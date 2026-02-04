@@ -84,6 +84,14 @@
     "home-assistant": {
       "version": "1.0.0",
       "installedAt": 1770241164407
+    },
+    "shortcuts-skill": {
+      "version": "0.1.0",
+      "installedAt": 1770241228074
+    },
+    "mcporter": {
+      "version": "1.0.0",
+      "installedAt": 1770241230048
     }
   }
 }
