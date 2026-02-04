@@ -1,0 +1,37 @@
+{
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "WhatsApp Gateway Monitoring",
+      "column": "in-progress",
+      "priority": "high",
+      "type": "recurring",
+      "created": "2026-02-03",
+      "context": "Monitor gateway disconnections and reconnections.",
+      "activity": [
+        {"date": "2026-02-03 17:23:04", "action": "Disconnected", "detail": "WhatsApp gateway disconnected (status 503)"},
+        {"date": "2026-02-03 17:23:07", "action": "Connected", "detail": "WhatsApp gateway reconnected."},
+        {"date": "2026-02-03 22:38:08", "action": "Disconnected", "detail": "WhatsApp gateway disconnected (status 499)"},
+        {"date": "2026-02-03 22:38:11", "action": "Connected", "detail": "WhatsApp gateway reconnected."},
+        {"date": "2026-02-04 09:28:12", "action": "Disconnected", "detail": "WhatsApp gateway disconnected (status 499)"},
+        {"date": "2026-02-04 09:28:15", "action": "Connected", "detail": "WhatsApp gateway reconnected."},
+        {"date": "2026-02-04 10:02:53", "action": "Disconnected", "detail": "WhatsApp gateway disconnected (status 428)"},
+        {"date": "2026-02-04 10:02:57", "action": "Connected", "detail": "WhatsApp gateway reconnected."},
+        {"date": "2026-02-04 12:54:03", "action": "Connected", "detail": "WhatsApp gateway connected."}
+      ]
+    },
+    {
+      "id": "task-002",
+      "title": "Daily Bitcoin Research",
+      "column": "recurring",
+      "priority": "medium",
+      "type": "recurring",
+      "created": "2026-02-03",
+      "context": "Fetch current market info and trends to report to Luke.",
+      "activity": [
+        {"date": "2026-02-03 18:00:00", "action": "Research reminder", "detail": "Time to research Bitcoin market."}
+      ]
+    }
+  ],
+  "lastUpdated": "2026-02-04T12:54:07"
+}

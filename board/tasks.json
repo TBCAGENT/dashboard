@@ -1,0 +1,128 @@
+{
+  "columns": [
+    { "id": "backlog", "name": "📋 Backlog" },
+    { "id": "recurring", "name": "🔄 Recurring" },
+    { "id": "in-progress", "name": "🚧 In Progress" },
+    { "id": "done", "name": "✅ Done" }
+  ],
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "Second Brain System",
+      "description": "Organize all information Luke shares into categorized knowledge base",
+      "column": "recurring",
+      "priority": "high",
+      "type": "recurring",
+      "created": "2026-02-01",
+      "context": "Luke requested a second brain to organize all info by: personal life, business, people, context, ideas, active projects. Stored locally on Mac.",
+      "activity": [
+        { "date": "2026-02-01T17:09:00", "action": "Request received", "detail": "Luke: 'I want you to build this out, to organize all information when I share it with you...'" },
+        { "date": "2026-02-01T17:14:00", "action": "Built folder structure", "detail": "Created brain/{people,projects,business,personal,ideas,reference}/" },
+        { "date": "2026-02-01T17:19:00", "action": "Desktop shortcut", "detail": "Created ~/Desktop/Arthur/ with symlinks" },
+        { "date": "2026-02-01T20:50:00", "action": "Major context dump", "detail": "Luke shared full background: business history (Leverage, Paraloon, coaching, Replaceable Media, Graystone Trading, LL Ventures), family, goals ($10M net worth), current company details" }
+      ]
+    },
+    {
+      "id": "task-004",
+      "title": "Luke Context Gathering",
+      "description": "Ongoing collection of info about Luke, his business, preferences, and decision-making",
+      "column": "backlog",
+      "priority": "medium",
+      "type": "recurring",
+      "created": "2026-02-01",
+      "context": "Arthur asked follow-up questions about LL Ventures operations, daily routines, tools used, deal criteria. Luke will share context when he has time.",
+      "activity": [
+        { "date": "2026-02-01T20:58:00", "action": "Questions posed", "detail": "Arthur asked about: Mikey/Nate roles, deal flow bottlenecks, tools/CRM, daily routines, hobbies, proforma criteria, target cash-on-cash returns" },
+        { "date": "2026-02-01T20:59:00", "action": "Added to backlog", "detail": "Luke: 'Add this as a backlog task that'll become recurring when I have time to give you context'" }
+      ]
+    },
+    {
+      "id": "task-005",
+      "title": "Deal Underwriting Automation",
+      "description": "Build system to underwrite deals in real-time using LL Ventures proformas",
+      "column": "backlog",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-01",
+      "context": "Automate deal analysis: run proformas, calculate numbers, send to agents for contracts, potentially auto-draft and send contracts for deal flow.",
+      "activity": [
+        { "date": "2026-02-01T20:50:00", "action": "Request received", "detail": "Luke: 'Have you actually underwrite deals in real time for me using our proformas and figuring out the exact numbers, sending those over to our agents for them to get the contracts or potentially having you draft them and just send them out automatically'" },
+        { "date": "2026-02-01T20:50:00", "action": "Added to backlog", "detail": "Luke noted this is not a project for now, add to backlog" }
+      ]
+    },
+    {
+      "id": "task-002",
+      "title": "Kanban Board",
+      "description": "Visual project management board for Arthur's work",
+      "column": "done",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-01",
+      "context": "Visual Kanban to track Arthur's work with activity logs.",
+      "activity": [
+        { "date": "2026-02-01T17:14:00", "action": "Request received", "detail": "Luke requested black Kanban with recurring, backlog, in progress columns and activity logs" },
+        { "date": "2026-02-01T17:16:00", "action": "Completed ✓", "detail": "Built dark-themed HTML board with 4 columns and click-to-view activity modal" }
+      ]
+    },
+    {
+      "id": "task-003",
+      "title": "Model Efficiency Index",
+      "description": "Reference guide for choosing the right AI model for each task type",
+      "column": "done",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-01",
+      "context": "Use right model for job - don't burn Opus on simple tasks.",
+      "activity": [
+        { "date": "2026-02-01T17:55:00", "action": "Request received", "detail": "Luke: 'Build an index so you can be an efficiency master with using the right models'" },
+        { "date": "2026-02-01T17:58:00", "action": "Completed ✓", "detail": "Created brain/reference/model-index.md with cost comparisons and task mapping" }
+      ]
+    }
+    ,
+    {
+      "id": "task-006",
+      "title": "Apify Integration",
+      "description": "Get Arthur full access to Luke's Apify account for web scraping and automation",
+      "column": "in-progress",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-02",
+      "context": "Luke wants Arthur to have full access to Apify for scraping and automation tasks. Waiting for API token from Luke's account.",
+      "activity": [
+        { "date": "2026-02-02T12:41:00", "action": "Request received", "detail": "Luke: 'I would like to give you access to Appify. It allows for like scraping'" },
+        { "date": "2026-02-02T13:26:00", "action": "Project added to board", "detail": "Arthur added project to Kanban board" },
+        { "date": "2026-02-02T13:42:26", "action": "Voice message confirmation", "detail": "Luke emphasized importance of Apify access for web scraping projects" }
+      ]
+    },
+    {
+      "id": "task-007",
+      "title": "Email Setup (arthur@blackboxalchemist.com)",
+      "description": "Configure Arthur's dedicated email for monitoring, responses, and tool signups",
+      "column": "in-progress",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-02",
+      "context": "Arthur has email credentials but needs app password setup for Gmail authentication. Email: arthur@blackboxalchemist.com",
+      "activity": [
+        { "date": "2026-02-02T13:08:00", "action": "Credentials received", "detail": "Luke provided email: arthur@blackboxalchemist.com with password" },
+        { "date": "2026-02-02T13:17:00", "action": "Authentication failed", "detail": "Gmail SMTP rejected credentials - need app password setup" },
+        { "date": "2026-02-02T13:26:00", "action": "Project added to board", "detail": "Arthur added project to Kanban board" }
+      ]
+    },
+    {
+      "id": "task-008",
+      "title": "Go High Level Access",
+      "description": "Get Arthur full access to Go High Level platform for text message monitoring and editing",
+      "column": "backlog",
+      "priority": "medium",
+      "type": "project",
+      "created": "2026-02-02",
+      "context": "Luke wants Arthur to read all text messages in Go High Level and be able to edit/manage the platform.",
+      "activity": [
+        { "date": "2026-02-02T13:17:00", "action": "Request received", "detail": "Luke: 'getting you full access to Go High Level so you can read all text messages'" },
+        { "date": "2026-02-02T13:26:00", "action": "Project added to board", "detail": "Arthur added project to Kanban board" }
+      ]
+    }
+  ],
+  "lastUpdated": "2026-02-02T22:05:00"
+}

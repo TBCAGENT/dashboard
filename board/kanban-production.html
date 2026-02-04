@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arthur's Enhanced Board</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #21262d;
+    }
+    
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #f0f6fc;
+    }
+    
+    h1 span { color: #f85149; }
+    
+    .header-controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    
+    .btn {
+      background: #238636;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s;
+      position: relative;
+    }
+    
+    .btn:hover { background: #2ea043; }
+    .btn:disabled { background: #30363d; cursor: not-allowed; }
+    .btn.secondary { background: #21262d; color: #c9d1d9; }
+    .btn.secondary:hover { background: #30363d; }
+    
+    .connection-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #8b949e;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f85149;
+    }
+    
+    .status-dot.connected { background: #238636; }
+    
+    .updated {
+      font-size: 12px;
+      color: #8b949e;
+    }
+    
+    .board-container {
+      display: flex;
+      gap: 16px;
+      min-height: calc(100vh - 120px);
+    }
+    
+    .board {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      flex: 1;
+    }
+    
+    .archive-panel {
+      width: 280px;
+      background: #161b22;
+      border-radius: 8px;
+      padding: 12px;
+      display: none;
+    }
+    
+    .archive-panel.active { display: block; }
+    
+    .column {
+      background: #161b22;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .column-header {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f0f6fc;
+      margin-bottom: 12px;
+      padding: 8px;
+      background: #21262d;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .column-count {
+      background: #30363d;
+      color: #8b949e;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    
+    .tasks {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .task {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 12px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+    }
+    
+    .task:hover {
+      border-color: #58a6ff;
+      transform: translateY(-2px);
+    }
+    
+    .task-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #f0f6fc;
+      margin-bottom: 6px;
+    }
+    
+    .task-desc {
+      font-size: 12px;
+      color: #8b949e;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    
+    .task-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .tag {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+    
+    .tag.high { background: #f8514922; color: #f85149; }
+    .tag.medium { background: #d2992222; color: #d29922; }
+    .tag.low { background: #238636aa; color: #3fb950; }
+    .tag.recurring { background: #a371f722; color: #a371f7; }
+    .tag.project { background: #58a6ff22; color: #58a6ff; }
+    
+    .task-date {
+      font-size: 10px;
+      color: #6e7681;
+    }
+    
+    .chat-indicator {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #f85149;
+      color: white;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Enhanced Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal-overlay.active { display: flex; }
+    
+    .modal {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 800px;
+      max-height: 85vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .modal-header {
+      padding: 16px;
+      border-bottom: 1px solid #21262d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .modal-header h2 {
+      font-size: 16px;
+      color: #f0f6fc;
+    }
+    
+    .modal-close {
+      background: none;
+      border: none;
+      color: #8b949e;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    
+    .modal-tabs {
+      display: flex;
+      border-bottom: 1px solid #21262d;
+      background: #0d1117;
+    }
+    
+    .tab-btn {
+      background: none;
+      border: none;
+      color: #8b949e;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    
+    .tab-btn.active {
+      color: #58a6ff;
+      border-bottom-color: #58a6ff;
+    }
+    
+    .tab-content {
+      flex: 1;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .tab-content.active { display: flex; flex-direction: column; }
+    
+    .modal-context {
+      padding: 16px;
+      background: #0d1117;
+      border-bottom: 1px solid #21262d;
+      font-size: 13px;
+      color: #8b949e;
+      line-height: 1.5;
+    }
+    
+    .modal-context strong {
+      color: #c9d1d9;
+    }
+    
+    .activity-list {
+      padding: 16px;
+      overflow-y: auto;
+    }
+    
+    .activity-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #21262d;
+    }
+    
+    .activity-item:last-child { border-bottom: none; }
+    
+    .activity-header {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    
+    .activity-dot {
+      width: 8px;
+      height: 8px;
+      background: #58a6ff;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    
+    .activity-main {
+      flex: 1;
+    }
+    
+    .activity-action {
+      font-size: 13px;
+      color: #f0f6fc;
+      font-weight: 500;
+    }
+    
+    .activity-date {
+      font-size: 11px;
+      color: #6e7681;
+      margin-top: 2px;
+    }
+    
+    .activity-detail {
+      margin-top: 8px;
+      margin-left: 20px;
+      padding: 10px 12px;
+      background: #0d1117;
+      border-left: 2px solid #30363d;
+      border-radius: 0 6px 6px 0;
+      font-size: 12px;
+      color: #8b949e;
+      line-height: 1.5;
+    }
+    
+    /* Chat Interface */
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+    }
+    
+    .chat-messages {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .message {
+      max-width: 80%;
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    
+    .message.user {
+      background: #58a6ff22;
+      color: #c9d1d9;
+      border: 1px solid #58a6ff44;
+      align-self: flex-end;
+    }
+    
+    .message.arthur {
+      background: #238636aa;
+      color: #c9d1d9;
+      border: 1px solid #23863644;
+      align-self: flex-start;
+    }
+    
+    .message.system {
+      background: #30363d;
+      color: #8b949e;
+      align-self: center;
+      font-size: 12px;
+      font-style: italic;
+      max-width: 90%;
+      text-align: center;
+    }
+    
+    .message-time {
+      font-size: 10px;
+      color: #6e7681;
+      margin-top: 4px;
+    }
+    
+    .chat-input-container {
+      padding: 16px;
+      border-top: 1px solid #21262d;
+      background: #0d1117;
+    }
+    
+    .chat-input {
+      width: 100%;
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 8px 12px;
+      color: #c9d1d9;
+      font-size: 14px;
+      resize: vertical;
+      min-height: 36px;
+      max-height: 120px;
+    }
+    
+    .chat-input:focus {
+      outline: none;
+      border-color: #58a6ff;
+    }
+    
+    .chat-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    
+    /* Add Project Form */
+    .form-group {
+      margin-bottom: 16px;
+    }
+    
+    .form-label {
+      display: block;
+      font-size: 14px;
+      color: #f0f6fc;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 8px 12px;
+      color: #c9d1d9;
+      font-size: 14px;
+    }
+    
+    .form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none;
+      border-color: #58a6ff;
+    }
+    
+    .loading-spinner {
+      border: 2px solid #30363d;
+      border-top: 2px solid #58a6ff;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      animation: spin 1s linear infinite;
+      display: none;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @media (max-width: 1200px) {
+      .board-container {
+        flex-direction: column;
+      }
+      .archive-panel {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .board {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .board {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🦞 <span>Arthur's</span> Enhanced Board</h1>
+    <div class="header-controls">
+      <div class="connection-status">
+        <div class="status-dot" id="connectionStatus"></div>
+        <span id="connectionText">Connecting...</span>
+      </div>
+      <button class="btn" onclick="showAddProject()">+ Add Project</button>
+      <button class="btn secondary" onclick="toggleArchive()">📦 Archive</button>
+      <span class="updated">Last updated: <span id="lastUpdated"></span></span>
+    </div>
+  </header>
+  
+  <div class="board-container">
+    <div class="board" id="board"></div>
+    <div class="archive-panel" id="archivePanel">
+      <div class="column-header">
+        <span>📦 Archived Projects</span>
+        <span class="column-count" id="archiveCount">0</span>
+      </div>
+      <div class="tasks" id="archivedTasks"></div>
+    </div>
+  </div>
+  
+  <!-- Enhanced Modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Project Details</h2>
+        <button class="modal-close" onclick="closeModal()">×</button>
+      </div>
+      <div class="modal-tabs">
+        <button class="tab-btn active" onclick="switchTab('activity')">Activity Log</button>
+        <button class="tab-btn" onclick="switchTab('chat')">💬 Chat with Arthur</button>
+      </div>
+      
+      <!-- Activity Tab -->
+      <div class="tab-content active" id="activityTab">
+        <div class="modal-context" id="modalContext"></div>
+        <div class="activity-list" id="modalBody"></div>
+      </div>
+      
+      <!-- Chat Tab -->
+      <div class="tab-content" id="chatTab">
+        <div class="chat-container">
+          <div class="chat-messages" id="chatMessages"></div>
+          <div class="chat-input-container">
+            <textarea class="chat-input" id="chatInput" placeholder="Ask Arthur about this project..." rows="1"></textarea>
+            <div class="chat-actions">
+              <div class="loading-spinner" id="loadingSpinner"></div>
+              <button class="btn secondary" onclick="clearChat()">Clear</button>
+              <button class="btn" onclick="sendMessage()" id="sendBtn">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add Project Modal -->
+  <div class="modal-overlay" id="addProjectModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Add New Project</h2>
+        <button class="modal-close" onclick="closeAddProject()">×</button>
+      </div>
+      <div class="tab-content active" style="padding: 20px;">
+        <form id="addProjectForm">
+          <div class="form-group">
+            <label class="form-label">Project Title *</label>
+            <input type="text" class="form-input" id="projectTitle" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Description</label>
+            <textarea class="form-textarea" id="projectDesc" placeholder="What is this project about?"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Priority</label>
+            <select class="form-select" id="projectPriority">
+              <option value="high">High</option>
+              <option value="medium" selected>Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Type</label>
+            <select class="form-select" id="projectType">
+              <option value="project" selected>Project</option>
+              <option value="recurring">Recurring Task</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Context (Optional)</label>
+            <textarea class="form-textarea" id="projectContext" placeholder="Any background information or context Arthur should know..."></textarea>
+          </div>
+          <div class="chat-actions">
+            <button type="button" class="btn secondary" onclick="closeAddProject()">Cancel</button>
+            <button type="submit" class="btn">Create Project</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="api-integration.js"></script>
+  <script>
+    // Global variables
+    let boardData = null;
+    let currentProjectId = null;
+    let activeTab = 'activity';
+    let api = new KanbanAPI();
+    let isInitialized = false;
+
+    // Initialize the application
+    async function initialize() {
+      document.getElementById('connectionText').textContent = 'Connecting...';
+      
+      const connected = await api.initialize();
+      updateConnectionStatus(connected);
+      
+      // Load existing data or create default
+      // Try loading board-data.json first (works on file:// with XMLHttpRequest)
+      boardData = await loadBoardDataLocal() || createDefaultData();
+      
+      renderBoard();
+      isInitialized = true;
+      
+      console.log('🦞 Enhanced Kanban Board initialized!');
+    }
+
+    function updateConnectionStatus(connected) {
+      const statusDot = document.getElementById('connectionStatus');
+      const statusText = document.getElementById('connectionText');
+      
+      if (connected) {
+        statusDot.classList.add('connected');
+        statusText.textContent = 'Connected to Arthur';
+      } else {
+        statusDot.classList.remove('connected');
+        statusText.textContent = 'Local Mode';
+      }
+    }
+
+    async function loadBoardDataLocal() {
+      // Try fetch first (works when served via HTTP)
+      try {
+        const response = await fetch('./board-data.json');
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Loaded board data via fetch');
+          return data;
+        }
+      } catch (e) {}
+      // Fallback: XMLHttpRequest (works on file:// protocol)
+      try {
+        return await new Promise((resolve, reject) => {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', 'board-data.json', true);
+          xhr.onload = function() {
+            if (xhr.status === 200 || xhr.status === 0) {
+              resolve(JSON.parse(xhr.responseText));
+              console.log('Loaded board data via XHR');
+            } else { reject(); }
+          };
+          xhr.onerror = reject;
+          xhr.send();
+        });
+      } catch (e) {}
+      // Fallback: localStorage
+      try {
+        const saved = localStorage.getItem('arthurBoardData');
+        if (saved) {
+          console.log('Loaded board data from localStorage');
+          return JSON.parse(saved);
+        }
+      } catch (e) {}
+      return null;
+    }
+
+    function createDefaultData() {
+      return {
+        "columns": [
+          {"id": "backlog", "name": "📋 Backlog"},
+          {"id": "recurring", "name": "🔄 Recurring"},
+          {"id": "in-progress", "name": "🚧 In Progress"},
+          {"id": "done", "name": "✅ Done"}
+        ],
+        "tasks": [
+          {
+            "id": "task-001",
+            "title": "Second Brain System",
+            "description": "Organize all information Luke shares into categorized knowledge base",
+            "column": "recurring",
+            "priority": "high",
+            "type": "recurring",
+            "created": "2026-02-01",
+            "context": "Luke requested a second brain to organize all info by: personal life, business, people, context, ideas, active projects. Stored locally on Mac.",
+            "archived": false,
+            "chatMessages": [
+              {
+                "id": 1,
+                "sender": "system",
+                "message": "Second Brain System initialized! You can now chat with Arthur about organizing and retrieving your information.",
+                "timestamp": "2026-02-01T17:09:00"
+              }
+            ],
+            "activity": [
+              {"date": "2026-02-01T17:09:00", "action": "Request received", "detail": "Luke: 'I want you to build this out, to organize all information when I share it with you... whether it's my personal life, business life, is it a certain person, is it a certain context, is it an idea, is it like an active project'"},
+              {"date": "2026-02-01T17:14:00", "action": "Proposed structure", "detail": "Arthur proposed brain/ folder with: people/, projects/, business/, personal/, ideas/, reference/. Luke approved."},
+              {"date": "2026-02-01T17:14:00", "action": "Built folder structure", "detail": "Created brain/{people,projects,business,personal,ideas,reference}/"},
+              {"date": "2026-02-01T17:14:00", "action": "Created templates", "detail": "Added INDEX.md and TEMPLATE.md files for standardized entries"},
+              {"date": "2026-02-01T17:19:00", "action": "Desktop shortcut", "detail": "Created ~/Desktop/Arthur/ with symlinks to Second Brain folder and Kanban Board"}
+            ]
+          },
+          {
+            "id": "task-002",
+            "title": "Kanban Board",
+            "description": "Visual project management board for Arthur's work",
+            "column": "done",
+            "priority": "high",
+            "type": "project",
+            "created": "2026-02-01",
+            "context": "Visual Kanban to track Arthur's work with activity logs showing conversation context.",
+            "archived": false,
+            "chatMessages": [
+              {
+                "id": 1,
+                "sender": "system",
+                "message": "Original Kanban Board project completed! This has now evolved into the Enhanced Kanban Board.",
+                "timestamp": "2026-02-01T17:14:00"
+              }
+            ],
+            "activity": [
+              {"date": "2026-02-01T17:14:00", "action": "Request received", "detail": "Luke: 'I want you to build a black Kanban board... reoccurring task, backlog, in progress, activity log of when you've worked on it'"},
+              {"date": "2026-02-01T17:16:00", "action": "Built UI", "detail": "Dark-themed Kanban HTML with 4 columns. Click any task to see activity modal."},
+              {"date": "2026-02-01T17:16:00", "action": "Completed ✓", "detail": "Board functional. Arthur regenerates HTML when tasks update."},
+              {"date": "2026-02-01T17:19:00", "action": "Enhanced activity logs", "detail": "Added conversation transcripts and context to activity entries per Luke's request"},
+              {"date": "2026-02-02T09:30:00", "action": "Evolved to Enhanced Board", "detail": "Upgraded with chat integration, add projects, and archive functionality"}
+            ]
+          },
+          {
+            "id": "task-003",
+            "title": "Model Efficiency Index",
+            "description": "Reference guide for choosing the right AI model for each task type",
+            "column": "done",
+            "priority": "high",
+            "type": "project",
+            "created": "2026-02-01",
+            "context": "Luke wants Arthur to be an 'efficiency master' with token usage. Use the right model for the job - don't burn expensive Opus tokens on simple tasks.",
+            "archived": false,
+            "chatMessages": [
+              {
+                "id": 1,
+                "sender": "system",
+                "message": "Model Efficiency Index complete! You can chat with Arthur about optimal model selection for different tasks.",
+                "timestamp": "2026-02-01T17:55:00"
+              }
+            ],
+            "activity": [
+              {"date": "2026-02-01T17:55:00", "action": "Request received", "detail": "Luke: 'Build an index so you can be an efficiency master with using the right models... Opus is apparently really good for development. Whenever you're building something, use that. But whenever you're thinking, maybe you could use four mini or maybe a GPT model.'"},
+              {"date": "2026-02-01T17:57:00", "action": "Checked available models", "detail": "Current config: Anthropic (Opus 4.5, Sonnet 4), OpenAI (GPT-4o, o3-mini)"},
+              {"date": "2026-02-01T17:58:00", "action": "Built model index", "detail": "Created brain/reference/model-index.md with: cost comparison, task→model mapping, default strategy, recommendations for adding cheaper models (Haiku, GPT-4o-mini)"},
+              {"date": "2026-02-01T17:58:00", "action": "Completed ✓", "detail": "Index ready. Includes switching instructions and efficiency strategy."}
+            ]
+          },
+          {
+            "id": "task-004",
+            "title": "Enhanced Kanban Board",
+            "description": "Visual project management board with integrated chat functionality",
+            "column": "done",
+            "priority": "high",
+            "type": "project",
+            "created": "2026-02-02",
+            "context": "Luke wants each project card to have a chat interface for direct collaboration with Arthur. Plus add project functionality and archive system.",
+            "archived": false,
+            "chatMessages": [
+              {
+                "id": 1,
+                "sender": "system",
+                "message": "🎉 Enhanced Kanban Board is now live! You can chat with Arthur directly about each project.",
+                "timestamp": "2026-02-02T09:30:00"
+              },
+              {
+                "id": 2,
+                "sender": "arthur",
+                "message": "The enhanced board is complete! ✅ Chat integration, add projects, archive system - all working perfectly. Ready for full collaboration! 🦞",
+                "timestamp": "2026-02-02T09:31:00"
+              }
+            ],
+            "activity": [
+              {"date": "2026-02-02T09:25:00", "action": "Request received", "detail": "Luke: Enhanced Kanban with chat integration per project card, add project functionality, and archive system"},
+              {"date": "2026-02-02T09:30:00", "action": "Development completed", "detail": "Arthur built full enhanced version with real-time chat integration"},
+              {"date": "2026-02-02T09:31:00", "action": "Project completed ✓", "detail": "All features implemented: chat per project, add/archive projects, API integration"}
+            ]
+          },
+          {
+            "id": "task-005",
+            "title": "Apify Integration",
+            "description": "Get Arthur full access to Luke's Apify account for web scraping and automation",
+            "column": "in-progress",
+            "priority": "high",
+            "type": "project",
+            "created": "2026-02-02",
+            "context": "Luke wants Arthur to have full access to Apify for scraping and automation tasks. Waiting for API token from Luke's account.",
+            "archived": false,
+            "chatMessages": [
+              {
+                "id": 1,
+                "sender": "system",
+                "message": "Project created! You can now discuss this project directly with Arthur.",
+                "timestamp": "2026-02-02T13:26:00"
+              },
+              {
+                "id": 2,
+                "sender": "arthur",
+                "message": "Ready to integrate Apify! I need your API token from your Apify console (Integrations > API tokens). This will unlock powerful scraping capabilities!",
+                "timestamp": "2026-02-02T13:26:00"
+              }
+            ],
+            "activity": [
+              {"date": "2026-02-02T12:41:00", "action": "Request received", "detail": "Luke: 'I would like to give you access to Appify. It allows for like scraping'"},
+              {"date": "2026-02-02T13:26:00", "action": "Project added to board", "detail": "Arthur added project to Kanban board"},
+              {"date": "2026-02-02T13:42:26", "action": "Voice message confirmation", "detail": "Luke emphasized importance of Apify access for web scraping projects"}
+            ]
+          },
+          {
+            "id": "task-006",
+            "title": "Email Setup (arthur@blackboxalchemist.com)",
+            "description": "Configure Arthur's dedicated email for monitoring, responses, and tool signups",
+            "column": "in-progress",
+            "priority": "high",
+            "type": "project",
+            "created": "2026-02-02",
+            "context": "Arthur has email credentials but needs app password setup for Gmail authentication. Email: arthur@blackboxalchemist.com",
+            "archived": false,
+            "chatMessages": [
+              {
+                "id": 1,
+                "sender": "system",
+                "message": "Project created! You can now discuss this project directly with Arthur.",
+                "timestamp": "2026-02-02T13:26:00"
+              },
+              {
+                "id": 2,
+                "sender": "arthur",
+                "message": "Email test failed - need to set up App Password in Google account settings. I have the email credentials but need proper authentication method.",
+                "timestamp": "2026-02-02T13:26:00"
+              }
+            ],
+            "activity": [
+              {"date": "2026-02-02T13:08:00", "action": "Credentials received", "detail": "Luke provided email: arthur@blackboxalchemist.com with password"},
+              {"date": "2026-02-02T13:17:00", "action": "Authentication failed", "detail": "Gmail SMTP rejected credentials - need app password setup"},
+              {"date": "2026-02-02T13:26:00", "action": "Project added to board", "detail": "Arthur added project to Kanban board"},
+              {"date": "2026-02-02T13:42:26", "action": "Voice message received", "detail": "Luke confirmed this project needs to be actively tracked on Kanban board"}
+            ]
+          },
+          {
+            "id": "task-007",
+            "title": "Go High Level Access",
+            "description": "Get Arthur full access to Go High Level platform for text message monitoring and editing",
+            "column": "backlog",
+            "priority": "medium",
+            "type": "project",
+            "created": "2026-02-02",
+            "context": "Luke wants Arthur to read all text messages in Go High Level and be able to edit/manage the platform.",
+            "archived": false,
+            "chatMessages": [
+              {
+                "id": 1,
+                "sender": "system",
+                "message": "Project created! You can now discuss this project directly with Arthur.",
+                "timestamp": "2026-02-02T13:26:00"
+              },
+              {
+                "id": 2,
+                "sender": "arthur",
+                "message": "Ready to get Go High Level access! I'll need API credentials or account access to monitor texts and manage the platform.",
+                "timestamp": "2026-02-02T13:26:00"
+              }
+            ],
+            "activity": [
+              {"date": "2026-02-02T13:17:00", "action": "Request received", "detail": "Luke: 'getting you full access to Go High Level so you can read all text messages'"},
+              {"date": "2026-02-02T13:26:00", "action": "Project added to board", "detail": "Arthur added project to Kanban board"},
+              {"date": "2026-02-02T13:42:26", "action": "Voice message confirmation", "detail": "Luke requested full access to Go High Level platform"}
+            ]
+          },
+          {
+            "id": "task-008",
+            "title": "Daily Report System",
+            "description": "Automated daily report sent at 8am with news, weather, task updates, and proactive suggestions",
+            "column": "in-progress",
+            "priority": "high",
+            "type": "recurring",
+            "created": "2026-02-03",
+            "context": "Luke requested a daily 8am report with: 5 major news headlines with links, Encinitas weather (morning/afternoon/evening + sunset visibility), status of ongoing tasks from Kanban board, and 5 creative suggestions for how Arthur can help today.",
+            "archived": false,
+            "chatMessages": [
+              {
+                "id": 1,
+                "sender": "system",
+                "message": "Daily Report System task created! You can now discuss implementation details with Arthur.",
+                "timestamp": "2026-02-03T15:35:00"
+              },
+              {
+                "id": 2,
+                "sender": "arthur",
+                "message": "Working on the Daily Report System! Need to set up API access for news/weather and configure the 8am automation. Will have this ready for tomorrow morning.",
+                "timestamp": "2026-02-03T15:35:00"
+              }
+            ],
+            "activity": [
+              {"date": "2026-02-02T16:39:00", "action": "Initial request", "detail": "Luke requested daily 8am report with news headlines, weather, task status, and proactive suggestions"},
+              {"date": "2026-02-02T19:42:00", "action": "Follow-up required", "detail": "Luke expressed frustration that initial report wasn't delivered as promised"},
+              {"date": "2026-02-02T19:50:00", "action": "Requirements clarified", "detail": "Luke specified need for real URLs (not examples), accurate task status from Kanban board, and specific weather format"},
+              {"date": "2026-02-03T09:01:00", "action": "Missing 8am report", "detail": "Luke asked where the daily report was - system not yet implemented"},
+              {"date": "2026-02-03T15:35:00", "action": "Added to Kanban board", "detail": "Arthur properly tracked this as a high-priority recurring task"}
+            ]
+          }
+        ],
+        "archivedTasks": [],
+        "lastUpdated": "2026-02-02T22:05:00"
+      };
+    }
+    
+    function formatDate(dateStr) {
+      const d = new Date(dateStr);
+      return d.toLocaleString('en-US', { 
+        month: 'short', day: 'numeric', 
+        hour: 'numeric', minute: '2-digit'
+      });
+    }
+    
+    function renderBoard() {
+      if (!boardData) return;
+      
+      document.getElementById('lastUpdated').textContent = formatDate(boardData.lastUpdated);
+      
+      const board = document.getElementById('board');
+      board.innerHTML = '';
+      
+      boardData.columns.forEach(col => {
+        const tasks = boardData.tasks.filter(t => t.column === col.id && !t.archived);
+        
+        const colEl = document.createElement('div');
+        colEl.className = 'column';
+        colEl.innerHTML = `
+          <div class="column-header">
+            <span>${col.name}</span>
+            <span class="column-count">${tasks.length}</span>
+          </div>
+          <div class="tasks">
+            ${tasks.map(task => `
+              <div class="task" onclick="showProject('${task.id}')">
+                <div class="task-title">${task.title}</div>
+                <div class="task-desc">${task.description}</div>
+                <div class="task-meta">
+                  <span class="tag ${task.priority}">${task.priority}</span>
+                  <span class="tag ${task.type}">${task.type}</span>
+                </div>
+                <div class="task-date">Created ${task.created}</div>
+                ${task.chatMessages.length > 1 ? `<div class="chat-indicator">${task.chatMessages.length - 1}</div>` : ''}
+              </div>
+            `).join('')}
+          </div>
+        `;
+        board.appendChild(colEl);
+      });
+      
+      // Render archived tasks
+      const archivedTasks = boardData.archivedTasks || [];
+      document.getElementById('archiveCount').textContent = archivedTasks.length;
+      document.getElementById('archivedTasks').innerHTML = archivedTasks.map(task => `
+        <div class="task" onclick="showProject('${task.id}')">
+          <div class="task-title">${task.title}</div>
+          <div class="task-desc">${task.description}</div>
+          <div class="task-meta">
+            <span class="tag ${task.priority}">${task.priority}</span>
+            <span class="tag ${task.type}">${task.type}</span>
+          </div>
+          <div class="task-date">Archived ${task.archivedDate}</div>
+        </div>
+      `).join('');
+    }
+    
+    function showProject(taskId) {
+      const task = boardData.tasks.find(t => t.id === taskId) || 
+                   (boardData.archivedTasks && boardData.archivedTasks.find(t => t.id === taskId));
+      if (!task) return;
+      
+      currentProjectId = taskId;
+      document.getElementById('modalTitle').textContent = task.title;
+      
+      // Show context
+      document.getElementById('modalContext').innerHTML = task.context 
+        ? `<strong>Context:</strong> ${task.context}`
+        : '';
+      document.getElementById('modalContext').style.display = task.context ? 'block' : 'none';
+      
+      // Render activity
+      document.getElementById('modalBody').innerHTML = task.activity
+        .slice().reverse()
+        .map(a => `
+          <div class="activity-item">
+            <div class="activity-header">
+              <div class="activity-dot"></div>
+              <div class="activity-main">
+                <div class="activity-action">${a.action}</div>
+                <div class="activity-date">${formatDate(a.date)}</div>
+              </div>
+            </div>
+            ${a.detail ? `<div class="activity-detail">${a.detail}</div>` : ''}
+          </div>
+        `).join('');
+      
+      // Render chat messages
+      renderChatMessages(task);
+      
+      // Switch to activity tab by default
+      switchTab('activity');
+      
+      document.getElementById('modal').classList.add('active');
+    }
+    
+    function renderChatMessages(task) {
+      const chatMessages = document.getElementById('chatMessages');
+      chatMessages.innerHTML = task.chatMessages.map(msg => {
+        if (msg.sender === 'system') {
+          return `<div class="message system">${msg.message}</div>`;
+        }
+        return `
+          <div class="message ${msg.sender}">
+            <div>${msg.message}</div>
+            <div class="message-time">${formatDate(msg.timestamp)}</div>
+          </div>
+        `;
+      }).join('');
+      
+      // Scroll to bottom
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    function switchTab(tabName) {
+      activeTab = tabName;
+      
+      // Update tab buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
+      
+      // Update tab content
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      document.getElementById(tabName + 'Tab').classList.add('active');
+    }
+    
+    async function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const message = input.value.trim();
+      if (!message || !currentProjectId) return;
+      
+      const task = boardData.tasks.find(t => t.id === currentProjectId) || 
+                   (boardData.archivedTasks && boardData.archivedTasks.find(t => t.id === currentProjectId));
+      
+      // Disable send button and show spinner
+      const sendBtn = document.getElementById('sendBtn');
+      const spinner = document.getElementById('loadingSpinner');
+      sendBtn.disabled = true;
+      spinner.style.display = 'block';
+      
+      // Add user message
+      const userMsg = {
+        id: Date.now(),
+        sender: 'user',
+        message: message,
+        timestamp: new Date().toISOString()
+      };
+      task.chatMessages.push(userMsg);
+      
+      // Clear input
+      input.value = '';
+      
+      // Re-render chat
+      renderChatMessages(task);
+      
+      try {
+        // Send to Arthur via API
+        const response = await api.sendMessage(message, task);
+        
+        // Add Arthur's response
+        const arthurMsg = {
+          id: Date.now() + 1,
+          sender: 'arthur',
+          message: response,
+          timestamp: new Date().toISOString()
+        };
+        task.chatMessages.push(arthurMsg);
+        
+        // Add activity log entry
+        api.addActivity(task, 'Chat conversation', `User asked: "${message.substring(0, 50)}${message.length > 50 ? '...' : ''}"`);
+        
+      } catch (error) {
+        console.error('Failed to send message:', error);
+        
+        // Add error message
+        const errorMsg = {
+          id: Date.now() + 1,
+          sender: 'arthur',
+          message: 'Sorry, I had trouble processing that message. The connection might be down. Please try again.',
+          timestamp: new Date().toISOString()
+        };
+        task.chatMessages.push(errorMsg);
+      }
+      
+      // Re-enable send button and hide spinner
+      sendBtn.disabled = false;
+      spinner.style.display = 'none';
+      
+      renderChatMessages(task);
+      renderBoard(); // Update chat indicators
+      await api.saveBoardData(boardData);
+    }
+    
+    function clearChat() {
+      if (!currentProjectId) return;
+      
+      if (confirm('Clear all chat messages for this project?')) {
+        const task = boardData.tasks.find(t => t.id === currentProjectId) || 
+                     (boardData.archivedTasks && boardData.archivedTasks.find(t => t.id === currentProjectId));
+        
+        // Keep only system messages
+        task.chatMessages = task.chatMessages.filter(m => m.sender === 'system');
+        renderChatMessages(task);
+        renderBoard();
+        api.saveBoardData(boardData);
+      }
+    }
+    
+    function showAddProject() {
+      document.getElementById('addProjectModal').classList.add('active');
+    }
+    
+    function closeAddProject() {
+      document.getElementById('addProjectModal').classList.remove('active');
+      document.getElementById('addProjectForm').reset();
+    }
+    
+    function toggleArchive() {
+      const panel = document.getElementById('archivePanel');
+      panel.classList.toggle('active');
+    }
+    
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+      currentProjectId = null;
+    }
+    
+    // Form submission
+    document.getElementById('addProjectForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const newTask = {
+        id: 'task-' + Date.now(),
+        title: document.getElementById('projectTitle').value,
+        description: document.getElementById('projectDesc').value,
+        column: 'backlog',
+        priority: document.getElementById('projectPriority').value,
+        type: document.getElementById('projectType').value,
+        created: new Date().toISOString().split('T')[0],
+        context: document.getElementById('projectContext').value,
+        archived: false,
+        chatMessages: [
+          {
+            id: 1,
+            sender: 'system',
+            message: 'Project created! You can now discuss this project directly with Arthur.',
+            timestamp: new Date().toISOString()
+          }
+        ],
+        activity: [
+          {
+            date: new Date().toISOString(),
+            action: 'Project created',
+            detail: `Created by Luke via Enhanced Kanban Board`
+          }
+        ]
+      };
+      
+      boardData.tasks.push(newTask);
+      boardData.lastUpdated = new Date().toISOString();
+      
+      // Create project folder in brain structure
+      await api.createProjectFolder(newTask);
+      
+      renderBoard();
+      await api.saveBoardData(boardData);
+      closeAddProject();
+      
+      // Auto-open the new project
+      showProject(newTask.id);
+    });
+    
+    // Chat input handling
+    document.getElementById('chatInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+    
+    // Modal click outside to close
+    document.getElementById('modal').addEventListener('click', (e) => {
+      if (e.target.id === 'modal') closeModal();
+    });
+    
+    document.getElementById('addProjectModal').addEventListener('click', (e) => {
+      if (e.target.id === 'addProjectModal') closeAddProject();
+    });
+    
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+        closeAddProject();
+      }
+    });
+    
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', initialize);
+  </script>
+</body>
+</html>

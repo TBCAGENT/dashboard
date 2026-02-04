@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arthur's Board</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #21262d;
+    }
+    
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #f0f6fc;
+    }
+    
+    h1 span { color: #f85149; }
+    
+    .updated {
+      font-size: 12px;
+      color: #8b949e;
+    }
+    
+    .board {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      min-height: calc(100vh - 120px);
+    }
+    
+    .column {
+      background: #161b22;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .column-header {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f0f6fc;
+      margin-bottom: 12px;
+      padding: 8px;
+      background: #21262d;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .column-count {
+      background: #30363d;
+      color: #8b949e;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    
+    .tasks {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .task {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 12px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    
+    .task:hover {
+      border-color: #58a6ff;
+      transform: translateY(-2px);
+    }
+    
+    .task-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #f0f6fc;
+      margin-bottom: 6px;
+    }
+    
+    .task-desc {
+      font-size: 12px;
+      color: #8b949e;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    
+    .task-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .tag {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+    
+    .tag.high { background: #f8514922; color: #f85149; }
+    .tag.medium { background: #d2992222; color: #d29922; }
+    .tag.low { background: #238636aa; color: #3fb950; }
+    .tag.recurring { background: #a371f722; color: #a371f7; }
+    .tag.project { background: #58a6ff22; color: #58a6ff; }
+    
+    .task-date {
+      font-size: 10px;
+      color: #6e7681;
+    }
+    
+    /* Activity Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal-overlay.active { display: flex; }
+    
+    .modal {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 85vh;
+      overflow: hidden;
+    }
+    
+    .modal-header {
+      padding: 16px;
+      border-bottom: 1px solid #21262d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .modal-header h2 {
+      font-size: 16px;
+      color: #f0f6fc;
+    }
+    
+    .modal-close {
+      background: none;
+      border: none;
+      color: #8b949e;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    
+    .modal-context {
+      padding: 16px;
+      background: #0d1117;
+      border-bottom: 1px solid #21262d;
+      font-size: 13px;
+      color: #8b949e;
+      line-height: 1.5;
+    }
+    
+    .modal-context strong {
+      color: #c9d1d9;
+    }
+    
+    .modal-body {
+      padding: 16px;
+      overflow-y: auto;
+      max-height: calc(85vh - 140px);
+    }
+    
+    .activity-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #21262d;
+    }
+    
+    .activity-item:last-child { border-bottom: none; }
+    
+    .activity-header {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    
+    .activity-dot {
+      width: 8px;
+      height: 8px;
+      background: #58a6ff;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    
+    .activity-main {
+      flex: 1;
+    }
+    
+    .activity-action {
+      font-size: 13px;
+      color: #f0f6fc;
+      font-weight: 500;
+    }
+    
+    .activity-date {
+      font-size: 11px;
+      color: #6e7681;
+      margin-top: 2px;
+    }
+    
+    .activity-detail {
+      margin-top: 8px;
+      margin-left: 20px;
+      padding: 10px 12px;
+      background: #0d1117;
+      border-left: 2px solid #30363d;
+      border-radius: 0 6px 6px 0;
+      font-size: 12px;
+      color: #8b949e;
+      line-height: 1.5;
+    }
+    
+    .activity-detail em {
+      color: #a371f7;
+      font-style: normal;
+    }
+    
+    @media (max-width: 900px) {
+      .board {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .board {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🦞 <span>Arthur's</span> Board</h1>
+    <span class="updated">Last updated: <span id="lastUpdated"></span></span>
+  </header>
+  
+  <div class="board" id="board"></div>
+  
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Activity Log</h2>
+        <button class="modal-close" onclick="closeModal()">×</button>
+      </div>
+      <div class="modal-context" id="modalContext"></div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    // Data embedded by Arthur - regenerated when tasks change
+    const data = {"columns":[{"id":"backlog","name":"📋 Backlog"},{"id":"recurring","name":"🔄 Recurring"},{"id":"in-progress","name":"🚧 In Progress"},{"id":"done","name":"✅ Done"}],"tasks":[{"id":"task-001","title":"Second Brain System","description":"Organize all information Luke shares into categorized knowledge base","column":"recurring","priority":"high","type":"recurring","created":"2026-02-01","context":"Luke requested a second brain to organize all info by: personal life, business, people, context, ideas, active projects. Stored locally on Mac.","activity":[{"date":"2026-02-01T17:09:00","action":"Request received","detail":"Luke: 'I want you to build this out, to organize all information when I share it with you... whether it's my personal life, business life, is it a certain person, is it a certain context, is it an idea, is it like an active project'"},{"date":"2026-02-01T17:14:00","action":"Proposed structure","detail":"Arthur proposed brain/ folder with: people/, projects/, business/, personal/, ideas/, reference/. Luke approved."},{"date":"2026-02-01T17:14:00","action":"Built folder structure","detail":"Created brain/{people,projects,business,personal,ideas,reference}/"},{"date":"2026-02-01T17:14:00","action":"Created templates","detail":"Added INDEX.md and TEMPLATE.md files for standardized entries"},{"date":"2026-02-01T17:19:00","action":"Desktop shortcut","detail":"Created ~/Desktop/Arthur/ with symlinks to Second Brain folder and Kanban Board"}]},{"id":"task-002","title":"Kanban Board","description":"Visual project management board for Arthur's work","column":"done","priority":"high","type":"project","created":"2026-02-01","context":"Visual Kanban to track Arthur's work with activity logs showing conversation context.","activity":[{"date":"2026-02-01T17:14:00","action":"Request received","detail":"Luke: 'I want you to build a black Kanban board... reoccurring task, backlog, in progress, activity log of when you've worked on it'"},{"date":"2026-02-01T17:16:00","action":"Built UI","detail":"Dark-themed Kanban HTML with 4 columns. Click any task to see activity modal."},{"date":"2026-02-01T17:16:00","action":"Completed ✓","detail":"Board functional. Arthur regenerates HTML when tasks update."},{"date":"2026-02-01T17:19:00","action":"Enhanced activity logs","detail":"Added conversation transcripts and context to activity entries per Luke's request"}]},{"id":"task-003","title":"Model Efficiency Index","description":"Reference guide for choosing the right AI model for each task type","column":"done","priority":"high","type":"project","created":"2026-02-01","context":"Luke wants Arthur to be an 'efficiency master' with token usage. Use the right model for the job - don't burn expensive Opus tokens on simple tasks.","activity":[{"date":"2026-02-01T17:55:00","action":"Request received","detail":"Luke: 'Build an index so you can be an efficiency master with using the right models... Opus is apparently really good for development. Whenever you're building something, use that. But whenever you're thinking, maybe you could use four mini or maybe a GPT model.'"},{"date":"2026-02-01T17:57:00","action":"Checked available models","detail":"Current config: Anthropic (Opus 4.5, Sonnet 4), OpenAI (GPT-4o, o3-mini)"},{"date":"2026-02-01T17:58:00","action":"Built model index","detail":"Created brain/reference/model-index.md with: cost comparison, task→model mapping, default strategy, recommendations for adding cheaper models (Haiku, GPT-4o-mini)"},{"date":"2026-02-01T17:58:00","action":"Completed ✓","detail":"Index ready. Includes switching instructions and efficiency strategy."}]}],"lastUpdated":"2026-02-01T17:58:00"};
+    
+    function formatDate(dateStr) {
+      const d = new Date(dateStr);
+      return d.toLocaleString('en-US', { 
+        month: 'short', day: 'numeric', 
+        hour: 'numeric', minute: '2-digit'
+      });
+    }
+    
+    function renderBoard() {
+      document.getElementById('lastUpdated').textContent = formatDate(data.lastUpdated);
+      
+      const board = document.getElementById('board');
+      board.innerHTML = '';
+      
+      data.columns.forEach(col => {
+        const tasks = data.tasks.filter(t => t.column === col.id);
+        
+        const colEl = document.createElement('div');
+        colEl.className = 'column';
+        colEl.innerHTML = `
+          <div class="column-header">
+            <span>${col.name}</span>
+            <span class="column-count">${tasks.length}</span>
+          </div>
+          <div class="tasks">
+            ${tasks.map(task => `
+              <div class="task" onclick="showActivity('${task.id}')">
+                <div class="task-title">${task.title}</div>
+                <div class="task-desc">${task.description}</div>
+                <div class="task-meta">
+                  <span class="tag ${task.priority}">${task.priority}</span>
+                  <span class="tag ${task.type}">${task.type}</span>
+                </div>
+                <div class="task-date">Created ${task.created}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        board.appendChild(colEl);
+      });
+    }
+    
+    function showActivity(taskId) {
+      const task = data.tasks.find(t => t.id === taskId);
+      if (!task) return;
+      
+      document.getElementById('modalTitle').textContent = task.title;
+      document.getElementById('modalContext').innerHTML = task.context 
+        ? `<strong>Context:</strong> ${task.context}`
+        : '';
+      document.getElementById('modalContext').style.display = task.context ? 'block' : 'none';
+      
+      document.getElementById('modalBody').innerHTML = task.activity
+        .slice().reverse()
+        .map(a => `
+          <div class="activity-item">
+            <div class="activity-header">
+              <div class="activity-dot"></div>
+              <div class="activity-main">
+                <div class="activity-action">${a.action}</div>
+                <div class="activity-date">${formatDate(a.date)}</div>
+              </div>
+            </div>
+            ${a.detail ? `<div class="activity-detail">${a.detail}</div>` : ''}
+          </div>
+        `).join('');
+      
+      document.getElementById('modal').classList.add('active');
+    }
+    
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+    
+    document.getElementById('modal').addEventListener('click', (e) => {
+      if (e.target.id === 'modal') closeModal();
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+    
+    renderBoard();
+  </script>
+</body>
+</html>

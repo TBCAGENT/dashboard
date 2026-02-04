@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "skills": {
+    "proactive-agent": {
+      "version": "1.2.4",
+      "installedAt": 1770167315629
+    },
+    "proactive-messages": {
+      "version": "1.0.0",
+      "installedAt": 1770167317236
+    },
+    "self-improving-agent-1-0-1": {
+      "version": "1.0.0",
+      "installedAt": 1770167319156
+    },
+    "reflect-learn": {
+      "version": "2.0.0",
+      "installedAt": 1770167320914
+    },
+    "cognitive-memory": {
+      "version": "1.0.6",
+      "installedAt": 1770167323600
+    },
+    "clawdex": {
+      "version": "1.0.2",
+      "installedAt": 1770240123444
+    },
+    "input-guard": {
+      "version": "1.0.1",
+      "installedAt": 1770240125832
+    },
+    "deep-research": {
+      "version": "1.0.1",
+      "installedAt": 1770240130622
+    },
+    "clawlist": {
+      "version": "0.0.1",
+      "installedAt": 1770240132413
+    },
+    "context-recovery": {
+      "version": "1.0.0",
+      "installedAt": 1770240133932
+    },
+    "news-aggregator-skill": {
+      "version": "0.1.0",
+      "installedAt": 1770240140395
+    },
+    "apple-remind-me": {
+      "version": "1.0.1",
+      "installedAt": 1770240142340
+    },
+    "conventional-commits": {
+      "version": "1.0.1",
+      "installedAt": 1770240143873
+    },
+    "deepwiki": {
+      "version": "1.0.0",
+      "installedAt": 1770240145248
+    },
+    "executing-plans": {
+      "version": "0.1.0",
+      "installedAt": 1770240156365
+    },
+    "soulcraft": {
+      "version": "1.0.0",
+      "installedAt": 1770240158249
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1770241157162
+    },
+    "github-pr": {
+      "version": "1.0.0",
+      "installedAt": 1770241159083
+    },
+    "gitclaw": {
+      "version": "1.0.0",
+      "installedAt": 1770241160925
+    },
+    "chromadb-memory": {
+      "version": "1.0.0",
+      "installedAt": 1770241162564
+    },
+    "home-assistant": {
+      "version": "1.0.0",
+      "installedAt": 1770241164407
+    }
+  }
+}

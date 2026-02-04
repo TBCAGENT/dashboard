@@ -1,0 +1,16 @@
+{
+  "email": "arthur@blackboxalchemist.com",
+  "provider": "gmail",
+  "imap_server": "imap.gmail.com",
+  "imap_port": 993,
+  "smtp_server": "smtp.gmail.com",
+  "smtp_port": 465,
+  "encryption": "tls",
+  "auth": "app-password",
+  "status": "active",
+  "cli_tool": "himalaya",
+  "config_path": "~/.config/himalaya/config.toml",
+  "created": "2026-02-02T13:09:00",
+  "configured": "2026-02-02T22:34:00",
+  "purpose": "Arthur's dedicated email for tool signups and communication"
+}

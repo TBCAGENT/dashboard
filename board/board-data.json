@@ -1,0 +1,240 @@
+{
+  "columns": [
+    {
+      "id": "backlog",
+      "name": "\ud83d\udccb Backlog"
+    },
+    {
+      "id": "recurring",
+      "name": "\ud83d\udd04 Recurring"
+    },
+    {
+      "id": "in-progress",
+      "name": "\ud83d\udea7 In Progress"
+    },
+    {
+      "id": "done",
+      "name": "\u2705 Done"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "Second Brain System",
+      "description": "Organize all information Luke shares into categorized knowledge base",
+      "column": "recurring",
+      "priority": "high",
+      "type": "recurring",
+      "created": "2026-02-01",
+      "context": "Luke requested a second brain to organize all info by: personal life, business, people, context, ideas, active projects. Auto-updating system.",
+      "archived": false,
+      "chatMessages": [
+        {
+          "id": 1,
+          "sender": "system",
+          "message": "Project chat initialized. You can now discuss this project directly with Arthur.",
+          "timestamp": "2026-02-02T09:30:00"
+        }
+      ],
+      "activity": [
+        {
+          "date": "2026-02-01T17:09:00",
+          "action": "Request received",
+          "detail": "Luke: 'I want you to build this out, to organize all information when I share it with you'"
+        },
+        {
+          "date": "2026-02-01T17:14:00",
+          "action": "Built folder structure",
+          "detail": "Created brain/{people,projects,business,personal,ideas,reference}/"
+        },
+        {
+          "date": "2026-02-02T12:37:00",
+          "action": "System working",
+          "detail": "Luke confirmed all family/business contacts are properly stored"
+        }
+      ]
+    },
+    {
+      "id": "task-002",
+      "title": "Enhanced Kanban Board",
+      "description": "Visual project management board with integrated chat functionality",
+      "column": "done",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-02",
+      "context": "Luke wants each project card to have a chat interface for direct collaboration with Arthur. Plus add project functionality and archive system.",
+      "archived": false,
+      "chatMessages": [
+        {
+          "id": 1,
+          "sender": "arthur",
+          "message": "Enhanced Kanban Board completed! \u2705 Chat integration, add projects, archive system - all working perfectly.",
+          "timestamp": "2026-02-02T09:31:00"
+        }
+      ],
+      "activity": [
+        {
+          "date": "2026-02-02T09:25:00",
+          "action": "Request received",
+          "detail": "Luke: Enhanced Kanban with chat integration per project card"
+        },
+        {
+          "date": "2026-02-02T09:31:00",
+          "action": "Project completed \u2713",
+          "detail": "All features implemented: chat per project, add/archive projects, API integration"
+        }
+      ]
+    },
+    {
+      "id": "task-003",
+      "title": "Apify Integration",
+      "description": "Get Arthur full access to Luke's Apify account for web scraping and automation",
+      "column": "in-progress",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-02",
+      "context": "Luke wants Arthur to have full access to Apify for scraping and automation tasks. Waiting for API token from Luke's account.",
+      "archived": false,
+      "chatMessages": [
+        {
+          "id": 1,
+          "sender": "system",
+          "message": "Project created! You can now discuss this project directly with Arthur.",
+          "timestamp": "2026-02-02T13:26:00"
+        },
+        {
+          "id": 2,
+          "sender": "arthur",
+          "message": "Ready to integrate Apify! I need your API token from your Apify console (Integrations > API tokens). This will unlock powerful scraping capabilities! \ud83e\udd9e",
+          "timestamp": "2026-02-02T13:26:00"
+        },
+        {
+          "id": 3,
+          "sender": "arthur",
+          "message": "Voice message confirmed - Apify integration is high priority! Ready to set up once you provide the API token.",
+          "timestamp": "2026-02-02T13:42:26"
+        }
+      ],
+      "activity": [
+        {
+          "date": "2026-02-02T12:41:00",
+          "action": "Request received",
+          "detail": "Luke: 'I would like to give you access to Appify. It allows for like scraping'"
+        },
+        {
+          "date": "2026-02-02T13:26:00",
+          "action": "Project added to board",
+          "detail": "Arthur added missing project to Kanban board"
+        },
+        {
+          "date": "2026-02-02T13:42:26",
+          "action": "Voice message confirmation",
+          "detail": "Luke emphasized importance of Apify access for web scraping projects"
+        }
+      ]
+    },
+    {
+      "id": "task-004",
+      "title": "Email Setup (arthur@blackboxalchemist.com)",
+      "description": "Configure Arthur's dedicated email for monitoring, responses, and tool signups",
+      "column": "in-progress",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-02",
+      "context": "Arthur has email credentials but needs app password setup for Gmail authentication. Email: arthur@blackboxalchemist.com",
+      "archived": false,
+      "chatMessages": [
+        {
+          "id": 1,
+          "sender": "system",
+          "message": "Project created! You can now discuss this project directly with Arthur.",
+          "timestamp": "2026-02-02T13:26:00"
+        },
+        {
+          "id": 2,
+          "sender": "arthur",
+          "message": "Email test failed - need to set up App Password in Google account settings. I have the email credentials but need proper authentication method.",
+          "timestamp": "2026-02-02T13:26:00"
+        },
+        {
+          "id": 3,
+          "sender": "arthur",
+          "message": "Transcribed your voice message! Email project confirmed on board. Still need App Password setup for Gmail authentication.",
+          "timestamp": "2026-02-02T13:42:26"
+        }
+      ],
+      "activity": [
+        {
+          "date": "2026-02-02T13:08:00",
+          "action": "Credentials received",
+          "detail": "Luke provided email: arthur@blackboxalchemist.com with password"
+        },
+        {
+          "date": "2026-02-02T13:17:00",
+          "action": "Authentication failed",
+          "detail": "Gmail SMTP rejected credentials - need app password setup"
+        },
+        {
+          "date": "2026-02-02T13:26:00",
+          "action": "Project added to board",
+          "detail": "Arthur added missing project to Kanban board"
+        },
+        {
+          "date": "2026-02-02T13:42:26",
+          "action": "Voice message received",
+          "detail": "Luke confirmed this project needs to be actively tracked on Kanban board"
+        }
+      ]
+    },
+    {
+      "id": "task-005",
+      "title": "Go High Level Access",
+      "description": "Get Arthur full access to Go High Level platform for text message monitoring and editing",
+      "column": "backlog",
+      "priority": "medium",
+      "type": "project",
+      "created": "2026-02-02",
+      "context": "Luke wants Arthur to read all text messages in Go High Level and be able to edit/manage the platform.",
+      "archived": false,
+      "chatMessages": [
+        {
+          "id": 1,
+          "sender": "system",
+          "message": "Project created! You can now discuss this project directly with Arthur.",
+          "timestamp": "2026-02-02T13:26:00"
+        },
+        {
+          "id": 2,
+          "sender": "arthur",
+          "message": "Ready to get Go High Level access! I'll need API credentials or account access to monitor texts and manage the platform. What's the best way to set this up?",
+          "timestamp": "2026-02-02T13:26:00"
+        },
+        {
+          "id": 3,
+          "sender": "arthur",
+          "message": "Got it from voice message - need full Go High Level access for text monitoring and editing. What access method works best?",
+          "timestamp": "2026-02-02T13:42:26"
+        }
+      ],
+      "activity": [
+        {
+          "date": "2026-02-02T13:17:00",
+          "action": "Request received",
+          "detail": "Luke: 'getting you full access to Go High Level so you can read all text messages'"
+        },
+        {
+          "date": "2026-02-02T13:26:00",
+          "action": "Project added to board",
+          "detail": "Arthur added missing project to Kanban board"
+        },
+        {
+          "date": "2026-02-02T13:42:26",
+          "action": "Voice message confirmation",
+          "detail": "Luke requested full access to Go High Level platform"
+        }
+      ]
+    }
+  ],
+  "archivedTasks": [],
+  "lastUpdated": "2026-02-02T22:05:00"
+}
