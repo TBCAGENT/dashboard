@@ -53,7 +53,15 @@ When adding new responses to Agent Responses table:
 3. **VERIFY the update completed** - check the response status code
 4. Never forget step 2 - Luke checks this for metrics
 
-**I KEEP MISSING THIS** - Every single time I add a response, I MUST update the tracker. No exceptions.
+**I KEEP MISSING THIS** - Every single time I add a response, I MUST:
+1. Update Airtable (Agent Responses table)
+2. Update Outreach Tracker (COUNT actual records, don't increment)
+3. **Move GHL opportunity from "Messaged" to "Response Received"** (or "Not Interested" if declining)
+
+**Pipeline Stage IDs (Detroit Agent Acquisition):**
+- Messaged: faf4f864-d3cc-4b89-a153-58b09e5757fb
+- Response Received: 3c1b7c53-c28d-4907-a350-35b98f39fd1e
+- Not Interested: 846fb1e6-79a8-4667-b112-b475082a23e2
 
 ---
 
