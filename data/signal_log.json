@@ -142,5 +142,245 @@
       "strength": "NEUTRAL",
       "reason": "Mixed signals: 1h=-0.63%, 24h=-8.36%"
     }
+  },
+  {
+    "timestamp": "2026-02-04T23:00:59.901246",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 70778.74894018113,
+    "details": {
+      "symbol": "BTC",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=0.31%, 24h=-7.56%"
+    }
+  },
+  {
+    "timestamp": "2026-02-04T23:00:59.902292",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2083.508238123194,
+    "details": {
+      "symbol": "ETH",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=-0.67%, 24h=-8.36%"
+    }
+  },
+  {
+    "timestamp": "2026-02-04T23:30:46.434457",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 71382.21342125059,
+    "details": {
+      "symbol": "BTC",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=1.51%, 24h=-6.49%"
+    }
+  },
+  {
+    "timestamp": "2026-02-04T23:30:46.436228",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2117.384085001061,
+    "details": {
+      "symbol": "ETH",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=2.00%, 24h=-6.84%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T00:00:07.678866",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 70525.0951501602,
+    "details": {
+      "symbol": "BTC",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=-0.36%, 24h=-7.72%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T00:00:07.680670",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2084.8584727483685,
+    "details": {
+      "symbol": "ETH",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=0.06%, 24h=-8.56%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T00:30:06.659310",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 71241.45351343056,
+    "details": {
+      "symbol": "BTC",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=-0.21%, 24h=-6.26%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T00:30:06.662127",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2109.460567033429,
+    "details": {
+      "symbol": "ETH",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=-0.42%, 24h=-6.92%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T01:00:05.776822",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 71043.25354200773,
+    "details": {
+      "symbol": "BTC",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=0.73%, 24h=-7.03%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T01:00:05.778891",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2111.8421078051,
+    "details": {
+      "symbol": "ETH",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=1.29%, 24h=-7.21%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T01:30:07.983167",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 71589.10291626421,
+    "details": {
+      "symbol": "BTC",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=0.49%, 24h=-5.85%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T01:30:07.985553",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2133.6483948555638,
+    "details": {
+      "symbol": "ETH",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=1.15%, 24h=-5.50%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T02:00:13.769940",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 71439.51825801187,
+    "details": {
+      "symbol": "BTC",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=0.56%, 24h=-6.03%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T02:00:13.771388",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2129.4827915287374,
+    "details": {
+      "symbol": "ETH",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=0.84%, 24h=-5.75%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T02:30:19.005485",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 71550.70992705581,
+    "details": {
+      "symbol": "BTC",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=-0.05%, 24h=-5.87%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T02:30:19.007938",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2135.250629048182,
+    "details": {
+      "symbol": "ETH",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=0.08%, 24h=-5.21%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T03:00:10.224751",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 70617.37736840123,
+    "details": {
+      "symbol": "BTC",
+      "signal": "SELL",
+      "strength": "MODERATE",
+      "reason": "Momentum down: 1h=-1.15%, 24h=-7.33%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T03:00:10.227531",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2087.9729435217446,
+    "details": {
+      "symbol": "ETH",
+      "signal": "SELL",
+      "strength": "MODERATE",
+      "reason": "Momentum down: 1h=-1.95%, 24h=-7.59%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T03:30:08.357043",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 69938.58844825574,
+    "details": {
+      "symbol": "BTC",
+      "signal": "SELL",
+      "strength": "STRONG",
+      "reason": "Momentum down: 1h=-2.25%, 24h=-7.80%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T03:30:08.358359",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2065.9716810216623,
+    "details": {
+      "symbol": "ETH",
+      "signal": "SELL",
+      "strength": "STRONG",
+      "reason": "Momentum down: 1h=-3.24%, 24h=-7.78%"
+    }
   }
 ]
