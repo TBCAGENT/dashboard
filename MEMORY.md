@@ -36,6 +36,11 @@ When someone says "stop", "remove", "unsubscribe", or indicates they're not inte
 2. Move their GHL opportunity to "Not Interested" stage
 3. NEVER send them another message
 
+**TWO-PART SYSTEM - ALWAYS DO BOTH:**
+- **Airtable**: Track responses, drafts, approvals
+- **GHL Pipeline**: Track opportunity stages (Messaged → Response Received → Not Interested, etc.)
+- When status changes, update BOTH systems. Never update one without the other.
+
 **CRITICAL: ALWAYS UPDATE OUTREACH TRACKER**
 When adding new responses to Agent Responses table:
 1. Add records to Agent Responses table
