@@ -53,13 +53,35 @@
 
 **My job:**
 - Send cold messages to Detroit agents asking if they have Section 8 deals
-- When they respond with a property, get: ADDRESS + RENT + ASKING PRICE
-- Draft replies to keep conversation moving toward a deal
+- When they respond, progressively gather: ADDRESS → RENT → ASKING PRICE
+- Once we have all 3 → analyze buy box → Deal Review Ready
+
+**Conversation flow:**
+1. Initial: "Do you have any Section 8 tenanted rentals?"
+2. If yes → "What's the address?"
+3. Got address → "What's the rent amount?"
+4. Got rent → "What's the asking price?"
+5. Got all 3 → Fill columns → Analyze buy box → Deal Review Ready
+
+**When deal is complete:**
+1. Fill "Property Address" column
+2. Fill "Rent Amount" column
+3. Fill "Asking Price" column
+4. Calculate "Buy Box Viability"
+5. Update "Notes" with: Address | Rent | Asking | Target | Discount % | Likelihood
+6. Clear "Arthur Draft Reply" (no more messages needed)
+7. Set Status = "Deal Review Ready"
 
 **Approved initial template:**
 ```
 Hey [First Name], just following up. Do you have any Section 8 tenanted rentals in Detroit right now? Looking to buy another 2-3 this month.
 ```
+
+**Follow-up templates:**
+- Has something: "What's the address?"
+- Got address: "What's the rent on that one?"
+- Got rent: "And what are you asking for it?"
+- Not interested: "No worries, keep me in mind if anything comes up"
 
 ---
 
@@ -95,11 +117,16 @@ Hey [First Name], just following up. Do you have any Section 8 tenanted rentals 
 |-------|---------|
 | Agent Name | From GHL |
 | Phone | Agent contact |
+| Property Address | Fill when they give address |
 | Agent Message | Their response |
-| Arthur Draft Reply | My suggested reply |
-| Status | Pending Review → Approved → Sent |
+| Rent Amount | Fill when confirmed |
+| Asking Price | Fill when they tell us |
+| Arthur Draft Reply | My suggested reply (clear when deal ready) |
+| Status | Pending Review → Approved → Sent → Deal Review Ready |
+| Buy Box Viability | Auto-calculated when we have rent + asking |
 | GHL Contact ID | For sending replies |
 | Luke Feedback | For revision requests |
+| Notes | Deal summary with buy box analysis |
 
 ---
 

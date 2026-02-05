@@ -430,5 +430,29 @@
       "strength": "NEUTRAL",
       "reason": "Mixed signals: 1h=-0.90%, 24h=-8.60%"
     }
+  },
+  {
+    "timestamp": "2026-02-05T10:53:10.735444",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 65478.406163491636,
+    "details": {
+      "symbol": "BTC",
+      "signal": "SELL",
+      "strength": "MODERATE",
+      "reason": "Momentum down: 1h=-1.91%, 24h=-10.79%"
+    }
+  },
+  {
+    "timestamp": "2026-02-05T10:53:10.737531",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 1919.9224710095007,
+    "details": {
+      "symbol": "ETH",
+      "signal": "SELL",
+      "strength": "STRONG",
+      "reason": "Momentum down: 1h=-2.19%, 24h=-10.57%"
+    }
   }
 ]
