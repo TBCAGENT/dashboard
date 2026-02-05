@@ -1,20 +1,23 @@
 {
   "started": "2026-02-04T19:00:00-08:00",
   "initial_balance": 5000,
-  "current_balance": 4750,
-  "positions": [
+  "current_balance": 4992.50,
+  "positions": [],
+  "closed_trades": [
     {
       "symbol": "BTC-USD",
       "quantity": 0.003500224259368298,
       "entry_price": 71423.995,
+      "exit_price": 69281.275,
       "entry_time": "2026-02-04T19:06:06.524064",
-      "stop_loss": 69281.27514999999,
-      "take_profit": 78566.3945,
+      "exit_time": "2026-02-05T05:30:00.000000",
+      "exit_reason": "stop_loss_triggered",
+      "pnl": -7.50,
+      "pnl_pct": -0.03,
       "value": 250,
       "strategy": "Strategy 1 - Basic Momentum"
     }
   ],
-  "closed_trades": [],
   "daily_snapshots": [],
   "settings": {
     "max_position_pct": 0.05,
