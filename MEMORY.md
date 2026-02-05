@@ -23,6 +23,14 @@
 - All replies need Luke's approval
 - Never mention AI/automation
 
+**CRITICAL: ALWAYS UPDATE OUTREACH TRACKER**
+When adding new responses to Agent Responses table:
+1. Add records to Agent Responses table
+2. **IMMEDIATELY update Outreach Tracker** (tblJJ6aYNQTKp5FMv)
+   - Increment "Responses Received" for today's date
+   - If no record for today, create one first
+3. Never forget step 2 - Luke checks this for metrics
+
 ---
 
 ## People
