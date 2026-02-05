@@ -1,0 +1,51 @@
+{
+  "system": "Detroit SMS Acquisition Specialist",
+  "operator": "Arthur",
+  "status": "AWAITING_APPROVAL",
+  "created": "2026-02-05",
+  
+  "airtable": {
+    "base_id": "appzBa1lPvu6zBZxv",
+    "base_name": "Arthur Base",
+    "tables": {
+      "agent_responses": "tblwRwbKogqQnRXtC",
+      "outreach_tracker": "tblJJ6aYNQTKp5FMv",
+      "deals_surfaced": "tblzABFy2fPdyhB5d",
+      "sms_templates": "tblWBmLI6D3B6PMFj",
+      "buy_box_reference": "tblOV7XK6CeoZh60L",
+      "system_log": "tblS78YZb9PnStt8l"
+    }
+  },
+  
+  "ghl": {
+    "location_id": "a0xDUfSzadt256BbUcgz",
+    "target_tag": "detroit",
+    "contact_count": 3504,
+    "pipeline": "NEEDS_MANUAL_CREATION",
+    "tags": {
+      "sms_sent": "sms sent",
+      "responded": "responded",
+      "deal_sent": "deal sent"
+    }
+  },
+  
+  "buy_box": {
+    "1000": {"target": 51000, "max": 55000},
+    "1100": {"target": 58500, "max": 62000},
+    "1200": {"target": 65500, "max": 70000},
+    "1300": {"target": 74500, "max": 79000},
+    "1400": {"target": 81500, "max": 86000},
+    "1500": {"target": 87500, "max": 92000},
+    "1600": {"target": 96500, "max": 101000},
+    "1700": {"target": 104500, "max": 110000},
+    "1800": {"target": 109500, "max": 115000}
+  },
+  
+  "rules": {
+    "daily_message_target": "20-50",
+    "approval_required": true,
+    "never_mention_ai": true,
+    "drip_pacing": true,
+    "follow_up_allowed": true
+  }
+}
