@@ -176,45 +176,167 @@ def calculate_momentum_signal(prices):
     return signals
 
 
+def is_oversold_bounce(data):
+    """Detect oversold bounce: 24h down big but 1h recovering"""
+    return data['change_24h'] < -5 and data['change_1h'] > 0.5
+
+
+def has_strong_momentum(data):
+    """Detect strong upward momentum"""
+    return data['change_1h'] > 1 and data['change_24h'] > 0
+
+
+def should_enter_trade(symbol, data, paper):
+    """Decide if we should enter a trade. Returns strategy name or None."""
+    # Check if we already have a position in this symbol
+    for pos in paper['positions']:
+        if pos['symbol'] == f"{symbol}-USD":
+            return None
+
+    # Check daily loss limit (2% of initial balance)
+    daily_loss = sum(t['pnl'] for t in paper.get('closed_trades', [])
+                     if t.get('exit_time', '').startswith(datetime.now().strftime('%Y-%m-%d')))
+    if daily_loss <= -(paper['initial_balance'] * 0.02):
+        return None
+
+    # Check max portfolio heat (max 2 open positions, max 10% at risk)
+    if len(paper['positions']) >= 2:
+        return None
+
+    # Strategy 1: Strong momentum (trend following)
+    if has_strong_momentum(data):
+        return "Strategy 1 - Momentum"
+
+    # Strategy 2: Oversold bounce (mean reversion)
+    if is_oversold_bounce(data):
+        return "Strategy 2 - Oversold Bounce"
+
+    return None
+
+
+def execute_paper_trade(paper, symbol, price, strategy):
+    """Execute a paper trade entry"""
+    # Determine position sizing and params based on strategy
+    if "Momentum" in strategy:
+        size_pct = 0.05  # 5% of portfolio
+        sl_pct = 0.03    # 3% stop loss
+        tp_pct = 0.10    # 10% take profit
+    elif "Oversold" in strategy:
+        size_pct = 0.03  # 3% of portfolio (smaller for mean reversion)
+        sl_pct = 0.03    # 3% stop loss
+        tp_pct = 0.06    # 6% take profit
+    else:
+        size_pct = 0.03
+        sl_pct = 0.03
+        tp_pct = 0.06
+
+    position_value = paper['current_balance'] * size_pct
+    quantity = position_value / price
+    stop_loss = price * (1 - sl_pct)
+    take_profit = price * (1 + tp_pct)
+
+    position = {
+        "symbol": f"{symbol}-USD",
+        "quantity": quantity,
+        "entry_price": price,
+        "entry_time": datetime.now().isoformat(),
+        "stop_loss": stop_loss,
+        "take_profit": take_profit,
+        "value": position_value,
+        "strategy": strategy
+    }
+
+    paper['positions'].append(position)
+    save_paper_trading(paper)
+
+    log_signal('TRADE_ENTRY', symbol, price, {
+        "strategy": strategy,
+        "quantity": quantity,
+        "value": position_value,
+        "stop_loss": stop_loss,
+        "take_profit": take_profit
+    })
+
+    return position
+
+
+def close_position(paper, pos, current_price, reason):
+    """Close a position and update the portfolio"""
+    pnl = (current_price - pos['entry_price']) * pos['quantity']
+    pnl_pct = (current_price - pos['entry_price']) / pos['entry_price']
+
+    closed = {
+        "symbol": pos['symbol'],
+        "quantity": pos['quantity'],
+        "entry_price": pos['entry_price'],
+        "exit_price": current_price,
+        "entry_time": pos['entry_time'],
+        "exit_time": datetime.now().isoformat(),
+        "exit_reason": reason,
+        "pnl": round(pnl, 2),
+        "pnl_pct": round(pnl_pct, 4),
+        "value": pos['value'],
+        "strategy": pos.get('strategy', 'unknown')
+    }
+
+    paper['closed_trades'].append(closed)
+    paper['current_balance'] += pnl
+    paper['positions'] = [p for p in paper['positions'] if p != pos]
+    save_paper_trading(paper)
+
+    log_signal('TRADE_EXIT', pos['symbol'], current_price, {
+        "reason": reason,
+        "pnl": round(pnl, 2),
+        "pnl_pct": f"{pnl_pct*100:.2f}%"
+    })
+
+    return closed
+
+
 def main():
     print("=" * 50)
     print(f"CRYPTO TRADING MONITOR - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 50)
-    
+
     # Get market data from CMC
     prices = get_cmc_prices(["BTC", "ETH"])
     if not prices:
         print("ERROR: Could not fetch market data")
         return
-    
+
     print("\n📊 MARKET DATA (CoinMarketCap)")
     for symbol, data in prices.items():
         print(f"  {symbol}: ${data['price']:,.2f} | 1h: {data['change_1h']:+.2f}% | 24h: {data['change_24h']:+.2f}%")
-    
+
     # Load paper trading state
     paper = load_paper_trading()
     if not paper:
         print("\nERROR: Could not load paper trading data")
         return
-    
-    # Check positions
+
+    # Check positions — auto-close on stop loss / take profit
     print(f"\n💼 PORTFOLIO")
     print(f"  Cash: ${paper['current_balance']:,.2f}")
-    
+
     if paper['positions']:
         print(f"  Positions:")
         alerts = check_stop_loss_take_profit(paper['positions'], prices)
-        
+
         for alert in alerts:
             if alert['type'] == 'POSITION_UPDATE':
                 print(f"    {alert['symbol']}: ${alert['current']:,.2f} | P&L: {alert['pnl_pct']:+.2f}% (${alert['pnl_usd']:+.2f})")
                 print(f"      Stop: {alert['distance_to_stop']:.2f}% away | TP: {alert['distance_to_tp']:.2f}% away")
             elif alert['type'] in ['STOP_LOSS_HIT', 'TAKE_PROFIT_HIT']:
-                print(f"    ⚠️ {alert['type']}: {alert['symbol']} | P&L: {alert['pnl_pct']:+.2f}%")
-                log_signal(alert['type'], alert['symbol'], alert['current'], alert)
+                # Auto-close the position
+                for pos in paper['positions']:
+                    sym = pos['symbol'].replace('-USD', '')
+                    if sym == alert['symbol']:
+                        closed = close_position(paper, pos, alert['current'], alert['type'].lower())
+                        print(f"    🚨 AUTO-CLOSED: {alert['symbol']} | {alert['type']} | P&L: ${closed['pnl']:+.2f} ({closed['pnl_pct']*100:+.2f}%)")
+                        break
     else:
         print("  No open positions")
-    
+
     # Generate signals
     print(f"\n📈 TRADING SIGNALS")
     signals = calculate_momentum_signal(prices)
@@ -222,7 +344,23 @@ def main():
         emoji = "🟢" if sig['signal'] == 'BUY' else "🔴" if sig['signal'] == 'SELL' else "⚪"
         print(f"  {emoji} {sig['symbol']}: {sig['signal']} ({sig['strength']}) - {sig['reason']}")
         log_signal('SIGNAL', sig['symbol'], prices[sig['symbol']]['price'], sig)
-    
+
+    # Auto-execute trades when conditions are met
+    print(f"\n🤖 AUTO-TRADING")
+    paper = load_paper_trading()  # Reload in case positions were closed above
+    traded = False
+    for symbol, data in prices.items():
+        strategy = should_enter_trade(symbol, data, paper)
+        if strategy:
+            pos = execute_paper_trade(paper, symbol, data['price'], strategy)
+            print(f"  ✅ ENTERED: {symbol}-USD @ ${data['price']:,.2f} | {strategy}")
+            print(f"     Size: ${pos['value']:,.2f} | SL: ${pos['stop_loss']:,.2f} | TP: ${pos['take_profit']:,.2f}")
+            traded = True
+            paper = load_paper_trading()  # Reload after each trade
+
+    if not traded:
+        print("  No setups met entry criteria — standing by")
+
     print("\n" + "=" * 50)
 
 

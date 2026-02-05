@@ -70,6 +70,17 @@ Skills define _how_ tools work. This file is for _your_ specifics — the stuff 
 
 ---
 
+## Airtable API
+- **API Key**: `~/.config/airtable/secrets.env`
+- **Bases**: 105 bases including Finance Alchemy, My Brain, Black Box Agency, BBA CRM, etc.
+- **List bases**: `curl -H "Authorization: Bearer $AIRTABLE_API_KEY" "https://api.airtable.com/v0/meta/bases"`
+- **List tables**: `curl -H "Authorization: Bearer $AIRTABLE_API_KEY" "https://api.airtable.com/v0/meta/bases/{baseId}/tables"`
+- **Get records**: `curl -H "Authorization: Bearer $AIRTABLE_API_KEY" "https://api.airtable.com/v0/{baseId}/{tableName}"`
+- **Docs**: https://airtable.com/developers/web/api/introduction
+- **Status**: ACTIVE
+
+---
+
 ## CoinMarketCap API (Market Data)
 - **API Key**: `~/.config/coinmarketcap/secrets.env`
 - **Plan**: Hobby ($29/mo) - 110K credits/month

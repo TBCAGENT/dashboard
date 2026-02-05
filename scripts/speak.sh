@@ -32,7 +32,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-# Generate speech
+# Use streaming endpoint — single continuous generation, no chunking, no voice drift
 JSON_BODY=$(python3 -c "
 import json, sys
 text = sys.stdin.read()
@@ -40,15 +40,15 @@ print(json.dumps({
     'text': text,
     'model_id': '$MODEL',
     'voice_settings': {
-        'stability': 0.85,
-        'similarity_boost': 0.90,
+        'stability': 0.75,
+        'similarity_boost': 0.85,
         'style': 0.0,
         'use_speaker_boost': True
     }
 }))
 " <<< "$TEXT")
 
-curl -s -X POST "https://api.elevenlabs.io/v1/text-to-speech/$VOICE_ID" \
+curl -s -X POST "https://api.elevenlabs.io/v1/text-to-speech/$VOICE_ID/stream" \
   -H "xi-api-key: $ELEVENLABS_API_KEY" \
   -H "Content-Type: application/json" \
   -d "$JSON_BODY" --output "$OUTPUT"
