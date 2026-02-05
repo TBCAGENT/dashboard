@@ -17,8 +17,8 @@ fi
 
 source ~/.config/elevenlabs/secrets.env
 
-VOICE_ID="${ELEVENLABS_VOICE_ID:-3MYE8EKer63bPDk874wF}"
-MODEL="${ELEVENLABS_MODEL:-eleven_multilingual_v2}"
+VOICE_ID="${ELEVENLABS_VOICE_ID:-onwK4e9ZLuTAKqWW03F9}"
+MODEL="${ELEVENLABS_MODEL:-eleven_turbo_v2_5}"
 OUTPUT="/tmp/arthur_speech_$$.mp3"
 SEND_TO=""
 PLAY=false
@@ -40,10 +40,9 @@ print(json.dumps({
     'text': text,
     'model_id': '$MODEL',
     'voice_settings': {
-        'stability': 0.75,
-        'similarity_boost': 0.85,
-        'style': 0.0,
-        'use_speaker_boost': True
+        'stability': 0.3,
+        'similarity_boost': 0.8,
+        'speed': 1.15
     }
 }))
 " <<< "$TEXT")

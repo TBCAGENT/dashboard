@@ -8,12 +8,14 @@ Skills define _how_ tools work. This file is for _your_ specifics — the stuff 
 ## SSH
 *(None configured yet)*
 
-## TTS (ElevenLabs — JARVIS Voice)
-- **Voice**: JARVIS MCU (cloned from Paul Bettany MCU lines) — ID: `3MYE8EKer63bPDk874wF`
+## TTS (ElevenLabs — Daniel Voice)
+- **Voice**: Daniel (British broadcaster) — ID: `onwK4e9ZLuTAKqWW03F9`
+- **Model**: eleven_turbo_v2_5 (faster)
+- **Settings**: stability 0.3, similarity 0.8, speed 1.15x
 - **Previous voices**: 
+  - JARVIS MCU clone (staticky): `3MYE8EKer63bPDk874wF`
   - George (JARVIS-style): `JBFqnCBsd6RMkjVDRZzb`
   - JARVIS library: `wDsJlOXPqcvIUKdLXjDs`
-  - Daniel: `onwK4e9ZLuTAKqWW03F9`
 - **Credentials**: `source ~/.config/elevenlabs/secrets.env`
 - **Speak (generate audio)**: `bash ~/.openclaw/workspace/scripts/speak.sh "text" [--play] [--send +1234567890] [--file out.mp3]`
   - `--play` plays on Mac speakers
