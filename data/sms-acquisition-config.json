@@ -1,86 +1,75 @@
 {
   "system": "Detroit SMS Acquisition Specialist",
   "operator": "Arthur",
-  "status": "AWAITING_APPROVAL",
+  "status": "ACTIVE",
   "created": "2026-02-05",
+  "last_updated": "2026-02-05",
+  "CRITICAL_RULES": {
+    "sms_hours": "6AM-4PM PST ONLY - HARD CODED",
+    "zillow_workflow": "We HAVE address, photos, asking price from Zillow. ONLY job is confirm rent.",
+    "cold_outreach": "We have NOTHING. Need to discover: address, rent, asking price.",
+    "never_ask_zillow": [
+      "address",
+      "photos",
+      "asking price"
+    ],
+    "tone": "Casual, human, normal capitalization, no dashes"
+  },
+  "workflows": {
+    "zillow": {
+      "table": "Zillow Agent Responses",
+      "table_id": "tblMOpm7a6Lqiwahu",
+      "purpose": "Track responses from agents about SPECIFIC Zillow listings",
+      "we_have": [
+        "address",
+        "photos",
+        "asking_price",
+        "zillow_url"
+      ],
+      "we_need": [
+        "rent_amount",
+        "tenant_confirmation"
+      ],
+      "on_rent_confirmed": {
+        "fill": [
+          "Rent Amount",
+          "Asking Price",
+          "Zillow URL"
+        ],
+        "clear": "Arthur Draft Reply",
+        "status": "Deal Review Ready",
+        "notes": "DEAL READY: [Address] | Rent $X/mo | Asking $Y"
+      }
+    },
+    "cold_outreach": {
+      "table": "Agent Responses",
+      "table_id": "tblwRwbKogqQnRXtC",
+      "purpose": "Track responses from COLD outreach to Detroit agents",
+      "we_have": [],
+      "we_need": [
+        "address",
+        "rent_amount",
+        "asking_price",
+        "tenant_type"
+      ],
+      "template": "Hey [First Name], just following up. Do you have any Section 8 tenanted rentals in Detroit right now? Looking to buy another 2-3 this month."
+    }
+  },
   "airtable": {
     "base_id": "appzBa1lPvu6zBZxv",
-    "base_name": "Arthur Base",
-    "tables": {
-      "agent_responses": "tblwRwbKogqQnRXtC",
-      "outreach_tracker": "tblJJ6aYNQTKp5FMv",
-      "deals_surfaced": "tblzABFy2fPdyhB5d",
-      "sms_templates": "tblWBmLI6D3B6PMFj",
-      "buy_box_reference": "tblOV7XK6CeoZh60L",
-      "system_log": "tblS78YZb9PnStt8l"
-    }
+    "base_name": "Arthur Base"
   },
   "ghl": {
     "location_id": "a0xDUfSzadt256BbUcgz",
-    "target_tag": "detroit",
-    "contact_count": 3504,
-    "pipeline": {
-      "id": "BKe2BFND6pmC5klqMbl8",
-      "name": "Detroit Agent Acquisition",
-      "stages": {
-        "fresh_lead": "2c68f86b-5c2c-45f4-a824-94d62842076b",
-        "messaged": "faf4f864-d3cc-4b89-a153-58b09e5757fb",
-        "response_received": "3c1b7c53-c28d-4907-a350-35b98f39fd1e",
-        "sent_deal": "eaa7a302-f1a1-4ea2-ad7c-9b5eee72392e",
-        "follow_up_later": "289e899c-4d6c-463c-a3eb-5471a5c73015",
-        "not_interested": "846fb1e6-79a8-4667-b112-b475082a23e2",
-        "agent_no_longer_active": "7ce77eb6-98cd-4f4d-b45c-d68cdfa00c18"
-      }
-    },
-    "tags": {
-      "sms_sent": "sms sent",
-      "responded": "responded",
-      "deal_sent": "deal sent"
-    }
+    "detroit_tag": "YwjFycYqAdyZnkCuufXv",
+    "pipeline_id": "BKe2BFND6pmC5klqMbl8"
   },
-  "buy_box": {
-    "1000": {
-      "target": 51000,
-      "max": 55000
-    },
-    "1100": {
-      "target": 58500,
-      "max": 62000
-    },
-    "1200": {
-      "target": 65500,
-      "max": 70000
-    },
-    "1300": {
-      "target": 74500,
-      "max": 79000
-    },
-    "1400": {
-      "target": 81500,
-      "max": 86000
-    },
-    "1500": {
-      "target": 87500,
-      "max": 92000
-    },
-    "1600": {
-      "target": 96500,
-      "max": 101000
-    },
-    "1700": {
-      "target": 104500,
-      "max": 110000
-    },
-    "1800": {
-      "target": 109500,
-      "max": 115000
-    }
-  },
-  "rules": {
-    "daily_message_target": "20-50",
-    "approval_required": true,
-    "never_mention_ai": true,
-    "drip_pacing": true,
-    "follow_up_allowed": true
+  "google_sheet": "https://docs.google.com/spreadsheets/d/1TkM54EN1EF_H9NW5RpoxhRaZd0qYe7NjAwwfvuLuIvg",
+  "cron_jobs": {
+    "zillow_send_approved": "*/15 6-15 * * * PST",
+    "zillow_check_responses": "*/30 6-16 * * * PST",
+    "cold_send_approved": "*/15 6-15 * * * PST",
+    "cold_check_responses": "*/30 6-16 * * * PST",
+    "cold_daily_messages": "0 9,12,15 * * 1-5 PST (30/day)"
   }
 }
