@@ -27,14 +27,24 @@
 - **NEVER say "cash" or "quick close"** - sounds like wholesaler spam
 - Respond to what they said, don't repeat the same pitch
 
-**OPT-OUT HANDLING (Stop, Remove, Unsubscribe, Not interested):**
-When someone says "stop", "remove", "unsubscribe", or indicates they're not interested:
+**OPT-OUT / BLACKLIST HANDLING:**
+Move to Blacklist (formerly "Not Interested") ONLY when:
+- Explicit opt-out: "stop", "remove", "unsubscribe"
+- Not in area: "don't work in Detroit", "too far away"
+
+When blacklisting:
 1. Add to Agent Responses table BUT:
    - **DO NOT draft a reply** (leave Arthur Draft Reply empty)
    - Set Status = "No Response Needed"
-   - Add note: "Opt-out request - do not contact"
-2. Move their GHL opportunity to "Not Interested" stage
-3. NEVER send them another message
+   - Add note explaining why (opt-out or not in area)
+2. Move GHL opportunity to Blacklist stage
+3. NEVER contact again
+
+**NOT blacklist material** (keep in Response Received):
+- "I don't have anything right now" → follow up later
+- "Who is this?" → respond and continue
+- "Check back in a few weeks" → follow up later
+- General declines → still worth nurturing
 
 **TWO-PART SYSTEM - ALWAYS DO BOTH:**
 - **Airtable**: Track responses, drafts, approvals
