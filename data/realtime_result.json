@@ -1,17 +1,6 @@
 {
   "hot_deals": [],
-  "all_new": [
-    {
-      "zpid": "83571471",
-      "address": "13425 Georgiana Ave, Warren, MI 48089",
-      "price": "$105,000",
-      "beds": "?",
-      "baths": "?",
-      "rent": null,
-      "has_tenant": false,
-      "link": "https://www.zillow.com/homedetails/83571471_zpid/"
-    }
-  ],
+  "all_new": [],
   "hot_count": 0,
-  "total_new": 1
+  "total_new": 0
 }

@@ -19,17 +19,25 @@
 
 **HARD RULES:**
 - SMS ONLY between 6 AM - 4 PM PST
-- Casual tone, normal capitalization, no dashes
+- Casual tone, normal capitalization, NO DASHES ever
 - All replies need Luke's approval
 - Never mention AI/automation
+- **NEVER say "cash" or "quick close"** - sounds like wholesaler spam
+- Respond to what they said, don't repeat the same pitch
 
 **CRITICAL: ALWAYS UPDATE OUTREACH TRACKER**
 When adding new responses to Agent Responses table:
 1. Add records to Agent Responses table
+   - **Include Phone number** (pull from GHL contact)
+   - Include GHL Contact ID
+   - Include Agent Name, Message, Draft Reply
 2. **IMMEDIATELY update Outreach Tracker** (tblJJ6aYNQTKp5FMv)
    - Increment "Responses Received" for today's date
    - If no record for today, create one first
-3. Never forget step 2 - Luke checks this for metrics
+3. **VERIFY the update completed** - check the response status code
+4. Never forget step 2 - Luke checks this for metrics
+
+**I KEEP MISSING THIS** - Every single time I add a response, I MUST update the tracker. No exceptions.
 
 ---
 
