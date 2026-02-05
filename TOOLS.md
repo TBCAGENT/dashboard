@@ -141,3 +141,13 @@ Skills define _how_ tools work. This file is for _your_ specifics — the stuff 
 ---
 
 *Updated 2026-02-04: Added Coinbase trading, CoinMarketCap, Zapier, Replicate*
+---
+
+## Asana (Project Management)
+- **Account**: luke@tbcpremium.com (Luke Fontaine)
+- **Workspace**: tbcpremium.com (GID: 1210382351336303)
+- **API Token**: `~/.config/asana/secrets.env`
+- **Get tasks**: `curl -H "Authorization: Bearer $ASANA_API_TOKEN" "https://app.asana.com/api/1.0/tasks?project=<project_gid>"`
+- **List projects**: `curl -H "Authorization: Bearer $ASANA_API_TOKEN" "https://app.asana.com/api/1.0/projects?workspace=1210382351336303"`
+- **Docs**: https://developers.asana.com/docs
+- **Status**: ACTIVE
