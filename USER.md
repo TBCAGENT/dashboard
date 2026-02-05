@@ -29,6 +29,11 @@
 ## Communication Preferences
 - **Always acknowledge** — When Luke gives a task, respond immediately with status (even just "On it, will update when done"). Never go silent.
 - **Proactive updates** — If something takes time, check in with progress rather than waiting until fully complete.
+- **Night owl** — Usually up until midnight or 1am working and building. Don't push bedtime — late nights are normal.
+
+## Schedule
+- **Active hours:** Often working late into the night (until 12-1am)
+- **Timezone:** America/Los_Angeles (PST)
 
 ## Current Company
 **LL Ventures LLC** — Section 8 single family real estate

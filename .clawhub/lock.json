@@ -92,6 +92,22 @@
     "mcporter": {
       "version": "1.0.0",
       "installedAt": 1770241230048
+    },
+    "google-calendar": {
+      "version": "0.1.0",
+      "installedAt": 1770241571362
+    },
+    "google-drive": {
+      "version": "1.0.1",
+      "installedAt": 1770241573049
+    },
+    "gcalcli": {
+      "version": "0.1.0",
+      "installedAt": 1770241574729
+    },
+    "clawvox": {
+      "version": "1.0.0",
+      "installedAt": 1770248511064
     }
   }
 }

@@ -89,7 +89,7 @@
       "id": "task-003",
       "title": "Apify Integration",
       "description": "Get Arthur full access to Luke's Apify account for web scraping and automation",
-      "column": "in-progress",
+      "column": "done",
       "priority": "high",
       "type": "project",
       "created": "2026-02-02",
@@ -130,6 +130,11 @@
           "date": "2026-02-02T13:42:26",
           "action": "Voice message confirmation",
           "detail": "Luke emphasized importance of Apify access for web scraping projects"
+        },
+        {
+          "date": "2026-02-04T18:04:30.314288",
+          "action": "Moved to Done",
+          "detail": "Actually completed - Instagram scraping working, Gmail API sending emails successfully"
         }
       ]
     },
@@ -137,7 +142,7 @@
       "id": "task-004",
       "title": "Email Setup (arthur@blackboxalchemist.com)",
       "description": "Configure Arthur's dedicated email for monitoring, responses, and tool signups",
-      "column": "in-progress",
+      "column": "done",
       "priority": "high",
       "type": "project",
       "created": "2026-02-02",
@@ -183,6 +188,11 @@
           "date": "2026-02-02T13:42:26",
           "action": "Voice message received",
           "detail": "Luke confirmed this project needs to be actively tracked on Kanban board"
+        },
+        {
+          "date": "2026-02-04T18:05:29.461509",
+          "action": "Moved to Done",
+          "detail": "Gmail API integration completed and working successfully"
         }
       ]
     },
@@ -236,5 +246,5 @@
     }
   ],
   "archivedTasks": [],
-  "lastUpdated": "2026-02-02T22:05:00"
+  "lastUpdated": "2026-02-04T18:05:29.461509"
 }
