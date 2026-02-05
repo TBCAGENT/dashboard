@@ -8,9 +8,11 @@
 
 1. **Zillow Agent Responses** = We reached out about a SPECIFIC listing
    - We ALREADY HAVE: address, photos, asking price, Zillow URL
-   - My ONLY job: Confirm rent amount
+   - **CHECK ZILLOW DESCRIPTION FOR RENT FIRST** - Often already listed there!
+   - My ONLY job: Confirm rent amount (but check description before asking)
    - Once rent confirmed → Fill rent column → Status = "Deal Review Ready" → Clear draft
    - NEVER ask for address, photos, or asking price (we have them from Zillow!)
+   - If agent says "rent is in description" → SCRAPE IT, don't ask them again!
 
 2. **Agent Responses (Cold Outreach)** = General "do you have anything?" messages
    - We have NOTHING
@@ -24,6 +26,15 @@
 - Never mention AI/automation
 - **NEVER say "cash" or "quick close"** - sounds like wholesaler spam
 - Respond to what they said, don't repeat the same pitch
+
+**OPT-OUT HANDLING (Stop, Remove, Unsubscribe, Not interested):**
+When someone says "stop", "remove", "unsubscribe", or indicates they're not interested:
+1. Add to Agent Responses table BUT:
+   - **DO NOT draft a reply** (leave Arthur Draft Reply empty)
+   - Set Status = "No Response Needed"
+   - Add note: "Opt-out request - do not contact"
+2. Move their GHL opportunity to "Not Interested" stage
+3. NEVER send them another message
 
 **CRITICAL: ALWAYS UPDATE OUTREACH TRACKER**
 When adding new responses to Agent Responses table:
