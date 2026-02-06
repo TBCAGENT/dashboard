@@ -46,6 +46,14 @@ When blacklisting:
 - "Check back in a few weeks" → follow up later
 - General declines → still worth nurturing
 
+**CRITICAL - CONTEXT-AWARE RESPONSES:**
+- READ THE MESSAGE before drafting a reply
+- "What's your email?" → Give them the email (luke@tbcpremium.com)
+- "I don't do Detroit" / "Take me off list" → NO RESPONSE, mark as blacklist
+- "STOP" → NO RESPONSE, mark as blacklist, NO DRAFT
+- Never use templated "awesome, whats the address" when it doesn't fit
+- Think like a human - would this response make sense in a real conversation?
+
 **TWO-PART SYSTEM - ALWAYS DO BOTH:**
 - **Airtable**: Track responses, drafts, approvals
 - **GHL Pipeline**: Track opportunity stages (Messaged → Response Received → Not Interested, etc.)
@@ -85,6 +93,17 @@ When adding new responses to Agent Responses table:
 - Girlfriend: Alyse
 - Twin brother: Ike
 - Night owl, works late
+
+---
+
+## Cost Efficiency (2026-02-05)
+
+**Default model switched to Sonnet** to reduce costs (was $362/day on Opus).
+
+- **Sonnet**: Default for 90% of tasks
+- **Opus**: Only escalate for complex reasoning, then return to Sonnet
+- **Target**: <$100/day
+- **Protocol**: See `brain/efficiency-protocol.md`
 
 ---
 
