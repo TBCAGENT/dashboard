@@ -454,5 +454,79 @@
       "strength": "STRONG",
       "reason": "Momentum down: 1h=-2.19%, 24h=-10.57%"
     }
+  },
+  {
+    "timestamp": "2026-02-06T09:14:54.205288",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 70254.65526029767,
+    "details": {
+      "symbol": "BTC",
+      "signal": "BUY",
+      "strength": "MODERATE",
+      "reason": "Momentum up: 1h=1.29%, 24h=4.60%"
+    }
+  },
+  {
+    "timestamp": "2026-02-06T09:14:54.208201",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2047.5306173199733,
+    "details": {
+      "symbol": "ETH",
+      "signal": "BUY",
+      "strength": "STRONG",
+      "reason": "Momentum up: 1h=2.23%, 24h=4.05%"
+    }
+  },
+  {
+    "timestamp": "2026-02-06T09:14:54.209705",
+    "type": "TRADE_ENTRY",
+    "symbol": "BTC",
+    "price": 70254.65526029767,
+    "details": {
+      "strategy": "Strategy 1 - Momentum",
+      "quantity": 0.0033698887870536945,
+      "value": 236.750375,
+      "stop_loss": 68147.01560248874,
+      "take_profit": 77280.12078632745
+    }
+  },
+  {
+    "timestamp": "2026-02-06T09:14:54.210994",
+    "type": "TRADE_ENTRY",
+    "symbol": "ETH",
+    "price": 2047.5306173199733,
+    "details": {
+      "strategy": "Strategy 1 - Momentum",
+      "quantity": 0.11562726974499857,
+      "value": 236.750375,
+      "stop_loss": 1986.104698800374,
+      "take_profit": 2252.283679051971
+    }
+  },
+  {
+    "timestamp": "2026-02-06T13:38:10.957010",
+    "type": "SIGNAL",
+    "symbol": "BTC",
+    "price": 70145.6222949215,
+    "details": {
+      "symbol": "BTC",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=-1.10%, 24h=10.60%"
+    }
+  },
+  {
+    "timestamp": "2026-02-06T13:38:10.958712",
+    "type": "SIGNAL",
+    "symbol": "ETH",
+    "price": 2048.308346711976,
+    "details": {
+      "symbol": "ETH",
+      "signal": "HOLD",
+      "strength": "NEUTRAL",
+      "reason": "Mixed signals: 1h=-2.01%, 24h=9.92%"
+    }
   }
 ]

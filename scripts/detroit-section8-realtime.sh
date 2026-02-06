@@ -203,6 +203,62 @@ for listing in new_listings:
     if has_tenant and rent:
         hot_deals.append(result_listing)
 
+# AUTO-SEND RENT INQUIRIES for listings without rent info
+import subprocess
+from datetime import datetime
+
+# Check if we're in SMS hours (6am-4pm PST)
+current_hour = datetime.now().hour
+if 6 <= current_hour < 16:
+    # Find listings that need rent inquiries (no rent found in description)
+    need_rent_inquiry = []
+    for listing in new_listings:
+        _, rent = analyze_listing(listing.get('description', ''))
+        if not rent:  # No rent found in description
+            # Get agent info from detailed scrape
+            if listing['zpid'] in detail_by_zpid:
+                detail = detail_by_zpid[listing['zpid']]
+                agent_info = detail.get('attributionInfo', {})
+                agent_phone = agent_info.get('agentPhoneNumber')
+                if agent_phone:
+                    # Clean phone number
+                    phone = ''.join(c for c in agent_phone if c.isdigit())
+                    if len(phone) == 10:
+                        phone = '+1' + phone
+                    elif len(phone) == 11 and phone.startswith('1'):
+                        phone = '+' + phone
+                    else:
+                        continue
+                    
+                    need_rent_inquiry.append({
+                        'zpid': listing['zpid'],
+                        'address': listing['address'],
+                        'agent_phone': phone,
+                        'agent_name': agent_info.get('agentName', 'Agent')
+                    })
+    
+    if need_rent_inquiry:
+        print(f"Sending {len(need_rent_inquiry)} rent inquiries...")
+        # Create input file for rent inquiry script
+        inquiry_input = f"{data_dir}/rent_inquiry_input.json"
+        with open(inquiry_input, 'w') as f:
+            json.dump(need_rent_inquiry, f, indent=2)
+        
+        # Call the rent inquiry script
+        try:
+            result = subprocess.run([
+                'python3', f"{data_dir}/../scripts/zillow-rent-inquiry.py",
+                inquiry_input
+            ], capture_output=True, text=True, timeout=60)
+            if result.returncode == 0:
+                print(f"Rent inquiries sent: {result.stdout.strip()}")
+            else:
+                print(f"Rent inquiry error: {result.stderr.strip()}")
+        except Exception as e:
+            print(f"Rent inquiry failed: {e}")
+else:
+    print(f"Outside SMS hours ({current_hour}:xx) - skipping rent inquiries")
+
 # Save results
 output = {
     'hot_deals': hot_deals,

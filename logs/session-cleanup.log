@@ -1,0 +1,9 @@
+[2026-02-06 14:10:43] Starting session cleanup check...
+[2026-02-06 14:10:43] Removing large session: 5553283f-c29e-4b77-8c51-e247404f2eb7.jsonl (2060KB)
+[2026-02-06 14:10:43] Cleaned 1 session(s). Restarting gateway...
+(node:25001) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Restarted LaunchAgent: gui/501/ai.openclaw.gateway
+[2026-02-06 14:10:45] Gateway restarted.
+[2026-02-06 14:15:00] Starting session cleanup check...
+[2026-02-06 14:15:00] No cleanup needed. All sessions under 500KB.

@@ -2,30 +2,110 @@
 
 ## Critical Learnings
 
-### SMS Acquisition System (2026-02-05)
+### 🚨 CRITICAL PROTOCOL VIOLATION - NEVER REPEAT (2026-02-06)
 
-**TWO SEPARATE WORKFLOWS - Never confuse them:**
+**INCIDENT:** Tim Bender (+15176053666) was messaged 3 times:
+- 2/5: First message → He responded "I do not."
+- 2/6: Messaged AGAIN twice → He complained about duplicates
 
-1. **Zillow Agent Responses** = We reached out about a SPECIFIC listing
-   - We ALREADY HAVE: address, photos, asking price, Zillow URL
-   - **CHECK ZILLOW DESCRIPTION FOR RENT FIRST** - Often already listed there!
-   - My ONLY job: Confirm rent amount (but check description before asking)
-   - Once rent confirmed → Fill rent column → Status = "Deal Review Ready" → Clear draft
-   - NEVER ask for address, photos, or asking price (we have them from Zillow!)
-   - If agent says "rent is in description" → SCRAPE IT, don't ask them again!
+**ROOT CAUSE:** Scripts failed to check Agent Responses table before sending
 
-2. **Agent Responses (Cold Outreach)** = General "do you have anything?" messages
-   - We have NOTHING
-   - Need to discover: address, rent, asking price
-   - Keep conversation going until we have all info
+**SECOND VIOLATION SAME DAY:** Used unauthorized message template for ALL 152 messages
+- ❌ **SENT:** "Hi {name}, I help investors buy section 8 properties in Detroit..."
+- ✅ **APPROVED:** "Hey [First Name], just following up. Do you have any Section 8 tenanted rentals in Detroit right now? Looking to buy another 2-3 this month."
 
-**HARD RULES:**
+**BUSINESS IMPACT:** Damaged relationship with real estate agent, professional reputation risk, WRONG BRAND VOICE for all 152 messages
+
+**MANDATORY PROTOCOL GOING FORWARD:**
+- ✅ **ONLY use `scripts/safe-outreach.py`** (bulletproof duplicate prevention + approved template)
+- ✅ **ALWAYS use approved template from Airtable SMS Templates table**
+- ✅ **ALWAYS check Airtable Agent Responses** (anyone who responded = blacklisted forever)
+- ✅ **ALWAYS check GHL "SMS sent" tags**
+- ❌ **NEVER use unauthorized message templates**
+- ❌ **NEVER use csv-outreach.py or direct-send-approach.py again**
+- ❌ **ZERO TOLERANCE for duplicates OR wrong templates**
+
+**🏠 ZILLOW RENT INQUIRY PROTOCOL (2026-02-06):**
+- ✅ **ONE MESSAGE ONLY** per listing agent - plain text asking about rent
+- ✅ **NO NAMES/COMPANY** - no Luke, LL Ventures, or company identification
+- ✅ **RESPONSE HANDLING** - add to Airtable for Luke's review, NEVER send same message again
+- ❌ **NEVER send follow-up messages** or repeat the same rent inquiry
+- ❌ **NO EXCEPTIONS** - one inquiry per agent per listing, period
+
+**CRITICAL DISTINCTION - TWO DIFFERENT OUTREACH TYPES:**
+
+**TYPE 1: AGENT OUTREACH (Building Agent Network)**
+- Purpose: Find new Detroit agents to add to our network
+- Frequency: 50 messages/day (7am, 11am, 2pm batches)
+- Template: ONLY approved template from Airtable SMS Templates table
+- Target: Detroit real estate agents (not specific listing agents)
+- Rule: ONE message per contact EVER
+
+**TYPE 2: ZILLOW RENT INQUIRIES (Listing-Specific)**
+- Purpose: Get rent info for Section 8 listings without rent data
+- Frequency: As needed when new listings found (realtime monitor)
+- Template: Plain text "What's the rent?" - NO names, NO company info
+- Target: Specific listing agents for specific properties
+- Rule: ONE inquiry per agent per listing**FORBIDDEN SCRIPTS:**
+- ❌ `zillow-agent-outreach.py` - uses unauthorized "Luke/LL Ventures" template
+- ❌ `zillow-daily-outreach.py` - uses unauthorized "Luke/LL Ventures" template
+
+**APPROVED SCRIPTS:**
+- ✅ `scripts/safe-outreach.py` - agent network building (Type 1) 
+- ✅ `scripts/zillow-rent-inquiry.py` - automated rent inquiries (Type 2)
+- ✅ Detroit realtime monitor auto-sends rent inquiries during SMS hours
+
+**BULLETPROOF FEATURES:**
+- Airtable approved template retrieval
+- Multi-layer duplicate prevention (GHL + Airtable)
+- SMS hours enforcement (6am-4pm PST)
+- Automatic GHL contact creation for new agents
+- Comprehensive inquiry tracking and logging
+
+**LESSON:** Professional reputation depends on NEVER contacting the same person twice. Agent relationships are fragile and valuable.
+
+### COMPLETE SMS OUTREACH WORKFLOW (2026-02-06)
+
+**🌅 DAILY STARTUP PROCESS (7:00 AM PST):**
+
+1. **Find Target Contacts in GHL:**
+   - Filter: Tag = "Detroit" AND NOT tag = "SMS sent"
+   - Select: 50 contacts
+
+2. **Send Messages (Rate Limited):**
+   - Template: Approved message from Airtable base
+   - Rate limit: 5 messages every 5 minutes
+   - Complete: All 50 within 1 hour
+
+3. **Update GHL After Sending:**
+   - Add tag: "SMS sent" to all 50 contacts
+   - Move pipeline: "message sent" stage
+   - Opportunity name: Contact's actual name
+
+4. **Update Airtable Tracker:**
+   - Create ONE record only per day
+   - Fields: Date, Messages Sent: 50
+
+**🔄 ONGOING MONITORING (Every 15-30 min, 7 AM - 6 PM PST):**
+
+**Response Processing:**
+- Check GHL for new responses
+- If response → Import to Airtable, draft reply, status "Review Ready"
+- Update GHL pipeline to "responded" category
+
+**Approval Processing:**
+- Check Airtable for "Approved" status → Send immediately  
+- If feedback given → Revise, set "Review Ready"
+
+**Rejection Handling:**
+- "Stop"/"Not interested" → Airtable: "Rejected", GHL: "Blacklist"
+
+**CRITICAL RULES:**
 - SMS ONLY between 6 AM - 4 PM PST
-- Casual tone, normal capitalization, NO DASHES ever
+- Casual tone, normal capitalization, NO DASHES
 - All replies need Luke's approval
 - Never mention AI/automation
-- **NEVER say "cash" or "quick close"** - sounds like wholesaler spam
-- Respond to what they said, don't repeat the same pitch
+- Rate limiting prevents API failures
 
 **OPT-OUT / BLACKLIST HANDLING:**
 Move to Blacklist (formerly "Not Interested") ONLY when:
@@ -107,12 +187,23 @@ When adding new responses to Agent Responses table:
 
 ---
 
+## Recent Major Projects (2026-02-06)
+
+### Amy Sangster Instagram Intelligence Report - COMPLETED
+- **Google Sheet:** https://docs.google.com/spreadsheets/d/1SssG3FqEySVKcMspfwM_36m67OMH6q1mlKEDH_EqJmg/edit
+- **Profile:** @amysangster53 (96.2K followers, 3,423 posts)
+- **Analysis:** 5 comprehensive tabs (Top Posts, Top Reels, Expert Insights, All Posts, Followers)
+- **Key Discovery:** Bank job → $10M transformation + free value offers = viral formula
+- **Performance:** 8.2% engagement rate (vs 3-5% industry standard)
+- **Strategic Value:** Complete blueprint for replicating her viral success patterns
+
 ## Active Systems
 
 - **Zillow Daily Scrape**: Cron every 30min, finds new Section 8 listings
-- **Cold Outreach**: 30 messages/day to Detroit agents (9am, 12pm, 3pm)
-- **Response Monitoring**: Every 15-30 min, check for replies, draft responses
+- **Cold Outreach**: 50 messages/day to Detroit agents (7am daily) - Complete automated workflow
+- **Response Monitoring**: Every 15-30 min, check for replies, draft responses - 14% conversion rate achieved
 - **Crypto Monitor**: Paper trading, every 30 min price checks
+- **GHL Webhook**: Arthur workflow captures SMS replies → Airtable (Detroit + "SMS sent" tags only)
 
 ---
 

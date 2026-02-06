@@ -1,0 +1,50 @@
+{
+  "date": "2026-02-06T10:59:28.784412",
+  "agents_selected": 5,
+  "messages_sent": 5,
+  "tracker_updated": true,
+  "tracker_record_id": "rec5hcdqCtjvuNtEy",
+  "total_messages_today": 5,
+  "results": [
+    {
+      "contact_id": "EIUaIaGt7CqNrwBr1ywP",
+      "name": "marc",
+      "phone": "+13132890699",
+      "status": "sent",
+      "pipeline_updated": true,
+      "message_id": "wHuLOLwNvF3S6vJdwkjP"
+    },
+    {
+      "contact_id": "yFT3nQG1Fi37xwntNYDa",
+      "name": "diana",
+      "phone": "+13139195819",
+      "status": "sent",
+      "pipeline_updated": true,
+      "message_id": "VilWOMkG2f8aVsJvLoPK"
+    },
+    {
+      "contact_id": "BpduvaoStdwiYHp7kEwN",
+      "name": "chahnaz",
+      "phone": "+13132659994",
+      "status": "sent",
+      "pipeline_updated": true,
+      "message_id": "F1NJPIkmsSS0ZkfAFtb1"
+    },
+    {
+      "contact_id": "LYatDUidXbmRQdfexdJ5",
+      "name": "ali",
+      "phone": "+13133342524",
+      "status": "sent",
+      "pipeline_updated": true,
+      "message_id": "qAkfuTi4wA29HwpGdEFI"
+    },
+    {
+      "contact_id": "WmAjBYJFiZXD99U2Dm1u",
+      "name": "alexandria",
+      "phone": "+13132072473",
+      "status": "sent",
+      "pipeline_updated": true,
+      "message_id": "aQZtKJfXSd5Lhq7oOp3O"
+    }
+  ]
+}
