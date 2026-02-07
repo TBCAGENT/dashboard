@@ -1,7 +1,7 @@
 {
   "started": "2026-02-04T19:00:00-08:00",
   "initial_balance": 5000,
-  "current_balance": 4735.0075,
+  "current_balance": 3735.0075,
   "positions": [
     {
       "symbol": "BTC-USD",
@@ -22,6 +22,16 @@
       "take_profit": 2252.283679051971,
       "value": 236.750375,
       "strategy": "Strategy 1 - Momentum"
+    },
+    {
+      "symbol": "BTC-USD",
+      "quantity": 0.014091209556126482,
+      "entry_price": 70976.19677383488,
+      "entry_time": "2026-02-06T15:19:00.000000",
+      "stop_loss": null,
+      "take_profit": 78073.81645121837,
+      "value": 1000,
+      "strategy": "Luke's 10% Strategy"
     }
   ],
   "closed_trades": [
@@ -83,6 +93,13 @@
       "stop_loss_pct": 0.015,
       "take_profit_pct": 0.03,
       "position_size_pct": 0.03,
+      "status": "active"
+    },
+    "lukes_10_pct_strategy": {
+      "name": "Luke's 10% Strategy",
+      "stop_loss_pct": null,
+      "take_profit_pct": 0.1,
+      "position_size_fixed": 1000,
       "status": "active"
     }
   }

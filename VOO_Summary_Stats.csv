@@ -1,0 +1,11 @@
+metric,value,note
+Total Invested,"$133,000.00","$1,000 x 133 trading days"
+Final Portfolio Value,"$144,948.76",Cash + current positions
+Total Return,8.98%,6-month period
+Absolute Gain,"$11,948.76",Dollar profit
+Completed Trades,101,All hit 10% target
+Active Positions,32,Still holding for 10% gain
+Average Days to Target,79.2,Time to reach 10% profit
+Total Realized Profits,"$10,895.75",From completed trades
+Buy & Hold Value,"$148,531.52",If just held VOO
+Strategy vs Buy & Hold,"$-3,582.75",Positive = strategy wins
