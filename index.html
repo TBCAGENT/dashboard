@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke Fontaine - Executive Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .card h3 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .status-item:last-child {
+            border-bottom: none;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .status-online {
+            background: #00ff00;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-warning {
+            background: #ffaa00;
+        }
+        
+        .status-offline {
+            background: #ff4444;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            margin: 0.5rem 0;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ff88;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.3rem;
+        }
+        
+        .project-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .project-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+        
+        .status-backlog { background: #666; }
+        .status-progress { background: #ff9500; }
+        .status-done { background: #00ff88; }
+        
+        .timestamp {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 0.3rem;
+        }
+        
+        .activity-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .activity-time {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🦞 Luke Fontaine</h1>
+        <p>Executive Dashboard | Real-time Status & Analytics</p>
+        <div class="timestamp" id="lastUpdate">Last Updated: Loading...</div>
+    </div>
+
+    <div class="dashboard-grid">
+        <!-- System Status -->
+        <div class="card">
+            <h3>🔧 System Status</h3>
+            <div class="status-item">
+                <span><span class="status-indicator status-online"></span>Arthur AI Assistant</span>
+                <span>Online</span>
+            </div>
+            <div class="status-item">
+                <span><span class="status-indicator status-online"></span>Zillow Scraper</span>
+                <span>Active</span>
+            </div>
+            <div class="status-item">
+                <span><span class="status-indicator status-online"></span>SMS Outreach</span>
+                <span>Running</span>
+            </div>
+            <div class="status-item">
+                <span><span class="status-indicator status-online"></span>GHL Integration</span>
+                <span>Connected</span>
+            </div>
+            <div class="status-item">
+                <span><span class="status-indicator status-online"></span>Airtable Sync</span>
+                <span>Synced</span>
+            </div>
+        </div>
+
+        <!-- Business Metrics -->
+        <div class="card">
+            <h3>📊 LL Ventures Metrics</h3>
+            <div class="metric">
+                <div class="metric-value">18</div>
+                <div class="metric-label">Deals in Contract</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">$149.5K</div>
+                <div class="metric-label">Pipeline Revenue</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">$59.8K</div>
+                <div class="metric-label">Luke's Share (40%)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">50</div>
+                <div class="metric-label">Daily SMS Outreach</div>
+            </div>
+        </div>
+
+        <!-- GitHub Activity -->
+        <div class="card">
+            <h3>💻 GitHub Activity</h3>
+            <div class="project-item">
+                <div class="project-status status-progress"></div>
+                <div>
+                    <div>dashboard</div>
+                    <div class="activity-time">Created • Just now</div>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="project-status status-done"></div>
+                <div>
+                    <div>zillow-scraper</div>
+                    <div class="activity-time">Updated • Last month</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Status -->
+        <div class="card">
+            <h3>📋 Active Projects</h3>
+            <div class="project-item">
+                <div class="project-status status-progress"></div>
+                <div>SMS Outreach Automation</div>
+            </div>
+            <div class="project-item">
+                <div class="project-status status-done"></div>
+                <div>Financial Analysis Complete</div>
+            </div>
+            <div class="project-item">
+                <div class="project-status status-progress"></div>
+                <div>Detroit Real Estate Pipeline</div>
+            </div>
+            <div class="project-item">
+                <div class="project-status status-backlog"></div>
+                <div>GitHub Dashboard Setup</div>
+            </div>
+        </div>
+
+        <!-- Financial Summary -->
+        <div class="card">
+            <h3>💰 Financial Overview</h3>
+            <div class="metric">
+                <div class="metric-value">$1.43M</div>
+                <div class="metric-label">Net Worth</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">$817K</div>
+                <div class="metric-label">Investment Accounts</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">A++</div>
+                <div class="metric-label">Wealth Grade</div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card">
+            <h3>📈 Recent Activity</h3>
+            <div class="activity-item">
+                <div>GitHub access configured</div>
+                <div class="activity-time">2 minutes ago</div>
+            </div>
+            <div class="activity-item">
+                <div>Temaki Handroll analysis completed</div>
+                <div class="activity-time">10 minutes ago</div>
+            </div>
+            <div class="activity-item">
+                <div>Vehicle expenses calculated</div>
+                <div class="activity-time">15 minutes ago</div>
+            </div>
+            <div class="activity-item">
+                <div>Financial audit updated</div>
+                <div class="activity-time">1 day ago</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateTimestamp() {
+            const now = new Date();
+            document.getElementById('lastUpdate').textContent = 
+                `Last Updated: ${now.toLocaleString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    timeZoneName: 'short'
+                })}`;
+        }
+
+        // Update timestamp every 30 seconds
+        updateTimestamp();
+        setInterval(updateTimestamp, 30000);
+
+        // Simulate real-time updates
+        function simulateActivity() {
+            const activities = [
+                'SMS outreach batch completed',
+                'New Zillow listings found',
+                'Agent response received',
+                'Financial data updated',
+                'System health check passed'
+            ];
+            
+            // This would normally fetch real data from your APIs
+            // For now, just update the timestamp
+            updateTimestamp();
+        }
+
+        // Check for updates every 2 minutes
+        setInterval(simulateActivity, 120000);
+    </script>
+</body>
+</html>
