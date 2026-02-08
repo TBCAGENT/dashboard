@@ -10,278 +10,569 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0a0a0a;
             color: #ffffff;
             min-height: 100vh;
+            display: flex;
         }
-        
-        .header {
-            text-align: center;
+
+        .sidebar {
+            width: 280px;
+            background: #111111;
+            border-right: 1px solid #333;
             padding: 2rem 0;
-            background: rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
         }
-        
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
+
+        .sidebar-header {
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 1px solid #333;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
-        
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.8;
+
+        .sidebar-header p {
+            font-size: 0.9rem;
+            color: #888;
         }
-        
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+
+        .nav-section {
+            margin-bottom: 2rem;
         }
-        
-        .card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .card h3 {
-            color: #FFD700;
+
+        .nav-title {
+            padding: 0 2rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-weight: 600;
         }
-        
-        .status-item {
+
+        .nav-item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 0.8rem 2rem;
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
         }
-        
-        .status-item:last-child {
-            border-bottom: none;
+
+        .nav-item:hover, .nav-item.active {
+            background: #1a1a1a;
+            color: #4a9eff;
+            border-left-color: #4a9eff;
         }
-        
+
+        .nav-item .icon {
+            margin-right: 0.8rem;
+            width: 16px;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 2rem;
+            background: #0a0a0a;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #111111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .stat-card:hover {
+            border-color: #4a9eff;
+            background: #131313;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4a9eff;
+        }
+
+        .stat-change {
+            font-size: 0.8rem;
+            color: #00ff88;
+            margin-top: 0.3rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: #111111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-title .icon {
+            margin-right: 0.5rem;
+        }
+
         .status-indicator {
-            width: 12px;
-            height: 12px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            margin-right: 10px;
+            display: inline-block;
+            margin-right: 0.5rem;
         }
-        
-        .status-online {
-            background: #00ff00;
-            animation: pulse 2s infinite;
-        }
-        
-        .status-warning {
-            background: #ffaa00;
-        }
-        
-        .status-offline {
-            background: #ff4444;
-        }
-        
+
+        .status-online { background: #00ff88; animation: pulse 2s infinite; }
+        .status-warning { background: #ff9500; }
+        .status-offline { background: #ff4444; }
+
         @keyframes pulse {
             0% { opacity: 1; }
             50% { opacity: 0.5; }
             100% { opacity: 1; }
         }
-        
-        .metric {
-            text-align: center;
-            padding: 1rem;
-            background: rgba(0,0,0,0.2);
-            border-radius: 10px;
-            margin: 0.5rem 0;
+
+        .system-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #222;
         }
-        
-        .metric-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #00ff88;
+
+        .system-item:last-child {
+            border-bottom: none;
         }
-        
-        .metric-label {
+
+        .system-name {
+            display: flex;
+            align-items: center;
+        }
+
+        .system-status {
             font-size: 0.9rem;
-            opacity: 0.8;
-            margin-top: 0.3rem;
+            color: #888;
+            padding: 0.3rem 0.8rem;
+            background: #1a1a1a;
+            border-radius: 20px;
         }
-        
+
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .activity-time {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
         .project-item {
             display: flex;
             align-items: center;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            justify-content: between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #222;
         }
-        
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
         .project-status {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
-            margin-right: 12px;
+            margin-right: 1rem;
         }
-        
-        .status-backlog { background: #666; }
-        .status-progress { background: #ff9500; }
+
         .status-done { background: #00ff88; }
-        
+        .status-progress { background: #ff9500; }
+        .status-backlog { background: #666; }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-name {
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .project-meta {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
         .timestamp {
+            text-align: center;
+            color: #666;
             font-size: 0.8rem;
-            opacity: 0.6;
-            margin-top: 0.3rem;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #111111;
+            border-radius: 8px;
         }
-        
-        .activity-item {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .activity-time {
-            font-size: 0.8rem;
-            opacity: 0.6;
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🦞 Luke Fontaine</h1>
-        <p>Executive Dashboard | Real-time Status & Analytics</p>
-        <div class="timestamp" id="lastUpdate">Last Updated: Loading...</div>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h1>🦞 Luke Fontaine</h1>
+            <p>Executive Dashboard</p>
+        </div>
+        
+        <nav>
+            <div class="nav-section">
+                <div class="nav-title">Overview</div>
+                <a href="#" class="nav-item active">
+                    <span class="icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">💼</span>
+                    LL Ventures
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">💰</span>
+                    Financials
+                </a>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-title">Operations</div>
+                <a href="#" class="nav-item">
+                    <span class="icon">🏠</span>
+                    Real Estate
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📱</span>
+                    SMS Outreach
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🔧</span>
+                    Automation
+                </a>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-title">Tools</div>
+                <a href="#" class="nav-item">
+                    <span class="icon">💻</span>
+                    GitHub
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🤖</span>
+                    Arthur AI
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📋</span>
+                    Airtable
+                </a>
+            </div>
+        </nav>
     </div>
 
-    <div class="dashboard-grid">
-        <!-- System Status -->
-        <div class="card">
-            <h3>🔧 System Status</h3>
-            <div class="status-item">
-                <span><span class="status-indicator status-online"></span>Arthur AI Assistant</span>
-                <span>Online</span>
+    <div class="main-content">
+        <div class="page-header">
+            <h1 class="page-title">Executive Overview</h1>
+            <p class="page-subtitle">Real-time business intelligence and operational status</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Net Worth</div>
+                <div class="stat-value">$1.43M</div>
+                <div class="stat-change">↗ A++ Grade</div>
             </div>
-            <div class="status-item">
-                <span><span class="status-indicator status-online"></span>Zillow Scraper</span>
-                <span>Active</span>
+            <div class="stat-card">
+                <div class="stat-label">Deals in Contract</div>
+                <div class="stat-value">18</div>
+                <div class="stat-change">↗ $149.5K Pipeline</div>
             </div>
-            <div class="status-item">
-                <span><span class="status-indicator status-online"></span>SMS Outreach</span>
-                <span>Running</span>
+            <div class="stat-card">
+                <div class="stat-label">Your Share (40%)</div>
+                <div class="stat-value">$59.8K</div>
+                <div class="stat-change">↗ Revenue Pending</div>
             </div>
-            <div class="status-item">
-                <span><span class="status-indicator status-online"></span>GHL Integration</span>
-                <span>Connected</span>
-            </div>
-            <div class="status-item">
-                <span><span class="status-indicator status-online"></span>Airtable Sync</span>
-                <span>Synced</span>
+            <div class="stat-card">
+                <div class="stat-label">SMS Outreach</div>
+                <div class="stat-value">50</div>
+                <div class="stat-change">↗ Daily Messages</div>
             </div>
         </div>
 
-        <!-- Business Metrics -->
-        <div class="card">
-            <h3>📊 LL Ventures Metrics</h3>
-            <div class="metric">
-                <div class="metric-value">18</div>
-                <div class="metric-label">Deals in Contract</div>
-            </div>
-            <div class="metric">
-                <div class="metric-value">$149.5K</div>
-                <div class="metric-label">Pipeline Revenue</div>
-            </div>
-            <div class="metric">
-                <div class="metric-value">$59.8K</div>
-                <div class="metric-label">Luke's Share (40%)</div>
-            </div>
-            <div class="metric">
-                <div class="metric-value">50</div>
-                <div class="metric-label">Daily SMS Outreach</div>
-            </div>
-        </div>
+        <div class="content-grid">
+            <div class="left-column">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span class="icon">🔧</span>
+                            System Status
+                        </div>
+                    </div>
+                    <div class="system-item">
+                        <div class="system-name">
+                            <span class="status-indicator status-online"></span>
+                            Arthur AI Assistant
+                        </div>
+                        <div class="system-status">Online</div>
+                    </div>
+                    <div class="system-item">
+                        <div class="system-name">
+                            <span class="status-indicator status-online"></span>
+                            Zillow Scraper
+                        </div>
+                        <div class="system-status">Active</div>
+                    </div>
+                    <div class="system-item">
+                        <div class="system-name">
+                            <span class="status-indicator status-online"></span>
+                            SMS Outreach
+                        </div>
+                        <div class="system-status">Running</div>
+                    </div>
+                    <div class="system-item">
+                        <div class="system-name">
+                            <span class="status-indicator status-online"></span>
+                            GHL Integration
+                        </div>
+                        <div class="system-status">Connected</div>
+                    </div>
+                    <div class="system-item">
+                        <div class="system-name">
+                            <span class="status-indicator status-online"></span>
+                            Airtable Sync
+                        </div>
+                        <div class="system-status">Synced</div>
+                    </div>
+                </div>
 
-        <!-- GitHub Activity -->
-        <div class="card">
-            <h3>💻 GitHub Activity</h3>
-            <div class="project-item">
-                <div class="project-status status-progress"></div>
-                <div>
-                    <div>dashboard</div>
-                    <div class="activity-time">Created • Just now</div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span class="icon">📋</span>
+                            Active Projects
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-status status-progress"></div>
+                        <div class="project-info">
+                            <div class="project-name">SMS Outreach Automation</div>
+                            <div class="project-meta">50 messages/day • Detroit agents</div>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-status status-done"></div>
+                        <div class="project-info">
+                            <div class="project-name">Financial Analysis Complete</div>
+                            <div class="project-meta">$1.43M net worth audit</div>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-status status-progress"></div>
+                        <div class="project-info">
+                            <div class="project-name">Detroit Real Estate Pipeline</div>
+                            <div class="project-meta">18 deals in contract</div>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-status status-done"></div>
+                        <div class="project-info">
+                            <div class="project-name">GitHub Dashboard</div>
+                            <div class="project-meta">Live at tbcagent.github.io</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project-item">
-                <div class="project-status status-done"></div>
-                <div>
-                    <div>zillow-scraper</div>
-                    <div class="activity-time">Updated • Last month</div>
+
+            <div class="right-column">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span class="icon">📈</span>
+                            Recent Activity
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">🔗</div>
+                        <div class="activity-content">
+                            <div class="activity-title">GitHub dashboard deployed</div>
+                            <div class="activity-time">2 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">🍣</div>
+                        <div class="activity-content">
+                            <div class="activity-title">Temaki Handroll spending analysis</div>
+                            <div class="activity-time">10 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">🚗</div>
+                        <div class="activity-content">
+                            <div class="activity-title">Vehicle expenses calculated</div>
+                            <div class="activity-time">15 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">💰</div>
+                        <div class="activity-content">
+                            <div class="activity-title">Financial audit completed</div>
+                            <div class="activity-time">1 day ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">📊</div>
+                        <div class="activity-content">
+                            <div class="activity-title">LL Ventures pipeline updated</div>
+                            <div class="activity-time">2 days ago</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span class="icon">💻</span>
+                            GitHub Activity
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">🚀</div>
+                        <div class="activity-content">
+                            <div class="activity-title">dashboard repository created</div>
+                            <div class="activity-time">Just now</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">📝</div>
+                        <div class="activity-content">
+                            <div class="activity-title">Initial dashboard setup</div>
+                            <div class="activity-time">2 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">🔧</div>
+                        <div class="activity-content">
+                            <div class="activity-title">GitHub Pages enabled</div>
+                            <div class="activity-time">3 minutes ago</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Project Status -->
-        <div class="card">
-            <h3>📋 Active Projects</h3>
-            <div class="project-item">
-                <div class="project-status status-progress"></div>
-                <div>SMS Outreach Automation</div>
-            </div>
-            <div class="project-item">
-                <div class="project-status status-done"></div>
-                <div>Financial Analysis Complete</div>
-            </div>
-            <div class="project-item">
-                <div class="project-status status-progress"></div>
-                <div>Detroit Real Estate Pipeline</div>
-            </div>
-            <div class="project-item">
-                <div class="project-status status-backlog"></div>
-                <div>GitHub Dashboard Setup</div>
-            </div>
-        </div>
-
-        <!-- Financial Summary -->
-        <div class="card">
-            <h3>💰 Financial Overview</h3>
-            <div class="metric">
-                <div class="metric-value">$1.43M</div>
-                <div class="metric-label">Net Worth</div>
-            </div>
-            <div class="metric">
-                <div class="metric-value">$817K</div>
-                <div class="metric-label">Investment Accounts</div>
-            </div>
-            <div class="metric">
-                <div class="metric-value">A++</div>
-                <div class="metric-label">Wealth Grade</div>
-            </div>
-        </div>
-
-        <!-- Recent Activity -->
-        <div class="card">
-            <h3>📈 Recent Activity</h3>
-            <div class="activity-item">
-                <div>GitHub access configured</div>
-                <div class="activity-time">2 minutes ago</div>
-            </div>
-            <div class="activity-item">
-                <div>Temaki Handroll analysis completed</div>
-                <div class="activity-time">10 minutes ago</div>
-            </div>
-            <div class="activity-item">
-                <div>Vehicle expenses calculated</div>
-                <div class="activity-time">15 minutes ago</div>
-            </div>
-            <div class="activity-item">
-                <div>Financial audit updated</div>
-                <div class="activity-time">1 day ago</div>
-            </div>
+        <div class="timestamp" id="lastUpdate">
+            Last Updated: Loading...
         </div>
     </div>
 
@@ -302,23 +593,14 @@
         updateTimestamp();
         setInterval(updateTimestamp, 30000);
 
-        // Simulate real-time updates
-        function simulateActivity() {
-            const activities = [
-                'SMS outreach batch completed',
-                'New Zillow listings found',
-                'Agent response received',
-                'Financial data updated',
-                'System health check passed'
-            ];
-            
-            // This would normally fetch real data from your APIs
-            // For now, just update the timestamp
-            updateTimestamp();
-        }
-
-        // Check for updates every 2 minutes
-        setInterval(simulateActivity, 120000);
+        // Add some interactivity
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
     </script>
 </body>
 </html>
