@@ -236,10 +236,23 @@ class FinancialAnalyzer:
                 except:
                     continue
         
+        # Get watch collection values
+        watches = self.read_sheet_data("Asset Tracker", "B19:B22")  # Watch values
+        watch_total = 0
+        for row in watches:
+            if row and row[0] and row[0] not in ['0', '']:
+                try:
+                    value_str = row[0].replace('$', '').replace(',', '')
+                    value = float(value_str)
+                    watch_total += value
+                except:
+                    continue
+        
         return {
             'investments': investment_total,
             'real_estate': real_estate_total,
-            'total': investment_total + real_estate_total
+            'watches': watch_total,
+            'total': investment_total + real_estate_total + watch_total
         }
 
 def main():
@@ -269,6 +282,7 @@ def main():
         net_worth = analyzer.get_net_worth()
         print(f"Investment Accounts: ${net_worth['investments']:,.2f}")
         print(f"Real Estate: ${net_worth['real_estate']:,.2f}")
+        print(f"Watch Collection: ${net_worth['watches']:,.2f}")
         print(f"Total Net Worth: ${net_worth['total']:,.2f}")
 
 if __name__ == "__main__":

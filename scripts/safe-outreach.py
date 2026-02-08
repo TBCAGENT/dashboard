@@ -16,17 +16,37 @@ from datetime import datetime
 
 def load_env():
     env = {}
-    with open(os.path.expanduser('~/.config/gohighlevel/secrets.env')) as f:
-        for line in f:
-            if '=' in line and not line.startswith('#'):
-                k, v = line.strip().split('=', 1)
-                env[k] = v.strip('"\'')
     
-    with open(os.path.expanduser('~/.config/airtable/secrets.env')) as f:
-        for line in f:
-            if '=' in line and not line.startswith('#'):
-                k, v = line.strip().split('=', 1)
-                env[k] = v.strip('"\'')
+    # Load GHL environment
+    try:
+        with open(os.path.expanduser('~/.config/gohighlevel/secrets.env')) as f:
+            for line in f:
+                line = line.strip()
+                if '=' in line and not line.startswith('#') and not line.startswith('export'):
+                    k, v = line.split('=', 1)
+                    env[k] = v.strip('"\'')
+                elif line.startswith('export') and '=' in line:
+                    line = line.replace('export ', '')
+                    k, v = line.split('=', 1)
+                    env[k] = v.strip('"\'')
+    except FileNotFoundError:
+        print("❌ GHL secrets file not found")
+    
+    # Load Airtable environment  
+    try:
+        with open(os.path.expanduser('~/.config/airtable/secrets.env')) as f:
+            for line in f:
+                line = line.strip()
+                if '=' in line and not line.startswith('#') and not line.startswith('export'):
+                    k, v = line.split('=', 1)
+                    env[k] = v.strip('"\'')
+                elif line.startswith('export') and '=' in line:
+                    line = line.replace('export ', '')
+                    k, v = line.split('=', 1)
+                    env[k] = v.strip('"\'')
+    except FileNotFoundError:
+        print("❌ Airtable secrets file not found")
+    
     return env
 
 def get_approved_template(env):

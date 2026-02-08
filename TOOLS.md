@@ -73,13 +73,14 @@ Skills define _how_ tools work. This file is for _your_ specifics — the stuff 
 ---
 
 ## Airtable API
-- **API Key**: `~/.config/airtable/secrets.env`
-- **Bases**: 105 bases including Finance Alchemy, My Brain, Black Box Agency, BBA CRM, etc.
+- **Personal Access Token**: `~/.config/airtable/secrets.env` (AIRTABLE_API_KEY)
+- **Authentication**: `pat7OpXE5AOmY2Vsx.a9022cbf9afe775f5f3a27f7900c77049a3d56fa715e34d0821cb7a756c036d7`
+- **Arthur Base**: appzBa1lPvu6zBZxv (SMS outreach, agent responses, templates)
+- **Buyers Club Control Center**: appEmn0HdyfUfZ429 (LL Ventures pipeline, Offers table)
 - **List bases**: `curl -H "Authorization: Bearer $AIRTABLE_API_KEY" "https://api.airtable.com/v0/meta/bases"`
-- **List tables**: `curl -H "Authorization: Bearer $AIRTABLE_API_KEY" "https://api.airtable.com/v0/meta/bases/{baseId}/tables"`
 - **Get records**: `curl -H "Authorization: Bearer $AIRTABLE_API_KEY" "https://api.airtable.com/v0/{baseId}/{tableName}"`
-- **Docs**: https://airtable.com/developers/web/api/introduction
-- **Status**: ACTIVE
+- **LL Ventures Pipeline**: 18 deals in contract, $149.5K total revenue, $59.8K Luke's 40% share
+- **Status**: FULLY OPERATIONAL
 
 ---
 
@@ -140,7 +141,34 @@ Skills define _how_ tools work. This file is for _your_ specifics — the stuff 
 
 ---
 
-*Updated 2026-02-04: Added Coinbase trading, CoinMarketCap, Zapier, Replicate*
+---
+
+## Miro (Visual Mind Mapping & Planning)
+- **Account**: Luke Fontaine / Alchemist team
+- **API Access**: Full read/write/create permissions
+- **Credentials**: `source ~/.config/miro/secrets.env`
+- **Create mind map**: `curl -X POST "https://api.miro.com/v2/boards" -H "Authorization: Bearer $MIRO_ACCESS_TOKEN" -d '{"name":"Project Name"}'`
+- **Add sticky notes**: `curl -X POST "https://api.miro.com/v2/boards/{board-id}/sticky_notes" -H "Authorization: Bearer $MIRO_ACCESS_TOKEN" -d '{"data":{"content":"Text"},"style":{"fillColor":"blue"},"position":{"x":0,"y":0}}'`
+- **Available colors**: gray, light_yellow, yellow, orange, light_green, green, dark_green, cyan, light_pink, pink, violet, red, light_blue, blue, dark_blue, black
+- **Demo Board**: https://miro.com/app/board/uXjVGEYkP4w= (LL Ventures Growth Strategy example)
+- **Use cases**: Project planning, business strategy, workflows, brainstorming sessions, process mapping
+- **Status**: ACTIVE - Connected and tested successfully
+
+---
+
+## GitHub Integration (Personal Dashboard)
+- **Account**: TBCAGENT (Luke Fontaine's GitHub)
+- **Token**: `source ~/.config/github/secrets.env`
+- **Dashboard URL**: https://tbcagent.github.io/dashboard/
+- **Repositories**: zillow-scraper (private), dashboard (public)
+- **API Access**: Full repo, issues, PRs, commits, releases
+- **Dashboard Features**: Real-time status, business metrics, project tracking, financial overview
+- **Mobile Optimized**: Accessible from anywhere, auto-updating
+- **Status**: LIVE - Can access from home, office, or any device
+
+---
+
+*Updated 2026-02-08: Added GitHub integration & live web dashboard*
 ---
 
 ## Asana (Project Management)

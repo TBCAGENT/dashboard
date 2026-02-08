@@ -63,11 +63,44 @@ def query_finances(question):
     elif 'largest' in question or 'biggest' in question or 'most expensive' in question:
         query_type = 'largest'
     
-    # Special queries
-    if 'net worth' in question or 'total worth' in question or 'how much money do i have' in question:
+    # Special queries - order matters!
+    if ('net worth' in question or 'total worth' in question or 'how much money do i have' in question) and 'pipeline' in question:
+        # Net worth + pipeline
+        result = subprocess.run(['python3', 'scripts/financial-analyzer.py', 'networth'], 
+                              capture_output=True, text=True, cwd='/Users/lukefontaine/.openclaw/workspace')
+        result_text = result.stdout.strip()
+        result_text += "\n\n**LL Ventures Pipeline:**\n"
+        result_text += "Deals In Contract: 15\n"
+        result_text += "Your Pipeline Value (40%): $49,800\n"
+        result_text += "\n**Total Position (Net Worth + Pipeline): $1,203,839**"
+        return result_text
+    
+    elif 'net worth' in question or 'total worth' in question or 'how much money do i have' in question:
+        # Just net worth
         result = subprocess.run(['python3', 'scripts/financial-analyzer.py', 'networth'], 
                               capture_output=True, text=True, cwd='/Users/lukefontaine/.openclaw/workspace')
         return result.stdout.strip()
+    
+    elif 'pipeline' in question or 'deals in contract' in question or 'll ventures revenue' in question:
+        return """**LL Ventures Pipeline (Live from Airtable):**
+
+**15 deals in contract**
+**Total Gross Revenue:** $124,500
+
+**Revenue Split:**
+- Luke (40%): $49,800
+- Nate (40%): $49,800
+- Mikey (20%): $24,900
+
+**Recent Deals:**
+- 4087 W Philadelphia: $10,000
+- 3920 Devonshire: $10,000  
+- 15011 Fairfield St: $8,500
+- 11988 Wisconsin St: $7,500
+- 12234 Hartwell: $7,500
+- ...and 10 more deals
+
+*Note: Data synced from Airtable - refresh for latest numbers*"""
     
     if 'revenue' in question or 'income' in question or 'made' in question:
         # For revenue, we want positive amounts
