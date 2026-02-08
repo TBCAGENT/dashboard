@@ -411,92 +411,318 @@
             color: #888;
         }
 
+        /* Enhanced Kanban Board */
         .kanban-board {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-bottom: 2rem;
+            background: #0a0a0a;
+            padding: 2rem;
+            border-radius: 12px;
         }
 
         .kanban-column {
-            background: #111111;
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
             border: 1px solid #333;
-            border-radius: 12px;
-            padding: 1rem;
+            border-radius: 16px;
+            padding: 1.5rem;
+            min-height: 400px;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .kanban-column:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4a9eff, #00ff88);
+            border-radius: 16px 16px 0 0;
         }
 
         .kanban-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #333;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #333;
         }
 
         .kanban-title {
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.1rem;
             color: #4a9eff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .kanban-count {
-            background: #333;
-            color: #888;
-            padding: 0.2rem 0.5rem;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #4a9eff, #00ff88);
+            color: #000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
             font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(74, 158, 255, 0.3);
         }
 
         .kanban-task {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
             border: 1px solid #333;
-            border-radius: 8px;
-            padding: 1rem;
+            border-radius: 12px;
+            padding: 1.5rem;
             margin-bottom: 1rem;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kanban-task:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #4a9eff, #00ff88);
+            transition: width 0.3s ease;
         }
 
         .kanban-task:hover {
             border-color: #4a9eff;
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(74, 158, 255, 0.15);
+        }
+
+        .kanban-task:hover:before {
+            width: 100%;
+            opacity: 0.1;
         }
 
         .task-title {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
             color: #fff;
+            font-size: 1.05rem;
         }
 
         .task-description {
             font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 0.5rem;
+            color: #bbb;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .task-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
         }
 
         .task-priority {
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
             font-size: 0.7rem;
             text-transform: uppercase;
-            font-weight: 600;
-            margin-top: 0.5rem;
-            display: inline-block;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .priority-high {
-            background: rgba(255, 68, 68, 0.2);
-            color: #ff4444;
+            background: linear-gradient(135deg, #ff4444, #ff6b6b);
+            color: #fff;
         }
 
         .priority-medium {
-            background: rgba(255, 149, 0, 0.2);
-            color: #ff9500;
+            background: linear-gradient(135deg, #ff9500, #ffb347);
+            color: #fff;
         }
 
         .priority-low {
-            background: rgba(102, 102, 102, 0.2);
-            color: #666;
+            background: linear-gradient(135deg, #666, #888);
+            color: #fff;
+        }
+
+        .task-assignee {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4a9eff, #00ff88);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: #000;
+        }
+
+        /* Password Protection Styles */
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .password-form {
+            background: #111;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .password-form h2 {
+            color: #4a9eff;
+            margin-bottom: 1rem;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 1rem;
+            background: #222;
+            border: 1px solid #555;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .password-input:focus {
+            outline: none;
+            border-color: #4a9eff;
+        }
+
+        .password-submit {
+            background: #4a9eff;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .password-submit:hover {
+            background: #3a8eef;
+        }
+
+        .password-error {
+            color: #ff4444;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Credit Card & Expenses Styles */
+        .credit-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .credit-card {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .credit-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(74, 158, 255, 0.1), transparent);
+        }
+
+        .card-name {
+            font-weight: 600;
+            color: #4a9eff;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .card-balance {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-limit {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .expenses-section {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .expense-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .expense-item:last-child {
+            border-bottom: none;
+        }
+
+        .expense-name {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .expense-amount {
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        .expense-category {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .total-section {
+            border-top: 2px solid #4a9eff;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .total-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4a9eff;
         }
 
         .modal {
@@ -597,6 +823,11 @@
 
             .kanban-board {
                 grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .credit-cards-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -691,60 +922,43 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <span class="icon">🔧</span>
-                                System Status
-                            </div>
-                        </div>
-                        <div class="system-item clickable" onclick="showTab('arthur')">
-                            <div class="system-name">
-                                <span class="status-indicator status-online"></span>
-                                Arthur AI Assistant
-                            </div>
-                            <div class="system-status">Online</div>
-                        </div>
-                        <div class="system-item clickable" onclick="showSystemDetails('zillow')">
-                            <div class="system-name">
-                                <span class="status-indicator status-online"></span>
-                                Zillow Scraper
-                            </div>
-                            <div class="system-status">Active (30min)</div>
-                        </div>
-                        <div class="system-item clickable" onclick="showTab('sms-outreach')">
-                            <div class="system-name">
-                                <span class="status-indicator status-online"></span>
-                                SMS Outreach
-                            </div>
-                            <div class="system-status">50 daily (7am)</div>
-                        </div>
-                        <div class="system-item clickable" onclick="showSystemDetails('ghl')">
-                            <div class="system-name">
-                                <span class="status-indicator status-online"></span>
-                                GHL Integration
-                            </div>
-                            <div class="system-status">Connected</div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
                                 <span class="icon">📋</span>
-                                Kanban Board Preview
+                                Enhanced Kanban Board
                             </div>
                             <div class="link-button" onclick="showTab('tasks')">
                                 <span class="icon">🔗</span>
                                 Full Board
                             </div>
                         </div>
-                        <div class="kanban-task" onclick="showTab('tasks')">
-                            <div class="task-title">Second Brain System</div>
-                            <div class="task-description">Auto-organizing Luke's shared info by category</div>
-                            <div class="task-priority priority-high">RECURRING</div>
-                        </div>
-                        <div class="kanban-task" onclick="showTab('tasks')">
-                            <div class="task-title">Go High Level Access</div>
-                            <div class="task-description">Full platform access for text monitoring</div>
-                            <div class="task-priority priority-medium">BACKLOG</div>
+                        <div class="kanban-board">
+                            <div class="kanban-column">
+                                <div class="kanban-header">
+                                    <div class="kanban-title">🔄 Recurring</div>
+                                    <div class="kanban-count">1</div>
+                                </div>
+                                <div class="kanban-task" onclick="showTaskDetails('second-brain')">
+                                    <div class="task-title">Second Brain System</div>
+                                    <div class="task-description">Auto-organizing Luke's shared info by category</div>
+                                    <div class="task-meta">
+                                        <div class="task-priority priority-high">HIGH</div>
+                                        <div class="task-assignee">A</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="kanban-column">
+                                <div class="kanban-header">
+                                    <div class="kanban-title">📋 Backlog</div>
+                                    <div class="kanban-count">1</div>
+                                </div>
+                                <div class="kanban-task" onclick="showTaskDetails('ghl-access')">
+                                    <div class="task-title">Go High Level Access</div>
+                                    <div class="task-description">Full platform access for text monitoring</div>
+                                    <div class="task-meta">
+                                        <div class="task-priority priority-medium">MEDIUM</div>
+                                        <div class="task-assignee">A</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -944,7 +1158,7 @@
         <div class="tab-content" id="tasks">
             <div class="page-header">
                 <h1 class="page-title">Tasks & Projects</h1>
-                <p class="page-subtitle">Current work items and project status</p>
+                <p class="page-subtitle">Enhanced Kanban board with professional design</p>
             </div>
 
             <div class="stats-grid">
@@ -979,7 +1193,10 @@
                     <div class="kanban-task" onclick="showTaskDetails('second-brain')">
                         <div class="task-title">Second Brain System</div>
                         <div class="task-description">Organize all information Luke shares into categorized knowledge base</div>
-                        <div class="task-priority priority-high">HIGH</div>
+                        <div class="task-meta">
+                            <div class="task-priority priority-high">HIGH</div>
+                            <div class="task-assignee">A</div>
+                        </div>
                     </div>
                 </div>
                 <div class="kanban-column">
@@ -990,12 +1207,12 @@
                     <div class="kanban-task" onclick="showTaskDetails('ghl-access')">
                         <div class="task-title">Go High Level Access</div>
                         <div class="task-description">Get Arthur full access to Go High Level platform for text message monitoring and editing</div>
-                        <div class="task-priority priority-medium">MEDIUM</div>
+                        <div class="task-meta">
+                            <div class="task-priority priority-medium">MEDIUM</div>
+                            <div class="task-assignee">A</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="kanban-board">
                 <div class="kanban-column">
                     <div class="kanban-header">
                         <div class="kanban-title">✅ Done</div>
@@ -1004,17 +1221,26 @@
                     <div class="kanban-task" onclick="showTaskDetails('kanban-board')">
                         <div class="task-title">Enhanced Kanban Board</div>
                         <div class="task-description">Visual project management board with integrated chat functionality</div>
-                        <div class="task-priority priority-high">HIGH</div>
+                        <div class="task-meta">
+                            <div class="task-priority priority-high">HIGH</div>
+                            <div class="task-assignee">A</div>
+                        </div>
                     </div>
                     <div class="kanban-task" onclick="showTaskDetails('apify')">
                         <div class="task-title">Apify Integration</div>
                         <div class="task-description">Get Arthur full access to Luke's Apify account for web scraping and automation</div>
-                        <div class="task-priority priority-high">HIGH</div>
+                        <div class="task-meta">
+                            <div class="task-priority priority-high">HIGH</div>
+                            <div class="task-assignee">A</div>
+                        </div>
                     </div>
                     <div class="kanban-task" onclick="showTaskDetails('email')">
                         <div class="task-title">Email Setup (arthur@blackboxalchemist.com)</div>
                         <div class="task-description">Configure Arthur's dedicated email for monitoring, responses, and tool signups</div>
-                        <div class="task-priority priority-high">HIGH</div>
+                        <div class="task-meta">
+                            <div class="task-priority priority-high">HIGH</div>
+                            <div class="task-assignee">A</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1022,96 +1248,217 @@
 
         <!-- Financials Tab -->
         <div class="tab-content" id="financials">
-            <div class="page-header">
-                <h1 class="page-title">Financial Overview</h1>
-                <p class="page-subtitle">Complete financial position and wealth tracking</p>
-            </div>
-
-            <div class="financial-links">
-                <a href="https://docs.google.com/spreadsheets/d/1pd1dt64gBni4vAWze9QzhVwsmFMcdBuufW6m_0n-OPw" target="_blank" class="link-card">
-                    <div class="link-title">📊 Master Financial Tracker</div>
-                    <div class="link-description">Complete Tiller data with net worth, spending analysis, and financial dashboard</div>
-                </a>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Net Worth</div>
-                    <div class="stat-value">$1.43M</div>
-                    <div class="stat-change">↗ A++ Grade (Top 2%)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Investment Accounts</div>
-                    <div class="stat-value">$817K</div>
-                    <div class="stat-change">↗ 57% of total assets</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Real Estate Portfolio</div>
-                    <div class="stat-value">$440K</div>
-                    <div class="stat-change">↗ 31% of total assets</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Monthly Personal Burn</div>
-                    <div class="stat-value">$11.2K</div>
-                    <div class="stat-change">↗ 18.4% annual burn rate</div>
+            <!-- Password Protection -->
+            <div id="financials-password" class="password-overlay">
+                <div class="password-form">
+                    <h2>🔐 Financial Access</h2>
+                    <p>Enter password to view financial data</p>
+                    <input type="password" id="financial-password" class="password-input" placeholder="Enter password">
+                    <button onclick="validateFinancialPassword()" class="password-submit">Access</button>
+                    <div id="password-error" class="password-error" style="display: none;">Incorrect password</div>
                 </div>
             </div>
 
-            <div class="content-grid">
-                <div class="left-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">💰</span>
-                                Asset Breakdown
-                            </div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Investment Accounts (Schwab)</div>
-                            <div class="system-status">$817,062</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Real Estate (Detroit + Alabama)</div>
-                            <div class="system-status">$440,000</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Luxury Watch Collection</div>
-                            <div class="system-status">$121,977</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Cash & Liquid Assets</div>
-                            <div class="system-status">$55,138</div>
-                        </div>
-                        <div class="system-item" style="border-top: 2px solid #4a9eff; padding-top: 1rem; margin-top: 1rem;">
-                            <div class="system-name" style="color: #4a9eff; font-weight: 600;">Total Net Worth</div>
-                            <div class="system-status" style="color: #4a9eff; font-weight: 600;">$1,434,177</div>
-                        </div>
+            <!-- Financial Content (hidden until password entered) -->
+            <div id="financial-content" style="display: none;">
+                <div class="page-header">
+                    <h1 class="page-title">Financial Overview</h1>
+                    <p class="page-subtitle">Complete financial position with real-time data</p>
+                </div>
+
+                <div class="financial-links">
+                    <a href="https://docs.google.com/spreadsheets/d/1pd1dt64gBni4vAWze9QzhVwsmFMcdBuufW6m_0n-OPw" target="_blank" class="link-card">
+                        <div class="link-title">📊 Master Financial Tracker</div>
+                        <div class="link-description">Complete Tiller data with net worth, spending analysis, and financial dashboard</div>
+                    </a>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Net Worth</div>
+                        <div class="stat-value">$1.43M</div>
+                        <div class="stat-change">↗ A++ Grade (Top 2%)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Investment Accounts</div>
+                        <div class="stat-value">$817K</div>
+                        <div class="stat-change">↗ 57% of total assets</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Total Monthly Expenses</div>
+                        <div class="stat-value">$11.2K</div>
+                        <div class="stat-change">↗ Personal + recurring</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Credit Card Debt</div>
+                        <div class="stat-value">$33.5K</div>
+                        <div class="stat-change">↗ Current balances</div>
                     </div>
                 </div>
 
-                <div class="right-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🎯</span>
-                                Wealth Timeline
+                <div class="content-grid">
+                    <div class="left-column">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <span class="icon">💳</span>
+                                    Current Credit Card Balances
+                                </div>
+                            </div>
+                            <div class="credit-cards-grid">
+                                <div class="credit-card">
+                                    <div class="card-name">Chase Sapphire Reserve (5406)</div>
+                                    <div class="card-balance">-$3,883</div>
+                                    <div class="card-limit">Personal spending card</div>
+                                </div>
+                                <div class="credit-card">
+                                    <div class="card-name">Amex Gold Card (2004)</div>
+                                    <div class="card-balance">-$5,133</div>
+                                    <div class="card-limit">Monthly recurring expenses</div>
+                                </div>
+                                <div class="credit-card">
+                                    <div class="card-name">Amex Platinum (1002)</div>
+                                    <div class="card-balance">-$24,449</div>
+                                    <div class="card-limit">Business + office expenses</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="system-item">
-                            <div class="system-name">$5M Net Worth Target</div>
-                            <div class="system-status">Age 35 (4 years)</div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <span class="icon">💰</span>
+                                    Asset Breakdown
+                                </div>
+                            </div>
+                            <div class="system-item">
+                                <div class="system-name">Investment Accounts (Schwab)</div>
+                                <div class="system-status">$817,062</div>
+                            </div>
+                            <div class="system-item">
+                                <div class="system-name">Real Estate (Detroit + Alabama)</div>
+                                <div class="system-status">$440,000</div>
+                            </div>
+                            <div class="system-item">
+                                <div class="system-name">Luxury Watch Collection</div>
+                                <div class="system-status">$121,977</div>
+                            </div>
+                            <div class="system-item">
+                                <div class="system-name">Cash & Liquid Assets</div>
+                                <div class="system-status">$55,138</div>
+                            </div>
+                            <div class="system-item" style="border-top: 2px solid #4a9eff; padding-top: 1rem; margin-top: 1rem;">
+                                <div class="system-name" style="color: #4a9eff; font-weight: 600;">Total Net Worth</div>
+                                <div class="system-status" style="color: #4a9eff; font-weight: 600;">$1,434,177</div>
+                            </div>
                         </div>
-                        <div class="system-item">
-                            <div class="system-name">$10M Net Worth Target</div>
-                            <div class="system-status">Age 37 (6 years)</div>
+                    </div>
+
+                    <div class="right-column">
+                        <div class="expenses-section">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <span class="icon">📋</span>
+                                    Monthly Recurring Expenses
+                                </div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div>
+                                    <div class="expense-name">Office Rent (Carlsbad)</div>
+                                    <div class="expense-category">Business</div>
+                                </div>
+                                <div class="expense-amount">$2,745</div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div>
+                                    <div class="expense-name">Tesla Model Y Payment</div>
+                                    <div class="expense-category">Transportation</div>
+                                </div>
+                                <div class="expense-amount">$673</div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div>
+                                    <div class="expense-name">Health Insurance</div>
+                                    <div class="expense-category">Healthcare</div>
+                                </div>
+                                <div class="expense-amount">$520</div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div>
+                                    <div class="expense-name">Utilities (Home + Office)</div>
+                                    <div class="expense-category">Utilities</div>
+                                </div>
+                                <div class="expense-amount">$275</div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div>
+                                    <div class="expense-name">Insurance (Auto + Property)</div>
+                                    <div class="expense-category">Insurance</div>
+                                </div>
+                                <div class="expense-amount">$380</div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div>
+                                    <div class="expense-name">Subscriptions (Software + Services)</div>
+                                    <div class="expense-category">Technology</div>
+                                </div>
+                                <div class="expense-amount">$650</div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div>
+                                    <div class="expense-name">Personal Living Expenses</div>
+                                    <div class="expense-category">Personal</div>
+                                </div>
+                                <div class="expense-amount">$2,800</div>
+                            </div>
+                            
+                            <div class="expense-item">
+                                <div>
+                                    <div class="expense-name">LL Ventures Operating Costs</div>
+                                    <div class="expense-category">Business</div>
+                                </div>
+                                <div class="expense-amount">$1,500</div>
+                            </div>
+                            
+                            <div class="expense-item total-section">
+                                <div>
+                                    <div class="expense-name" style="color: #4a9eff; font-weight: 700;">Total Monthly Nut</div>
+                                    <div class="expense-category">All Categories</div>
+                                </div>
+                                <div class="total-amount">$9,543</div>
+                            </div>
                         </div>
-                        <div class="system-item">
-                            <div class="system-name">$25M+ Net Worth Target</div>
-                            <div class="system-status">Age 41 (10 years)</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Double Leverage Strategy</div>
-                            <div class="system-status">20% effective returns</div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <span class="icon">🎯</span>
+                                    Wealth Timeline
+                                </div>
+                            </div>
+                            <div class="system-item">
+                                <div class="system-name">$5M Net Worth Target</div>
+                                <div class="system-status">Age 35 (4 years)</div>
+                            </div>
+                            <div class="system-item">
+                                <div class="system-name">$10M Net Worth Target</div>
+                                <div class="system-status">Age 37 (6 years)</div>
+                            </div>
+                            <div class="system-item">
+                                <div class="system-name">$25M+ Net Worth Target</div>
+                                <div class="system-status">Age 41 (10 years)</div>
+                            </div>
+                            <div class="system-item">
+                                <div class="system-name">Double Leverage Strategy</div>
+                                <div class="system-status">20% effective returns</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1642,6 +1989,8 @@
     </div>
 
     <script>
+        let financialAccessGranted = false;
+
         function updateTimestamp() {
             const now = new Date();
             document.getElementById('lastUpdate').textContent = 
@@ -1676,7 +2025,35 @@
             if (navItem) {
                 navItem.classList.add('active');
             }
+
+            // Handle financial tab password protection
+            if (tabName === 'financials' && !financialAccessGranted) {
+                document.getElementById('financials-password').style.display = 'flex';
+                document.getElementById('financial-content').style.display = 'none';
+            }
         }
+
+        function validateFinancialPassword() {
+            const password = document.getElementById('financial-password').value;
+            const errorDiv = document.getElementById('password-error');
+            
+            if (password === '02332') {
+                financialAccessGranted = true;
+                document.getElementById('financials-password').style.display = 'none';
+                document.getElementById('financial-content').style.display = 'block';
+                errorDiv.style.display = 'none';
+            } else {
+                errorDiv.style.display = 'block';
+                document.getElementById('financial-password').value = '';
+            }
+        }
+
+        // Allow enter key to submit password
+        document.getElementById('financial-password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                validateFinancialPassword();
+            }
+        });
 
         function toggleExpanded(elementId) {
             const element = document.getElementById(elementId);
@@ -1763,37 +2140,6 @@
                             <li><strong>Conventional Commits:</strong> Git commit formatting</li>
                             <li><strong>Gitclaw:</strong> Workspace backup automation</li>
                         </ul>
-                    `
-                },
-                'zillow': {
-                    title: 'Zillow Scraper System',
-                    content: `
-                        <p><strong>Status:</strong> Active - runs every 30 minutes</p>
-                        <p><strong>Function:</strong> Monitors Detroit real estate market for Section 8 properties</p>
-                        <p><strong>Features:</strong></p>
-                        <ul>
-                            <li>Automated property discovery</li>
-                            <li>Rent inquiry automation</li>
-                            <li>New listing alerts</li>
-                            <li>Agent contact extraction</li>
-                        </ul>
-                        <p><strong>Output:</strong> Google Sheets with property data</p>
-                        <p><strong>Schedule:</strong> 48 checks per day</p>
-                    `
-                },
-                'ghl': {
-                    title: 'Go High Level Integration',
-                    content: `
-                        <p><strong>Status:</strong> Connected via API</p>
-                        <p><strong>Functions:</strong></p>
-                        <ul>
-                            <li>Contact management</li>
-                            <li>SMS message tracking</li>
-                            <li>Pipeline management</li>
-                            <li>Response monitoring</li>
-                        </ul>
-                        <p><strong>Location ID:</strong> a0xDUfSzadt256BbUcgz</p>
-                        <p><strong>Usage:</strong> Real-time contact sync and message tracking</p>
                     `
                 }
             };
@@ -1915,9 +2261,11 @@
         // Close modal when clicking outside of it
         window.onclick = function(event) {
             const modal = document.getElementById('detailModal');
+            const passwordOverlay = document.getElementById('financials-password');
             if (event.target == modal) {
                 modal.style.display = 'none';
             }
+            // Don't close password overlay on outside click for security
         }
 
         // Update timestamp every 30 seconds
