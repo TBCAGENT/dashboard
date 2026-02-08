@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke's Financial Command Center</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .metric-card {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 13px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .progress-bar {
+            background: #e2e8f0;
+            border-radius: 10px;
+            height: 8px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #48bb78, #38a169);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .pipeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .pipeline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .pipeline-address {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 14px;
+        }
+        
+        .pipeline-value {
+            font-weight: 700;
+            color: #38a169;
+            font-size: 14px;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 200px;
+            margin: 15px 0;
+        }
+        
+        .refresh-btn {
+            background: #4299e1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .refresh-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-live {
+            background: #48bb78;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: #718096;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Financial Command Center</h1>
+            <div class="subtitle">
+                <span class="status-indicator status-live"></span>
+                Live Dashboard
+            </div>
+        </div>
+        
+        <!-- Total Position Card -->
+        <div class="card metric-card">
+            <div class="metric-value" id="totalPosition">$1,203,839</div>
+            <div class="metric-label">Total Financial Position</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar" style="width: 12%"></div>
+            </div>
+            <div style="font-size: 12px; color: #718096; margin-top: 8px;">
+                <span id="progressPercent">12.0%</span> toward $10M goal
+            </div>
+        </div>
+        
+        <!-- Net Worth Breakdown -->
+        <div class="card">
+            <h3 style="margin-bottom: 15px; color: #2d3748; font-size: 16px;">💎 Realized Net Worth</h3>
+            <div class="metric-card" style="margin-bottom: 15px;">
+                <div class="metric-value" style="font-size: 24px;" id="realizedNetWorth">$817,942</div>
+                <div class="metric-label">Tiller + Assets</div>
+            </div>
+            <div class="chart-container">
+                <canvas id="netWorthChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- LL Ventures Pipeline -->
+        <div class="card">
+            <h3 style="margin-bottom: 15px; color: #2d3748; font-size: 16px;">🏠 LL Ventures Pipeline</h3>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 20px; font-weight: 700; color: #2d3748;" id="dealCount">15</div>
+                    <div style="font-size: 12px; color: #718096;">Deals</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 20px; font-weight: 700; color: #38a169;" id="pipelineValue">$49,800</div>
+                    <div style="font-size: 12px; color: #718096;">Your 40%</div>
+                </div>
+            </div>
+            
+            <div id="pipelineDeals">
+                <div class="pipeline-item">
+                    <span class="pipeline-address">4087 W Philadelphia</span>
+                    <span class="pipeline-value">$4,000</span>
+                </div>
+                <div class="pipeline-item">
+                    <span class="pipeline-address">3920 Devonshire</span>
+                    <span class="pipeline-value">$4,000</span>
+                </div>
+                <div class="pipeline-item">
+                    <span class="pipeline-address">15011 Fairfield St</span>
+                    <span class="pipeline-value">$3,400</span>
+                </div>
+                <div class="pipeline-item">
+                    <span class="pipeline-address">+ 12 more deals</span>
+                    <span class="pipeline-value">$38,400</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="card">
+            <button class="refresh-btn" onclick="refreshData()">🔄 Refresh Data</button>
+            <div class="last-updated" id="lastUpdated">
+                Last updated: <span id="updateTime">Just now</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize charts
+        const ctx = document.getElementById('netWorthChart').getContext('2d');
+        const netWorthChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Investments', 'Bank Accounts', 'Real Estate', 'Watch Collection'],
+                datasets: [{
+                    data: [650000, 167942, 0, 0], // Placeholder data
+                    backgroundColor: [
+                        '#4299e1',
+                        '#38a169',
+                        '#ed8936',
+                        '#9f7aea'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 15,
+                            font: {
+                                size: 11
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        async function refreshData() {
+            const btn = document.querySelector('.refresh-btn');
+            btn.textContent = '🔄 Updating...';
+            btn.disabled = true;
+            
+            try {
+                // In a real implementation, this would fetch from the Google Sheet API
+                // For demo purposes, we'll simulate an API call
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Update timestamp
+                document.getElementById('updateTime').textContent = new Date().toLocaleTimeString();
+                
+                btn.textContent = '✅ Updated!';
+                setTimeout(() => {
+                    btn.textContent = '🔄 Refresh Data';
+                    btn.disabled = false;
+                }, 1000);
+            } catch (error) {
+                console.error('Error refreshing data:', error);
+                btn.textContent = '❌ Error';
+                setTimeout(() => {
+                    btn.textContent = '🔄 Refresh Data';
+                    btn.disabled = false;
+                }, 2000);
+            }
+        }
+
+        // Auto-refresh every 5 minutes
+        setInterval(() => {
+            if (!document.querySelector('.refresh-btn').disabled) {
+                refreshData();
+            }
+        }, 300000);
+
+        // Set initial update time
+        document.getElementById('updateTime').textContent = new Date().toLocaleTimeString();
+    </script>
+</body>
+</html>
