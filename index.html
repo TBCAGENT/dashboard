@@ -249,48 +249,166 @@
             border-radius: 20px;
         }
 
-        .activity-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 1rem 0;
-            border-bottom: 1px solid #222;
+        .clickable {
+            cursor: pointer;
             transition: all 0.2s;
+        }
+
+        .clickable:hover {
+            color: #4a9eff;
+            transform: translateX(2px);
+        }
+
+        .toggle-button {
+            background: #333;
+            border: 1px solid #555;
+            border-radius: 4px;
+            padding: 0.3rem 0.8rem;
+            color: #4a9eff;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-button:hover {
+            background: #4a9eff;
+            color: white;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+            z-index: 1;
+            border-radius: 4px;
+            border: 1px solid #555;
+        }
+
+        .dropdown-content a {
+            color: #ccc;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
             cursor: pointer;
         }
 
-        .activity-item:last-child {
+        .dropdown-content a:hover {
+            background-color: #333;
+            color: #4a9eff;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .expandable {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .expandable:hover {
+            color: #4a9eff;
+        }
+
+        .expanded-content {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #333;
+        }
+
+        .expanded-content.show {
+            display: block;
+        }
+
+        .property-item {
+            display: flex;
+            align-items: center;
+            justify-content: between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .property-item:last-child {
             border-bottom: none;
         }
 
-        .activity-item:hover {
-            background: rgba(74, 158, 255, 0.05);
-            transform: translateX(5px);
-        }
-
-        .activity-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            flex-shrink: 0;
-        }
-
-        .activity-content {
+        .property-info {
             flex: 1;
+            margin-right: 1rem;
         }
 
-        .activity-title {
-            font-size: 0.95rem;
-            margin-bottom: 0.3rem;
+        .property-name {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.2rem;
         }
 
-        .activity-time {
-            font-size: 0.8rem;
-            color: #666;
+        .property-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .property-link {
+            padding: 0.2rem 0.5rem;
+            background: #333;
+            color: #4a9eff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            transition: all 0.2s;
+        }
+
+        .property-link:hover {
+            background: #4a9eff;
+            color: white;
+        }
+
+        .property-value {
+            color: #00ff88;
+            font-weight: 600;
+        }
+
+        .financial-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .link-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .link-card:hover {
+            border-color: #4a9eff;
+            background: #222;
+            transform: translateY(-2px);
+        }
+
+        .link-title {
+            font-weight: 600;
+            color: #4a9eff;
+            margin-bottom: 0.5rem;
+        }
+
+        .link-description {
+            font-size: 0.9rem;
+            color: #888;
         }
 
         .kanban-board {
@@ -459,41 +577,6 @@
             border-radius: 8px;
         }
 
-        .financial-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .link-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 1rem;
-            transition: all 0.2s;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .link-card:hover {
-            border-color: #4a9eff;
-            background: #222;
-            transform: translateY(-2px);
-        }
-
-        .link-title {
-            font-weight: 600;
-            color: #4a9eff;
-            margin-bottom: 0.5rem;
-        }
-
-        .link-description {
-            font-size: 0.9rem;
-            color: #888;
-        }
-
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
@@ -536,6 +619,10 @@
                     <span class="icon">📋</span>
                     Tasks & Projects
                 </div>
+                <div class="nav-item" onclick="showTab('personal')">
+                    <span class="icon">👤</span>
+                    Personal
+                </div>
                 <div class="nav-item" onclick="showTab('financials')">
                     <span class="icon">💰</span>
                     Financials
@@ -545,12 +632,8 @@
             <div class="nav-section">
                 <div class="nav-title">Business</div>
                 <div class="nav-item" onclick="showTab('ll-ventures')">
-                    <span class="icon">💼</span>
-                    LL Ventures
-                </div>
-                <div class="nav-item" onclick="showTab('real-estate')">
                     <span class="icon">🏠</span>
-                    Real Estate
+                    LL Ventures Real Estate
                 </div>
                 <div class="nav-item" onclick="showTab('sms-outreach')">
                     <span class="icon">📱</span>
@@ -581,10 +664,10 @@
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card" onclick="showTab('ll-ventures')">
+                <div class="stat-card clickable" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
                     <div class="stat-label">LL Ventures Pipeline</div>
-                    <div class="stat-value">18 Deals</div>
-                    <div class="stat-change">↗ $149.5K Total Revenue</div>
+                    <div class="stat-value">19 Deals</div>
+                    <div class="stat-change">↗ $158K+ Total Revenue</div>
                 </div>
                 <div class="stat-card" onclick="showTab('sms-outreach')">
                     <div class="stat-label">SMS Outreach</div>
@@ -612,28 +695,28 @@
                                 System Status
                             </div>
                         </div>
-                        <div class="system-item" onclick="showSystemDetails('arthur')">
+                        <div class="system-item clickable" onclick="showTab('arthur')">
                             <div class="system-name">
                                 <span class="status-indicator status-online"></span>
                                 Arthur AI Assistant
                             </div>
                             <div class="system-status">Online</div>
                         </div>
-                        <div class="system-item" onclick="showSystemDetails('zillow')">
+                        <div class="system-item clickable" onclick="showSystemDetails('zillow')">
                             <div class="system-name">
                                 <span class="status-indicator status-online"></span>
                                 Zillow Scraper
                             </div>
                             <div class="system-status">Active (30min)</div>
                         </div>
-                        <div class="system-item" onclick="showSystemDetails('sms')">
+                        <div class="system-item clickable" onclick="showTab('sms-outreach')">
                             <div class="system-name">
                                 <span class="status-indicator status-online"></span>
                                 SMS Outreach
                             </div>
                             <div class="system-status">50 daily (7am)</div>
                         </div>
-                        <div class="system-item" onclick="showSystemDetails('ghl')">
+                        <div class="system-item clickable" onclick="showSystemDetails('ghl')">
                             <div class="system-name">
                                 <span class="status-indicator status-online"></span>
                                 GHL Integration
@@ -646,55 +729,22 @@
                         <div class="card-header">
                             <div class="card-title">
                                 <span class="icon">📋</span>
-                                Kanban Board
+                                Kanban Board Preview
+                            </div>
+                            <div class="link-button" onclick="showTab('tasks')">
+                                <span class="icon">🔗</span>
+                                Full Board
                             </div>
                         </div>
-                        <div class="kanban-board">
-                            <div class="kanban-column">
-                                <div class="kanban-header">
-                                    <div class="kanban-title">🔄 Recurring</div>
-                                    <div class="kanban-count">1</div>
-                                </div>
-                                <div class="kanban-task" onclick="showTaskDetails('second-brain')">
-                                    <div class="task-title">Second Brain System</div>
-                                    <div class="task-description">Auto-organizing Luke's shared info by category</div>
-                                    <div class="task-priority priority-high">HIGH</div>
-                                </div>
-                            </div>
-                            <div class="kanban-column">
-                                <div class="kanban-header">
-                                    <div class="kanban-title">📋 Backlog</div>
-                                    <div class="kanban-count">1</div>
-                                </div>
-                                <div class="kanban-task" onclick="showTaskDetails('ghl-access')">
-                                    <div class="task-title">Go High Level Access</div>
-                                    <div class="task-description">Full platform access for text monitoring</div>
-                                    <div class="task-priority priority-medium">MEDIUM</div>
-                                </div>
-                            </div>
+                        <div class="kanban-task" onclick="showTab('tasks')">
+                            <div class="task-title">Second Brain System</div>
+                            <div class="task-description">Auto-organizing Luke's shared info by category</div>
+                            <div class="task-priority priority-high">RECURRING</div>
                         </div>
-                        <div class="kanban-board">
-                            <div class="kanban-column">
-                                <div class="kanban-header">
-                                    <div class="kanban-title">✅ Done</div>
-                                    <div class="kanban-count">3</div>
-                                </div>
-                                <div class="kanban-task" onclick="showTaskDetails('kanban-board')">
-                                    <div class="task-title">Enhanced Kanban Board</div>
-                                    <div class="task-description">Chat integration, project management</div>
-                                    <div class="task-priority priority-high">HIGH</div>
-                                </div>
-                                <div class="kanban-task" onclick="showTaskDetails('apify')">
-                                    <div class="task-title">Apify Integration</div>
-                                    <div class="task-description">Full web scraping capabilities</div>
-                                    <div class="task-priority priority-high">HIGH</div>
-                                </div>
-                                <div class="kanban-task" onclick="showTaskDetails('email')">
-                                    <div class="task-title">Email Setup</div>
-                                    <div class="task-description">Gmail API integration working</div>
-                                    <div class="task-priority priority-high">HIGH</div>
-                                </div>
-                            </div>
+                        <div class="kanban-task" onclick="showTab('tasks')">
+                            <div class="task-title">Go High Level Access</div>
+                            <div class="task-description">Full platform access for text monitoring</div>
+                            <div class="task-priority priority-medium">BACKLOG</div>
                         </div>
                     </div>
                 </div>
@@ -703,62 +753,187 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <span class="icon">📈</span>
-                                Recent Activity
+                                <span class="icon">🔗</span>
+                                Quick Access
                             </div>
                         </div>
-                        <div class="activity-item" onclick="showActivityDetails('dashboard-enhanced')">
-                            <div class="activity-icon">🚀</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Enhanced dashboard deployed</div>
-                                <div class="activity-time">Just now</div>
-                            </div>
+                        <div class="link-button" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                            <span class="icon">📊</span>
+                            Buyers Club Control Center
                         </div>
-                        <div class="activity-item" onclick="showActivityDetails('github-dashboard')">
-                            <div class="activity-icon">🌐</div>
-                            <div class="activity-content">
-                                <div class="activity-title">GitHub dashboard deployment</div>
-                                <div class="activity-time">5 minutes ago</div>
-                            </div>
+                        <div class="link-button" onclick="window.open('https://app.asana.com/', '_blank')">
+                            <span class="icon">📋</span>
+                            Asana Dispo Pipeline
                         </div>
-                        <div class="activity-item" onclick="showActivityDetails('financial-audit')">
-                            <div class="activity-icon">💰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Financial audit completed</div>
-                                <div class="activity-time">1 day ago</div>
-                            </div>
+                        <div class="link-button" onclick="showTab('financials')">
+                            <span class="icon">💰</span>
+                            Financial Tracker
                         </div>
-                        <div class="activity-item" onclick="showActivityDetails('voo-backtest')">
-                            <div class="activity-icon">📊</div>
-                            <div class="activity-content">
-                                <div class="activity-title">VOO backtest analysis</div>
-                                <div class="activity-time">2 days ago</div>
-                            </div>
+                        <div class="link-button" onclick="showTab('personal')">
+                            <span class="icon">👤</span>
+                            Personal Dashboard
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <span class="icon">🔗</span>
-                                Quick Links
+                                <span class="icon">💼</span>
+                                LL Ventures Quick Stats
                             </div>
                         </div>
-                        <div class="link-button" onclick="window.open('https://tbcagent.github.io/dashboard/', '_blank')">
-                            <span class="icon">🌐</span>
-                            Live Dashboard
+                        <div class="system-item clickable" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                            <div class="system-name">Deals in Contract</div>
+                            <div class="system-status">19 properties</div>
                         </div>
-                        <div class="link-button" onclick="showTab('tasks')">
-                            <span class="icon">📋</span>
-                            Kanban Board
+                        <div class="system-item clickable" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                            <div class="system-name">Pipeline Revenue</div>
+                            <div class="system-status">$158K+</div>
                         </div>
-                        <div class="link-button" onclick="showTab('financials')">
-                            <span class="icon">💰</span>
-                            Financial Data
+                        <div class="system-item">
+                            <div class="system-name">Monthly Target</div>
+                            <div class="system-status">30 homes</div>
                         </div>
-                        <div class="link-button" onclick="showTab('ll-ventures')">
-                            <span class="icon">💼</span>
-                            LL Ventures Pipeline
+                        <div class="system-item">
+                            <div class="system-name">Team Size</div>
+                            <div class="system-status">5 (Luke, Mikey, Nate, Ailen, Mary)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Tab -->
+        <div class="tab-content" id="personal">
+            <div class="page-header">
+                <h1 class="page-title">Personal Overview</h1>
+                <p class="page-subtitle">Lifestyle, goals, and personal metrics</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Age</div>
+                    <div class="stat-value">31</div>
+                    <div class="stat-change">Born 1993, Duxbury MA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Location</div>
+                    <div class="stat-value">Encinitas</div>
+                    <div class="stat-change">California (PST)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Net Worth Rank</div>
+                    <div class="stat-value">Top 2%</div>
+                    <div class="stat-change">For age 31 nationally</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Wealth Grade</div>
+                    <div class="stat-value">A++</div>
+                    <div class="stat-change">98/100 score</div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="left-column">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <span class="icon">👨‍👩‍👧‍👦</span>
+                                Family & Relationships
+                            </div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Alyse</div>
+                            <div class="system-status">Girlfriend</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Ike</div>
+                            <div class="system-status">Twin Brother</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Orie</div>
+                            <div class="system-status">Father</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Holly</div>
+                            <div class="system-status">Mother</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <span class="icon">🎯</span>
+                                Goals & Aspirations
+                            </div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">$10M liquid net worth target</div>
+                            <div class="system-status">Primary goal</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Scale LL Ventures to 30/month</div>
+                            <div class="system-status">Business focus</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">"Number two guy" identity</div>
+                            <div class="system-status">Operator/partner</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Wealth timeline: $10M by age 37</div>
+                            <div class="system-status">6 years</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <span class="icon">📱</span>
+                                Communication Style
+                            </div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Always acknowledge tasks</div>
+                            <div class="system-status">Immediate response</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Proactive updates preferred</div>
+                            <div class="system-status">Progress reports</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Night owl schedule</div>
+                            <div class="system-status">Works until 12-1am</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Direct communication</div>
+                            <div class="system-status">No fluff preferred</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <span class="icon">🎵</span>
+                                Background & Strengths
+                            </div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Former touring musician</div>
+                            <div class="system-status">Folk rock with Ike</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Serial entrepreneur 10+ years</div>
+                            <div class="system-status">Multiple exits</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Core strengths</div>
+                            <div class="system-status">Team building, systems</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Biggest success: Graystone Trading</div>
+                            <div class="system-status">8 figures annually</div>
                         </div>
                     </div>
                 </div>
@@ -786,7 +961,7 @@
                 <div class="stat-card">
                     <div class="stat-label">Completed</div>
                     <div class="stat-value">3</div>
-                    <div class="stat-change">↗ Kanban, Apify, Email setup</div>
+                    <div class="stat-change">↗ Major integrations done</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Backlog</div>
@@ -854,43 +1029,31 @@
 
             <div class="financial-links">
                 <a href="https://docs.google.com/spreadsheets/d/1pd1dt64gBni4vAWze9QzhVwsmFMcdBuufW6m_0n-OPw" target="_blank" class="link-card">
-                    <div class="link-title">📊 Master Financial Spreadsheet</div>
+                    <div class="link-title">📊 Master Financial Tracker</div>
                     <div class="link-description">Complete Tiller data with net worth, spending analysis, and financial dashboard</div>
-                </a>
-                <a href="https://docs.google.com/spreadsheets/d/1ilUEC8dshKHr3d8VEUCYYxjshttZol3fvMXP6l5lTno/edit" target="_blank" class="link-card">
-                    <div class="link-title">📈 VOO 6-Month Backtest</div>
-                    <div class="link-description">$1,000/day + 10% take-profit strategy analysis (Aug 2025 - Feb 2026)</div>
-                </a>
-                <a href="https://docs.google.com/spreadsheets/d/1LBiQpBOtldvtA8Fg65f1M60nbk6-GBUqn8X8fZU1ivc/edit" target="_blank" class="link-card">
-                    <div class="link-title">📊 VOO 24-Month Backtest</div>
-                    <div class="link-description">2-year comprehensive analysis (Feb 2024 - Feb 2026, 524 trading days)</div>
-                </a>
-                <a href="https://docs.google.com/spreadsheets/d/1SssG3FqEySVKcMspfwM_36m67OMH6q1mlKEDH_EqJmg/edit" target="_blank" class="link-card">
-                    <div class="link-title">📱 Amy Sangster Instagram Analysis</div>
-                    <div class="link-description">Comprehensive intelligence report with viral content patterns and engagement metrics</div>
                 </a>
             </div>
 
             <div class="stats-grid">
                 <div class="stat-card">
+                    <div class="stat-label">Net Worth</div>
+                    <div class="stat-value">$1.43M</div>
+                    <div class="stat-change">↗ A++ Grade (Top 2%)</div>
+                </div>
+                <div class="stat-card">
                     <div class="stat-label">Investment Accounts</div>
-                    <div class="stat-value">$817,062</div>
-                    <div class="stat-change">↗ 57.0% of total assets</div>
+                    <div class="stat-value">$817K</div>
+                    <div class="stat-change">↗ 57% of total assets</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Real Estate Portfolio</div>
-                    <div class="stat-value">$440,000</div>
-                    <div class="stat-change">↗ 30.7% of total assets</div>
+                    <div class="stat-value">$440K</div>
+                    <div class="stat-change">↗ 31% of total assets</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Monthly Personal Burn</div>
-                    <div class="stat-value">$11,200</div>
+                    <div class="stat-value">$11.2K</div>
                     <div class="stat-change">↗ 18.4% annual burn rate</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Wealth Grade</div>
-                    <div class="stat-value">A++</div>
-                    <div class="stat-change">↗ Top 2% for age 31</div>
                 </div>
             </div>
 
@@ -958,30 +1121,30 @@
         <!-- LL Ventures Tab -->
         <div class="tab-content" id="ll-ventures">
             <div class="page-header">
-                <h1 class="page-title">LL Ventures</h1>
-                <p class="page-subtitle">Section 8 single family real estate business metrics</p>
+                <h1 class="page-title">LL Ventures Real Estate</h1>
+                <p class="page-subtitle">Section 8 single family real estate business operations</p>
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card clickable" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
                     <div class="stat-label">Deals in Contract</div>
-                    <div class="stat-value">18</div>
-                    <div class="stat-change">↗ Contracts signed both sides</div>
+                    <div class="stat-value">19</div>
+                    <div class="stat-change">↗ Updated count</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Total Pipeline Revenue</div>
-                    <div class="stat-value">$149.5K</div>
+                <div class="stat-card clickable" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                    <div class="stat-label">Pipeline Revenue</div>
+                    <div class="stat-value">$158K+</div>
                     <div class="stat-change">↗ Gross revenue pending</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Monthly Target</div>
-                    <div class="stat-value">25-30</div>
+                    <div class="stat-value">30</div>
                     <div class="stat-change">↗ Homes/month goal</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Team Size</div>
-                    <div class="stat-value">4</div>
-                    <div class="stat-change">↗ Luke, Mikey, Nate, Ailen + Arthur AI</div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-change">↗ Including Mary</div>
                 </div>
             </div>
 
@@ -993,87 +1156,60 @@
                                 <span class="icon">🏠</span>
                                 Pipeline Properties
                             </div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">4087 W Philadelphia</div>
-                            <div class="system-status">$10,000</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">3920 Devonshire</div>
-                            <div class="system-status">$10,000</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">15011 Fairfield</div>
-                            <div class="system-status">$8,500</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">+ 15 More Properties</div>
-                            <div class="system-status">In Contract</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="right-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">👥</span>
-                                Team & Strategy
+                            <div class="link-button" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                                <span class="icon">🔗</span>
+                                View in Airtable
                             </div>
                         </div>
-                        <div class="system-item">
-                            <div class="system-name">Primary Market</div>
-                            <div class="system-status">Detroit</div>
+                        <div class="property-item">
+                            <div class="property-info">
+                                <div class="property-name">4087 W Philadelphia</div>
+                                <div class="property-links">
+                                    <a href="https://airtable.com/appEmn0HdyfUfZ429" target="_blank" class="property-link">Dispo</a>
+                                    <a href="https://airtable.com/appEmn0HdyfUfZ429" target="_blank" class="property-link">Offers</a>
+                                </div>
+                            </div>
+                            <div class="property-value">$10,000</div>
                         </div>
-                        <div class="system-item">
-                            <div class="system-name">Revenue per Home</div>
-                            <div class="system-status">$8-10K</div>
+                        <div class="property-item">
+                            <div class="property-info">
+                                <div class="property-name">3920 Devonshire</div>
+                                <div class="property-links">
+                                    <a href="https://airtable.com/appEmn0HdyfUfZ429" target="_blank" class="property-link">Dispo</a>
+                                    <a href="https://airtable.com/appEmn0HdyfUfZ429" target="_blank" class="property-link">Offers</a>
+                                </div>
+                            </div>
+                            <div class="property-value">$10,000</div>
                         </div>
-                        <div class="system-item">
-                            <div class="system-name">Partners</div>
-                            <div class="system-status">Mikey, Nate</div>
+                        <div class="property-item">
+                            <div class="property-info">
+                                <div class="property-name">15011 Fairfield</div>
+                                <div class="property-links">
+                                    <a href="https://airtable.com/appEmn0HdyfUfZ429" target="_blank" class="property-link">Dispo</a>
+                                    <a href="https://airtable.com/appEmn0HdyfUfZ429" target="_blank" class="property-link">Offers</a>
+                                </div>
+                            </div>
+                            <div class="property-value">$8,500</div>
                         </div>
-                        <div class="system-item">
-                            <div class="system-name">Operations (Ailen)</div>
-                            <div class="system-status">Carlsbad Office</div>
+                        <div class="property-item expandable" onclick="toggleExpanded('more-properties')">
+                            <div class="property-info">
+                                <div class="property-name">+ 16 More Properties</div>
+                                <div style="font-size: 0.8rem; color: #888;">Click to expand all properties</div>
+                            </div>
+                            <div class="property-value">$130K+</div>
+                        </div>
+                        <div id="more-properties" class="expanded-content">
+                            <div class="property-item">
+                                <div class="property-info">
+                                    <div class="property-name">Additional property details would be loaded from Airtable here</div>
+                                    <div class="property-links">
+                                        <a href="https://airtable.com/appEmn0HdyfUfZ429" target="_blank" class="property-link">View All</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Real Estate Tab -->
-        <div class="tab-content" id="real-estate">
-            <div class="page-header">
-                <h1 class="page-title">Real Estate Operations</h1>
-                <p class="page-subtitle">Property pipeline, markets, and automation</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Properties in Pipeline</div>
-                    <div class="stat-value">18</div>
-                    <div class="stat-change">↗ In contract status</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Primary Market</div>
-                    <div class="stat-value">Detroit</div>
-                    <div class="stat-change">↗ Section 8 focus</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Zillow Scrapes</div>
-                    <div class="stat-value">Every 30min</div>
-                    <div class="stat-change">↗ Automated monitoring</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Agent Network</div>
-                    <div class="stat-value">50/day</div>
-                    <div class="stat-change">↗ New agent outreach</div>
-                </div>
-            </div>
-
-            <div class="content-grid">
-                <div class="left-column">
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
@@ -1116,21 +1252,71 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <span class="icon">🗺️</span>
-                                Markets
+                                <span class="icon">👥</span>
+                                Team Structure
                             </div>
                         </div>
                         <div class="system-item">
-                            <div class="system-name">Detroit, Michigan</div>
-                            <div class="system-status">Primary Market</div>
+                            <div class="system-name">Luke (40% ownership)</div>
+                            <div class="system-status">Operations Lead</div>
                         </div>
                         <div class="system-item">
-                            <div class="system-name">Montgomery, Alabama</div>
-                            <div class="system-status">Secondary Market</div>
+                            <div class="system-name">Mikey & Nate</div>
+                            <div class="system-status">Partners</div>
                         </div>
                         <div class="system-item">
-                            <div class="system-name">Peoria, Illinois</div>
-                            <div class="system-status">Secondary Market</div>
+                            <div class="system-name">Ailen (Carlsbad Office)</div>
+                            <div class="system-status">Operations</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Mary (Filipino VA)</div>
+                            <div class="system-status">Virtual Assistant</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Arthur AI</div>
+                            <div class="system-status">SMS & Analytics</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <span class="icon">📊</span>
+                                Business Model
+                            </div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Primary Market</div>
+                            <div class="system-status">Detroit</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Secondary Markets</div>
+                            <div class="system-status">Montgomery AL, Peoria IL</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Revenue per Home</div>
+                            <div class="system-status">$8-10K</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Target: 30 homes/month</div>
+                            <div class="system-status">$2.4-3M annually</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <span class="icon">🔗</span>
+                                Quick Links
+                            </div>
+                        </div>
+                        <div class="link-button" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                            <span class="icon">📊</span>
+                            Buyers Club Control Center
+                        </div>
+                        <div class="link-button" onclick="window.open('https://app.asana.com/', '_blank')">
+                            <span class="icon">📋</span>
+                            Asana Dispo Pipeline
                         </div>
                     </div>
                 </div>
@@ -1254,10 +1440,10 @@
                     <div class="stat-value">8</div>
                     <div class="stat-change">↗ GHL, Airtable, Gmail, etc.</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card clickable" onclick="showSystemDetails('daily-tasks')">
                     <div class="stat-label">Daily Automated Tasks</div>
-                    <div class="stat-value">120+</div>
-                    <div class="stat-change">↗ SMS, scraping, monitoring</div>
+                    <div class="stat-value">150+</div>
+                    <div class="stat-change">↗ Click for breakdown</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Uptime</div>
@@ -1354,18 +1540,28 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Model</div>
-                    <div class="stat-value">Sonnet</div>
+                    <div class="stat-value">
+                        <div class="dropdown">
+                            <span class="toggle-button">Sonnet ▼</span>
+                            <div class="dropdown-content">
+                                <a onclick="changeModel('sonnet')">Claude Sonnet (Current)</a>
+                                <a onclick="changeModel('opus')">Claude Opus</a>
+                                <a onclick="changeModel('gpt')">GPT-4o</a>
+                                <a onclick="changeModel('o3')">O3-Mini</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="stat-change">↗ Cost-optimized</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card clickable" onclick="showSystemDetails('daily-tasks')">
                     <div class="stat-label">Daily Tasks</div>
                     <div class="stat-value">150+</div>
-                    <div class="stat-change">↗ SMS, analysis, monitoring</div>
+                    <div class="stat-change">↗ Click for breakdown</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card clickable" onclick="showSystemDetails('skills')">
                     <div class="stat-label">Available Skills</div>
                     <div class="stat-value">25+</div>
-                    <div class="stat-change">↗ Tools and capabilities</div>
+                    <div class="stat-change">↗ Click to explore</div>
                 </div>
             </div>
 
@@ -1482,87 +1678,131 @@
             }
         }
 
-        function showActivityDetails(activityId) {
-            const activities = {
-                'dashboard-enhanced': {
-                    title: 'Enhanced Dashboard Deployed',
+        function toggleExpanded(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.classList.toggle('show');
+            }
+        }
+
+        function changeModel(model) {
+            // This would make an API call to change the model
+            const modelNames = {
+                'sonnet': 'Claude Sonnet',
+                'opus': 'Claude Opus', 
+                'gpt': 'GPT-4o',
+                'o3': 'O3-Mini'
+            };
+            
+            // Update the displayed model name
+            document.querySelector('.toggle-button').textContent = modelNames[model] + ' ▼';
+            
+            // Here you would make an actual API call to change the model
+            console.log('Would change model to:', model);
+        }
+
+        function showSystemDetails(systemId) {
+            const systems = {
+                'daily-tasks': {
+                    title: 'Daily Automated Tasks Breakdown',
                     content: `
-                        <p><strong>Status:</strong> Completed ✅</p>
-                        <p><strong>Description:</strong> Built comprehensive multi-tab dashboard with working navigation, interactive Kanban board, and real data integration.</p>
-                        <p><strong>Features Added:</strong></p>
+                        <p><strong>SMS & Communication:</strong></p>
                         <ul>
-                            <li>Working tab navigation system</li>
-                            <li>Interactive clickable activities</li>
-                            <li>Embedded Kanban board</li>
-                            <li>Financial data with Google Sheet links</li>
-                            <li>Real-time system status monitoring</li>
+                            <li>50 SMS messages sent daily (7am PST)</li>
+                            <li>Response monitoring (every 15-30 min)</li>
+                            <li>Draft replies for Luke's approval</li>
+                            <li>GHL pipeline updates</li>
                         </ul>
-                        <p><strong>Live URL:</strong> <a href="https://tbcagent.github.io/dashboard/" target="_blank">tbcagent.github.io/dashboard</a></p>
+                        <p><strong>Data Collection:</strong></p>
+                        <ul>
+                            <li>48 Zillow scrapes daily (every 30 min)</li>
+                            <li>New property detection and alerts</li>
+                            <li>Agent contact extraction</li>
+                            <li>Rent inquiry automation</li>
+                        </ul>
+                        <p><strong>Monitoring & Analytics:</strong></p>
+                        <ul>
+                            <li>Crypto position monitoring (30 min intervals)</li>
+                            <li>System health checks</li>
+                            <li>Email monitoring</li>
+                            <li>Calendar sync</li>
+                        </ul>
+                        <p><strong>Total: 150+ automated actions daily</strong></p>
                     `
                 },
-                'github-dashboard': {
-                    title: 'GitHub Dashboard Deployment',
+                'skills': {
+                    title: 'Available Arthur AI Skills',
                     content: `
-                        <p><strong>Repository:</strong> TBCAGENT/dashboard</p>
-                        <p><strong>Status:</strong> Live and operational</p>
+                        <p><strong>Core Skills:</strong></p>
+                        <ul>
+                            <li><strong>Apple Notes:</strong> Manage notes via memo CLI</li>
+                            <li><strong>GitHub:</strong> Repository management, CI/CD</li>
+                            <li><strong>Himalaya:</strong> Email management via CLI</li>
+                            <li><strong>Weather:</strong> Current conditions and forecasts</li>
+                            <li><strong>Video Frames:</strong> Extract frames from videos</li>
+                        </ul>
+                        <p><strong>Business Skills:</strong></p>
+                        <ul>
+                            <li><strong>Apify:</strong> Web scraping and automation</li>
+                            <li><strong>Deep Research:</strong> Complex research tasks</li>
+                            <li><strong>News Aggregator:</strong> Real-time content analysis</li>
+                            <li><strong>Google Calendar:</strong> Calendar management</li>
+                            <li><strong>Google Drive:</strong> File management</li>
+                        </ul>
+                        <p><strong>Advanced Skills:</strong></p>
+                        <ul>
+                            <li><strong>Cognitive Memory:</strong> Multi-store memory system</li>
+                            <li><strong>Self-Improvement:</strong> Learn from corrections</li>
+                            <li><strong>Clawlist:</strong> Project planning and execution</li>
+                            <li><strong>Home Assistant:</strong> Smart home control</li>
+                            <li><strong>Shortcuts Generator:</strong> macOS/iOS automation</li>
+                        </ul>
+                        <p><strong>Security & Productivity:</strong></p>
+                        <ul>
+                            <li><strong>Input Guard:</strong> Prompt injection detection</li>
+                            <li><strong>Conventional Commits:</strong> Git commit formatting</li>
+                            <li><strong>Gitclaw:</strong> Workspace backup automation</li>
+                        </ul>
+                    `
+                },
+                'zillow': {
+                    title: 'Zillow Scraper System',
+                    content: `
+                        <p><strong>Status:</strong> Active - runs every 30 minutes</p>
+                        <p><strong>Function:</strong> Monitors Detroit real estate market for Section 8 properties</p>
                         <p><strong>Features:</strong></p>
                         <ul>
-                            <li>GitHub Pages hosting</li>
-                            <li>Mobile responsive design</li>
-                            <li>Auto-updating content</li>
-                            <li>Professional executive interface</li>
+                            <li>Automated property discovery</li>
+                            <li>Rent inquiry automation</li>
+                            <li>New listing alerts</li>
+                            <li>Agent contact extraction</li>
                         </ul>
-                        <p><strong>Access:</strong> Available 24/7 from any device</p>
+                        <p><strong>Output:</strong> Google Sheets with property data</p>
+                        <p><strong>Schedule:</strong> 48 checks per day</p>
                     `
                 },
-                'financial-audit': {
-                    title: 'Comprehensive Financial Audit',
+                'ghl': {
+                    title: 'Go High Level Integration',
                     content: `
-                        <p><strong>Net Worth:</strong> $1,434,177</p>
-                        <p><strong>Grade:</strong> A++ (Top 2% for age 31)</p>
-                        <p><strong>Key Findings:</strong></p>
+                        <p><strong>Status:</strong> Connected via API</p>
+                        <p><strong>Functions:</strong></p>
                         <ul>
-                            <li>Investment accounts: $817,062 (57%)</li>
-                            <li>Real estate: $440,000 (31%)</li>
-                            <li>Luxury watches: $121,977 (9%)</li>
-                            <li>Cash/liquid: $55,138 (4%)</li>
+                            <li>Contact management</li>
+                            <li>SMS message tracking</li>
+                            <li>Pipeline management</li>
+                            <li>Response monitoring</li>
                         </ul>
-                        <p><strong>Strategy:</strong> Double leverage approach for 20% effective returns</p>
-                        <div class="link-button" onclick="window.open('https://docs.google.com/spreadsheets/d/1pd1dt64gBni4vAWze9QzhVwsmFMcdBuufW6m_0n-OPw', '_blank')">
-                            <span class="icon">📊</span>
-                            View Financial Spreadsheet
-                        </div>
-                    `
-                },
-                'voo-backtest': {
-                    title: 'VOO Strategy Backtest Analysis',
-                    content: `
-                        <p><strong>Strategy:</strong> $1,000/day + 10% take-profit</p>
-                        <p><strong>Period:</strong> 6-month and 24-month analysis</p>
-                        <p><strong>Results:</strong></p>
-                        <ul>
-                            <li>6-month: 8.98% returns, $111K cash generated</li>
-                            <li>24-month: 400.4% cash-on-cash returns</li>
-                            <li>Peak capital: Only $115K vs $524K theoretical</li>
-                        </ul>
-                        <p><strong>Key Insight:</strong> Massive capital efficiency through profit recycling</p>
-                        <div class="link-button" onclick="window.open('https://docs.google.com/spreadsheets/d/1ilUEC8dshKHr3d8VEUCYYxjshttZol3fvMXP6l5lTno/edit', '_blank')">
-                            <span class="icon">📈</span>
-                            6-Month Analysis
-                        </div>
-                        <div class="link-button" onclick="window.open('https://docs.google.com/spreadsheets/d/1LBiQpBOtldvtA8Fg65f1M60nbk6-GBUqn8X8fZU1ivc/edit', '_blank')">
-                            <span class="icon">📊</span>
-                            24-Month Analysis
-                        </div>
+                        <p><strong>Location ID:</strong> a0xDUfSzadt256BbUcgz</p>
+                        <p><strong>Usage:</strong> Real-time contact sync and message tracking</p>
                     `
                 }
             };
 
-            const activity = activities[activityId];
-            if (activity) {
+            const system = systems[systemId];
+            if (system) {
                 document.getElementById('modalContent').innerHTML = `
-                    <h2 class="modal-title">${activity.title}</h2>
-                    ${activity.content}
+                    <h2 class="modal-title">${system.title}</h2>
+                    ${system.content}
                 `;
                 document.getElementById('detailModal').style.display = 'block';
             }
@@ -1663,85 +1903,6 @@
                 document.getElementById('modalContent').innerHTML = `
                     <h2 class="modal-title">${task.title}</h2>
                     ${task.content}
-                `;
-                document.getElementById('detailModal').style.display = 'block';
-            }
-        }
-
-        function showSystemDetails(systemId) {
-            const systems = {
-                'arthur': {
-                    title: 'Arthur AI Assistant',
-                    content: `
-                        <p><strong>Status:</strong> Online and fully operational</p>
-                        <p><strong>Model:</strong> Claude Sonnet (cost-optimized)</p>
-                        <p><strong>Capabilities:</strong></p>
-                        <ul>
-                            <li>SMS campaign management (50/day)</li>
-                            <li>Financial analysis and auditing</li>
-                            <li>Web scraping via Apify</li>
-                            <li>Real estate intelligence</li>
-                            <li>Voice message processing</li>
-                            <li>Email management</li>
-                        </ul>
-                        <p><strong>Performance:</strong> 14% SMS response rate, zero duplicates</p>
-                        <p><strong>Integrations:</strong> WhatsApp, Airtable, GHL, Gmail, GitHub</p>
-                    `
-                },
-                'zillow': {
-                    title: 'Zillow Scraper',
-                    content: `
-                        <p><strong>Status:</strong> Active - runs every 30 minutes</p>
-                        <p><strong>Function:</strong> Monitors Detroit real estate market for Section 8 properties</p>
-                        <p><strong>Features:</strong></p>
-                        <ul>
-                            <li>Automated property discovery</li>
-                            <li>Rent inquiry automation</li>
-                            <li>New listing alerts</li>
-                            <li>Agent contact extraction</li>
-                        </ul>
-                        <p><strong>Output:</strong> Google Sheets with property data</p>
-                        <p><strong>Schedule:</strong> 48 checks per day</p>
-                    `
-                },
-                'sms': {
-                    title: 'SMS Outreach System',
-                    content: `
-                        <p><strong>Status:</strong> Active - 50 messages daily at 7am PST</p>
-                        <p><strong>Target:</strong> Detroit real estate agents</p>
-                        <p><strong>Safety Features:</strong></p>
-                        <ul>
-                            <li>Zero duplicate prevention (multi-layer)</li>
-                            <li>SMS hours enforcement (6am-4pm PST)</li>
-                            <li>Approved template validation</li>
-                            <li>Rate limiting (5 msgs/5min)</li>
-                        </ul>
-                        <p><strong>Performance:</strong> 14% response rate</p>
-                        <p><strong>Integration:</strong> GHL + Airtable sync</p>
-                    `
-                },
-                'ghl': {
-                    title: 'Go High Level Integration',
-                    content: `
-                        <p><strong>Status:</strong> Connected via API</p>
-                        <p><strong>Functions:</strong></p>
-                        <ul>
-                            <li>Contact management</li>
-                            <li>SMS message tracking</li>
-                            <li>Pipeline management</li>
-                            <li>Response monitoring</li>
-                        </ul>
-                        <p><strong>Location ID:</strong> a0xDUfSzadt256BbUcgz</p>
-                        <p><strong>Usage:</strong> Real-time contact sync and message tracking</p>
-                    `
-                }
-            };
-
-            const system = systems[systemId];
-            if (system) {
-                document.getElementById('modalContent').innerHTML = `
-                    <h2 class="modal-title">${system.title}</h2>
-                    ${system.content}
                 `;
                 document.getElementById('detailModal').style.display = 'block';
             }
