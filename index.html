@@ -27,6 +27,7 @@
             position: fixed;
             height: 100vh;
             overflow-y: auto;
+            z-index: 100;
         }
 
         .sidebar-header {
@@ -87,6 +88,7 @@
             flex: 1;
             padding: 2rem;
             background: #0a0a0a;
+            min-height: 100vh;
         }
 
         .page-header {
@@ -106,10 +108,16 @@
 
         .tab-content {
             display: none;
+            animation: fadeIn 0.3s ease-in-out;
         }
 
         .tab-content.active {
             display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .stats-grid {
@@ -125,11 +133,13 @@
             border-radius: 12px;
             padding: 1.5rem;
             transition: all 0.2s;
+            cursor: pointer;
         }
 
         .stat-card:hover {
             border-color: #4a9eff;
             background: #131313;
+            transform: translateY(-2px);
         }
 
         .stat-label {
@@ -165,6 +175,11 @@
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            border-color: #333;
         }
 
         .card-header {
@@ -209,10 +224,16 @@
             justify-content: space-between;
             padding: 1rem 0;
             border-bottom: 1px solid #222;
+            transition: all 0.2s;
         }
 
         .system-item:last-child {
             border-bottom: none;
+        }
+
+        .system-item:hover {
+            background: rgba(74, 158, 255, 0.05);
+            cursor: pointer;
         }
 
         .system-name {
@@ -233,10 +254,17 @@
             align-items: flex-start;
             padding: 1rem 0;
             border-bottom: 1px solid #222;
+            transition: all 0.2s;
+            cursor: pointer;
         }
 
         .activity-item:last-child {
             border-bottom: none;
+        }
+
+        .activity-item:hover {
+            background: rgba(74, 158, 255, 0.05);
+            transform: translateX(5px);
         }
 
         .activity-icon {
@@ -265,83 +293,67 @@
             color: #666;
         }
 
-        .project-item {
-            display: flex;
-            align-items: center;
-            padding: 1rem 0;
-            border-bottom: 1px solid #222;
-        }
-
-        .project-item:last-child {
-            border-bottom: none;
-        }
-
-        .project-status {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            margin-right: 1rem;
-        }
-
-        .status-done { background: #00ff88; }
-        .status-progress { background: #ff9500; }
-        .status-backlog { background: #666; }
-        .status-recurring { background: #4a9eff; }
-
-        .project-info {
-            flex: 1;
-        }
-
-        .project-name {
-            font-size: 0.95rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .project-meta {
-            font-size: 0.8rem;
-            color: #666;
-        }
-
-        .timestamp {
-            text-align: center;
-            color: #666;
-            font-size: 0.8rem;
-            margin-top: 2rem;
-            padding: 1rem;
-            background: #111111;
-            border-radius: 8px;
-        }
-
-        .financial-breakdown {
+        .kanban-board {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
 
-        .breakdown-item {
+        .kanban-column {
             background: #111111;
             border: 1px solid #333;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 1rem;
         }
 
-        .breakdown-title {
+        .kanban-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .kanban-title {
+            font-weight: 600;
+            color: #4a9eff;
+        }
+
+        .kanban-count {
+            background: #333;
+            color: #888;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .kanban-task {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .kanban-task:hover {
+            border-color: #4a9eff;
+            transform: translateY(-2px);
+        }
+
+        .task-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .task-description {
             font-size: 0.9rem;
             color: #888;
             margin-bottom: 0.5rem;
-        }
-
-        .breakdown-amount {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #4a9eff;
-            margin-bottom: 0.3rem;
-        }
-
-        .breakdown-detail {
-            font-size: 0.8rem;
-            color: #666;
         }
 
         .task-priority {
@@ -350,7 +362,8 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             font-weight: 600;
-            margin-left: auto;
+            margin-top: 0.5rem;
+            display: inline-block;
         }
 
         .priority-high {
@@ -368,33 +381,116 @@
             color: #666;
         }
 
-        .pipeline-item {
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background: #111111;
+            margin: 5% auto;
+            padding: 2rem;
+            border: 1px solid #333;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close {
+            color: #888;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+
+        .close:hover {
+            color: #4a9eff;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #4a9eff;
+        }
+
+        .link-button {
+            display: inline-flex;
+            align-items: center;
+            background: #4a9eff;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+
+        .link-button:hover {
+            background: #3a8eef;
+            transform: translateY(-1px);
+        }
+
+        .link-button .icon {
+            margin-right: 0.5rem;
+        }
+
+        .timestamp {
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #111111;
+            border-radius: 8px;
+        }
+
+        .financial-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .link-card {
             background: #1a1a1a;
             border: 1px solid #333;
             border-radius: 8px;
             padding: 1rem;
-            margin-bottom: 1rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
         }
 
-        .pipeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .link-card:hover {
+            border-color: #4a9eff;
+            background: #222;
+            transform: translateY(-2px);
+        }
+
+        .link-title {
+            font-weight: 600;
+            color: #4a9eff;
             margin-bottom: 0.5rem;
         }
 
-        .pipeline-property {
-            font-weight: 600;
-            color: #4a9eff;
-        }
-
-        .pipeline-revenue {
-            color: #00ff88;
-            font-weight: 600;
-        }
-
-        .pipeline-status {
-            font-size: 0.8rem;
+        .link-description {
+            font-size: 0.9rem;
             color: #888;
         }
 
@@ -415,6 +511,10 @@
             .stats-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
+
+            .kanban-board {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -428,51 +528,43 @@
         <nav>
             <div class="nav-section">
                 <div class="nav-title">Overview</div>
-                <div class="nav-item active" data-tab="dashboard">
+                <div class="nav-item active" onclick="showTab('dashboard')">
                     <span class="icon">📊</span>
                     Dashboard
                 </div>
-                <div class="nav-item" data-tab="financials">
-                    <span class="icon">💰</span>
-                    Financials
-                </div>
-                <div class="nav-item" data-tab="ll-ventures">
-                    <span class="icon">💼</span>
-                    LL Ventures
-                </div>
-                <div class="nav-item" data-tab="personal">
-                    <span class="icon">👤</span>
-                    Personal
-                </div>
-            </div>
-            
-            <div class="nav-section">
-                <div class="nav-title">Operations</div>
-                <div class="nav-item" data-tab="tasks">
+                <div class="nav-item" onclick="showTab('tasks')">
                     <span class="icon">📋</span>
                     Tasks & Projects
                 </div>
-                <div class="nav-item" data-tab="real-estate">
-                    <span class="icon">🏠</span>
-                    Real Estate
-                </div>
-                <div class="nav-item" data-tab="sms-outreach">
-                    <span class="icon">📱</span>
-                    SMS Outreach
-                </div>
-                <div class="nav-item" data-tab="automation">
-                    <span class="icon">🔧</span>
-                    Automation
+                <div class="nav-item" onclick="showTab('financials')">
+                    <span class="icon">💰</span>
+                    Financials
                 </div>
             </div>
             
             <div class="nav-section">
-                <div class="nav-title">Tools</div>
-                <div class="nav-item" data-tab="github">
-                    <span class="icon">💻</span>
-                    GitHub
+                <div class="nav-title">Business</div>
+                <div class="nav-item" onclick="showTab('ll-ventures')">
+                    <span class="icon">💼</span>
+                    LL Ventures
                 </div>
-                <div class="nav-item" data-tab="arthur">
+                <div class="nav-item" onclick="showTab('real-estate')">
+                    <span class="icon">🏠</span>
+                    Real Estate
+                </div>
+                <div class="nav-item" onclick="showTab('sms-outreach')">
+                    <span class="icon">📱</span>
+                    SMS Outreach
+                </div>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-title">Systems</div>
+                <div class="nav-item" onclick="showTab('automation')">
+                    <span class="icon">🔧</span>
+                    Automation
+                </div>
+                <div class="nav-item" onclick="showTab('arthur')">
                     <span class="icon">🤖</span>
                     Arthur AI
                 </div>
@@ -489,25 +581,25 @@
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Net Worth</div>
-                    <div class="stat-value">$1.43M</div>
-                    <div class="stat-change">↗ A++ Grade (Age 31)</div>
-                </div>
-                <div class="stat-card">
+                <div class="stat-card" onclick="showTab('ll-ventures')">
                     <div class="stat-label">LL Ventures Pipeline</div>
                     <div class="stat-value">18 Deals</div>
                     <div class="stat-change">↗ $149.5K Total Revenue</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Your Share (40%)</div>
-                    <div class="stat-value">$59.8K</div>
-                    <div class="stat-change">↗ Revenue Pending</div>
-                </div>
-                <div class="stat-card">
+                <div class="stat-card" onclick="showTab('sms-outreach')">
                     <div class="stat-label">SMS Outreach</div>
                     <div class="stat-value">50/day</div>
                     <div class="stat-change">↗ 14% Response Rate</div>
+                </div>
+                <div class="stat-card" onclick="showTab('automation')">
+                    <div class="stat-label">Active Systems</div>
+                    <div class="stat-value">8</div>
+                    <div class="stat-change">↗ All Online</div>
+                </div>
+                <div class="stat-card" onclick="showTab('tasks')">
+                    <div class="stat-label">Active Projects</div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-change">↗ 3 Done, 1 Recurring, 1 Backlog</div>
                 </div>
             </div>
 
@@ -520,40 +612,33 @@
                                 System Status
                             </div>
                         </div>
-                        <div class="system-item">
+                        <div class="system-item" onclick="showSystemDetails('arthur')">
                             <div class="system-name">
                                 <span class="status-indicator status-online"></span>
                                 Arthur AI Assistant
                             </div>
                             <div class="system-status">Online</div>
                         </div>
-                        <div class="system-item">
+                        <div class="system-item" onclick="showSystemDetails('zillow')">
                             <div class="system-name">
                                 <span class="status-indicator status-online"></span>
                                 Zillow Scraper
                             </div>
                             <div class="system-status">Active (30min)</div>
                         </div>
-                        <div class="system-item">
+                        <div class="system-item" onclick="showSystemDetails('sms')">
                             <div class="system-name">
                                 <span class="status-indicator status-online"></span>
                                 SMS Outreach
                             </div>
                             <div class="system-status">50 daily (7am)</div>
                         </div>
-                        <div class="system-item">
+                        <div class="system-item" onclick="showSystemDetails('ghl')">
                             <div class="system-name">
                                 <span class="status-indicator status-online"></span>
                                 GHL Integration
                             </div>
                             <div class="system-status">Connected</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">
-                                <span class="status-indicator status-online"></span>
-                                Airtable Sync
-                            </div>
-                            <div class="system-status">Synced</div>
                         </div>
                     </div>
 
@@ -561,35 +646,54 @@
                         <div class="card-header">
                             <div class="card-title">
                                 <span class="icon">📋</span>
-                                Active Projects
+                                Kanban Board
                             </div>
                         </div>
-                        <div class="project-item">
-                            <div class="project-status status-recurring"></div>
-                            <div class="project-info">
-                                <div class="project-name">Second Brain System</div>
-                                <div class="project-meta">Auto-organizing Luke's shared info by category</div>
+                        <div class="kanban-board">
+                            <div class="kanban-column">
+                                <div class="kanban-header">
+                                    <div class="kanban-title">🔄 Recurring</div>
+                                    <div class="kanban-count">1</div>
+                                </div>
+                                <div class="kanban-task" onclick="showTaskDetails('second-brain')">
+                                    <div class="task-title">Second Brain System</div>
+                                    <div class="task-description">Auto-organizing Luke's shared info by category</div>
+                                    <div class="task-priority priority-high">HIGH</div>
+                                </div>
+                            </div>
+                            <div class="kanban-column">
+                                <div class="kanban-header">
+                                    <div class="kanban-title">📋 Backlog</div>
+                                    <div class="kanban-count">1</div>
+                                </div>
+                                <div class="kanban-task" onclick="showTaskDetails('ghl-access')">
+                                    <div class="task-title">Go High Level Access</div>
+                                    <div class="task-description">Full platform access for text monitoring</div>
+                                    <div class="task-priority priority-medium">MEDIUM</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="project-item">
-                            <div class="project-status status-done"></div>
-                            <div class="project-info">
-                                <div class="project-name">Enhanced Dashboard</div>
-                                <div class="project-meta">Multi-tab executive dashboard with real data</div>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-status status-done"></div>
-                            <div class="project-info">
-                                <div class="project-name">Financial Audit Complete</div>
-                                <div class="project-meta">$1.43M net worth comprehensive analysis</div>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-status status-backlog"></div>
-                            <div class="project-info">
-                                <div class="project-name">Go High Level Access</div>
-                                <div class="project-meta">Full platform access for text monitoring</div>
+                        <div class="kanban-board">
+                            <div class="kanban-column">
+                                <div class="kanban-header">
+                                    <div class="kanban-title">✅ Done</div>
+                                    <div class="kanban-count">3</div>
+                                </div>
+                                <div class="kanban-task" onclick="showTaskDetails('kanban-board')">
+                                    <div class="task-title">Enhanced Kanban Board</div>
+                                    <div class="task-description">Chat integration, project management</div>
+                                    <div class="task-priority priority-high">HIGH</div>
+                                </div>
+                                <div class="kanban-task" onclick="showTaskDetails('apify')">
+                                    <div class="task-title">Apify Integration</div>
+                                    <div class="task-description">Full web scraping capabilities</div>
+                                    <div class="task-priority priority-high">HIGH</div>
+                                </div>
+                                <div class="kanban-task" onclick="showTaskDetails('email')">
+                                    <div class="task-title">Email Setup</div>
+                                    <div class="task-description">Gmail API integration working</div>
+                                    <div class="task-priority priority-high">HIGH</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -603,32 +707,32 @@
                                 Recent Activity
                             </div>
                         </div>
-                        <div class="activity-item">
+                        <div class="activity-item" onclick="showActivityDetails('dashboard-enhanced')">
                             <div class="activity-icon">🚀</div>
                             <div class="activity-content">
                                 <div class="activity-title">Enhanced dashboard deployed</div>
                                 <div class="activity-time">Just now</div>
                             </div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🔗</div>
+                        <div class="activity-item" onclick="showActivityDetails('github-dashboard')">
+                            <div class="activity-icon">🌐</div>
                             <div class="activity-content">
-                                <div class="activity-title">Multi-tab dashboard built</div>
-                                <div class="activity-time">2 minutes ago</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Financial data integrated</div>
+                                <div class="activity-title">GitHub dashboard deployment</div>
                                 <div class="activity-time">5 minutes ago</div>
                             </div>
                         </div>
-                        <div class="activity-item">
+                        <div class="activity-item" onclick="showActivityDetails('financial-audit')">
+                            <div class="activity-icon">💰</div>
+                            <div class="activity-content">
+                                <div class="activity-title">Financial audit completed</div>
+                                <div class="activity-time">1 day ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item" onclick="showActivityDetails('voo-backtest')">
                             <div class="activity-icon">📊</div>
                             <div class="activity-content">
-                                <div class="activity-title">LL Ventures pipeline synced</div>
-                                <div class="activity-time">10 minutes ago</div>
+                                <div class="activity-title">VOO backtest analysis</div>
+                                <div class="activity-time">2 days ago</div>
                             </div>
                         </div>
                     </div>
@@ -636,475 +740,25 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <span class="icon">💻</span>
-                                GitHub Status
+                                <span class="icon">🔗</span>
+                                Quick Links
                             </div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🚀</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Dashboard repository updated</div>
-                                <div class="activity-time">Active now</div>
-                            </div>
+                        <div class="link-button" onclick="window.open('https://tbcagent.github.io/dashboard/', '_blank')">
+                            <span class="icon">🌐</span>
+                            Live Dashboard
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🌐</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Live at tbcagent.github.io/dashboard</div>
-                                <div class="activity-time">Available 24/7</div>
-                            </div>
+                        <div class="link-button" onclick="showTab('tasks')">
+                            <span class="icon">📋</span>
+                            Kanban Board
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Financials Tab -->
-        <div class="tab-content" id="financials">
-            <div class="page-header">
-                <h1 class="page-title">Financial Overview</h1>
-                <p class="page-subtitle">Complete financial position and wealth tracking</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Net Worth</div>
-                    <div class="stat-value">$1,434,177</div>
-                    <div class="stat-change">↗ A++ Grade (Top 2% for age 31)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Investment Accounts</div>
-                    <div class="stat-value">$817,062</div>
-                    <div class="stat-change">↗ 57.0% of net worth</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Monthly Personal Burn</div>
-                    <div class="stat-value">$11,200</div>
-                    <div class="stat-change">↗ 18.4% burn rate (excellent)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Annual Investment Capacity</div>
-                    <div class="stat-value">$536K</div>
-                    <div class="stat-change">↗ After personal expenses</div>
-                </div>
-            </div>
-
-            <div class="content-grid">
-                <div class="left-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">💰</span>
-                                Asset Breakdown
-                            </div>
+                        <div class="link-button" onclick="showTab('financials')">
+                            <span class="icon">💰</span>
+                            Financial Data
                         </div>
-                        <div class="financial-breakdown">
-                            <div class="breakdown-item">
-                                <div class="breakdown-title">Investment Accounts</div>
-                                <div class="breakdown-amount">$817,062</div>
-                                <div class="breakdown-detail">Schwab LLC + Individual accounts</div>
-                            </div>
-                            <div class="breakdown-item">
-                                <div class="breakdown-title">Real Estate</div>
-                                <div class="breakdown-amount">$440,000</div>
-                                <div class="breakdown-detail">Detroit PMMI + Alabama properties</div>
-                            </div>
-                            <div class="breakdown-item">
-                                <div class="breakdown-title">Luxury Watches</div>
-                                <div class="breakdown-amount">$121,977</div>
-                                <div class="breakdown-detail">Rolex Day-Date, AP Royal Oak, etc.</div>
-                            </div>
-                            <div class="breakdown-item">
-                                <div class="breakdown-title">Cash & Liquid</div>
-                                <div class="breakdown-amount">$55,138</div>
-                                <div class="breakdown-detail">Chase, Bank of America accounts</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">📊</span>
-                                Wealth Trajectory
-                            </div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">$5M Net Worth Target</div>
-                            <div class="system-status">Age 35 (4 years)</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">$10M Net Worth Target</div>
-                            <div class="system-status">Age 37 (6 years)</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">$25M+ Net Worth Target</div>
-                            <div class="system-status">Age 41 (10 years)</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Current Trajectory</div>
-                            <div class="system-status">20% annual returns</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="right-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">💳</span>
-                                Monthly Spending
-                            </div>
-                        </div>
-                        <div class="financial-breakdown">
-                            <div class="breakdown-item">
-                                <div class="breakdown-title">Chase Sapphire</div>
-                                <div class="breakdown-amount">$1,560</div>
-                                <div class="breakdown-detail">Healthcare, insurance, food</div>
-                            </div>
-                            <div class="breakdown-item">
-                                <div class="breakdown-title">Amex Gold</div>
-                                <div class="breakdown-amount">$282</div>
-                                <div class="breakdown-detail">Tesla subscriptions, Uber One</div>
-                            </div>
-                            <div class="breakdown-item">
-                                <div class="breakdown-title">BlackBox CHK</div>
-                                <div class="breakdown-amount">$963</div>
-                                <div class="breakdown-detail">Auto loan $673 + utilities $275</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🎯</span>
-                                Financial Strategy
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📈</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Double Leverage Strategy</div>
-                                <div class="activity-time">10-12% base + 6% borrow + 20% real estate</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🏦</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Institutional-Level Engineering</div>
-                                <div class="activity-time">Borrow against investments for real estate</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">⚡</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Accelerated Wealth Building</div>
-                                <div class="activity-time">20% effective annual returns</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- LL Ventures Tab -->
-        <div class="tab-content" id="ll-ventures">
-            <div class="page-header">
-                <h1 class="page-title">LL Ventures</h1>
-                <p class="page-subtitle">Section 8 single family real estate business metrics</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Deals in Contract</div>
-                    <div class="stat-value">18</div>
-                    <div class="stat-change">↗ Contracts signed both sides</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Total Pipeline Revenue</div>
-                    <div class="stat-value">$149.5K</div>
-                    <div class="stat-change">↗ Gross revenue pending</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Luke's Share (40%)</div>
-                    <div class="stat-value">$59.8K</div>
-                    <div class="stat-change">↗ Revenue pending close</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Monthly Target</div>
-                    <div class="stat-value">25-30</div>
-                    <div class="stat-change">↗ Homes/month goal</div>
-                </div>
-            </div>
-
-            <div class="content-grid">
-                <div class="left-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🏠</span>
-                                Current Pipeline
-                            </div>
-                        </div>
-                        <div class="pipeline-item">
-                            <div class="pipeline-header">
-                                <div class="pipeline-property">4087 W Philadelphia</div>
-                                <div class="pipeline-revenue">$10,000</div>
-                            </div>
-                            <div class="pipeline-status">Contract Status: In Contract</div>
-                        </div>
-                        <div class="pipeline-item">
-                            <div class="pipeline-header">
-                                <div class="pipeline-property">3920 Devonshire</div>
-                                <div class="pipeline-revenue">$10,000</div>
-                            </div>
-                            <div class="pipeline-status">Contract Status: In Contract</div>
-                        </div>
-                        <div class="pipeline-item">
-                            <div class="pipeline-header">
-                                <div class="pipeline-property">15011 Fairfield</div>
-                                <div class="pipeline-revenue">$8,500</div>
-                            </div>
-                            <div class="pipeline-status">Contract Status: In Contract</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">+ 15 More Properties</div>
-                            <div class="system-status">In Contract</div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🎯</span>
-                                Business Model
-                            </div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Revenue per Home</div>
-                            <div class="system-status">$8-10K</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Primary Market</div>
-                            <div class="system-status">Detroit</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Secondary Markets</div>
-                            <div class="system-status">Montgomery AL, Peoria IL</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Luke's Ownership</div>
-                            <div class="system-status">40%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="right-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">👥</span>
-                                Team Structure
-                            </div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Partners</div>
-                            <div class="system-status">Mikey, Nate</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Ailen (Carlsbad Office)</div>
-                            <div class="system-status">Operations</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Mary (Filipino VA)</div>
-                            <div class="system-status">Virtual Assistant</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Arthur AI</div>
-                            <div class="system-status">SMS Outreach & Analytics</div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🚀</span>
-                                Growth Targets
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🎯</div>
-                            <div class="activity-content">
-                                <div class="activity-title">25-30 homes/month goal</div>
-                                <div class="activity-time">$2-3M annual top line</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Luke's 40% share</div>
-                                <div class="activity-time">$800K-$1.2M annually</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🤖</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Automation scaling</div>
-                                <div class="activity-time">50 daily agent messages</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Personal Tab -->
-        <div class="tab-content" id="personal">
-            <div class="page-header">
-                <h1 class="page-title">Personal Overview</h1>
-                <p class="page-subtitle">Lifestyle, goals, and personal metrics</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Age</div>
-                    <div class="stat-value">31</div>
-                    <div class="stat-change">Born 1993, Duxbury MA</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Location</div>
-                    <div class="stat-value">Encinitas</div>
-                    <div class="stat-change">California (PST)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Monthly Personal Burn</div>
-                    <div class="stat-value">$11.2K</div>
-                    <div class="stat-change">18.4% of net worth annually</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Net Worth Rank</div>
-                    <div class="stat-value">Top 2%</div>
-                    <div class="stat-change">For age 31 nationally</div>
-                </div>
-            </div>
-
-            <div class="content-grid">
-                <div class="left-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">👨‍👩‍👧‍👦</span>
-                                Family & Relationships
-                            </div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Alyse</div>
-                            <div class="system-status">Girlfriend</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Ike</div>
-                            <div class="system-status">Twin Brother</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Orie</div>
-                            <div class="system-status">Father</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Holly</div>
-                            <div class="system-status">Mother</div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">📱</span>
-                                Communication Preferences
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">⚡</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Always acknowledge tasks</div>
-                                <div class="activity-time">Immediate status updates required</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🔄</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Proactive updates</div>
-                                <div class="activity-time">Progress reports, not just final results</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🌙</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Night owl schedule</div>
-                                <div class="activity-time">Works until 12-1am regularly</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="right-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🎯</span>
-                                Goals & Aspirations
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">$10M liquid net worth target</div>
-                                <div class="activity-time">Currently $1.43M (14% there)</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🏢</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Scale LL Ventures volume</div>
-                                <div class="activity-time">Primary wealth building vehicle</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🎭</div>
-                            <div class="activity-content">
-                                <div class="activity-title">"Number two guy" identity</div>
-                                <div class="activity-time">Operator/partner, not solo founder</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🎵</span>
-                                Background & Strengths
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🎸</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Former touring musician</div>
-                                <div class="activity-time">Folk rock band with Ike, signed at 18</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💼</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Serial entrepreneur 10+ years</div>
-                                <div class="activity-time">Graystone Trading biggest success (8 figures)</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🔧</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Core strengths</div>
-                                <div class="activity-time">Hiring, team building, infrastructure, systems</div>
-                            </div>
+                        <div class="link-button" onclick="showTab('ll-ventures')">
+                            <span class="icon">💼</span>
+                            LL Ventures Pipeline
                         </div>
                     </div>
                 </div>
@@ -1141,55 +795,133 @@
                 </div>
             </div>
 
+            <div class="kanban-board">
+                <div class="kanban-column">
+                    <div class="kanban-header">
+                        <div class="kanban-title">🔄 Recurring</div>
+                        <div class="kanban-count">1</div>
+                    </div>
+                    <div class="kanban-task" onclick="showTaskDetails('second-brain')">
+                        <div class="task-title">Second Brain System</div>
+                        <div class="task-description">Organize all information Luke shares into categorized knowledge base</div>
+                        <div class="task-priority priority-high">HIGH</div>
+                    </div>
+                </div>
+                <div class="kanban-column">
+                    <div class="kanban-header">
+                        <div class="kanban-title">📋 Backlog</div>
+                        <div class="kanban-count">1</div>
+                    </div>
+                    <div class="kanban-task" onclick="showTaskDetails('ghl-access')">
+                        <div class="task-title">Go High Level Access</div>
+                        <div class="task-description">Get Arthur full access to Go High Level platform for text message monitoring and editing</div>
+                        <div class="task-priority priority-medium">MEDIUM</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kanban-board">
+                <div class="kanban-column">
+                    <div class="kanban-header">
+                        <div class="kanban-title">✅ Done</div>
+                        <div class="kanban-count">3</div>
+                    </div>
+                    <div class="kanban-task" onclick="showTaskDetails('kanban-board')">
+                        <div class="task-title">Enhanced Kanban Board</div>
+                        <div class="task-description">Visual project management board with integrated chat functionality</div>
+                        <div class="task-priority priority-high">HIGH</div>
+                    </div>
+                    <div class="kanban-task" onclick="showTaskDetails('apify')">
+                        <div class="task-title">Apify Integration</div>
+                        <div class="task-description">Get Arthur full access to Luke's Apify account for web scraping and automation</div>
+                        <div class="task-priority priority-high">HIGH</div>
+                    </div>
+                    <div class="kanban-task" onclick="showTaskDetails('email')">
+                        <div class="task-title">Email Setup (arthur@blackboxalchemist.com)</div>
+                        <div class="task-description">Configure Arthur's dedicated email for monitoring, responses, and tool signups</div>
+                        <div class="task-priority priority-high">HIGH</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financials Tab -->
+        <div class="tab-content" id="financials">
+            <div class="page-header">
+                <h1 class="page-title">Financial Overview</h1>
+                <p class="page-subtitle">Complete financial position and wealth tracking</p>
+            </div>
+
+            <div class="financial-links">
+                <a href="https://docs.google.com/spreadsheets/d/1pd1dt64gBni4vAWze9QzhVwsmFMcdBuufW6m_0n-OPw" target="_blank" class="link-card">
+                    <div class="link-title">📊 Master Financial Spreadsheet</div>
+                    <div class="link-description">Complete Tiller data with net worth, spending analysis, and financial dashboard</div>
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1ilUEC8dshKHr3d8VEUCYYxjshttZol3fvMXP6l5lTno/edit" target="_blank" class="link-card">
+                    <div class="link-title">📈 VOO 6-Month Backtest</div>
+                    <div class="link-description">$1,000/day + 10% take-profit strategy analysis (Aug 2025 - Feb 2026)</div>
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1LBiQpBOtldvtA8Fg65f1M60nbk6-GBUqn8X8fZU1ivc/edit" target="_blank" class="link-card">
+                    <div class="link-title">📊 VOO 24-Month Backtest</div>
+                    <div class="link-description">2-year comprehensive analysis (Feb 2024 - Feb 2026, 524 trading days)</div>
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1SssG3FqEySVKcMspfwM_36m67OMH6q1mlKEDH_EqJmg/edit" target="_blank" class="link-card">
+                    <div class="link-title">📱 Amy Sangster Instagram Analysis</div>
+                    <div class="link-description">Comprehensive intelligence report with viral content patterns and engagement metrics</div>
+                </a>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Investment Accounts</div>
+                    <div class="stat-value">$817,062</div>
+                    <div class="stat-change">↗ 57.0% of total assets</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Real Estate Portfolio</div>
+                    <div class="stat-value">$440,000</div>
+                    <div class="stat-change">↗ 30.7% of total assets</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Monthly Personal Burn</div>
+                    <div class="stat-value">$11,200</div>
+                    <div class="stat-change">↗ 18.4% annual burn rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Wealth Grade</div>
+                    <div class="stat-value">A++</div>
+                    <div class="stat-change">↗ Top 2% for age 31</div>
+                </div>
+            </div>
+
             <div class="content-grid">
                 <div class="left-column">
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <span class="icon">🔄</span>
-                                Recurring Tasks
+                                <span class="icon">💰</span>
+                                Asset Breakdown
                             </div>
                         </div>
-                        <div class="project-item">
-                            <div class="project-status status-recurring"></div>
-                            <div class="project-info">
-                                <div class="project-name">Second Brain System</div>
-                                <div class="project-meta">Organize all Luke's shared info by category</div>
-                            </div>
-                            <div class="task-priority priority-high">HIGH</div>
+                        <div class="system-item">
+                            <div class="system-name">Investment Accounts (Schwab)</div>
+                            <div class="system-status">$817,062</div>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">✅</span>
-                                Recently Completed
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Real Estate (Detroit + Alabama)</div>
+                            <div class="system-status">$440,000</div>
                         </div>
-                        <div class="project-item">
-                            <div class="project-status status-done"></div>
-                            <div class="project-info">
-                                <div class="project-name">Enhanced Kanban Board</div>
-                                <div class="project-meta">Chat integration, add projects, archive system</div>
-                            </div>
-                            <div class="task-priority priority-high">HIGH</div>
+                        <div class="system-item">
+                            <div class="system-name">Luxury Watch Collection</div>
+                            <div class="system-status">$121,977</div>
                         </div>
-                        <div class="project-item">
-                            <div class="project-status status-done"></div>
-                            <div class="project-info">
-                                <div class="project-name">Apify Integration</div>
-                                <div class="project-meta">Full access to Luke's Apify account</div>
-                            </div>
-                            <div class="task-priority priority-high">HIGH</div>
+                        <div class="system-item">
+                            <div class="system-name">Cash & Liquid Assets</div>
+                            <div class="system-status">$55,138</div>
                         </div>
-                        <div class="project-item">
-                            <div class="project-status status-done"></div>
-                            <div class="project-info">
-                                <div class="project-name">Email Setup (arthur@blackboxalchemist.com)</div>
-                                <div class="project-meta">Gmail API integration working</div>
-                            </div>
-                            <div class="task-priority priority-high">HIGH</div>
+                        <div class="system-item" style="border-top: 2px solid #4a9eff; padding-top: 1rem; margin-top: 1rem;">
+                            <div class="system-name" style="color: #4a9eff; font-weight: 600;">Total Net Worth</div>
+                            <div class="system-status" style="color: #4a9eff; font-weight: 600;">$1,434,177</div>
                         </div>
                     </div>
                 </div>
@@ -1198,61 +930,112 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <span class="icon">📋</span>
-                                Backlog
+                                <span class="icon">🎯</span>
+                                Wealth Timeline
                             </div>
                         </div>
-                        <div class="project-item">
-                            <div class="project-status status-backlog"></div>
-                            <div class="project-info">
-                                <div class="project-name">Go High Level Access</div>
-                                <div class="project-meta">Full platform access for text monitoring</div>
-                            </div>
-                            <div class="task-priority priority-medium">MEDIUM</div>
+                        <div class="system-item">
+                            <div class="system-name">$5M Net Worth Target</div>
+                            <div class="system-status">Age 35 (4 years)</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">⏰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Stale for 5 days</div>
-                                <div class="activity-time">Needs API credentials from Luke</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">$10M Net Worth Target</div>
+                            <div class="system-status">Age 37 (6 years)</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">$25M+ Net Worth Target</div>
+                            <div class="system-status">Age 41 (10 years)</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Double Leverage Strategy</div>
+                            <div class="system-status">20% effective returns</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- LL Ventures Tab -->
+        <div class="tab-content" id="ll-ventures">
+            <div class="page-header">
+                <h1 class="page-title">LL Ventures</h1>
+                <p class="page-subtitle">Section 8 single family real estate business metrics</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Deals in Contract</div>
+                    <div class="stat-value">18</div>
+                    <div class="stat-change">↗ Contracts signed both sides</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Pipeline Revenue</div>
+                    <div class="stat-value">$149.5K</div>
+                    <div class="stat-change">↗ Gross revenue pending</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Monthly Target</div>
+                    <div class="stat-value">25-30</div>
+                    <div class="stat-change">↗ Homes/month goal</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Team Size</div>
+                    <div class="stat-value">4</div>
+                    <div class="stat-change">↗ Luke, Mikey, Nate, Ailen + Arthur AI</div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="left-column">
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <span class="icon">📈</span>
-                                Project Activity
+                                <span class="icon">🏠</span>
+                                Pipeline Properties
                             </div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🚀</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Enhanced dashboard built</div>
-                                <div class="activity-time">Just now</div>
+                        <div class="system-item">
+                            <div class="system-name">4087 W Philadelphia</div>
+                            <div class="system-status">$10,000</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">3920 Devonshire</div>
+                            <div class="system-status">$10,000</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">15011 Fairfield</div>
+                            <div class="system-status">$8,500</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">+ 15 More Properties</div>
+                            <div class="system-status">In Contract</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <span class="icon">👥</span>
+                                Team & Strategy
                             </div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">✅</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Apify integration completed</div>
-                                <div class="activity-time">Feb 4 - Instagram scraping working</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Primary Market</div>
+                            <div class="system-status">Detroit</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📧</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Gmail API configured</div>
-                                <div class="activity-time">Feb 4 - Sending emails successfully</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Revenue per Home</div>
+                            <div class="system-status">$8-10K</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💬</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Kanban chat integration</div>
-                                <div class="activity-time">Feb 2 - All features implemented</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Partners</div>
+                            <div class="system-status">Mikey, Nate</div>
+                        </div>
+                        <div class="system-item">
+                            <div class="system-name">Operations (Ailen)</div>
+                            <div class="system-status">Carlsbad Office</div>
                         </div>
                     </div>
                 </div>
@@ -1294,63 +1077,6 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <span class="icon">🏠</span>
-                                Active Properties
-                            </div>
-                        </div>
-                        <div class="pipeline-item">
-                            <div class="pipeline-header">
-                                <div class="pipeline-property">4087 W Philadelphia, Detroit</div>
-                                <div class="pipeline-revenue">$10,000</div>
-                            </div>
-                            <div class="pipeline-status">In Contract - Revenue pending</div>
-                        </div>
-                        <div class="pipeline-item">
-                            <div class="pipeline-header">
-                                <div class="pipeline-property">3920 Devonshire, Detroit</div>
-                                <div class="pipeline-revenue">$10,000</div>
-                            </div>
-                            <div class="pipeline-status">In Contract - Revenue pending</div>
-                        </div>
-                        <div class="pipeline-item">
-                            <div class="pipeline-header">
-                                <div class="pipeline-property">15011 Fairfield, Detroit</div>
-                                <div class="pipeline-revenue">$8,500</div>
-                            </div>
-                            <div class="pipeline-status">In Contract - Revenue pending</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">+ 15 Additional Properties</div>
-                            <div class="system-status">In Contract</div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🗺️</span>
-                                Market Coverage
-                            </div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Detroit, Michigan</div>
-                            <div class="system-status">Primary Market</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Montgomery, Alabama</div>
-                            <div class="system-status">Secondary Market</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">Peoria, Illinois</div>
-                            <div class="system-status">Secondary Market</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="right-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
                                 <span class="icon">🤖</span>
                                 Automation Status
                             </div>
@@ -1384,34 +1110,27 @@
                             <div class="system-status">Auto-sent</div>
                         </div>
                     </div>
+                </div>
 
+                <div class="right-column">
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
-                                <span class="icon">📊</span>
-                                Performance Metrics
+                                <span class="icon">🗺️</span>
+                                Markets
                             </div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">$8-10K revenue per property</div>
-                                <div class="activity-time">Standard LL Ventures rate</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Detroit, Michigan</div>
+                            <div class="system-status">Primary Market</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📈</div>
-                            <div class="activity-content">
-                                <div class="activity-title">14% SMS response rate</div>
-                                <div class="activity-time">Above industry average</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Montgomery, Alabama</div>
+                            <div class="system-status">Secondary Market</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🎯</div>
-                            <div class="activity-content">
-                                <div class="activity-title">25-30 homes/month target</div>
-                                <div class="activity-time">Scale goal for $2-3M annually</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Peoria, Illinois</div>
+                            <div class="system-status">Secondary Market</div>
                         </div>
                     </div>
                 </div>
@@ -1437,14 +1156,14 @@
                     <div class="stat-change">↗ Above industry average</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Target Market</div>
-                    <div class="stat-value">Detroit</div>
-                    <div class="stat-change">↗ Real estate agents</div>
-                </div>
-                <div class="stat-card">
                     <div class="stat-label">SMS Hours</div>
                     <div class="stat-value">6am-4pm</div>
                     <div class="stat-change">↗ PST compliance</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Duplicate Prevention</div>
+                    <div class="stat-value">100%</div>
+                    <div class="stat-change">↗ Zero duplicates</div>
                 </div>
             </div>
 
@@ -1486,83 +1205,9 @@
                             <div class="system-status">Real-time tracking</div>
                         </div>
                     </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">📋</span>
-                                Workflow Process
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🎯</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Target Selection</div>
-                                <div class="activity-time">Detroit tag, NOT "SMS sent"</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📤</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Message Sending</div>
-                                <div class="activity-time">5 messages every 5 minutes</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🏷️</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Tag Update</div>
-                                <div class="activity-time">Add "SMS sent" to all contacts</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📊</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Tracking Update</div>
-                                <div class="activity-time">Log in Airtable daily tracker</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="right-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">💬</span>
-                                Response Management
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">👁️</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Response Detection</div>
-                                <div class="activity-time">Auto-import from GHL</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">✍️</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Draft Reply</div>
-                                <div class="activity-time">Context-aware responses</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">✅</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Luke Approval</div>
-                                <div class="activity-time">Review before sending</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📈</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Pipeline Update</div>
-                                <div class="activity-time">Move to "Response Received"</div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
@@ -1570,33 +1215,21 @@
                                 Critical Protocols
                             </div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🚫</div>
-                            <div class="activity-content">
-                                <div class="activity-title">ZERO duplicates</div>
-                                <div class="activity-time">Multi-layer duplicate prevention</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">ZERO duplicates</div>
+                            <div class="system-status">Multi-layer prevention</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📝</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Approved template only</div>
-                                <div class="activity-time">From Airtable SMS Templates</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Approved template only</div>
+                            <div class="system-status">From Airtable</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">⏰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">SMS hours only</div>
-                                <div class="activity-time">6am-4pm PST enforcement</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">SMS hours enforcement</div>
+                            <div class="system-status">6am-4pm PST</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🎭</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Human-like responses</div>
-                                <div class="activity-time">Context-aware, natural replies</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Human-like responses</div>
+                            <div class="system-status">Context-aware</div>
                         </div>
                     </div>
                 </div>
@@ -1670,15 +1303,10 @@
                             </div>
                             <div class="system-status">Every 30 minutes</div>
                         </div>
-                        <div class="system-item">
-                            <div class="system-name">
-                                <span class="status-indicator status-online"></span>
-                                Heartbeat Monitor
-                            </div>
-                            <div class="system-status">Every heartbeat</div>
-                        </div>
                     </div>
+                </div>
 
+                <div class="right-column">
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">
@@ -1706,257 +1334,6 @@
                             <div class="system-name">WhatsApp</div>
                             <div class="system-status">Connected</div>
                         </div>
-                        <div class="system-item">
-                            <div class="system-name">CoinMarketCap</div>
-                            <div class="system-status">Active</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="right-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">📊</span>
-                                Automation Metrics
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📱</div>
-                            <div class="activity-content">
-                                <div class="activity-title">50 SMS messages/day</div>
-                                <div class="activity-time">Fully automated agent outreach</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🏠</div>
-                            <div class="activity-content">
-                                <div class="activity-title">48 Zillow checks/day</div>
-                                <div class="activity-time">New property detection</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💬</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Response monitoring</div>
-                                <div class="activity-time">Continuous SMS reply tracking</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Crypto position monitoring</div>
-                                <div class="activity-time">Paper trading automation</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🛡️</span>
-                                Safety Systems
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🚫</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Duplicate prevention</div>
-                                <div class="activity-time">Multi-layer SMS duplicate blocking</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">⏰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Time enforcement</div>
-                                <div class="activity-time">SMS only 6am-4pm PST</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📝</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Template validation</div>
-                                <div class="activity-time">Only approved message templates</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🔄</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Rate limiting</div>
-                                <div class="activity-time">5 messages every 5 minutes</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- GitHub Tab -->
-        <div class="tab-content" id="github">
-            <div class="page-header">
-                <h1 class="page-title">GitHub Integration</h1>
-                <p class="page-subtitle">Repository management and dashboard hosting</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Account</div>
-                    <div class="stat-value">TBCAGENT</div>
-                    <div class="stat-change">↗ Luke Fontaine's GitHub</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Repositories</div>
-                    <div class="stat-value">2</div>
-                    <div class="stat-change">↗ Dashboard (public), Zillow scraper (private)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Live Dashboard</div>
-                    <div class="stat-value">Active</div>
-                    <div class="stat-change">↗ tbcagent.github.io/dashboard</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Mobile Optimized</div>
-                    <div class="stat-value">Yes</div>
-                    <div class="stat-change">↗ Accessible anywhere</div>
-                </div>
-            </div>
-
-            <div class="content-grid">
-                <div class="left-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">📁</span>
-                                Repository Status
-                            </div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">
-                                <span class="status-indicator status-online"></span>
-                                dashboard (public)
-                            </div>
-                            <div class="system-status">GitHub Pages enabled</div>
-                        </div>
-                        <div class="system-item">
-                            <div class="system-name">
-                                <span class="status-indicator status-online"></span>
-                                zillow-scraper (private)
-                            </div>
-                            <div class="system-status">Active development</div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🌐</span>
-                                Dashboard Features
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📊</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Real-time status updates</div>
-                                <div class="activity-time">Live business metrics</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Financial overview</div>
-                                <div class="activity-time">Net worth, investments, spending</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📱</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Mobile responsive</div>
-                                <div class="activity-time">Access from any device</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🔄</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Auto-updating</div>
-                                <div class="activity-time">Syncs with live data sources</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="right-column">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🔧</span>
-                                Recent Activity
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🚀</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Enhanced multi-tab dashboard</div>
-                                <div class="activity-time">Just deployed</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📊</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Added comprehensive tabs</div>
-                                <div class="activity-time">Financials, LL Ventures, Personal, Tasks</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💳</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Integrated financial data</div>
-                                <div class="activity-time">Real spending analysis from Tiller</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🏠</div>
-                            <div class="activity-content">
-                                <div class="activity-title">LL Ventures pipeline</div>
-                                <div class="activity-time">18 properties, $149.5K revenue</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🔗</span>
-                                Access Information
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🌐</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Live URL</div>
-                                <div class="activity-time">https://tbcagent.github.io/dashboard/</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📱</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Mobile access</div>
-                                <div class="activity-time">Responsive design, works on all devices</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🔄</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Auto-refresh</div>
-                                <div class="activity-time">Updates every 30 seconds</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🏠</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Bookmark recommended</div>
-                                <div class="activity-time">Add to home screen for quick access</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1978,7 +1355,7 @@
                 <div class="stat-card">
                     <div class="stat-label">Model</div>
                     <div class="stat-value">Sonnet</div>
-                    <div class="stat-change">↗ Cost-optimized for 90% of tasks</div>
+                    <div class="stat-change">↗ Cost-optimized</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Daily Tasks</div>
@@ -1986,9 +1363,9 @@
                     <div class="stat-change">↗ SMS, analysis, monitoring</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Integrations</div>
+                    <div class="stat-label">Available Skills</div>
                     <div class="stat-value">25+</div>
-                    <div class="stat-change">↗ Tools and services</div>
+                    <div class="stat-change">↗ Tools and capabilities</div>
                 </div>
             </div>
 
@@ -2018,56 +1395,8 @@
                             <div class="system-status">Specialized</div>
                         </div>
                         <div class="system-item">
-                            <div class="system-name">Email Management</div>
-                            <div class="system-status">Connected</div>
-                        </div>
-                        <div class="system-item">
                             <div class="system-name">Voice Message Processing</div>
                             <div class="system-status">Active</div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🔧</span>
-                                Available Tools & Skills
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🧠</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Second Brain System</div>
-                                <div class="activity-time">Auto-organizing knowledge by category</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🕷️</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Apify Web Scraping</div>
-                                <div class="activity-time">Instagram, Google, any website</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📧</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Email Integration</div>
-                                <div class="activity-time">Gmail API, Himalaya CLI</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🌐</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Browser Automation</div>
-                                <div class="activity-time">OpenClaw browser control</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🗣️</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Text-to-Speech</div>
-                                <div class="activity-time">ElevenLabs Daniel voice</div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -2080,70 +1409,21 @@
                                 Performance Stats
                             </div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">💰</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Cost optimization</div>
-                                <div class="activity-time">Switched to Sonnet from Opus</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">SMS success rate</div>
+                            <div class="system-status">14% response rate</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">📱</div>
-                            <div class="activity-content">
-                                <div class="activity-title">SMS success rate</div>
-                                <div class="activity-time">14% response rate achieved</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Zero SMS duplicates</div>
+                            <div class="system-status">Bulletproof system</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🚫</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Zero SMS duplicates</div>
-                                <div class="activity-time">Bulletproof prevention system</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">Response time</div>
+                            <div class="system-status">Immediate</div>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">⚡</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Response time</div>
-                                <div class="activity-time">Immediate task acknowledgment</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                <span class="icon">🎯</span>
-                                Personality & Approach
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🦞</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Arthur persona</div>
-                                <div class="activity-time">Sharp, helpful, dry humor</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🎭</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Jarvis-inspired</div>
-                                <div class="activity-time">British, authoritative, composed</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">⚡</div>
-                            <div class="activity-content">
-                                <div class="activity-title">High agency operation</div>
-                                <div class="activity-time">Think before act, act before ask</div>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">🧠</div>
-                            <div class="activity-content">
-                                <div class="activity-title">Proactive intelligence</div>
-                                <div class="activity-time">Anticipates needs, suggests improvements</div>
-                            </div>
+                        <div class="system-item">
+                            <div class="system-name">High agency operation</div>
+                            <div class="system-status">Proactive</div>
                         </div>
                     </div>
                 </div>
@@ -2152,6 +1432,16 @@
 
         <div class="timestamp" id="lastUpdate">
             Last Updated: Loading...
+        </div>
+    </div>
+
+    <!-- Modal for detailed views -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+                <!-- Dynamic content will be inserted here -->
+            </div>
         </div>
     </div>
 
@@ -2180,26 +1470,301 @@
             });
             
             // Show selected tab
-            document.getElementById(tabName).classList.add('active');
+            const targetTab = document.getElementById(tabName);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
             
             // Add active class to clicked nav item
-            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+            const navItem = document.querySelector(`[onclick="showTab('${tabName}')"]`);
+            if (navItem) {
+                navItem.classList.add('active');
+            }
         }
 
-        // Add tab switching functionality
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const tabName = this.getAttribute('data-tab');
-                if (tabName) {
-                    showTab(tabName);
+        function showActivityDetails(activityId) {
+            const activities = {
+                'dashboard-enhanced': {
+                    title: 'Enhanced Dashboard Deployed',
+                    content: `
+                        <p><strong>Status:</strong> Completed ✅</p>
+                        <p><strong>Description:</strong> Built comprehensive multi-tab dashboard with working navigation, interactive Kanban board, and real data integration.</p>
+                        <p><strong>Features Added:</strong></p>
+                        <ul>
+                            <li>Working tab navigation system</li>
+                            <li>Interactive clickable activities</li>
+                            <li>Embedded Kanban board</li>
+                            <li>Financial data with Google Sheet links</li>
+                            <li>Real-time system status monitoring</li>
+                        </ul>
+                        <p><strong>Live URL:</strong> <a href="https://tbcagent.github.io/dashboard/" target="_blank">tbcagent.github.io/dashboard</a></p>
+                    `
+                },
+                'github-dashboard': {
+                    title: 'GitHub Dashboard Deployment',
+                    content: `
+                        <p><strong>Repository:</strong> TBCAGENT/dashboard</p>
+                        <p><strong>Status:</strong> Live and operational</p>
+                        <p><strong>Features:</strong></p>
+                        <ul>
+                            <li>GitHub Pages hosting</li>
+                            <li>Mobile responsive design</li>
+                            <li>Auto-updating content</li>
+                            <li>Professional executive interface</li>
+                        </ul>
+                        <p><strong>Access:</strong> Available 24/7 from any device</p>
+                    `
+                },
+                'financial-audit': {
+                    title: 'Comprehensive Financial Audit',
+                    content: `
+                        <p><strong>Net Worth:</strong> $1,434,177</p>
+                        <p><strong>Grade:</strong> A++ (Top 2% for age 31)</p>
+                        <p><strong>Key Findings:</strong></p>
+                        <ul>
+                            <li>Investment accounts: $817,062 (57%)</li>
+                            <li>Real estate: $440,000 (31%)</li>
+                            <li>Luxury watches: $121,977 (9%)</li>
+                            <li>Cash/liquid: $55,138 (4%)</li>
+                        </ul>
+                        <p><strong>Strategy:</strong> Double leverage approach for 20% effective returns</p>
+                        <div class="link-button" onclick="window.open('https://docs.google.com/spreadsheets/d/1pd1dt64gBni4vAWze9QzhVwsmFMcdBuufW6m_0n-OPw', '_blank')">
+                            <span class="icon">📊</span>
+                            View Financial Spreadsheet
+                        </div>
+                    `
+                },
+                'voo-backtest': {
+                    title: 'VOO Strategy Backtest Analysis',
+                    content: `
+                        <p><strong>Strategy:</strong> $1,000/day + 10% take-profit</p>
+                        <p><strong>Period:</strong> 6-month and 24-month analysis</p>
+                        <p><strong>Results:</strong></p>
+                        <ul>
+                            <li>6-month: 8.98% returns, $111K cash generated</li>
+                            <li>24-month: 400.4% cash-on-cash returns</li>
+                            <li>Peak capital: Only $115K vs $524K theoretical</li>
+                        </ul>
+                        <p><strong>Key Insight:</strong> Massive capital efficiency through profit recycling</p>
+                        <div class="link-button" onclick="window.open('https://docs.google.com/spreadsheets/d/1ilUEC8dshKHr3d8VEUCYYxjshttZol3fvMXP6l5lTno/edit', '_blank')">
+                            <span class="icon">📈</span>
+                            6-Month Analysis
+                        </div>
+                        <div class="link-button" onclick="window.open('https://docs.google.com/spreadsheets/d/1LBiQpBOtldvtA8Fg65f1M60nbk6-GBUqn8X8fZU1ivc/edit', '_blank')">
+                            <span class="icon">📊</span>
+                            24-Month Analysis
+                        </div>
+                    `
                 }
-            });
-        });
+            };
+
+            const activity = activities[activityId];
+            if (activity) {
+                document.getElementById('modalContent').innerHTML = `
+                    <h2 class="modal-title">${activity.title}</h2>
+                    ${activity.content}
+                `;
+                document.getElementById('detailModal').style.display = 'block';
+            }
+        }
+
+        function showTaskDetails(taskId) {
+            const tasks = {
+                'second-brain': {
+                    title: 'Second Brain System',
+                    content: `
+                        <p><strong>Type:</strong> Recurring Project</p>
+                        <p><strong>Priority:</strong> HIGH</p>
+                        <p><strong>Description:</strong> Organize all information Luke shares into categorized knowledge base</p>
+                        <p><strong>Categories:</strong></p>
+                        <ul>
+                            <li>Personal life & family</li>
+                            <li>Business operations</li>
+                            <li>People & contacts</li>
+                            <li>Ideas & concepts</li>
+                            <li>Active projects</li>
+                            <li>Reference materials</li>
+                        </ul>
+                        <p><strong>Status:</strong> Auto-updating during every conversation</p>
+                        <p><strong>Location:</strong> brain/ folder structure</p>
+                    `
+                },
+                'ghl-access': {
+                    title: 'Go High Level Access',
+                    content: `
+                        <p><strong>Type:</strong> Integration Project</p>
+                        <p><strong>Priority:</strong> MEDIUM</p>
+                        <p><strong>Description:</strong> Get Arthur full access to Go High Level platform for text message monitoring and editing</p>
+                        <p><strong>Requirements:</strong></p>
+                        <ul>
+                            <li>API credentials from Luke</li>
+                            <li>Read all text messages in GHL</li>
+                            <li>Edit/manage platform settings</li>
+                            <li>Monitor conversation flows</li>
+                        </ul>
+                        <p><strong>Status:</strong> Waiting on API access from Luke</p>
+                        <p><strong>Blocker:</strong> Need GHL API token or account access</p>
+                    `
+                },
+                'kanban-board': {
+                    title: 'Enhanced Kanban Board',
+                    content: `
+                        <p><strong>Status:</strong> COMPLETED ✅</p>
+                        <p><strong>Description:</strong> Visual project management board with integrated chat functionality</p>
+                        <p><strong>Features Delivered:</strong></p>
+                        <ul>
+                            <li>Interactive project cards</li>
+                            <li>Chat integration per project</li>
+                            <li>Add/archive project system</li>
+                            <li>Real-time status updates</li>
+                            <li>Activity logging</li>
+                        </ul>
+                        <p><strong>Location:</strong> board/kanban-production.html</p>
+                        <p><strong>Data Source:</strong> board/board-data.json</p>
+                    `
+                },
+                'apify': {
+                    title: 'Apify Integration',
+                    content: `
+                        <p><strong>Status:</strong> COMPLETED ✅</p>
+                        <p><strong>Description:</strong> Full access to Luke's Apify account for web scraping and automation</p>
+                        <p><strong>Capabilities Unlocked:</strong></p>
+                        <ul>
+                            <li>Instagram profile scraping (Amy Sangster analysis)</li>
+                            <li>Google search automation</li>
+                            <li>Website content extraction</li>
+                            <li>Any actor from Apify store</li>
+                        </ul>
+                        <p><strong>Account:</strong> olive_omelet (Luke Fontaine)</p>
+                        <p><strong>Usage:</strong> Active for research and data collection</p>
+                    `
+                },
+                'email': {
+                    title: 'Email Setup (arthur@blackboxalchemist.com)',
+                    content: `
+                        <p><strong>Status:</strong> COMPLETED ✅</p>
+                        <p><strong>Email:</strong> arthur@blackboxalchemist.com</p>
+                        <p><strong>Integration:</strong> Gmail API fully operational</p>
+                        <p><strong>Capabilities:</strong></p>
+                        <ul>
+                            <li>Send emails programmatically</li>
+                            <li>Monitor inbox for responses</li>
+                            <li>Tool signups and registrations</li>
+                            <li>Business communication</li>
+                        </ul>
+                        <p><strong>Helper Scripts:</strong> send-email.sh for quick sending</p>
+                        <p><strong>Authentication:</strong> OAuth tokens configured</p>
+                    `
+                }
+            };
+
+            const task = tasks[taskId];
+            if (task) {
+                document.getElementById('modalContent').innerHTML = `
+                    <h2 class="modal-title">${task.title}</h2>
+                    ${task.content}
+                `;
+                document.getElementById('detailModal').style.display = 'block';
+            }
+        }
+
+        function showSystemDetails(systemId) {
+            const systems = {
+                'arthur': {
+                    title: 'Arthur AI Assistant',
+                    content: `
+                        <p><strong>Status:</strong> Online and fully operational</p>
+                        <p><strong>Model:</strong> Claude Sonnet (cost-optimized)</p>
+                        <p><strong>Capabilities:</strong></p>
+                        <ul>
+                            <li>SMS campaign management (50/day)</li>
+                            <li>Financial analysis and auditing</li>
+                            <li>Web scraping via Apify</li>
+                            <li>Real estate intelligence</li>
+                            <li>Voice message processing</li>
+                            <li>Email management</li>
+                        </ul>
+                        <p><strong>Performance:</strong> 14% SMS response rate, zero duplicates</p>
+                        <p><strong>Integrations:</strong> WhatsApp, Airtable, GHL, Gmail, GitHub</p>
+                    `
+                },
+                'zillow': {
+                    title: 'Zillow Scraper',
+                    content: `
+                        <p><strong>Status:</strong> Active - runs every 30 minutes</p>
+                        <p><strong>Function:</strong> Monitors Detroit real estate market for Section 8 properties</p>
+                        <p><strong>Features:</strong></p>
+                        <ul>
+                            <li>Automated property discovery</li>
+                            <li>Rent inquiry automation</li>
+                            <li>New listing alerts</li>
+                            <li>Agent contact extraction</li>
+                        </ul>
+                        <p><strong>Output:</strong> Google Sheets with property data</p>
+                        <p><strong>Schedule:</strong> 48 checks per day</p>
+                    `
+                },
+                'sms': {
+                    title: 'SMS Outreach System',
+                    content: `
+                        <p><strong>Status:</strong> Active - 50 messages daily at 7am PST</p>
+                        <p><strong>Target:</strong> Detroit real estate agents</p>
+                        <p><strong>Safety Features:</strong></p>
+                        <ul>
+                            <li>Zero duplicate prevention (multi-layer)</li>
+                            <li>SMS hours enforcement (6am-4pm PST)</li>
+                            <li>Approved template validation</li>
+                            <li>Rate limiting (5 msgs/5min)</li>
+                        </ul>
+                        <p><strong>Performance:</strong> 14% response rate</p>
+                        <p><strong>Integration:</strong> GHL + Airtable sync</p>
+                    `
+                },
+                'ghl': {
+                    title: 'Go High Level Integration',
+                    content: `
+                        <p><strong>Status:</strong> Connected via API</p>
+                        <p><strong>Functions:</strong></p>
+                        <ul>
+                            <li>Contact management</li>
+                            <li>SMS message tracking</li>
+                            <li>Pipeline management</li>
+                            <li>Response monitoring</li>
+                        </ul>
+                        <p><strong>Location ID:</strong> a0xDUfSzadt256BbUcgz</p>
+                        <p><strong>Usage:</strong> Real-time contact sync and message tracking</p>
+                    `
+                }
+            };
+
+            const system = systems[systemId];
+            if (system) {
+                document.getElementById('modalContent').innerHTML = `
+                    <h2 class="modal-title">${system.title}</h2>
+                    ${system.content}
+                `;
+                document.getElementById('detailModal').style.display = 'block';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('detailModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('detailModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
 
         // Update timestamp every 30 seconds
         updateTimestamp();
         setInterval(updateTimestamp, 30000);
+
+        // Initialize dashboard
+        showTab('dashboard');
     </script>
 </body>
 </html>
