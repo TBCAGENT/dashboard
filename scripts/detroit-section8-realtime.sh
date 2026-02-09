@@ -15,8 +15,8 @@ source ~/.config/apify/secrets.env
 
 echo "[$NOW] Realtime scan starting..."
 
-# STEP 1: Search for Section 8 listings
-SEARCH_URL='https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.515,%22east%22:-82.91,%22south%22:42.25,%22west%22:-83.35},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}'
+# STEP 1: Search for Section 8 listings (expanded bounds, section 8 keywords)
+SEARCH_URL='https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}'
 
 RUN_RESPONSE=$(curl -s -X POST "https://api.apify.com/v2/acts/maxcopell~zillow-scraper/runs?token=$APIFY_API_TOKEN" \
   -H "Content-Type: application/json" \

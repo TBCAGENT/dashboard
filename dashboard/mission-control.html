@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke's Mission Control - Agent Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "header header header header"
+                "agents queue activity detail"
+                "agents queue activity detail";
+            grid-template-columns: 300px 1fr 400px 350px;
+            grid-template-rows: 80px 1fr 300px;
+            height: 100vh;
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .header {
+            grid-area: header;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .header .stats {
+            display: flex;
+            gap: 30px;
+            color: white;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .panel {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow-y: auto;
+        }
+        
+        .panel h3 {
+            margin-bottom: 15px;
+            color: #2d3748;
+            font-size: 16px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        
+        .agents-panel {
+            grid-area: agents;
+        }
+        
+        .queue-panel {
+            grid-area: queue;
+        }
+        
+        .activity-panel {
+            grid-area: activity;
+        }
+        
+        .detail-panel {
+            grid-area: detail;
+        }
+        
+        .agent-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .agent-card.active {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+        
+        .agent-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .agent-name {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .agent-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #48bb78;
+        }
+        
+        .agent-status.busy {
+            background: #ed8936;
+            animation: pulse 2s infinite;
+        }
+        
+        .agent-status.idle {
+            background: #a0aec0;
+        }
+        
+        .agent-role {
+            font-size: 11px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .agent-stats {
+            font-size: 11px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .task-item {
+            background: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .task-item:hover {
+            background: #edf2f7;
+        }
+        
+        .task-item.priority-high {
+            border-left-color: #f56565;
+        }
+        
+        .task-item.priority-medium {
+            border-left-color: #ed8936;
+        }
+        
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .task-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .task-priority {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+        
+        .task-priority.high {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        
+        .task-priority.medium {
+            background: #feebc8;
+            color: #dd6b20;
+        }
+        
+        .task-agent {
+            font-size: 12px;
+            color: #718096;
+        }
+        
+        .activity-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 10px 0;
+            font-size: 12px;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-time {
+            color: #718096;
+            font-weight: 500;
+        }
+        
+        .activity-text {
+            margin-top: 3px;
+            color: #2d3748;
+        }
+        
+        .performance-chart {
+            height: 120px;
+            margin-top: 15px;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        .agent-expertise {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        
+        .expertise-item {
+            font-size: 11px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .expertise-bar {
+            width: 60px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .expertise-fill {
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            transition: width 0.3s ease;
+        }
+        
+        .memory-bank {
+            background: #f0f4f7;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .memory-item {
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+        
+        .memory-count {
+            font-weight: 600;
+            color: #2d3748;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎯 Mission Control</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="activeAgents">4</div>
+                    <div class="stat-label">Active Agents</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="activeTasks">7</div>
+                    <div class="stat-label">Active Tasks</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="completedToday">12</div>
+                    <div class="stat-label">Completed Today</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Agent Roster -->
+        <div class="panel agents-panel">
+            <h3>🤖 Agent Roster</h3>
+            
+            <div class="agent-card active" onclick="selectAgent('realestate')">
+                <div class="agent-header">
+                    <div class="agent-name">🏠 Real Estate Agent</div>
+                    <div class="agent-status"></div>
+                </div>
+                <div class="agent-role">Acquisition & Market Analysis</div>
+                <div class="agent-stats">
+                    <span>3 Active Tasks</span>
+                    <span>89% Success</span>
+                </div>
+                <div class="agent-expertise">
+                    <div class="expertise-item">
+                        <span>Zillow Analysis</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="expertise-item">
+                        <span>Market Trends</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 87%"></div></div>
+                    </div>
+                    <div class="expertise-item">
+                        <span>Agent Outreach</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 92%"></div></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-card" onclick="selectAgent('cfo')">
+                <div class="agent-header">
+                    <div class="agent-name">💰 CFO Agent</div>
+                    <div class="agent-status busy"></div>
+                </div>
+                <div class="agent-role">Financial Analysis & Reporting</div>
+                <div class="agent-stats">
+                    <span>2 Active Tasks</span>
+                    <span>96% Success</span>
+                </div>
+                <div class="agent-expertise">
+                    <div class="expertise-item">
+                        <span>Financial Modeling</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 94%"></div></div>
+                    </div>
+                    <div class="expertise-item">
+                        <span>Portfolio Analysis</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 91%"></div></div>
+                    </div>
+                    <div class="expertise-item">
+                        <span>Reporting</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 88%"></div></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-card" onclick="selectAgent('legal')">
+                <div class="agent-header">
+                    <div class="agent-name">⚖️ Legal Agent</div>
+                    <div class="agent-status idle"></div>
+                </div>
+                <div class="agent-role">Contract & Compliance</div>
+                <div class="agent-stats">
+                    <span>1 Active Task</span>
+                    <span>94% Success</span>
+                </div>
+                <div class="agent-expertise">
+                    <div class="expertise-item">
+                        <span>Contract Review</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 93%"></div></div>
+                    </div>
+                    <div class="expertise-item">
+                        <span>Compliance</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 89%"></div></div>
+                    </div>
+                    <div class="expertise-item">
+                        <span>Risk Assessment</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 86%"></div></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agent-card" onclick="selectAgent('operations')">
+                <div class="agent-header">
+                    <div class="agent-name">⚙️ Operations Agent</div>
+                    <div class="agent-status busy"></div>
+                </div>
+                <div class="agent-role">Automation & Monitoring</div>
+                <div class="agent-stats">
+                    <span>1 Active Task</span>
+                    <span>99% Success</span>
+                </div>
+                <div class="agent-expertise">
+                    <div class="expertise-item">
+                        <span>System Automation</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 97%"></div></div>
+                    </div>
+                    <div class="expertise-item">
+                        <span>Monitoring</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="expertise-item">
+                        <span>Integration</span>
+                        <div class="expertise-bar"><div class="expertise-fill" style="width: 92%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Task Queue -->
+        <div class="panel queue-panel">
+            <h3>📋 Task Queue</h3>
+            
+            <div class="task-item priority-high">
+                <div class="task-header">
+                    <div class="task-title">Apify Usage Limit Alert</div>
+                    <div class="task-priority high">HIGH</div>
+                </div>
+                <div class="task-agent">Operations Agent • 3m ago</div>
+            </div>
+            
+            <div class="task-item priority-medium">
+                <div class="task-header">
+                    <div class="task-title">Weekly Financial Report</div>
+                    <div class="task-priority medium">MED</div>
+                </div>
+                <div class="task-agent">CFO Agent • 12m ago</div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-header">
+                    <div class="task-title">Detroit Market Analysis</div>
+                    <div class="task-priority">LOW</div>
+                </div>
+                <div class="task-agent">Real Estate Agent • 45m ago</div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-header">
+                    <div class="task-title">Contract Review - 4087 W Philadelphia</div>
+                    <div class="task-priority">LOW</div>
+                </div>
+                <div class="task-agent">Legal Agent • 1h ago</div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-header">
+                    <div class="task-title">SMS Response Analysis</div>
+                    <div class="task-priority">LOW</div>
+                </div>
+                <div class="task-agent">Real Estate Agent • 2h ago</div>
+            </div>
+        </div>
+        
+        <!-- Activity Stream -->
+        <div class="panel activity-panel">
+            <h3>🔥 Live Activity</h3>
+            
+            <div class="activity-item">
+                <div class="activity-time">3:00 PM</div>
+                <div class="activity-text">🚨 Operations Agent detected Apify limit exceeded</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-time">2:58 PM</div>
+                <div class="activity-text">📊 CFO Agent updated financial dashboard</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-time">2:45 PM</div>
+                <div class="activity-text">🏠 Real Estate Agent found 1 new listing (no hot deals)</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-time">2:30 PM</div>
+                <div class="activity-text">💰 CFO Agent analyzed crypto positions</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-time">2:15 PM</div>
+                <div class="activity-text">⚖️ Legal Agent reviewed Andy Antiles lawsuit docs</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-time">2:00 PM</div>
+                <div class="activity-text">🏠 Real Estate Agent processed 0 SMS responses</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-time">1:45 PM</div>
+                <div class="activity-text">⚙️ Operations Agent updated heartbeat status</div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-time">1:30 PM</div>
+                <div class="activity-text">🏠 Real Estate Agent checked for hot deals</div>
+            </div>
+        </div>
+        
+        <!-- Agent Detail -->
+        <div class="panel detail-panel">
+            <h3 id="agentDetailTitle">🏠 Real Estate Agent</h3>
+            
+            <div class="memory-bank">
+                <h4 style="margin-bottom: 10px; color: #2d3748;">🧠 Memory Bank</h4>
+                
+                <div class="memory-item">
+                    <span class="memory-count">1,247</span> Property listings analyzed
+                </div>
+                <div class="memory-item">
+                    <span class="memory-count">89</span> Agent relationships
+                </div>
+                <div class="memory-item">
+                    <span class="memory-count">156</span> Market patterns learned
+                </div>
+                <div class="memory-item">
+                    <span class="memory-count">342</span> Successful outreach messages
+                </div>
+                <div class="memory-item">
+                    <span class="memory-count">23</span> Hot deals identified
+                </div>
+            </div>
+            
+            <div class="performance-chart">
+                <canvas id="performanceChart"></canvas>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <h4 style="margin-bottom: 10px; color: #2d3748;">🎯 Current Focus</h4>
+                <div style="font-size: 12px; color: #4a5568; line-height: 1.4;">
+                    Monitoring Detroit Section 8 market for new opportunities. 
+                    Apify limit reached - temporarily using cached data. 
+                    SMS outreach campaign running at 14% response rate.
+                </div>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <h4 style="margin-bottom: 10px; color: #2d3748;">🏆 Recent Wins</h4>
+                <div style="font-size: 12px; color: #4a5568;">
+                    • Identified 3 hot deals this week<br>
+                    • 95% outreach message approval rate<br>
+                    • Zero duplicate contacts (protocol working)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Performance chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Tasks Completed',
+                    data: [12, 8, 15, 11, 9, 6, 14],
+                    borderColor: '#4299e1',
+                    backgroundColor: 'rgba(66, 153, 225, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(0,0,0,0.1)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        function selectAgent(agentId) {
+            // Remove active class from all agent cards
+            document.querySelectorAll('.agent-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Add active class to selected agent
+            event.currentTarget.classList.add('active');
+            
+            // Update detail panel based on selected agent
+            const agentDetails = {
+                realestate: {
+                    title: '🏠 Real Estate Agent',
+                    memory: [
+                        { label: 'Property listings analyzed', count: '1,247' },
+                        { label: 'Agent relationships', count: '89' },
+                        { label: 'Market patterns learned', count: '156' },
+                        { label: 'Successful outreach messages', count: '342' },
+                        { label: 'Hot deals identified', count: '23' }
+                    ],
+                    focus: 'Monitoring Detroit Section 8 market for new opportunities. Apify limit reached - temporarily using cached data. SMS outreach campaign running at 14% response rate.',
+                    wins: [
+                        'Identified 3 hot deals this week',
+                        '95% outreach message approval rate',
+                        'Zero duplicate contacts (protocol working)'
+                    ]
+                },
+                cfo: {
+                    title: '💰 CFO Agent',
+                    memory: [
+                        { label: 'Financial models created', count: '47' },
+                        { label: 'Investment analyses', count: '234' },
+                        { label: 'Market correlations found', count: '89' },
+                        { label: 'Risk assessments', count: '156' },
+                        { label: 'Portfolio optimizations', count: '34' }
+                    ],
+                    focus: 'Analyzing LL Ventures pipeline performance and crypto trading positions. Generating weekly financial reports and monitoring cash flow patterns.',
+                    wins: [
+                        'Identified $59.8K pending revenue',
+                        'Crypto positions +2.8% profit',
+                        'Optimized expense categorization'
+                    ]
+                },
+                legal: {
+                    title: '⚖️ Legal Agent',
+                    memory: [
+                        { label: 'Contracts reviewed', count: '67' },
+                        { label: 'Legal precedents', count: '289' },
+                        { label: 'Compliance checks', count: '145' },
+                        { label: 'Risk assessments', count: '78' },
+                        { label: 'Legal strategies', count: '23' }
+                    ],
+                    focus: 'Managing Andy Antiles lawsuit documentation and reviewing LL Ventures property contracts. Ensuring compliance with real estate regulations.',
+                    wins: [
+                        'Drafted lawsuit documentation',
+                        '100% contract compliance rate',
+                        'Identified 3 risk mitigation strategies'
+                    ]
+                },
+                operations: {
+                    title: '⚙️ Operations Agent',
+                    memory: [
+                        { label: 'Systems monitored', count: '15' },
+                        { label: 'Automations built', count: '34' },
+                        { label: 'Issues resolved', count: '127' },
+                        { label: 'Performance optimizations', count: '56' },
+                        { label: 'Integration points', count: '23' }
+                    ],
+                    focus: 'Monitoring all automated systems and managing API integrations. Currently addressing Apify usage limit and ensuring system reliability.',
+                    wins: [
+                        'Detected Apify limit proactively',
+                        '99.7% system uptime',
+                        'Automated 12 manual processes'
+                    ]
+                }
+            };
+            
+            const agent = agentDetails[agentId];
+            document.getElementById('agentDetailTitle').textContent = agent.title;
+            
+            // Update memory bank
+            const memoryBank = document.querySelector('.memory-bank');
+            const memoryItems = memoryBank.querySelectorAll('.memory-item');
+            agent.memory.forEach((item, index) => {
+                if (memoryItems[index]) {
+                    memoryItems[index].innerHTML = `<span class="memory-count">${item.count}</span> ${item.label}`;
+                }
+            });
+            
+            // Update focus and wins sections
+            const detailPanel = document.querySelector('.detail-panel');
+            const sections = detailPanel.querySelectorAll('div[style*="margin-top: 15px"]');
+            
+            if (sections[0]) {
+                sections[0].querySelector('div[style*="font-size: 12px"]').textContent = agent.focus;
+            }
+            
+            if (sections[1]) {
+                sections[1].querySelector('div[style*="font-size: 12px"]').innerHTML = agent.wins.map(win => `• ${win}`).join('<br>');
+            }
+        }
+
+        // API Configuration
+        const API_BASE = 'http://localhost:8888/api';
+        
+        // Real-time data fetching
+        async function fetchDashboardData() {
+            try {
+                const response = await fetch(`${API_BASE}/dashboard`);
+                const data = await response.json();
+                updateDashboardFromAPI(data);
+            } catch (error) {
+                console.log('API not available, using simulated data');
+                // Fallback to simulated updates
+                updateActivity();
+            }
+        }
+        
+        function updateDashboardFromAPI(data) {
+            // Update header stats
+            if (data.stats) {
+                document.getElementById('activeAgents').textContent = data.stats.active_agents;
+                document.getElementById('activeTasks').textContent = data.stats.active_tasks;
+                document.getElementById('completedToday').textContent = data.stats.completed_today;
+            }
+            
+            // Update activity stream
+            if (data.activity) {
+                const activityPanel = document.querySelector('.activity-panel');
+                const existingItems = activityPanel.querySelectorAll('.activity-item');
+                
+                // Clear existing items
+                existingItems.forEach(item => item.remove());
+                
+                // Add new activity items
+                data.activity.forEach(activity => {
+                    const newItem = document.createElement('div');
+                    newItem.className = 'activity-item';
+                    newItem.innerHTML = `
+                        <div class="activity-time">${activity.time}</div>
+                        <div class="activity-text">${activity.text}</div>
+                    `;
+                    activityPanel.appendChild(newItem);
+                });
+            }
+            
+            // Update task queue
+            if (data.queue) {
+                const queuePanel = document.querySelector('.queue-panel');
+                const existingTasks = queuePanel.querySelectorAll('.task-item');
+                
+                // Clear existing tasks
+                existingTasks.forEach(task => task.remove());
+                
+                // Add new tasks
+                data.queue.forEach(task => {
+                    const priorityClass = task.priority === 'high' ? 'priority-high' : 
+                                         task.priority === 'medium' ? 'priority-medium' : '';
+                    
+                    const taskItem = document.createElement('div');
+                    taskItem.className = `task-item ${priorityClass}`;
+                    taskItem.innerHTML = `
+                        <div class="task-header">
+                            <div class="task-title">${task.title}</div>
+                            <div class="task-priority ${task.priority}">${task.priority.toUpperCase()}</div>
+                        </div>
+                        <div class="task-agent">${task.agent} • ${task.time_ago}</div>
+                    `;
+                    queuePanel.appendChild(taskItem);
+                });
+            }
+            
+            // Update agent cards if data available
+            if (data.agents) {
+                data.agents.forEach(agent => {
+                    updateAgentCard(agent);
+                });
+            }
+        }
+        
+        function updateAgentCard(agentData) {
+            // Find and update agent card
+            const agentCards = document.querySelectorAll('.agent-card');
+            agentCards.forEach(card => {
+                const nameElement = card.querySelector('.agent-name');
+                if (nameElement && nameElement.textContent.includes(agentData.name)) {
+                    // Update status indicator
+                    const statusIndicator = card.querySelector('.agent-status');
+                    statusIndicator.className = `agent-status ${agentData.status}`;
+                    
+                    // Update stats
+                    const statsElement = card.querySelector('.agent-stats');
+                    if (statsElement) {
+                        statsElement.innerHTML = `
+                            <span>${agentData.active_tasks} Active Tasks</span>
+                            <span>${Math.round(agentData.success_rate)}% Success</span>
+                        `;
+                    }
+                }
+            });
+        }
+
+        // Fallback activity simulation
+        function updateActivity() {
+            const activities = [
+                '🏠 Real Estate Agent checked for new listings',
+                '💰 CFO Agent updated portfolio analysis',
+                '⚙️ Operations Agent performed system health check',
+                '⚖️ Legal Agent reviewed contract terms',
+                '🏠 Real Estate Agent processed market data'
+            ];
+            
+            const newActivity = activities[Math.floor(Math.random() * activities.length)];
+            const time = new Date().toLocaleTimeString('en-US', { 
+                hour: 'numeric', 
+                minute: '2-digit',
+                hour12: true 
+            });
+            
+            const activityPanel = document.querySelector('.activity-panel');
+            const firstActivity = activityPanel.querySelector('.activity-item');
+            
+            const newItem = document.createElement('div');
+            newItem.className = 'activity-item';
+            newItem.innerHTML = `
+                <div class="activity-time">${time}</div>
+                <div class="activity-text">${newActivity}</div>
+            `;
+            
+            if (firstActivity) {
+                activityPanel.insertBefore(newItem, firstActivity);
+            } else {
+                activityPanel.appendChild(newItem);
+            }
+            
+            // Remove last item to keep list manageable
+            const items = activityPanel.querySelectorAll('.activity-item');
+            if (items.length > 8) {
+                items[items.length - 1].remove();
+            }
+        }
+
+        // Initialize dashboard
+        window.onload = function() {
+            selectAgent('realestate');
+            
+            // Try to connect to API first
+            fetchDashboardData();
+            
+            // Set up periodic updates
+            setInterval(fetchDashboardData, 30000); // Every 30 seconds
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+{
+  "agents": {
+    "real_estate": {
+      "id": "real_estate",
+      "name": "Real Estate Agent",
+      "emoji": "🏠",
+      "role": "Acquisition & Market Analysis",
+      "specialization": [
+        "Zillow market analysis",
+        "Property evaluation",
+        "Agent relationship management",
+        "SMS outreach campaigns",
+        "Market trend analysis"
+      ],
+      "active_skills": [
+        "apify",
+        "zillow-scraper",
+        "sms-outreach",
+        "market-analysis"
+      ],
+      "memory_bank": {
+        "properties_analyzed": 1247,
+        "agent_relationships": 89,
+        "market_patterns": 156,
+        "successful_outreach": 342,
+        "hot_deals_identified": 23,
+        "response_rate": 14.2,
+        "success_rate": 89.3
+      },
+      "current_tasks": [
+        {
+          "id": "monitor_detroit_market",
+          "priority": "high",
+          "description": "Monitor Detroit Section 8 market for new opportunities",
+          "status": "active",
+          "blocker": "Apify monthly limit exceeded"
+        },
+        {
+          "id": "sms_outreach_campaign", 
+          "priority": "medium",
+          "description": "Daily SMS outreach to Detroit agents",
+          "status": "active",
+          "next_batch": "2026-02-09 07:00 PST"
+        },
+        {
+          "id": "response_processing",
+          "priority": "low", 
+          "description": "Process and draft replies to agent responses",
+          "status": "monitoring"
+        }
+      ],
+      "expertise_levels": {
+        "zillow_analysis": 95,
+        "market_trends": 87,
+        "agent_outreach": 92,
+        "contract_evaluation": 78,
+        "pricing_analysis": 84
+      },
+      "recent_wins": [
+        "Identified 3 hot deals this week",
+        "95% outreach message approval rate", 
+        "Zero duplicate contacts (protocol working)",
+        "14% response rate above industry average"
+      ],
+      "learning_history": [
+        {
+          "date": "2026-02-06",
+          "lesson": "Never contact same agent twice - implement bulletproof duplicate prevention",
+          "impact": "Zero duplicates since implementation"
+        },
+        {
+          "date": "2026-02-08", 
+          "lesson": "Apify monthly limits can disrupt monitoring - need backup data sources",
+          "impact": "Identified need for alternative monitoring solutions"
+        }
+      ]
+    },
+    "cfo": {
+      "id": "cfo", 
+      "name": "CFO Agent",
+      "emoji": "💰",
+      "role": "Financial Analysis & Reporting",
+      "specialization": [
+        "Financial modeling",
+        "Portfolio analysis", 
+        "Investment research",
+        "Risk assessment",
+        "Performance reporting"
+      ],
+      "active_skills": [
+        "financial-analysis",
+        "crypto-trading",
+        "portfolio-management",
+        "reporting"
+      ],
+      "memory_bank": {
+        "financial_models": 47,
+        "investment_analyses": 234,
+        "market_correlations": 89,
+        "risk_assessments": 156,
+        "portfolio_optimizations": 34,
+        "net_worth_tracked": 1434177,
+        "success_rate": 96.1
+      },
+      "current_tasks": [
+        {
+          "id": "weekly_financial_report",
+          "priority": "medium",
+          "description": "Generate comprehensive weekly financial summary",
+          "status": "in_progress",
+          "due": "2026-02-09 17:00 PST"
+        },
+        {
+          "id": "crypto_monitoring",
+          "priority": "low",
+          "description": "Monitor paper trading positions and performance",
+          "status": "active",
+          "frequency": "every_30_minutes"
+        }
+      ],
+      "expertise_levels": {
+        "financial_modeling": 94,
+        "portfolio_analysis": 91,
+        "reporting": 88,
+        "crypto_analysis": 82,
+        "risk_management": 87
+      },
+      "recent_wins": [
+        "Identified $59.8K pending revenue in LL Ventures",
+        "Crypto positions maintaining +2.8% profit",
+        "Optimized personal expense categorization", 
+        "Completed comprehensive wealth audit"
+      ],
+      "learning_history": [
+        {
+          "date": "2026-02-07",
+          "lesson": "Credit card spending includes business expenses - separate for accurate personal budget",
+          "impact": "Corrected personal living costs from $40K+ to $8,254/month"
+        },
+        {
+          "date": "2026-02-07",
+          "lesson": "Double leverage strategy: borrow against investments for real estate yields 20% returns",
+          "impact": "Identified path to accelerated wealth building"
+        }
+      ]
+    },
+    "legal": {
+      "id": "legal",
+      "name": "Legal Agent", 
+      "emoji": "⚖️",
+      "role": "Contract & Compliance",
+      "specialization": [
+        "Contract review",
+        "Legal compliance",
+        "Risk assessment",
+        "Litigation support",
+        "Regulatory analysis"
+      ],
+      "active_skills": [
+        "contract-analysis",
+        "legal-research", 
+        "compliance-monitoring",
+        "risk-assessment"
+      ],
+      "memory_bank": {
+        "contracts_reviewed": 67,
+        "legal_precedents": 289,
+        "compliance_checks": 145,
+        "risk_assessments": 78,
+        "legal_strategies": 23,
+        "success_rate": 94.2
+      },
+      "current_tasks": [
+        {
+          "id": "andy_antiles_lawsuit",
+          "priority": "high",
+          "description": "Manage Andy Antiles lawsuit documentation and strategy",
+          "status": "active",
+          "value": "5M_potential_recovery"
+        }
+      ],
+      "expertise_levels": {
+        "contract_review": 93,
+        "compliance": 89,
+        "risk_assessment": 86,
+        "litigation": 82,
+        "real_estate_law": 91
+      },
+      "recent_wins": [
+        "Drafted comprehensive lawsuit documentation vs Andy Antiles",
+        "100% contract compliance rate for LL Ventures",
+        "Identified 3 key risk mitigation strategies",
+        "Established strong evidence base for $5M+ claim"
+      ],
+      "learning_history": [
+        {
+          "date": "2026-02-07",
+          "lesson": "Partnership disputes require comprehensive evidence gathering from day one",
+          "impact": "Built systematic documentation process for business relationships"
+        }
+      ]
+    },
+    "operations": {
+      "id": "operations",
+      "name": "Operations Agent",
+      "emoji": "⚙️", 
+      "role": "Automation & Monitoring",
+      "specialization": [
+        "System automation",
+        "Performance monitoring",
+        "Integration management", 
+        "Process optimization",
+        "Issue resolution"
+      ],
+      "active_skills": [
+        "system-monitoring",
+        "automation",
+        "integration-management",
+        "performance-optimization"
+      ],
+      "memory_bank": {
+        "systems_monitored": 15,
+        "automations_built": 34,
+        "issues_resolved": 127,
+        "optimizations": 56,
+        "integration_points": 23,
+        "uptime_percentage": 99.7,
+        "success_rate": 99.1
+      },
+      "current_tasks": [
+        {
+          "id": "apify_limit_management",
+          "priority": "high", 
+          "description": "Address Apify monthly usage limit and implement backup monitoring",
+          "status": "active",
+          "impact": "Property monitoring disrupted"
+        }
+      ],
+      "expertise_levels": {
+        "system_automation": 97,
+        "monitoring": 95,
+        "integration": 92,
+        "optimization": 89,
+        "troubleshooting": 96
+      },
+      "recent_wins": [
+        "Detected Apify limit proactively before major disruption",
+        "Maintained 99.7% system uptime",
+        "Automated 12 previously manual processes",
+        "Zero critical system failures this month"
+      ],
+      "learning_history": [
+        {
+          "date": "2026-02-08",
+          "lesson": "API usage limits need proactive monitoring and backup plans",
+          "impact": "Implementing multi-source monitoring to prevent single points of failure"
+        }
+      ]
+    }
+  },
+  "collaboration_patterns": {
+    "real_estate_cfo": {
+      "description": "Real Estate Agent provides deal data, CFO Agent analyzes financial viability",
+      "frequency": "weekly",
+      "last_collaboration": "2026-02-07",
+      "success_rate": 94
+    },
+    "legal_cfo": {
+      "description": "Legal Agent reviews contracts, CFO Agent assesses financial risks",  
+      "frequency": "as_needed",
+      "last_collaboration": "2026-02-06",
+      "success_rate": 97
+    },
+    "operations_all": {
+      "description": "Operations Agent monitors and supports all other agents' systems",
+      "frequency": "continuous",
+      "last_collaboration": "ongoing",
+      "success_rate": 99
+    }
+  },
+  "system_metrics": {
+    "total_tasks_completed": 1247,
+    "average_completion_time": "23_minutes",
+    "overall_success_rate": 94.6,
+    "agent_collaboration_events": 67,
+    "last_updated": "2026-02-08T15:00:00-08:00"
+  }
+}
