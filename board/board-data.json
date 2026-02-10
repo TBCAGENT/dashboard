@@ -258,8 +258,120 @@
           "detail": "Task stale >96h in backlog - Go High Level integration waiting for API credentials or access method from Luke"
         }
       ]
+    },
+    {
+      "id": "task-006",
+      "title": "Travel Refunds (JSX Flight + Vegas Hotel)",
+      "description": "Process refunds for Luke's cancelled Feb 8th travel - JSX flight (GYNEWN) and Resorts World Las Vegas (LAPS18ZEW7)",
+      "column": "in-progress",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-09",
+      "context": "Luke cancelled Feb 8th Carlsbad-Vegas travel due to medical emergency. Processing refunds for JSX flight (GYNEWN) and Resorts World Las Vegas hotel (LAPS18ZEW7). JSX escalated to CEO level after auto-replies.",
+      "archived": false,
+      "chatMessages": [],
+      "activity": [
+        {
+          "date": "2026-02-08T20:12:00",
+          "action": "JSX refund emails sent",
+          "detail": "Sent 2 refund request emails to JSX customer support citing medical emergency"
+        },
+        {
+          "date": "2026-02-08T20:12:00",
+          "action": "JSX auto-replies received",
+          "detail": "Both JSX emails got generic auto-replies with self-service options, awaiting human response"
+        },
+        {
+          "date": "2026-02-09T10:04:00",
+          "action": "Luke status check",
+          "detail": "Luke asked for update on refund progress - JSX pending, hotel refund status unclear"
+        },
+        {
+          "date": "2026-02-09T10:05:00",
+          "action": "Hotel refund confirmed",
+          "detail": "Luke confirmed hotel refund needed, waiting for specific hotel details (name, confirmation, dates, platform)"
+        },
+        {
+          "date": "2026-02-09T10:05:30",
+          "action": "Hotel details received",
+          "detail": "Resorts World Las Vegas, confirmation LAPS18ZEW7, Feb 8-10, 2026"
+        },
+        {
+          "date": "2026-02-09T10:06:00",
+          "action": "Hotel refund emails sent",
+          "detail": "Sent refund requests to reservations@rwlasvegas.com and customerservice@rwlasvegas.com citing medical emergency"
+        },
+        {
+          "date": "2026-02-09T10:13:00",
+          "action": "JSX refund escalation",
+          "detail": "Luke requested escalation beyond auto-replies. Sent 3 strategic emails: customerservice@jsx.com, CEO alex.wilcox@jsx.com, reservations@jsx.com"
+        }
+      ]
+    },
+    {
+      "id": "task-007",
+      "title": "Enhanced Dashboard (Agents + Health)",
+      "description": "Build comprehensive Command Center dashboard with agents Kanban section and health tracking system",
+      "column": "done",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-09",
+      "context": "Luke requested enhanced dashboard with agent management Kanban board and health/longevity tracking section for comprehensive monitoring.",
+      "archived": false,
+      "chatMessages": [],
+      "activity": [
+        {
+          "date": "2026-02-09T10:56:00",
+          "action": "Project requested",
+          "detail": "Luke asked for dashboard with agents Kanban section and health tracking"
+        },
+        {
+          "date": "2026-02-09T10:59:00",
+          "action": "Dashboard built",
+          "detail": "Created command-center.html with 3 sections: Finance, Agents, Health"
+        },
+        {
+          "date": "2026-02-09T11:00:00",
+          "action": "Health system created",
+          "detail": "Built health_tracker.py with metrics, goals, and recommendations"
+        },
+        {
+          "date": "2026-02-09T11:01:00",
+          "action": "Project completed",
+          "detail": "Dashboard ready with launch script and health logging capabilities"
+        }
+      ]
+    },
+    {
+      "id": "task-006",
+      "title": "Dashboard Emergency Rebuild",
+      "description": "Fix missing financial data, add Projects Archive, restore transaction history",
+      "column": "done",
+      "priority": "critical",
+      "type": "project",
+      "created": "2026-02-09",
+      "context": "Luke identified 50% efficiency loss due to completed work disappearing from dashboard. Missing: Tiller analysis, credit card transactions, monthly expenses wrong, no project history.",
+      "archived": false,
+      "activity": [
+        {
+          "date": "2026-02-09T12:25:00",
+          "action": "Critical feedback received",
+          "detail": "Luke: Dashboard missing major completed projects, wrong financial data, no transaction history"
+        },
+        {
+          "date": "2026-02-09T12:30:00",
+          "action": "Emergency fixes deployed",
+          "detail": "Added Projects Archive tab, restored transactions, corrected monthly expenses (K)"
+        },
+        {
+          "date": "2026-02-09T12:35:00",
+          "action": "COMPLETED",
+          "detail": "All major analyses now accessible: Amy Sangster, VOO backtest, Tiller, wealth audit, Daniel Fazio"
+        }
+      ],
+      "chatMessages": []
     }
   ],
   "archivedTasks": [],
-  "lastUpdated": "2026-02-08T20:02:00.000000"
+  "lastUpdated": "2026-02-09T12:31:38.545211"
 }

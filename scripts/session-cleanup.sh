@@ -6,7 +6,7 @@
 set -euo pipefail
 
 SESSION_DIR="$HOME/.openclaw/agents/main/sessions"
-MAX_SIZE_KB=500  # Delete sessions larger than 500KB
+MAX_SIZE_KB=200  # Delete sessions larger than 200KB (~50k tokens)
 LOG_FILE="$HOME/.openclaw/workspace/logs/session-cleanup.log"
 
 mkdir -p "$(dirname "$LOG_FILE")"

@@ -1,0 +1,31 @@
+{
+  "profile": {
+    "name": "Luke Fontaine",
+    "age": 31,
+    "goals": {
+      "steps": 10000,
+      "water_glasses": 8,
+      "sleep_hours": 8.0,
+      "meditation_minutes": 10,
+      "weight_target": 180
+    }
+  },
+  "daily_records": {
+    "2026-02-09": {
+      "sleep_hours": 7.5,
+      "steps": 3247,
+      "water_glasses": 6,
+      "meditation_minutes": 10,
+      "nutrition_score": 13
+    }
+  },
+  "weekly_averages": {},
+  "health_score_history": [
+    {
+      "date": "2026-02-09",
+      "score": 74,
+      "timestamp": "2026-02-09T10:59:46.383957"
+    }
+  ],
+  "last_updated": "2026-02-09T10:59:46.383971"
+}

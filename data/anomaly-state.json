@@ -1,0 +1,29 @@
+{
+  "last_check": "2026-02-09T11:47:12.221762",
+  "deal_counts": {
+    "total": 31,
+    "in_contract": 18,
+    "pending": 13
+  },
+  "revenue_totals": {
+    "total": 311630
+  },
+  "stale_deals": [
+    {
+      "address": "13851 Liberal St, Detroit, MI 48205",
+      "revenue": 10000,
+      "days_old": 20
+    },
+    {
+      "address": "10976 PEERLESS ST. DETROIT, MI  48224",
+      "revenue": 10000,
+      "days_old": 28
+    },
+    {
+      "address": "5061 Hillsboro St, Detroit, MI 48204",
+      "revenue": 10000,
+      "days_old": 14
+    }
+  ],
+  "recent_deals": []
+}

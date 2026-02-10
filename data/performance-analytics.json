@@ -1,0 +1,210 @@
+{
+  "deal_outcomes": {
+    "total_deals": 162,
+    "successful_deals": 31,
+    "success_rate": 19.1358024691358,
+    "status_breakdown": {
+      "Lost (Offer Denied)": 59,
+      "Lost (Already Under Contract)": 13,
+      "In Contract": 18,
+      "Building Offer": 14,
+      "Killed": 30,
+      "Offer Made": 11,
+      "Pending Contract": 13,
+      "Mutual Release": 1,
+      "Waiting On Info": 3
+    },
+    "revenue_by_status": {
+      "Lost (Offer Denied)": 548000,
+      "Lost (Already Under Contract)": 193000,
+      "In Contract": 162000,
+      "Building Offer": 27000,
+      "Killed": 259500,
+      "Offer Made": 430000,
+      "Pending Contract": 149630,
+      "Mutual Release": 7500,
+      "Waiting On Info": 0
+    }
+  },
+  "revenue_patterns": {
+    "total_revenue": 311630,
+    "average_revenue": 10052.58064516129,
+    "max_revenue": 40000,
+    "min_revenue": 5000,
+    "deal_count": 31,
+    "revenue_distribution": {
+      "low_count": 6,
+      "medium_count": 23,
+      "high_count": 2
+    }
+  },
+  "timing_patterns": {
+    "average_days_to_contract": 9.11111111111111,
+    "fastest_deal": 3,
+    "slowest_deal": 36,
+    "fast_deals": 5,
+    "slow_deals": 1,
+    "total_analyzed": 18
+  },
+  "poc_performance": {
+    "Mohamad": {
+      "total_deals": 7,
+      "successful_deals": 5,
+      "total_revenue": 105000,
+      "avg_revenue": 21000.0,
+      "success_rate": 71.42857142857143
+    },
+    "Nick": {
+      "total_deals": 32,
+      "successful_deals": 14,
+      "total_revenue": 339500,
+      "avg_revenue": 24250.0,
+      "success_rate": 43.75
+    },
+    "VRE": {
+      "total_deals": 13,
+      "successful_deals": 4,
+      "total_revenue": 418750,
+      "avg_revenue": 104687.5,
+      "success_rate": 30.76923076923077
+    },
+    "Talaal": {
+      "total_deals": 26,
+      "successful_deals": 5,
+      "total_revenue": 150380,
+      "avg_revenue": 30076.0,
+      "success_rate": 19.230769230769234
+    },
+    "Unknown": {
+      "total_deals": 12,
+      "successful_deals": 2,
+      "total_revenue": 59500,
+      "avg_revenue": 29750.0,
+      "success_rate": 16.666666666666664
+    },
+    "Melissa": {
+      "total_deals": 19,
+      "successful_deals": 1,
+      "total_revenue": 188000,
+      "avg_revenue": 188000.0,
+      "success_rate": 5.263157894736842
+    },
+    "Guy": {
+      "total_deals": 13,
+      "successful_deals": 0,
+      "total_revenue": 127500,
+      "avg_revenue": 0,
+      "success_rate": 0.0
+    },
+    "Dominic": {
+      "total_deals": 23,
+      "successful_deals": 0,
+      "total_revenue": 233000,
+      "avg_revenue": 0,
+      "success_rate": 0.0
+    },
+    "Unassigned": {
+      "total_deals": 5,
+      "successful_deals": 0,
+      "total_revenue": 10000,
+      "avg_revenue": 0,
+      "success_rate": 0.0
+    },
+    "Lucien": {
+      "total_deals": 10,
+      "successful_deals": 0,
+      "total_revenue": 100000,
+      "avg_revenue": 0,
+      "success_rate": 0.0
+    },
+    "Nate Eaton": {
+      "total_deals": 1,
+      "successful_deals": 0,
+      "total_revenue": 45000,
+      "avg_revenue": 0,
+      "success_rate": 0.0
+    },
+    "Garrett": {
+      "total_deals": 1,
+      "successful_deals": 0,
+      "total_revenue": 0,
+      "avg_revenue": 0,
+      "success_rate": 0.0
+    }
+  },
+  "property_areas": {
+    "Manor": {
+      "count": 2,
+      "successful": 1,
+      "total_revenue": 6000,
+      "success_rate": 50.0
+    },
+    "Fairfield": {
+      "count": 2,
+      "successful": 1,
+      "total_revenue": 8500,
+      "success_rate": 50.0
+    },
+    "Liberal": {
+      "count": 2,
+      "successful": 1,
+      "total_revenue": 10000,
+      "success_rate": 50.0
+    },
+    "Freeland": {
+      "count": 2,
+      "successful": 1,
+      "total_revenue": 10000,
+      "success_rate": 50.0
+    },
+    "Orleans": {
+      "count": 2,
+      "successful": 1,
+      "total_revenue": 8440,
+      "success_rate": 50.0
+    },
+    "Meyers": {
+      "count": 2,
+      "successful": 1,
+      "total_revenue": 5000,
+      "success_rate": 50.0
+    },
+    "Tuxedo": {
+      "count": 2,
+      "successful": 1,
+      "total_revenue": 10000,
+      "success_rate": 50.0
+    },
+    "W": {
+      "count": 5,
+      "successful": 2,
+      "total_revenue": 20000,
+      "success_rate": 40.0
+    },
+    "Steel": {
+      "count": 3,
+      "successful": 1,
+      "total_revenue": 10000,
+      "success_rate": 33.33333333333333
+    },
+    "Hartwell": {
+      "count": 3,
+      "successful": 1,
+      "total_revenue": 7500,
+      "success_rate": 33.33333333333333
+    }
+  },
+  "insights": [
+    {
+      "type": "warning",
+      "title": "Low Success Rate",
+      "message": "Success rate is only 19.1%. Focus on higher-quality leads."
+    },
+    {
+      "type": "success",
+      "title": "Top Performer",
+      "message": "Mohamad has 71.4% success rate. Prioritize deals from this contact."
+    }
+  ],
+  "generated_at": "2026-02-09T11:47:05.640581"
+}

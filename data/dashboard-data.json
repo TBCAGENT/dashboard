@@ -1,0 +1,46 @@
+{
+  "last_updated": "2026-02-09T11:47:17.109404",
+  "mission_control": {
+    "success_rate": 19.1358024691358,
+    "active_deals": 31,
+    "total_revenue": 311630,
+    "avg_deal_value": 10052.58064516129
+  },
+  "performance_metrics": {
+    "top_pocs": [
+      {
+        "name": "Mohamad",
+        "success_rate": 71.42857142857143,
+        "total_deals": 7,
+        "revenue": 105000
+      },
+      {
+        "name": "Nick",
+        "success_rate": 43.75,
+        "total_deals": 32,
+        "revenue": 339500
+      },
+      {
+        "name": "VRE",
+        "success_rate": 30.76923076923077,
+        "total_deals": 13,
+        "revenue": 418750
+      }
+    ],
+    "avg_days_to_contract": 9.11111111111111,
+    "fast_deals_count": 5
+  },
+  "insights": [
+    {
+      "type": "warning",
+      "title": "Low Success Rate",
+      "message": "Success rate is only 19.1%. Focus on higher-quality leads."
+    },
+    {
+      "type": "success",
+      "title": "Top Performer",
+      "message": "Mohamad has 71.4% success rate. Prioritize deals from this contact."
+    }
+  ],
+  "alerts": []
+}

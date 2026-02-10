@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke's Command Center</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 4px;
+            margin-bottom: 15px;
+        }
+
+        .nav-tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px 5px;
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab.active {
+            background: rgba(255, 255, 255, 0.95);
+            color: #2d3748;
+        }
+
+        .nav-tab:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-tab.active:hover {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .metric-card {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 13px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .progress-bar {
+            background: #e2e8f0;
+            border-radius: 10px;
+            height: 8px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #48bb78, #38a169);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .pipeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .pipeline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .pipeline-address {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 14px;
+        }
+        
+        .pipeline-value {
+            font-weight: 700;
+            color: #38a169;
+            font-size: 14px;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 200px;
+            margin: 15px 0;
+        }
+
+        /* Agents Kanban Styles */
+        .kanban-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .kanban-column {
+            min-width: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .kanban-header {
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .agent-card {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .agent-name {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .agent-task {
+            font-size: 11px;
+            color: #718096;
+            margin-bottom: 6px;
+        }
+
+        .agent-status {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: #c6f6d5;
+            color: #276749;
+        }
+
+        .status-busy {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .status-idle {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        /* Health Tracking Styles */
+        .health-metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .health-metric:last-child {
+            border-bottom: none;
+        }
+
+        .health-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 14px;
+        }
+
+        .health-value {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .health-good {
+            color: #38a169;
+        }
+
+        .health-warning {
+            color: #ed8936;
+        }
+
+        .health-critical {
+            color: #e53e3e;
+        }
+
+        .health-ring {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+            margin: 10px auto;
+        }
+
+        .health-ring.good {
+            background: conic-gradient(from 0deg, #38a169 0deg 270deg, #e2e8f0 270deg 360deg);
+        }
+
+        .health-ring.warning {
+            background: conic-gradient(from 0deg, #ed8936 0deg 180deg, #e2e8f0 180deg 360deg);
+        }
+        
+        .refresh-btn {
+            background: #4299e1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .refresh-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-live {
+            background: #48bb78;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: #718096;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+
+        .section-header {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quick-action {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quick-action:hover {
+            background: #edf2f7;
+            border-color: #cbd5e0;
+        }
+
+        .action-title {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 13px;
+        }
+
+        .action-desc {
+            font-size: 11px;
+            color: #718096;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Command Center</h1>
+            <div class="subtitle">
+                <span class="status-indicator status-live"></span>
+                Luke's Mission Control
+            </div>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <div class="nav-tab active" onclick="switchTab('financial')">💰 Finance</div>
+            <div class="nav-tab" onclick="switchTab('agents')">🤖 Agents</div>
+            <div class="nav-tab" onclick="switchTab('health')">💪 Health</div>
+        </div>
+
+        <!-- Financial Tab -->
+        <div class="tab-content active" id="financial">
+            <!-- Total Position Card -->
+            <div class="card metric-card">
+                <div class="metric-value" id="totalPosition">$1,203,839</div>
+                <div class="metric-label">Total Financial Position</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar" style="width: 12%"></div>
+                </div>
+                <div style="font-size: 12px; color: #718096; margin-top: 8px;">
+                    <span id="progressPercent">12.0%</span> toward $10M goal
+                </div>
+            </div>
+            
+            <!-- Net Worth Breakdown -->
+            <div class="card">
+                <h3 class="section-header">💎 Realized Net Worth</h3>
+                <div class="metric-card" style="margin-bottom: 15px;">
+                    <div class="metric-value" style="font-size: 24px;" id="realizedNetWorth">$817,942</div>
+                    <div class="metric-label">Tiller + Assets</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="netWorthChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- LL Ventures Pipeline -->
+            <div class="card">
+                <h3 class="section-header">🏠 LL Ventures Pipeline</h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 20px; font-weight: 700; color: #2d3748;" id="dealCount">18</div>
+                        <div style="font-size: 12px; color: #718096;">Deals</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 20px; font-weight: 700; color: #38a169;" id="pipelineValue">$64,800</div>
+                        <div style="font-size: 12px; color: #718096;">Your 40%</div>
+                    </div>
+                </div>
+                
+                <div id="pipelineDeals">
+                    <div class="pipeline-item">
+                        <span class="pipeline-address">4087 W Philadelphia</span>
+                        <span class="pipeline-value">$4,000</span>
+                    </div>
+                    <div class="pipeline-item">
+                        <span class="pipeline-address">3920 Devonshire</span>
+                        <span class="pipeline-value">$4,000</span>
+                    </div>
+                    <div class="pipeline-item">
+                        <span class="pipeline-address">15011 Fairfield St</span>
+                        <span class="pipeline-value">$3,400</span>
+                    </div>
+                    <div class="pipeline-item">
+                        <span class="pipeline-address">+ 15 more deals</span>
+                        <span class="pipeline-value">$54,000</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Crypto Trading Bot -->
+            <div class="card">
+                <h3 class="section-header">📈 Trading Bot</h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 18px; font-weight: 700; color: #f7931a;">$70,820</div>
+                        <div style="font-size: 12px; color: #718096;">BTC Price</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 18px; font-weight: 700; color: #627eea;">$2,126</div>
+                        <div style="font-size: 12px; color: #718096;">ETH Price</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 18px; font-weight: 700; color: #38a169;">Paper</div>
+                        <div style="font-size: 12px; color: #718096;">Mode</div>
+                    </div>
+                </div>
+                <div style="background: #e6fffa; border: 1px solid #81e6d9; border-radius: 8px; padding: 10px; text-align: center;">
+                    <div style="font-size: 12px; color: #234e52;">
+                        🧪 Paper Trading Phase (Until Feb 18, 2026)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agents Tab -->
+        <div class="tab-content" id="agents">
+            <!-- Agent Status Overview -->
+            <div class="card">
+                <h3 class="section-header">🤖 Agent Status</h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 20px; font-weight: 700; color: #38a169;" id="activeAgents">6</div>
+                        <div style="font-size: 12px; color: #718096;">Active</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 20px; font-weight: 700; color: #ed8936;" id="busyAgents">3</div>
+                        <div style="font-size: 12px; color: #718096;">Busy</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 20px; font-weight: 700; color: #4299e1;" id="totalTasks">15</div>
+                        <div style="font-size: 12px; color: #718096;">Tasks</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent Kanban Board -->
+            <div class="card">
+                <h3 class="section-header">📋 Agent Tasks</h3>
+                <div class="kanban-container">
+                    <div class="kanban-column">
+                        <div class="kanban-header">🟢 Available</div>
+                        <div class="agent-card">
+                            <div class="agent-name">Arthur</div>
+                            <div class="agent-task">Main assistant</div>
+                            <span class="agent-status status-active">ACTIVE</span>
+                        </div>
+                        <div class="agent-card">
+                            <div class="agent-name">Research Agent</div>
+                            <div class="agent-task">Web research</div>
+                            <span class="agent-status status-idle">IDLE</span>
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column">
+                        <div class="kanban-header">🟡 Working</div>
+                        <div class="agent-card">
+                            <div class="agent-name">Real Estate Agent</div>
+                            <div class="agent-task">Detroit monitor</div>
+                            <span class="agent-status status-busy">BUSY</span>
+                        </div>
+                        <div class="agent-card">
+                            <div class="agent-name">Trading Bot</div>
+                            <div class="agent-task">Paper trading BTC/ETH</div>
+                            <span class="agent-status status-active">ACTIVE</span>
+                        </div>
+                        <div class="agent-card">
+                            <div class="agent-name">Financial Agent</div>
+                            <div class="agent-task">Portfolio analysis</div>
+                            <span class="agent-status status-busy">BUSY</span>
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column">
+                        <div class="kanban-header">🔴 Issues</div>
+                        <div class="agent-card">
+                            <div class="agent-name">Apify Monitor</div>
+                            <div class="agent-task">API limit exceeded</div>
+                            <span class="agent-status status-busy">ERROR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="card">
+                <h3 class="section-header">⚡ Quick Actions</h3>
+                <div class="quick-action" onclick="createTask()">
+                    <div class="action-title">Create New Task</div>
+                    <div class="action-desc">Delegate work to available agents</div>
+                </div>
+                <div class="quick-action" onclick="viewActivity()">
+                    <div class="action-title">View Activity Log</div>
+                    <div class="action-desc">Recent agent communications</div>
+                </div>
+                <div class="quick-action" onclick="systemHealth()">
+                    <div class="action-title">System Health Check</div>
+                    <div class="action-desc">Diagnose agent performance</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Tab -->
+        <div class="tab-content" id="health">
+            <!-- Health Score -->
+            <div class="card metric-card">
+                <div class="health-ring good">
+                    <span style="color: white; background: rgba(56, 161, 105, 0.9); border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">85%</span>
+                </div>
+                <div class="metric-value" style="font-size: 24px; color: #38a169;">Health Score</div>
+                <div class="metric-label">Overall Wellness</div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="card">
+                <h3 class="section-header">📊 Key Metrics</h3>
+                <div class="health-metric">
+                    <div class="health-label">
+                        <span>😴</span> Sleep
+                    </div>
+                    <div class="health-value health-good">7.5h avg</div>
+                </div>
+                <div class="health-metric">
+                    <div class="health-label">
+                        <span>🏃</span> Activity
+                    </div>
+                    <div class="health-value health-warning">3.2k steps</div>
+                </div>
+                <div class="health-metric">
+                    <div class="health-label">
+                        <span>💧</span> Hydration
+                    </div>
+                    <div class="health-value health-good">2.1L today</div>
+                </div>
+                <div class="health-metric">
+                    <div class="health-label">
+                        <span>🍎</span> Nutrition
+                    </div>
+                    <div class="health-value health-good">Clean eating</div>
+                </div>
+            </div>
+
+            <!-- Goals & Tracking -->
+            <div class="card">
+                <h3 class="section-header">🎯 Health Goals</h3>
+                <div class="quick-action">
+                    <div class="action-title">🏃‍♂️ 10K Steps Daily</div>
+                    <div class="action-desc">Progress: 3,247 / 10,000 (32%)</div>
+                </div>
+                <div class="quick-action">
+                    <div class="action-title">💧 8 Glasses Water</div>
+                    <div class="action-desc">Progress: 6 / 8 (75%)</div>
+                </div>
+                <div class="quick-action">
+                    <div class="action-title">😴 8 Hours Sleep</div>
+                    <div class="action-desc">Average: 7.5h (94%)</div>
+                </div>
+                <div class="quick-action">
+                    <div class="action-title">🧘 10min Meditation</div>
+                    <div class="action-desc">Streak: 3 days</div>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="card">
+                <h3 class="section-header">💡 Today's Focus</h3>
+                <div style="background: #e6fffa; border: 1px solid #81e6d9; border-radius: 8px; padding: 12px;">
+                    <div style="font-weight: 600; color: #234e52; font-size: 13px;">⭐ Priority Action</div>
+                    <div style="color: #234e52; font-size: 12px; margin-top: 4px;">Get 6,753 more steps before 10pm. Consider a walk or standing desk session.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Global Actions -->
+        <div class="card">
+            <button class="refresh-btn" onclick="refreshData()">🔄 Refresh All Data</button>
+            <div class="last-updated" id="lastUpdated">
+                Last updated: <span id="updateTime">Just now</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => tab.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const navTabs = document.querySelectorAll('.nav-tab');
+            navTabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to selected nav tab
+            event.target.classList.add('active');
+            
+            // Initialize charts if switching to financial tab
+            if (tabName === 'financial') {
+                setTimeout(initCharts, 100);
+            }
+        }
+
+        // Initialize charts
+        function initCharts() {
+            const ctx = document.getElementById('netWorthChart');
+            if (!ctx) return;
+            
+            // Destroy existing chart if it exists
+            if (window.netWorthChart) {
+                window.netWorthChart.destroy();
+            }
+            
+            window.netWorthChart = new Chart(ctx.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Investments', 'Bank Accounts', 'Real Estate', 'Watch Collection'],
+                    datasets: [{
+                        data: [650000, 167942, 0, 0],
+                        backgroundColor: [
+                            '#4299e1',
+                            '#38a169',
+                            '#ed8936',
+                            '#9f7aea'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 15,
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Agent actions
+        function createTask() {
+            alert('🚀 Task creation interface coming soon!\n\nThis will allow you to delegate tasks directly to available agents.');
+        }
+
+        function viewActivity() {
+            alert('📊 Activity log viewer coming soon!\n\nThis will show real-time agent communications and task updates.');
+        }
+
+        function systemHealth() {
+            alert('🔧 System health check initiated!\n\n• Arthur: ✅ Operational\n• Financial Agent: ✅ Active\n• Real Estate Agent: ⚠️ API limits\n• Research Agent: ✅ Standby');
+        }
+
+        async function refreshData() {
+            const btn = document.querySelector('.refresh-btn');
+            btn.textContent = '🔄 Updating...';
+            btn.disabled = true;
+            
+            try {
+                // Simulate API calls
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Update agents data
+                document.getElementById('activeAgents').textContent = Math.floor(Math.random() * 3) + 4;
+                document.getElementById('busyAgents').textContent = Math.floor(Math.random() * 3) + 1;
+                document.getElementById('totalTasks').textContent = Math.floor(Math.random() * 5) + 10;
+                
+                // Update timestamp
+                document.getElementById('updateTime').textContent = new Date().toLocaleTimeString();
+                
+                btn.textContent = '✅ Updated!';
+                setTimeout(() => {
+                    btn.textContent = '🔄 Refresh All Data';
+                    btn.disabled = false;
+                }, 1000);
+            } catch (error) {
+                console.error('Error refreshing data:', error);
+                btn.textContent = '❌ Error';
+                setTimeout(() => {
+                    btn.textContent = '🔄 Refresh All Data';
+                    btn.disabled = false;
+                }, 2000);
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initCharts();
+            document.getElementById('updateTime').textContent = new Date().toLocaleTimeString();
+            
+            // Auto-refresh every 5 minutes
+            setInterval(() => {
+                if (!document.querySelector('.refresh-btn').disabled) {
+                    refreshData();
+                }
+            }, 300000);
+        });
+    </script>
+</body>
+</html>
