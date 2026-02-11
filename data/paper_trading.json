@@ -1,18 +1,8 @@
 {
   "started": "2026-02-04T19:00:00-08:00",
   "initial_balance": 5000,
-  "current_balance": 3963.51,
+  "current_balance": 3936.32,
   "positions": [
-    {
-      "symbol": "ETH-USD",
-      "quantity": 0.11562726974499857,
-      "entry_price": 2047.5306173199733,
-      "entry_time": "2026-02-06T09:14:54.210747",
-      "stop_loss": 1986.104698800374,
-      "take_profit": 2252.283679051971,
-      "value": 236.750375,
-      "strategy": "Strategy 1 - Momentum"
-    },
     {
       "symbol": "BTC-USD",
       "quantity": 0.014091209556126482,
@@ -25,6 +15,19 @@
     }
   ],
   "closed_trades": [
+    {
+      "symbol": "ETH-USD",
+      "quantity": 0.11562726974499857,
+      "entry_price": 2047.5306173199733,
+      "exit_price": 1985.37,
+      "entry_time": "2026-02-06T09:14:54.210747",
+      "exit_time": "2026-02-10T20:31:00.000000",
+      "exit_reason": "stop_loss_triggered",
+      "pnl": -7.19,
+      "pnl_pct": -0.0304,
+      "value": 229.56,
+      "strategy": "Strategy 1 - Momentum"
+    },
     {
       "symbol": "BTC-USD",
       "quantity": 0.0033698887870536945,
