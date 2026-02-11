@@ -660,6 +660,67 @@
             backdrop-filter: blur(10px);
         }
 
+        .activity-feed-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .activity-feed-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(100, 181, 246, 0.2);
+        }
+
+        .activity-info {
+            flex: 1;
+        }
+
+        .activity-merchant {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .activity-details {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .activity-amount {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .amount-debit {
+            color: #ef4444;
+        }
+
+        .amount-credit {
+            color: #4ade80;
+        }
+
+        .activity-category {
+            background: rgba(100, 181, 246, 0.2);
+            color: #64b5f6;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .category-business { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+        .category-personal { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+        .category-recurring { background: rgba(168, 85, 247, 0.2); color: #a855f7; }
+
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
@@ -682,6 +743,16 @@
 
             .credit-cards-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .activity-details {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .activity-category {
+                margin-left: 0;
+                margin-top: 0.5rem;
             }
         }
     </style>
@@ -1164,6 +1235,21 @@
                             <div class="card-balance">-$24,449</div>
                             <div class="card-limit">Business + office expenses</div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="financial-section">
+                    <h3 style="color: #64b5f6; margin-bottom: 1.5rem; font-size: 1.2rem;">📈 Live Activity Feed</h3>
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; max-height: 600px; overflow-y: auto;">
+                        <div id="activity-feed" style="padding: 1rem;">
+                            <!-- Activity feed will be populated by JavaScript -->
+                            <div style="text-align: center; color: rgba(255, 255, 255, 0.5); padding: 2rem;">
+                                Loading transaction data...
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <button onclick="loadMoreTransactions()" style="background: linear-gradient(135deg, #64b5f6, #42a5f5); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 12px; cursor: pointer; font-weight: 600;">Load More Transactions</button>
                     </div>
                 </div>
 
@@ -1768,6 +1854,11 @@
                 document.getElementById('financials-password').style.display = 'none';
                 document.getElementById('financial-content').style.display = 'block';
                 errorDiv.style.display = 'none';
+                
+                // Initialize activity feed after a short delay
+                setTimeout(() => {
+                    initializeActivityFeed();
+                }, 200);
             } else {
                 errorDiv.style.display = 'block';
                 document.getElementById('financial-password').value = '';
@@ -1865,6 +1956,133 @@
         // Update timestamp every 30 seconds
         updateTimestamp();
         setInterval(updateTimestamp, 30000);
+
+        let transactionOffset = 0;
+        let allTransactions = [];
+
+        // Mock transaction data - in production this would come from Tiller API
+        function generateMockTransactions() {
+            const merchants = [
+                'PayPal ACE Rezo', 'PayPal M Barrientos', 'Anthropic', 'OpenAI', 'Tesla Charging',
+                'Whole Foods Market', 'Costco Wholesale', 'Shell Gas Station', 'Amazon.com',
+                'Apple iTunes', 'Netflix', 'Spotify Premium', 'Adobe Creative', 'GitHub Pro',
+                'Carlsbad Office Rent', 'San Diego Gas & Electric', 'Verizon Wireless',
+                'Chase Credit Card Payment', 'AmEx Payment', 'Blue Cross Blue Shield',
+                'Uber', 'Lyft', 'DoorDash', 'Grubhub', 'Starbucks', 'Chipotle',
+                'Home Depot', 'Lowe\'s', 'Target', 'Best Buy', 'REI Co-op',
+                'LinkedIn Premium', 'Zoom Pro', 'Slack Premium', 'Notion Pro',
+                'Quickbooks Online', 'DocuSign', 'Calendly Pro', 'Loom Pro'
+            ];
+
+            const categories = [
+                { name: 'Business', class: 'category-business' },
+                { name: 'Personal', class: 'category-personal' },
+                { name: 'Recurring', class: 'category-recurring' }
+            ];
+
+            const transactions = [];
+            const now = new Date();
+
+            for (let i = 0; i < 200; i++) {
+                const daysAgo = Math.floor(i / 5);
+                const hoursAgo = Math.floor(Math.random() * 24);
+                const date = new Date(now - (daysAgo * 24 * 60 * 60 * 1000) - (hoursAgo * 60 * 60 * 1000));
+                
+                const merchant = merchants[Math.floor(Math.random() * merchants.length)];
+                const category = categories[Math.floor(Math.random() * categories.length)];
+                const amount = (Math.random() * 2000 + 10).toFixed(2);
+                const isCredit = Math.random() < 0.05; // 5% chance of credit
+                
+                transactions.push({
+                    id: `tx_${i}`,
+                    merchant: merchant,
+                    amount: isCredit ? amount : `-${amount}`,
+                    date: date,
+                    category: category,
+                    account: Math.random() < 0.6 ? 'Amex Platinum (1002)' : 
+                             Math.random() < 0.5 ? 'Amex Gold (2004)' : 'Chase Reserve (5406)'
+                });
+            }
+
+            return transactions.sort((a, b) => b.date - a.date);
+        }
+
+        function formatTimeAgo(date) {
+            const now = new Date();
+            const diffInHours = Math.floor((now - date) / (1000 * 60 * 60));
+            
+            if (diffInHours < 1) return 'Just now';
+            if (diffInHours < 24) return `${diffInHours} hours ago`;
+            
+            const diffInDays = Math.floor(diffInHours / 24);
+            if (diffInDays === 1) return 'Yesterday';
+            if (diffInDays < 7) return `${diffInDays} days ago`;
+            
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        }
+
+        function loadActivityFeed(limit = 50) {
+            if (allTransactions.length === 0) {
+                allTransactions = generateMockTransactions();
+            }
+
+            const feedContainer = document.getElementById('activity-feed');
+            const transactions = allTransactions.slice(transactionOffset, transactionOffset + limit);
+            
+            if (transactions.length === 0) {
+                feedContainer.innerHTML = '<div style="text-align: center; color: rgba(255, 255, 255, 0.5); padding: 2rem;">No more transactions to load</div>';
+                return;
+            }
+
+            if (transactionOffset === 0) {
+                feedContainer.innerHTML = '';
+            }
+
+            transactions.forEach(tx => {
+                const isCredit = !tx.amount.startsWith('-');
+                const amountClass = isCredit ? 'amount-credit' : 'amount-debit';
+                const displayAmount = isCredit ? `+$${tx.amount}` : `$${tx.amount}`;
+                
+                const item = document.createElement('div');
+                item.className = 'activity-feed-item';
+                item.innerHTML = `
+                    <div class="activity-info">
+                        <div class="activity-merchant">${tx.merchant}</div>
+                        <div class="activity-details">
+                            <span>${tx.account}</span>
+                            <span>${formatTimeAgo(tx.date)}</span>
+                        </div>
+                    </div>
+                    <div class="activity-amount ${amountClass}">${displayAmount}</div>
+                    <div class="activity-category ${tx.category.class}">${tx.category.name}</div>
+                `;
+                
+                feedContainer.appendChild(item);
+            });
+
+            transactionOffset += limit;
+        }
+
+        function loadMoreTransactions() {
+            loadActivityFeed(50);
+        }
+
+        function initializeActivityFeed() {
+            transactionOffset = 0;
+            loadActivityFeed(50);
+        }
+
+        // Load activity feed when financial tab is shown
+        const originalShowTab = showTab;
+        showTab = function(tabName) {
+            originalShowTab(tabName);
+            
+            if (tabName === 'financials' && financialAccessGranted) {
+                setTimeout(() => {
+                    initializeActivityFeed();
+                }, 100);
+            }
+        };
 
         // Initialize dashboard
         showTab('dashboard');
