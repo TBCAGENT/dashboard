@@ -830,10 +830,10 @@
                         <div class="card-icon">💼</div>
                         <div class="card-title">LL Ventures Pipeline</div>
                     </div>
-                    <div class="card-value">18</div>
-                    <div class="card-change">↗ Deals in Contract</div>
+                    <div class="card-value">91</div>
+                    <div class="card-change">↗ Total Properties</div>
                     <div class="card-progress">
-                        <div class="progress-fill" style="width: 72%"></div>
+                        <div class="progress-fill" style="width: 85%"></div>
                     </div>
                 </div>
 
@@ -843,23 +843,23 @@
                         <div class="card-icon">💰</div>
                         <div class="card-title">Pipeline Revenue</div>
                     </div>
-                    <div class="card-value">$162K</div>
-                    <div class="card-change">↗ Gross Revenue</div>
+                    <div class="card-value">$796K</div>
+                    <div class="card-change">↗ Total Pipeline Value</div>
                     <div class="card-progress">
-                        <div class="progress-fill" style="width: 65%"></div>
+                        <div class="progress-fill" style="width: 95%"></div>
                     </div>
                 </div>
 
-                <div class="control-card" onclick="showTab('sms-outreach')">
-                    <div class="card-indicator indicator-online"></div>
+                <div class="control-card" onclick="showTab('ll-ventures')">
+                    <div class="card-indicator indicator-warning"></div>
                     <div class="card-header">
-                        <div class="card-icon">📡</div>
-                        <div class="card-title">SMS Operations</div>
+                        <div class="card-icon">⏳</div>
+                        <div class="card-title">Active Deals</div>
                     </div>
-                    <div class="card-value">50</div>
-                    <div class="card-change">↗ Daily Messages</div>
+                    <div class="card-value">32</div>
+                    <div class="card-change">↗ Pending + Contract</div>
                     <div class="card-progress">
-                        <div class="progress-fill" style="width: 88%"></div>
+                        <div class="progress-fill" style="width: 78%"></div>
                     </div>
                 </div>
 
@@ -981,7 +981,7 @@
                         <div class="card-title">Financial Core</div>
                     </div>
                     <div class="card-value">$1.43M</div>
-                    <div class="card-change">Net Worth Analysis</div>
+                    <div class="card-change">Net Worth + $796K Pipeline</div>
                 </div>
             </div>
         </div>
@@ -1510,20 +1510,80 @@
                 <p class="control-subtitle">Real estate operations command and control</p>
             </div>
 
-            <div class="control-grid">
-                <div class="control-card" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
-                    <div class="card-indicator indicator-online"></div>
-                    <div class="card-header">
-                        <div class="card-icon">🏠</div>
-                        <div class="card-title">Properties</div>
+            <!-- Deal Pipeline Overview -->
+            <div class="financial-section" style="background: rgba(34, 197, 94, 0.05); border: 1px solid rgba(34, 197, 94, 0.2); margin-bottom: 2rem;">
+                <h3 style="color: #22c55e; margin-bottom: 1.5rem; font-size: 1.2rem;">📊 Deal Revenue Tracker</h3>
+                <div class="control-grid">
+                    <div class="control-card" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                        <div class="card-indicator indicator-warning"></div>
+                        <div class="card-header">
+                            <div class="card-icon">📝</div>
+                            <div class="card-title">Offer Made</div>
+                        </div>
+                        <div class="card-value">59</div>
+                        <div class="card-change">Houses • 23 Records</div>
+                        <div class="card-meta" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #22c55e;">$509,000</strong> Total Revenue
+                        </div>
+                        <div class="card-progress">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
                     </div>
-                    <div class="card-value">18</div>
-                    <div class="card-change">In Contract</div>
-                    <div class="card-progress">
-                        <div class="progress-fill" style="width: 72%"></div>
+
+                    <div class="control-card" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                        <div class="card-indicator indicator-warning"></div>
+                        <div class="card-header">
+                            <div class="card-icon">⏳</div>
+                            <div class="card-title">Pending Contract</div>
+                        </div>
+                        <div class="card-value">14</div>
+                        <div class="card-change">Houses • 11 Records</div>
+                        <div class="card-meta" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #f59e0b;">$124,750</strong> Gross Revenue
+                        </div>
+                        <div class="card-progress">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+
+                    <div class="control-card" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                        <div class="card-indicator indicator-online"></div>
+                        <div class="card-header">
+                            <div class="card-icon">✅</div>
+                            <div class="card-title">In Contract</div>
+                        </div>
+                        <div class="card-value">18</div>
+                        <div class="card-change">Properties</div>
+                        <div class="card-meta" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #22c55e;">$162,000</strong> Pipeline Revenue
+                        </div>
+                        <div class="card-progress">
+                            <div class="progress-fill" style="width: 72%"></div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Pipeline Summary -->
+                <div class="expenses-grid" style="margin-top: 1.5rem;">
+                    <div class="expense-item" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3);">
+                        <div>
+                            <div class="expense-name" style="color: #22c55e; font-weight: 700;">Total Pipeline</div>
+                            <div class="expense-category" style="color: #22c55e;">All Stages Combined</div>
+                        </div>
+                        <div class="expense-amount" style="color: #22c55e; font-size: 1.4rem;">$795,750</div>
+                    </div>
+                    <div class="expense-item" style="background: rgba(64, 181, 246, 0.1); border: 1px solid rgba(64, 181, 246, 0.3);">
+                        <div>
+                            <div class="expense-name" style="color: #64b5f6; font-weight: 700;">Total Properties</div>
+                            <div class="expense-category" style="color: #64b5f6;">Houses in Pipeline</div>
+                        </div>
+                        <div class="expense-amount" style="color: #64b5f6; font-size: 1.4rem;">91</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operations Overview -->
+            <div class="control-grid">
                 <div class="control-card">
                     <div class="card-indicator indicator-info"></div>
                     <div class="card-header">
@@ -1547,6 +1607,19 @@
                     <div class="card-change">Active Personnel</div>
                     <div class="card-progress">
                         <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="control-card">
+                    <div class="card-indicator indicator-online"></div>
+                    <div class="card-header">
+                        <div class="card-icon">💰</div>
+                        <div class="card-title">Conversion Rate</div>
+                    </div>
+                    <div class="card-value">31%</div>
+                    <div class="card-change">Pending → Contract</div>
+                    <div class="card-progress">
+                        <div class="progress-fill" style="width: 78%"></div>
                     </div>
                 </div>
             </div>
