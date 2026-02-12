@@ -1,6 +1,17 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/_global-error/page": "app/_global-error/page.js",
+  "/api/airtable/route": "app/api/airtable/route.js",
+  "/api/build-queue/route": "app/api/build-queue/route.js",
+  "/api/email/route": "app/api/email/route.js",
+  "/api/ghl/conversations/route": "app/api/ghl/conversations/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/ghl/route": "app/api/ghl/route.js",
+  "/api/tiller/route": "app/api/tiller/route.js",
+  "/api/ops/health/route": "app/api/ops/health/route.js",
+  "/api/ops/briefing/route": "app/api/ops/briefing/route.js",
+  "/api/ops/heartbeat/route": "app/api/ops/heartbeat/route.js",
+  "/api/ops/standup/route": "app/api/ops/standup/route.js",
   "/page": "app/page.js",
-  "/settings/page": "app/settings/page.js"
+  "/settings/page": "app/settings/page.js",
+  "/ops/page": "app/ops/page.js"
 }

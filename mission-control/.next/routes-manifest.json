@@ -6,26 +6,12 @@
   "basePath": "",
   "redirects": [
     {
-      "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
-      "destination": "/:file",
-      "internal": true,
-      "priority": true,
-      "missing": [
-        {
-          "type": "header",
-          "key": "x-nextjs-data"
-        }
-      ],
-      "statusCode": 308,
-      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$"
-    },
-    {
-      "source": "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)",
-      "destination": "/:notfile/",
+      "source": "/:path+/",
+      "destination": "/:path+",
       "internal": true,
       "priority": true,
       "statusCode": 308,
-      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
     }
   ],
   "headers": [],
@@ -53,6 +39,72 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/airtable",
+      "regex": "^/api/airtable(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/airtable(?:/)?$"
+    },
+    {
+      "page": "/api/build-queue",
+      "regex": "^/api/build\\-queue(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/build\\-queue(?:/)?$"
+    },
+    {
+      "page": "/api/email",
+      "regex": "^/api/email(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/email(?:/)?$"
+    },
+    {
+      "page": "/api/ghl",
+      "regex": "^/api/ghl(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ghl(?:/)?$"
+    },
+    {
+      "page": "/api/ghl/conversations",
+      "regex": "^/api/ghl/conversations(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ghl/conversations(?:/)?$"
+    },
+    {
+      "page": "/api/ops/briefing",
+      "regex": "^/api/ops/briefing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ops/briefing(?:/)?$"
+    },
+    {
+      "page": "/api/ops/health",
+      "regex": "^/api/ops/health(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ops/health(?:/)?$"
+    },
+    {
+      "page": "/api/ops/heartbeat",
+      "regex": "^/api/ops/heartbeat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ops/heartbeat(?:/)?$"
+    },
+    {
+      "page": "/api/ops/standup",
+      "regex": "^/api/ops/standup(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ops/standup(?:/)?$"
+    },
+    {
+      "page": "/api/tiller",
+      "regex": "^/api/tiller(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/tiller(?:/)?$"
+    },
+    {
+      "page": "/ops",
+      "regex": "^/ops(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ops(?:/)?$"
     },
     {
       "page": "/settings",

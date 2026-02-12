@@ -72,6 +72,17 @@ Skills define _how_ tools work. This file is for _your_ specifics — the stuff 
 
 ---
 
+## Go High Level (SMS Outreach Platform)
+- **Location ID**: a0xDUfSzadt256BbUcgz (Detroit Agent Acquisition)
+- **API Credentials**: `~/.config/ghl/secrets.env` (GHL_API_KEY)
+- **SMS System**: Active for Detroit real estate agent outreach
+- **Daily Volume**: 50 messages/day (rate limited)
+- **Pipeline Stages**: Messaged → Response Received → Blacklist
+- **Integration**: Airtable sync for responses and templates
+- **Status**: ACTIVE — SMS delivery and response tracking operational
+
+---
+
 ## Airtable API
 - **Personal Access Token**: `~/.config/airtable/secrets.env` (AIRTABLE_API_KEY)
 - **Authentication**: `pat7OpXE5AOmY2Vsx.a9022cbf9afe775f5f3a27f7900c77049a3d56fa715e34d0821cb7a756c036d7`

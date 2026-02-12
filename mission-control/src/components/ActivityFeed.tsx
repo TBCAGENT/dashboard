@@ -9,9 +9,14 @@ interface Activity {
 }
 
 interface Agent {
+  _id: string;
   name: string;
+  role: string;
   emoji: string;
   color: string;
+  status: "active" | "idle";
+  currentTask: string;
+  lastSeen: number;
 }
 
 function formatTimestamp(timestamp: number): string {
@@ -32,9 +37,11 @@ function formatTimestamp(timestamp: number): string {
 export function ActivityFeed({
   activities,
   agents,
+  onActivityClick,
 }: {
   activities: Activity[];
   agents: Agent[];
+  onActivityClick?: (activity: Activity, agent: Agent) => void;
 }) {
   const agentMap = new Map(agents.map((a) => [a.name, { emoji: a.emoji, color: a.color }]));
 
@@ -53,18 +60,22 @@ export function ActivityFeed({
       {/* Activity List */}
       <div className="flex-1 overflow-y-auto p-3 space-y-2">
         {activities.map((activity) => {
-          const agent = agentMap.get(activity.agent);
+          const agentData = agentMap.get(activity.agent);
+          const agent = agents.find(a => a.name === activity.agent);
           return (
             <div
               key={activity._id}
-              className="flex items-start gap-3 p-2.5 rounded border border-[#1e1e1e] bg-[#0a0a0a] hover:border-[#2a2a2a] transition-colors"
+              onClick={() => agent && onActivityClick?.(activity, agent)}
+              className={`flex items-start gap-3 p-2.5 rounded border border-[#1e1e1e] bg-[#0a0a0a] hover:border-[#2a2a2a] transition-colors ${
+                onActivityClick ? 'cursor-pointer hover:bg-[#0f0f0f]' : ''
+              }`}
             >
-              <span className="text-lg flex-shrink-0">{agent?.emoji || "⚡"}</span>
+              <span className="text-lg flex-shrink-0">{agentData?.emoji || "⚡"}</span>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
                   <span
                     className="font-mono text-xs font-medium"
-                    style={{ color: agent?.color || "#10b981" }}
+                    style={{ color: agentData?.color || "#10b981" }}
                   >
                     {activity.agent}
                   </span>

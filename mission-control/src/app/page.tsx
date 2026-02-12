@@ -12,9 +12,22 @@ import { TaskCreator } from "@/components/TaskCreator";
 import { LeadTracker } from "@/components/LeadTracker";
 import { ActionLog } from "@/components/ActionLog";
 import { FinancialsTab } from "@/components/FinancialsTab";
+import { AgentDetailModal } from "@/components/AgentDetailModal";
+import { ActivityDetailModal } from "@/components/ActivityDetailModal";
 import { useState } from "react";
 
 type TabType = "dashboard" | "leads" | "actions" | "financials";
+
+interface Agent {
+  _id: string;
+  name: string;
+  role: string;
+  emoji: string;
+  color: string;
+  status: "active" | "idle";
+  currentTask: string;
+  lastSeen: number;
+}
 
 function TabButton({
   label,
@@ -41,11 +54,23 @@ function TabButton({
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<TabType>("dashboard");
+  const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
+  const [selectedActivity, setSelectedActivity] = useState<any | null>(null);
+  const [selectedActivityAgent, setSelectedActivityAgent] = useState<Agent | null>(null);
 
   const agents = useMockAgents();
   const tasks = useMockTasks();
   const activities = useMockActivities();
   const metrics = useMockMetrics();
+
+  const handleAgentClick = (agent: Agent) => {
+    setSelectedAgent(agent);
+  };
+
+  const handleActivityClick = (activity: any, agent: Agent) => {
+    setSelectedActivity(activity);
+    setSelectedActivityAgent(agent);
+  };
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -75,14 +100,18 @@ export default function Dashboard() {
           <div className="flex-1 overflow-auto">
             {/* Agent Status Cards */}
             <div className="px-4 py-3">
-              <AgentCards agents={agents} />
+              <AgentCards agents={agents} onAgentClick={handleAgentClick} />
             </div>
 
             {/* Main Content: Activity Feed + Task Board */}
             <div className="flex-1 flex gap-4 px-4 pb-3 min-h-0">
               {/* Activity Feed - 60% */}
               <div className="w-[60%] flex flex-col min-h-0">
-                <ActivityFeed activities={activities} agents={agents} />
+                <ActivityFeed 
+                  activities={activities} 
+                  agents={agents} 
+                  onActivityClick={handleActivityClick} 
+                />
               </div>
 
               {/* Task Board - 40% */}
@@ -163,6 +192,22 @@ export default function Dashboard() {
       {activeTab === "dashboard" && (
         <MetricsBar metrics={metrics} tasks={tasks} />
       )}
+
+      {/* Agent Detail Modal */}
+      <AgentDetailModal 
+        agent={selectedAgent} 
+        onClose={() => setSelectedAgent(null)} 
+      />
+
+      {/* Activity Detail Modal */}
+      <ActivityDetailModal 
+        activity={selectedActivity}
+        agent={selectedActivityAgent}
+        onClose={() => {
+          setSelectedActivity(null);
+          setSelectedActivityAgent(null);
+        }} 
+      />
     </div>
   );
 }

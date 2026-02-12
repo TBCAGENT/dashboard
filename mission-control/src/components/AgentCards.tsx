@@ -22,16 +22,24 @@ function formatLastSeen(timestamp: number): string {
   return `${hours}h ago`;
 }
 
-export function AgentCards({ agents }: { agents: Agent[] }) {
+export function AgentCards({ 
+  agents, 
+  onAgentClick 
+}: { 
+  agents: Agent[];
+  onAgentClick?: (agent: Agent) => void;
+}) {
   return (
     <div className="flex flex-wrap justify-center gap-3">
       {agents.map((agent) => (
         <div
           key={agent._id}
+          onClick={() => onAgentClick?.(agent)}
           className={`
             relative rounded-lg border bg-[#111111] p-3
             transition-all duration-300 w-[160px] flex-shrink-0
             ${agent.status === "active" ? "agent-active" : "agent-idle"}
+            ${onAgentClick ? "cursor-pointer hover:bg-[#1a1a1a] hover:border-opacity-60" : ""}
           `}
           style={{ borderColor: `${agent.color}40` }}
         >

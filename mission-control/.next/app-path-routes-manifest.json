@@ -1,6 +1,17 @@
 {
-  "/_not-found/page": "/_not-found",
   "/_global-error/page": "/_global-error",
+  "/api/airtable/route": "/api/airtable",
+  "/api/build-queue/route": "/api/build-queue",
+  "/api/email/route": "/api/email",
+  "/api/ghl/conversations/route": "/api/ghl/conversations",
+  "/_not-found/page": "/_not-found",
+  "/api/ghl/route": "/api/ghl",
+  "/api/tiller/route": "/api/tiller",
+  "/api/ops/health/route": "/api/ops/health",
+  "/api/ops/briefing/route": "/api/ops/briefing",
+  "/api/ops/heartbeat/route": "/api/ops/heartbeat",
+  "/api/ops/standup/route": "/api/ops/standup",
   "/page": "/",
-  "/settings/page": "/settings"
+  "/settings/page": "/settings",
+  "/ops/page": "/ops"
 }
