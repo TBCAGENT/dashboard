@@ -2054,13 +2054,13 @@
                 
                 // Process transactions (skip header row)
                 const transactions = rows.slice(1)
-                    .filter(row => row && row.length >= 4 && row[0] && row[1] && row[3]) // Date, Description, Amount
+                    .filter(row => row && row.length >= 5 && row[1] && row[2] && row[4]) // Date, Description, Amount
                     .map(row => ({
-                        date: row[0],
-                        description: row[1],
-                        category: row[2] || 'Uncategorized',
-                        amount: parseFloat(row[3]) || 0,
-                        account: row[4] || 'Unknown'
+                        date: row[1],
+                        description: row[2],
+                        category: row[3] || 'Uncategorized',
+                        amount: parseFloat(row[4].replace(/[^-\d.]/g, '')) || 0,
+                        account: row[5] || 'Unknown'
                     }))
                     .sort((a, b) => new Date(b.date) - new Date(a.date)); // Most recent first
 
