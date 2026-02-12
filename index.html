@@ -1241,31 +1241,38 @@
                 <div class="expenses-grid">
                     <div class="expense-item">
                         <div>
-                            <div class="expense-name">PayPal ACE Rezo</div>
-                            <div class="expense-category">2 hours ago</div>
+                            <div class="expense-name">Apify Subscription Prague</div>
+                            <div class="expense-category">Feb 10, 2026</div>
                         </div>
-                        <div class="expense-amount" style="color: #ef4444;">-$1,286.55</div>
+                        <div class="expense-amount" style="color: #ef4444;">-$77.42</div>
                     </div>
                     <div class="expense-item">
                         <div>
-                            <div class="expense-name">PayPal M Barrientos</div>
-                            <div class="expense-category">4 hours ago</div>
+                            <div class="expense-name">Melio Payment New York</div>
+                            <div class="expense-category">Feb 10, 2026</div>
                         </div>
-                        <div class="expense-amount" style="color: #ef4444;">-$337.32</div>
+                        <div class="expense-amount" style="color: #ef4444;">-$25.00</div>
                     </div>
                     <div class="expense-item">
                         <div>
-                            <div class="expense-name">Anthropic (5 charges)</div>
-                            <div class="expense-category">6 hours ago</div>
+                            <div class="expense-name">Online Payment - Thank You</div>
+                            <div class="expense-category">Feb 10, 2026</div>
                         </div>
-                        <div class="expense-amount" style="color: #ef4444;">-$52.92</div>
+                        <div class="expense-amount" style="color: #34c759;">$848.00</div>
                     </div>
                     <div class="expense-item">
                         <div>
-                            <div class="expense-name">Total Last 24h</div>
-                            <div class="expense-category" style="font-weight: 600;">Daily Burn</div>
+                            <div class="expense-name">Anthropic San Francisco</div>
+                            <div class="expense-category">Feb 10, 2026</div>
                         </div>
-                        <div class="expense-amount" style="color: #ef4444; font-size: 1.1rem; font-weight: 700;">-$1,676.79</div>
+                        <div class="expense-amount" style="color: #ef4444;">-$10.07</div>
+                    </div>
+                    <div class="expense-item">
+                        <div>
+                            <div class="expense-name">Net Recent Activity</div>
+                            <div class="expense-category" style="font-weight: 600;">Latest Transactions</div>
+                        </div>
+                        <div class="expense-amount" style="color: #34c759; font-size: 1.1rem; font-weight: 700;">+$735.51</div>
                     </div>
                 </div>
                 <div style="margin-top: 1rem; text-align: center;">
@@ -2005,6 +2012,193 @@
 
     <script>
         let financialAccessGranted = false;
+        
+        // Dynamic Tiller Transaction Loader
+        async function loadTillerTransactions() {
+            try {
+                console.log('🔄 Loading Tiller transactions...');
+                
+                // Get fresh Google API token using local script
+                const { exec } = require('child_process');
+                const tokenCommand = 'bash ~/.openclaw/workspace/scripts/google-token.sh';
+                
+                // For browser environment, we'll use a different approach
+                const token = await getGoogleToken();
+                
+                if (!token) {
+                    console.error('❌ No Google token available');
+                    return showFallbackTransactions();
+                }
+
+                // Fetch ALL transactions from Tiller sheet
+                const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/1pd1dt64gBni4vAWze9QzhVwsmFMcdBuufW6m_0n-OPw/values/Transactions!A:Z`;
+                const response = await fetch(sheetsUrl, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const rows = data.values || [];
+                
+                if (rows.length <= 1) {
+                    console.error('❌ No transaction data found');
+                    return showFallbackTransactions();
+                }
+
+                console.log(`✅ Loaded ${rows.length - 1} transactions from Tiller`);
+                
+                // Process transactions (skip header row)
+                const transactions = rows.slice(1)
+                    .filter(row => row && row.length >= 4 && row[0] && row[1] && row[3]) // Date, Description, Amount
+                    .map(row => ({
+                        date: row[0],
+                        description: row[1],
+                        category: row[2] || 'Uncategorized',
+                        amount: parseFloat(row[3]) || 0,
+                        account: row[4] || 'Unknown'
+                    }))
+                    .sort((a, b) => new Date(b.date) - new Date(a.date)); // Most recent first
+
+                // Update the Recent Transactions section
+                updateRecentTransactions(transactions.slice(0, 10)); // Top 10 most recent
+                
+                // Update the Financials tab with full transaction list
+                updateFinancialsTransactions(transactions);
+                
+                return transactions;
+
+            } catch (error) {
+                console.error('❌ Error loading Tiller transactions:', error);
+                showFallbackTransactions();
+            }
+        }
+
+        async function getGoogleToken() {
+            // This will only work in a Node.js environment or with a proxy
+            // For now, we'll use hardcoded token that needs to be updated
+            // TODO: Implement proper OAuth flow for browser
+            return null; // Fallback for now
+        }
+
+        function updateRecentTransactions(transactions) {
+            const container = document.querySelector('.expenses-grid');
+            if (!container) return;
+
+            const transactionHtml = transactions.map(t => {
+                const timeAgo = getTimeAgo(t.date);
+                const amountColor = t.amount < 0 ? '#ef4444' : '#34c759';
+                const amountPrefix = t.amount < 0 ? '-$' : '$';
+                
+                return `
+                    <div class="expense-item">
+                        <div>
+                            <div class="expense-name">${t.description}</div>
+                            <div class="expense-category">${timeAgo}</div>
+                        </div>
+                        <div class="expense-amount" style="color: ${amountColor};">${amountPrefix}${Math.abs(t.amount).toLocaleString()}</div>
+                    </div>
+                `;
+            }).join('');
+
+            // Calculate 24h total
+            const today = new Date();
+            const yesterday = new Date(today.getTime() - 24 * 60 * 60 * 1000);
+            const recent24h = transactions.filter(t => new Date(t.date) >= yesterday);
+            const total24h = recent24h.reduce((sum, t) => sum + (t.amount < 0 ? t.amount : 0), 0);
+
+            container.innerHTML = transactionHtml + `
+                <div class="expense-item">
+                    <div>
+                        <div class="expense-name">Total Last 24h</div>
+                        <div class="expense-category" style="font-weight: 600;">Daily Burn</div>
+                    </div>
+                    <div class="expense-amount" style="color: #ef4444; font-size: 1.1rem; font-weight: 700;">-$${Math.abs(total24h).toLocaleString()}</div>
+                </div>
+            `;
+        }
+
+        function updateFinancialsTransactions(transactions) {
+            // Add a detailed transactions section to the Financials tab
+            const financialContent = document.getElementById('financial-content');
+            if (!financialContent) return;
+
+            // Remove existing transactions section if it exists
+            const existingSection = document.getElementById('detailed-transactions');
+            if (existingSection) {
+                existingSection.remove();
+            }
+
+            // Create new transactions section
+            const transactionsSection = document.createElement('div');
+            transactionsSection.id = 'detailed-transactions';
+            transactionsSection.className = 'financial-section';
+            
+            const recentTransactions = transactions.slice(0, 50); // Show last 50
+            const transactionRows = recentTransactions.map(t => {
+                const amountColor = t.amount < 0 ? '#ef4444' : '#34c759';
+                const amountPrefix = t.amount < 0 ? '-$' : '$';
+                
+                return `
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <td style="padding: 12px; color: rgba(255,255,255,0.8);">${t.date}</td>
+                        <td style="padding: 12px;">${t.description}</td>
+                        <td style="padding: 12px; color: rgba(255,255,255,0.6);">${t.category}</td>
+                        <td style="padding: 12px; color: ${amountColor}; font-weight: 600;">${amountPrefix}${Math.abs(t.amount).toLocaleString()}</td>
+                        <td style="padding: 12px; color: rgba(255,255,255,0.5);">${t.account}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            transactionsSection.innerHTML = `
+                <h3 style="color: #64b5f6; margin-bottom: 1.5rem; font-size: 1.2rem;">📊 Recent Transactions (${transactions.length} total)</h3>
+                <div style="overflow-x: auto; background: rgba(0,0,0,0.2); border-radius: 12px; padding: 1rem;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="color: #64b5f6; font-weight: 600; border-bottom: 2px solid rgba(100, 181, 246, 0.3);">
+                                <th style="padding: 12px; text-align: left;">Date</th>
+                                <th style="padding: 12px; text-align: left;">Description</th>
+                                <th style="padding: 12px; text-align: left;">Category</th>
+                                <th style="padding: 12px; text-align: right;">Amount</th>
+                                <th style="padding: 12px; text-align: left;">Account</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${transactionRows}
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-top: 1rem; text-align: center; color: rgba(255,255,255,0.6);">
+                    Showing most recent 50 of ${transactions.length} total transactions
+                    <br><a href="https://docs.google.com/spreadsheets/d/1pd1dt64gBni4vAWze9QzhVwsmFMcdBuufW6m_0n-OPw" target="_blank" style="color: #64b5f6; text-decoration: none; font-weight: 600;">View Full Tiller Analysis →</a>
+                </div>
+            `;
+
+            // Insert before the last section in financial content
+            financialContent.appendChild(transactionsSection);
+        }
+
+        function getTimeAgo(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diffMs = now - date;
+            const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+            const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+            
+            if (diffHours < 1) return 'Less than 1 hour ago';
+            if (diffHours < 24) return `${diffHours} hour${diffHours === 1 ? '' : 's'} ago`;
+            if (diffDays < 7) return `${diffDays} day${diffDays === 1 ? '' : 's'} ago`;
+            return date.toLocaleDateString();
+        }
+
+        function showFallbackTransactions() {
+            console.log('⚠️ Using fallback transaction data');
+            // Keep the existing hardcoded transactions as fallback
+        }
 
         function updateTimestamp() {
             const now = new Date();
