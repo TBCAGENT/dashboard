@@ -677,6 +677,21 @@
             border-color: rgba(100, 181, 246, 0.2);
         }
 
+        .clickable-transaction {
+            cursor: pointer !important;
+        }
+
+        .clickable-transaction:hover {
+            background: rgba(100, 181, 246, 0.1) !important;
+            border-color: rgba(100, 181, 246, 0.4) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(100, 181, 246, 0.1);
+        }
+
+        .clickable-transaction:active {
+            transform: translateY(0);
+        }
+
         .activity-info {
             flex: 1;
         }
@@ -1872,6 +1887,78 @@
             }
         });
 
+        function showTransactionDetails(transaction) {
+            const isCredit = !transaction.amount.startsWith('-');
+            const amountClass = isCredit ? 'amount-credit' : 'amount-debit';
+            const displayAmount = isCredit ? `+$${transaction.amount}` : `$${transaction.amount}`;
+            const amountColor = isCredit ? '#4ade80' : '#ef4444';
+            
+            const detailedInfo = `
+                <div style="background: rgba(255, 255, 255, 0.02); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="color: #64b5f6; margin: 0; font-size: 1.3rem;">${transaction.merchant}</h3>
+                        <div style="font-size: 1.4rem; font-weight: 700; color: ${amountColor};">${displayAmount}</div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 0.25rem;">Account</div>
+                            <div style="color: white; font-weight: 500;">${transaction.account}</div>
+                        </div>
+                        <div>
+                            <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 0.25rem;">Category</div>
+                            <div style="color: white; font-weight: 500;">${transaction.category.name}</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 0.25rem;">Date & Time</div>
+                            <div style="color: white; font-weight: 500;">${transaction.date.toLocaleString('en-US', {
+                                month: 'short', 
+                                day: 'numeric', 
+                                year: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit'
+                            })}</div>
+                        </div>
+                        <div>
+                            <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 0.25rem;">Transaction ID</div>
+                            <div style="color: white; font-weight: 500; font-family: monospace;">${transaction.id}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(100, 181, 246, 0.05); border: 1px solid rgba(100, 181, 246, 0.2); border-radius: 12px; padding: 1.5rem;">
+                    <h4 style="color: #64b5f6; margin: 0 0 1rem 0; font-size: 1.1rem;">📊 Transaction Intelligence</h4>
+                    <div style="display: grid; gap: 0.75rem;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: rgba(255, 255, 255, 0.7);">Status:</span>
+                            <span style="color: #4ade80; font-weight: 600;">✓ Processed</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: rgba(255, 255, 255, 0.7);">Type:</span>
+                            <span style="color: white;">${isCredit ? 'Credit/Refund' : 'Purchase/Debit'}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: rgba(255, 255, 255, 0.7);">Processing Time:</span>
+                            <span style="color: white;">${formatTimeAgo(transaction.date)}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: rgba(255, 255, 255, 0.7);">Source System:</span>
+                            <span style="color: white;">Tiller Sheets Integration</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('modalContent').innerHTML = `
+                <h2 class="modal-title">Transaction Details</h2>
+                ${detailedInfo}
+            `;
+            document.getElementById('detailModal').style.display = 'block';
+        }
+
         function showTaskDetails(taskId) {
             const tasks = {
                 'second-brain': {
@@ -2044,7 +2131,9 @@
                 const displayAmount = isCredit ? `+$${tx.amount}` : `$${tx.amount}`;
                 
                 const item = document.createElement('div');
-                item.className = 'activity-feed-item';
+                item.className = 'activity-feed-item clickable-transaction';
+                item.style.cursor = 'pointer';
+                item.onclick = () => showTransactionDetails(tx);
                 item.innerHTML = `
                     <div class="activity-info">
                         <div class="activity-merchant">${tx.merchant}</div>
