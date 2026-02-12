@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke Fontaine - Executive Control Center</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: rgba(16, 16, 20, 0.95);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2rem 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar-header {
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-header h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #64b5f6, #42a5f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .sidebar-header p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
+        }
+
+        .nav-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-title {
+            padding: 0 2rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 3px solid transparent;
+            cursor: pointer;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #64b5f6;
+            border-left-color: #64b5f6;
+            transform: translateX(4px);
+        }
+
+        .nav-item.active {
+            background: rgba(100, 181, 246, 0.12);
+            color: #64b5f6;
+            border-left-color: #64b5f6;
+        }
+
+        .nav-item .icon {
+            margin-right: 0.75rem;
+            width: 18px;
+            font-size: 1.1rem;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 2rem;
+            background: transparent;
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .page-header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .control-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff, #64b5f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.03em;
+        }
+
+        .control-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .control-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .control-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        .control-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(100, 181, 246, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(100, 181, 246, 0.1);
+        }
+
+        .card-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            box-shadow: 0 0 12px currentColor;
+        }
+
+        .indicator-online { 
+            background: #4ade80; 
+            color: #4ade80;
+        }
+        .indicator-warning { 
+            background: #f59e0b; 
+            color: #f59e0b;
+        }
+        .indicator-error { 
+            background: #ef4444; 
+            color: #ef4444;
+        }
+        .indicator-info { 
+            background: #64b5f6; 
+            color: #64b5f6;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(100, 181, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: #64b5f6;
+            font-size: 1.2rem;
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .card-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0.5rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        .card-change {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-progress {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #64b5f6, #4ade80);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .financial-section {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-meta {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .expenses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .expense-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .expense-name {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .expense-category {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .expense-amount {
+            color: #ef4444;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+            
+            .control-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h1>🦞 Luke Fontaine</h1>
+            <p>Executive Control Center</p>
+        </div>
+        
+        <nav>
+            <div class="nav-section">
+                <div class="nav-title">Command Center</div>
+                <div class="nav-item active" onclick="showTab('dashboard')">
+                    <span class="icon">⚡</span>
+                    Main Control
+                </div>
+                <div class="nav-item" onclick="showTab('ll-ventures')">
+                    <span class="icon">🏢</span>
+                    LL Ventures HQ
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <!-- Main Control Tab -->
+        <div class="tab-content active" id="dashboard">
+            <div class="page-header">
+                <h1 class="control-title">Executive Control Center</h1>
+                <p class="control-subtitle">Real-time operational intelligence and command interface</p>
+            </div>
+
+            <div class="control-grid">
+                <div class="control-card" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                    <div class="card-indicator indicator-online"></div>
+                    <div class="card-header">
+                        <div class="card-icon">💼</div>
+                        <div class="card-title">LL Ventures Pipeline</div>
+                    </div>
+                    <div class="card-value">91</div>
+                    <div class="card-change">↗ Total Properties</div>
+                    <div class="card-progress">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="control-card" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                    <div class="card-indicator indicator-info"></div>
+                    <div class="card-header">
+                        <div class="card-icon">💰</div>
+                        <div class="card-title">Pipeline Revenue</div>
+                    </div>
+                    <div class="card-value">$796K</div>
+                    <div class="card-change">↗ Total Pipeline Value</div>
+                    <div class="card-progress">
+                        <div class="progress-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="control-card" onclick="showTab('ll-ventures')">
+                    <div class="card-indicator indicator-warning"></div>
+                    <div class="card-header">
+                        <div class="card-icon">⏳</div>
+                        <div class="card-title">Active Deals</div>
+                    </div>
+                    <div class="card-value">32</div>
+                    <div class="card-change">↗ Pending + Contract</div>
+                    <div class="card-progress">
+                        <div class="progress-fill" style="width: 78%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LL Ventures HQ Tab -->
+        <div class="tab-content" id="ll-ventures">
+            <div class="page-header">
+                <h1 class="control-title">LL Ventures HQ</h1>
+                <p class="control-subtitle">Real estate operations command and control</p>
+            </div>
+
+            <!-- Deal Pipeline Overview -->
+            <div class="financial-section" style="background: rgba(34, 197, 94, 0.05); border: 1px solid rgba(34, 197, 94, 0.2); margin-bottom: 2rem;">
+                <h3 style="color: #22c55e; margin-bottom: 1.5rem; font-size: 1.2rem;">📊 Deal Revenue Tracker</h3>
+                <div class="control-grid">
+                    <div class="control-card" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                        <div class="card-indicator indicator-warning"></div>
+                        <div class="card-header">
+                            <div class="card-icon">📝</div>
+                            <div class="card-title">Offer Made</div>
+                        </div>
+                        <div class="card-value">59</div>
+                        <div class="card-change">Houses • 23 Records</div>
+                        <div class="card-meta" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #22c55e;">$509,000</strong> Total Revenue
+                        </div>
+                        <div class="card-progress">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                    </div>
+
+                    <div class="control-card" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                        <div class="card-indicator indicator-warning"></div>
+                        <div class="card-header">
+                            <div class="card-icon">⏳</div>
+                            <div class="card-title">Pending Contract</div>
+                        </div>
+                        <div class="card-value">14</div>
+                        <div class="card-change">Houses • 11 Records</div>
+                        <div class="card-meta" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #f59e0b;">$124,750</strong> Gross Revenue
+                        </div>
+                        <div class="card-progress">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+
+                    <div class="control-card" onclick="window.open('https://airtable.com/appEmn0HdyfUfZ429', '_blank')">
+                        <div class="card-indicator indicator-online"></div>
+                        <div class="card-header">
+                            <div class="card-icon">✅</div>
+                            <div class="card-title">In Contract</div>
+                        </div>
+                        <div class="card-value">18</div>
+                        <div class="card-change">Properties</div>
+                        <div class="card-meta" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #22c55e;">$162,000</strong> Pipeline Revenue
+                        </div>
+                        <div class="card-progress">
+                            <div class="progress-fill" style="width: 72%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pipeline Summary -->
+                <div class="expenses-grid" style="margin-top: 1.5rem;">
+                    <div class="expense-item" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3);">
+                        <div>
+                            <div class="expense-name" style="color: #22c55e; font-weight: 700;">Total Pipeline</div>
+                            <div class="expense-category" style="color: #22c55e;">All Stages Combined</div>
+                        </div>
+                        <div class="expense-amount" style="color: #22c55e; font-size: 1.4rem;">$795,750</div>
+                    </div>
+                    <div class="expense-item" style="background: rgba(64, 181, 246, 0.1); border: 1px solid rgba(64, 181, 246, 0.3);">
+                        <div>
+                            <div class="expense-name" style="color: #64b5f6; font-weight: 700;">Total Properties</div>
+                            <div class="expense-category" style="color: #64b5f6;">Houses in Pipeline</div>
+                        </div>
+                        <div class="expense-amount" style="color: #64b5f6; font-size: 1.4rem;">91</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operations Overview -->
+            <div class="control-grid">
+                <div class="control-card">
+                    <div class="card-indicator indicator-info"></div>
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-title">Monthly Target</div>
+                    </div>
+                    <div class="card-value">17/30</div>
+                    <div class="card-change">Trailing 30 Days</div>
+                    <div class="card-progress">
+                        <div class="progress-fill" style="width: 57%"></div>
+                    </div>
+                </div>
+
+                <div class="control-card">
+                    <div class="card-indicator indicator-online"></div>
+                    <div class="card-header">
+                        <div class="card-icon">👥</div>
+                        <div class="card-title">Team Force</div>
+                    </div>
+                    <div class="card-value">5</div>
+                    <div class="card-change">Active Personnel</div>
+                    <div class="card-progress">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="control-card">
+                    <div class="card-indicator indicator-online"></div>
+                    <div class="card-header">
+                        <div class="card-icon">💰</div>
+                        <div class="card-title">Conversion Rate</div>
+                    </div>
+                    <div class="card-value">31%</div>
+                    <div class="card-change">Pending → Contract</div>
+                    <div class="card-progress">
+                        <div class="progress-fill" style="width: 78%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Show selected tab
+            const targetTab = document.getElementById(tabName);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+            
+            // Add active class to clicked nav item
+            const navItem = document.querySelector(`[onclick="showTab('${tabName}')"]`);
+            if (navItem) {
+                navItem.classList.add('active');
+            }
+        }
+
+        // Initialize dashboard
+        showTab('dashboard');
+    </script>
+</body>
+</html>

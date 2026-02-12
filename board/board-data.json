@@ -261,6 +261,11 @@
           "date": "2026-02-10T22:45:00",
           "action": "Stale task alert",
           "detail": "Task stale >120h in backlog - Go High Level access critical for SMS outreach monitoring. Needs Luke's priority decision."
+        },
+        {
+          "date": "2026-02-11T16:01:00",
+          "action": "Heartbeat stale task review",
+          "detail": "Task stale >216h in backlog - Go High Level integration blocking SMS monitoring automation. Recommend priority discussion or archive."
         }
       ]
     },
@@ -375,8 +380,37 @@
         }
       ],
       "chatMessages": []
+    },
+    {
+      "id": "task-008",
+      "title": "Off-Market Deals Website",
+      "description": "Lead generation funnel website deployed to Netlify for property acquisition and seller outreach",
+      "column": "done",
+      "priority": "high",
+      "type": "project",
+      "created": "2026-02-08",
+      "context": "Complete website funnel for off-market real estate deals, deployed to Netlify with lead capture and automated follow-up.",
+      "archived": false,
+      "activity": [
+        {
+          "date": "2026-02-08T14:00:00",
+          "action": "Website development started",
+          "detail": "Built lead generation funnel with property seller forms"
+        },
+        {
+          "date": "2026-02-08T16:30:00",
+          "action": "Deployed to Netlify",
+          "detail": "Website live with automated lead capture and email integration"
+        },
+        {
+          "date": "2026-02-08T17:00:00",
+          "action": "Project completed",
+          "detail": "Off-market deals funnel fully operational and collecting leads"
+        }
+      ],
+      "chatMessages": []
     }
   ],
   "archivedTasks": [],
-  "lastUpdated": "2026-02-09T12:31:38.545211"
+  "lastUpdated": "2026-02-11T16:01:15"
 }

@@ -1,0 +1,211 @@
+{
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "Second Brain System",
+      "description": "Organize all information Luke shares into categorized knowledge base",
+      "column": "backlog",
+      "priority": "high",
+      "assignee": "Admin",
+      "created": "2026-02-01",
+      "lastUpdate": "2026-02-02T12:37:00"
+    },
+    {
+      "id": "task-002",
+      "title": "Enhanced Kanban Board",
+      "description": "Visual project management board with integrated chat functionality",
+      "column": "done",
+      "priority": "high",
+      "assignee": "Admin",
+      "created": "2026-02-02",
+      "lastUpdate": "2026-02-02T09:31:00"
+    },
+    {
+      "id": "task-003",
+      "title": "Apify Integration",
+      "description": "Get Arthur full access to Luke's Apify account for web scraping and automation",
+      "column": "done",
+      "priority": "high",
+      "assignee": "Arthur",
+      "created": "2026-02-02",
+      "lastUpdate": "2026-02-04T18:04:30.314288"
+    },
+    {
+      "id": "task-004",
+      "title": "Email Setup (arthur@blackboxalchemist.com)",
+      "description": "Configure Arthur's dedicated email for monitoring, responses, and tool signups",
+      "column": "done",
+      "priority": "high",
+      "assignee": "Arthur",
+      "created": "2026-02-02",
+      "lastUpdate": "2026-02-04T18:05:29.461509"
+    },
+    {
+      "id": "task-005",
+      "title": "Go High Level Access",
+      "description": "Get Arthur full access to Go High Level platform for text message monitoring and editing",
+      "column": "backlog",
+      "priority": "medium",
+      "assignee": "Arthur",
+      "created": "2026-02-02",
+      "lastUpdate": "2026-02-10T22:45:00"
+    },
+    {
+      "id": "task-006",
+      "title": "Travel Refunds (JSX Flight + Vegas Hotel)",
+      "description": "Process refunds for Luke's cancelled Feb 8th travel - JSX flight (GYNEWN) and Resorts World Las Vega...",
+      "column": "in-progress",
+      "priority": "high",
+      "assignee": "Arthur",
+      "created": "2026-02-09",
+      "lastUpdate": "2026-02-09T10:13:00"
+    },
+    {
+      "id": "task-007",
+      "title": "Enhanced Dashboard (Agents + Health)",
+      "description": "Build comprehensive Command Center dashboard with agents Kanban section and health tracking system",
+      "column": "done",
+      "priority": "high",
+      "assignee": "Arthur",
+      "created": "2026-02-09",
+      "lastUpdate": "2026-02-09T11:01:00"
+    },
+    {
+      "id": "task-006",
+      "title": "Dashboard Emergency Rebuild",
+      "description": "Fix missing financial data, add Projects Archive, restore transaction history",
+      "column": "done",
+      "priority": "critical",
+      "assignee": "Arthur",
+      "created": "2026-02-09",
+      "lastUpdate": "2026-02-09T12:35:00"
+    },
+    {
+      "id": "task-008",
+      "title": "Off-Market Deals Website",
+      "description": "Lead generation funnel website deployed to Netlify for property acquisition and seller outreach",
+      "column": "done",
+      "priority": "high",
+      "assignee": "Zillow Bot",
+      "created": "2026-02-08",
+      "lastUpdate": "2026-02-08T17:00:00"
+    },
+    {
+      "id": "task-netlify-001",
+      "title": "Off-Market Deals Website",
+      "description": "Funnel website deployed to Netlify for lead generation and property acquisition",
+      "column": "done",
+      "priority": "high",
+      "assignee": "Arthur",
+      "created": "2026-02-08",
+      "lastUpdate": "2026-02-08T15:30:00"
+    }
+  ],
+  "financial": {
+    "transactions": []
+  },
+  "agents": {
+    "arthur": {
+      "active": true,
+      "task": "Coordinating Operations"
+    },
+    "zillow-bot": {
+      "active": true,
+      "task": "Scanning Detroit Properties"
+    },
+    "ghost": {
+      "active": false,
+      "task": "Preparing Content Queue"
+    },
+    "admin": {
+      "active": false,
+      "task": "Managing Asana Pipeline"
+    }
+  },
+  "activities": [
+    {
+      "type": "REVENUE",
+      "description": "Deal Revenue Tracker: $162,000 from 18 deals",
+      "timestamp": "2026-02-11T15:50:43.273413",
+      "time": "03:50 PM"
+    },
+    {
+      "type": "SMS",
+      "description": "SMS Operations: 50 messages sent today",
+      "timestamp": "2026-02-11T15:47:43.273422",
+      "time": "03:47 PM"
+    },
+    {
+      "type": "EMAIL",
+      "description": "Arthur Email: 8 emails processed today",
+      "timestamp": "2026-02-11T15:43:43.273432",
+      "time": "03:43 PM"
+    },
+    {
+      "type": "SYSTEM",
+      "description": "Dashboard v2 updated with live Airtable integration",
+      "timestamp": "2026-02-11T15:48:43.273437",
+      "time": "03:48 PM"
+    },
+    {
+      "type": "COORD",
+      "description": "Arthur coordinating 4 active agents",
+      "timestamp": "2026-02-11T15:45:43.273441",
+      "time": "03:45 PM"
+    },
+    {
+      "type": "SCRAPE",
+      "description": "Zillow Bot found 2 new Section 8 listings",
+      "timestamp": "2026-02-11T15:38:43.273444",
+      "time": "03:38 PM"
+    },
+    {
+      "type": "ADMIN",
+      "description": "Admin updated 3 Asana tasks to pre-approval",
+      "timestamp": "2026-02-11T15:32:43.273448",
+      "time": "03:32 PM"
+    },
+    {
+      "type": "FINANCIAL",
+      "description": "Processed $8,500 LL Ventures revenue",
+      "timestamp": "2026-02-11T14:50:43.273452",
+      "time": "02:50 PM"
+    },
+    {
+      "type": "CONTENT",
+      "description": "Ghost generated Twitter thread draft",
+      "timestamp": "2026-02-11T13:50:43.273462",
+      "time": "01:50 PM"
+    },
+    {
+      "type": "OUTREACH",
+      "description": "14% response rate on Detroit agent outreach",
+      "timestamp": "2026-02-11T12:50:43.273467",
+      "time": "12:50 PM"
+    },
+    {
+      "type": "NETLIFY",
+      "description": "Off-Market Deals website deployed successfully",
+      "timestamp": "2026-02-11T11:50:43.273471",
+      "time": "11:50 AM"
+    }
+  ],
+  "metrics": {
+    "deal_revenue": {
+      "total_revenue": 162000,
+      "deal_count": 18,
+      "last_24h": 0
+    },
+    "sms_stats": {
+      "today": 50,
+      "this_week": 350,
+      "this_month": 1500
+    },
+    "email_stats": {
+      "today": 8,
+      "this_week": 45,
+      "this_month": 180
+    }
+  },
+  "lastUpdated": "2026-02-11T15:50:43.273614"
+}

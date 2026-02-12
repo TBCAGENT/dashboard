@@ -1,71 +1,70 @@
 [{
-  "zpid": "88079047",
-  "palsId": "17925002_11546750",
-  "id": "88079047",
+  "zpid": "83462865",
+  "palsId": "230001_26005034",
+  "id": "83462865",
   "rawHomeStatusCd": "ForSale",
   "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/5428d937be6c347d898188727600121c-p_e.jpg",
+  "imgSrc": "https://photos.zillowstatic.com/fp/eec3e75614e64349cf19ffb56c73b5cf-p_e.jpg",
   "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/12048-Meyers-Rd-Detroit-MI-48227/88079047_zpid/",
+  "detailUrl": "https://www.zillow.com/homedetails/2615-Emmons-Ave-Warren-MI-48091/83462865_zpid/",
   "statusType": "FOR_SALE",
-  "statusText": "Multi-family home for sale",
+  "statusText": "House for sale",
   "countryCurrency": "$",
-  "price": "$59,999",
-  "unformattedPrice": 59999,
-  "address": "12048 Meyers Rd, Detroit, MI 48227",
-  "addressStreet": "12048 Meyers Rd",
-  "addressCity": "Detroit",
+  "price": "$114,900",
+  "unformattedPrice": 114900,
+  "address": "2615 Emmons Ave, Warren, MI 48091",
+  "addressStreet": "2615 Emmons Ave",
+  "addressCity": "Warren",
   "addressState": "MI",
-  "addressZipcode": "48227",
+  "addressZipcode": "48091",
   "isUndisclosedAddress": false,
   "shouldShowRequestOnPrice": false,
-  "beds": 3,
-  "baths": 2,
-  "area": 1512,
+  "beds": 2,
+  "baths": 1,
+  "area": 906,
   "latLong": {
-    "latitude": 42.37639,
-    "longitude": -83.16799
+    "latitude": 42.448597,
+    "longitude": -83.07648
   },
   "isZillowOwned": false,
-  "flexFieldText": "Spacious interiors",
-  "contentType": "homeInsight",
+  "flexFieldText": "1 hour ago",
+  "contentType": "timeOnInfo",
   "hdpData": {
     "homeInfo": {
-      "zpid": 88079047,
-      "streetAddress": "12048 Meyers Rd",
-      "zipcode": "48227",
-      "city": "Detroit",
+      "zpid": 83462865,
+      "streetAddress": "2615 Emmons Ave",
+      "zipcode": "48091",
+      "city": "Warren",
       "state": "MI",
-      "latitude": 42.37639,
-      "longitude": -83.16799,
-      "price": 59999,
-      "datePriceChanged": 1758178800000,
-      "bathrooms": 2,
-      "bedrooms": 3,
-      "livingArea": 1512,
-      "homeType": "MULTI_FAMILY",
+      "latitude": 42.448597,
+      "longitude": -83.07648,
+      "price": 114900,
+      "bathrooms": 1,
+      "bedrooms": 2,
+      "livingArea": 906,
+      "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 1,
+      "daysOnZillow": 0,
       "isFeatured": false,
       "shouldHighlight": false,
-      "zestimate": 47400,
-      "rentZestimate": 600,
+      "zestimate": 66400,
+      "rentZestimate": 1324,
       "listing_sub_type": {
         "is_FSBA": true
       },
-      "priceReduction": "",
       "isUnmappable": false,
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 59999,
-      "priceChange": -19501,
-      "timeOnZillow": 90695000,
+      "priceForHDP": 114900,
+      "timeOnZillow": 5299000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
       "currency": "USD",
       "country": "USA",
-      "taxAssessedValue": 23200,
+      "taxAssessedValue": 83720,
+      "lotAreaValue": 4356,
+      "lotAreaUnit": "sqft",
       "isShowcaseListing": false
     }
   },
@@ -74,7 +73,7 @@
   "isUserConfirmedClaim": false,
   "pgapt": "ForSale",
   "sgapt": "For Sale (Broker)",
-  "zestimate": 47400,
+  "zestimate": 66400,
   "shouldShowZestimateAsPrice": false,
   "has3DModel": false,
   "hasVideo": false,
@@ -82,94 +81,188 @@
   "hasAdditionalAttributions": true,
   "isFeaturedListing": false,
   "isShowcaseListing": false,
-  "availabilityDate": "2025-07-31 00:00:00",
   "list": true,
   "relaxed": false,
-  "brokerName": "RE/MAX Connection - Detroit",
+  "info3String": "https://photos.zillowstatic.com/fp/5bf0a493c71e7254cf1b8add4798807d-zillow_web_48_23.jpg",
+  "brokerName": "Grant and Main, LLC",
   "carouselPhotosComposable": {
     "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
     "communityBaseUrl": null,
     "photoData": [
       {
-        "photoKey": "5428d937be6c347d898188727600121c"
+        "photoKey": "eec3e75614e64349cf19ffb56c73b5cf"
       },
       {
-        "photoKey": "a7960350e27e186a2b3ee078135a4512"
+        "photoKey": "0258d99858fa1c009d077985ed5cfe9e"
       },
       {
-        "photoKey": "13639e3f4efa0f299ab3d781de512e67"
+        "photoKey": "f4638576ad230aa35d18505f32a9f441"
       },
       {
-        "photoKey": "022f2196ddb3f13c877ba88273dd99ab"
+        "photoKey": "5d43433124d9d4041a32b4e0d4661764"
       },
       {
-        "photoKey": "57516600b1d55b77a77b61f0d4aa700d"
+        "photoKey": "605513a6278c45eb36f3a7eed1135d03"
       },
       {
-        "photoKey": "4cf2315000b72949a8074372130cbfec"
+        "photoKey": "2cf6d6b89c9c863a231f10391145778e"
       },
       {
-        "photoKey": "20aa28de4007125bfddded310fe42faa"
+        "photoKey": "28d30272fd3911fdedbc5cf0bddc379a"
       },
       {
-        "photoKey": "3fc586a97783cc445af11f6e48aed238"
+        "photoKey": "4d701b8c5c9ad2260ecc84e438a2d551"
       },
       {
-        "photoKey": "6714cb738c3b1658c917aa26ea9f0311"
+        "photoKey": "b102660ebd53b93f4f9b05ccd9aeaed6"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "88585993",
+  "palsId": "14001_20261008434",
+  "id": "88585993",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/211133eb816fbe4fda2df812c5bc96c4-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/8864-Heyden-St-Detroit-MI-48228/88585993_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$60,000",
+  "unformattedPrice": 60000,
+  "address": "8864 Heyden St, Detroit, MI 48228",
+  "addressStreet": "8864 Heyden St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48228",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 3,
+  "baths": 1,
+  "area": 1009,
+  "latLong": {
+    "latitude": 42.35855,
+    "longitude": -83.238045
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Vinyl windows",
+  "contentType": "homeInsight",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88585993,
+      "streetAddress": "8864 Heyden St",
+      "zipcode": "48228",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.35855,
+      "longitude": -83.238045,
+      "price": 60000,
+      "bathrooms": 1,
+      "bedrooms": 3,
+      "livingArea": 1009,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 1,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "zestimate": 60800,
+      "rentZestimate": 1291,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 60000,
+      "timeOnZillow": 89109000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 26400,
+      "lotAreaValue": 4791.6,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "zestimate": 60800,
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Keller Williams Legacy",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "211133eb816fbe4fda2df812c5bc96c4"
       },
       {
-        "photoKey": "90cd03e4396673b4788ec822f4430680"
+        "photoKey": "b5f3cf7d4b8f72fb5782d804397422f4"
       },
       {
-        "photoKey": "4691736c628b504cc5a5aeb8669d8f42"
+        "photoKey": "83e81a9aa718fe6ede6368189b6f86ec"
       },
       {
-        "photoKey": "a76317a51063f84289fb0c696c30ac80"
+        "photoKey": "8d9d62c8e59aeb593348c13cd982bf69"
       },
       {
-        "photoKey": "69cd8745a5130819ae4184d4a5182506"
+        "photoKey": "484176264e832b1f539a9cf736baf490"
       },
       {
-        "photoKey": "df807e866a3749d8211148f18ee89be5"
+        "photoKey": "e3c44378755dc7cd8a352051c8e4b69c"
       },
       {
-        "photoKey": "771870ecd3f28d0055b74848b699eb11"
+        "photoKey": "9f9fb427e4e03efbbae61297b4e26689"
       },
       {
-        "photoKey": "6a2c439ed93764a970dfe34b84a0397d"
+        "photoKey": "8d56a0573f4cc99bff29abd1b620f6d5"
       },
       {
-        "photoKey": "011eea9bd14112ee39546068e3703e7e"
+        "photoKey": "a5b69f0bbf68af51f5a1367f56bee4f3"
       },
       {
-        "photoKey": "bc8c74358b2521936c63dfd5dfdbf168"
+        "photoKey": "d9857db58a4924aa3ca6aca715413a44"
       },
       {
-        "photoKey": "a72f4356a8479f33d416b0d077374e41"
+        "photoKey": "cd7e2d46da2bcedc6c498038e8959aca"
       },
       {
-        "photoKey": "728de4e89da6365e4f1a3c40e2944e61"
+        "photoKey": "012b4d45771f10e09ba2860a1793d5e7"
       },
       {
-        "photoKey": "1dfaa0983d5c37936f1b2f84574e0435"
+        "photoKey": "a81d3087b57faddf01c0a13086c799e8"
       },
       {
-        "photoKey": "5ce294703db7113d9a8b3726eb0b9101"
+        "photoKey": "1e2e8528624d03d8ab7cfbddeaa42f85"
       },
       {
-        "photoKey": "f8639dc1fe4c4d3e6af06e5c23cd4e00"
+        "photoKey": "495fef1f123ede57455226ca00caf730"
       },
       {
-        "photoKey": "a293d651541cc617c0e7a86a127d1fea"
-      },
-      {
-        "photoKey": "a02fb970c89bc47ac70b2ebd30dbff39"
-      },
-      {
-        "photoKey": "6b00e9bd56f6a6ddd45cbe4f7abbf9ed"
-      },
-      {
-        "photoKey": "42389b19c59bd7db85ac03cf35cb5d49"
+        "photoKey": "4e442b803fd7ee68c7be200baecd33ec"
       }
     ],
     "communityPhotoData": null,
@@ -226,10 +319,10 @@
       "livingArea": 2242,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 2,
+      "daysOnZillow": 3,
       "isFeatured": false,
       "shouldHighlight": false,
-      "zestimate": 123300,
+      "zestimate": 125300,
       "rentZestimate": 1426,
       "listing_sub_type": {
         "is_FSBA": true
@@ -238,7 +331,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 89900,
-      "timeOnZillow": 197113000,
+      "timeOnZillow": 261909000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -255,7 +348,7 @@
   "isUserConfirmedClaim": false,
   "pgapt": "ForSale",
   "sgapt": "For Sale (Broker)",
-  "zestimate": 123300,
+  "zestimate": 125300,
   "shouldShowZestimateAsPrice": false,
   "has3DModel": false,
   "hasVideo": false,
@@ -329,7 +422,7 @@
       "livingArea": 1164,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 2,
+      "daysOnZillow": 3,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 42100,
@@ -341,7 +434,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 125000,
-      "timeOnZillow": 197113000,
+      "timeOnZillow": 261909000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -456,212 +549,6 @@
   "zoomQuadrantSequence": []
 },
 {
-  "zpid": "88269838",
-  "palsId": "14001_20261007010",
-  "id": "88269838",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/815e4b5757ec035b539e3b51b9d6e188-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/17695-Woodbine-St-Detroit-MI-48219/88269838_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$125,000",
-  "unformattedPrice": 125000,
-  "address": "17695 Woodbine St, Detroit, MI 48219",
-  "addressStreet": "17695 Woodbine St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48219",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 3,
-  "baths": 1,
-  "area": 950,
-  "latLong": {
-    "latitude": 42.420727,
-    "longitude": -83.27924
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Brick ranch",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88269838,
-      "streetAddress": "17695 Woodbine St",
-      "zipcode": "48219",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.420727,
-      "longitude": -83.27924,
-      "price": 125000,
-      "bathrooms": 1,
-      "bedrooms": 3,
-      "livingArea": 950,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 5,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 115200,
-      "rentZestimate": 1214,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 125000,
-      "timeOnZillow": 456313000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 31000,
-      "lotAreaValue": 6534,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 115200,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Keller Williams Somerset",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "815e4b5757ec035b539e3b51b9d6e188"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "88367270",
-  "palsId": "14001_20261006984",
-  "id": "88367270",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/e5077d721299295d554118c8d41a4344-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/20158-Riopelle-St-Highland-Park-MI-48203/88367270_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$100,000",
-  "unformattedPrice": 100000,
-  "address": "20158 Riopelle St, Highland Park, MI 48203",
-  "addressStreet": "20158 Riopelle St",
-  "addressCity": "Highland Park",
-  "addressState": "MI",
-  "addressZipcode": "48203",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 3,
-  "baths": 1,
-  "area": 929,
-  "latLong": {
-    "latitude": 42.443336,
-    "longitude": -83.086555
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Recent cosmetic improvements",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88367270,
-      "streetAddress": "20158 Riopelle St",
-      "zipcode": "48203",
-      "city": "Highland Park",
-      "state": "MI",
-      "latitude": 42.443336,
-      "longitude": -83.086555,
-      "price": 100000,
-      "bathrooms": 1,
-      "bedrooms": 3,
-      "livingArea": 929,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 5,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 65500,
-      "rentZestimate": 1168,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 100000,
-      "timeOnZillow": 456313000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 18500,
-      "lotAreaValue": 4791.6,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 65500,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Keller Williams Somerset",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "e5077d721299295d554118c8d41a4344"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
   "zpid": "88395903",
   "palsId": "14001_20261007812",
   "id": "88395903",
@@ -707,7 +594,7 @@
       "livingArea": 2986,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 5,
+      "daysOnZillow": 6,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1407,
@@ -718,7 +605,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 200000,
-      "timeOnZillow": 456313000,
+      "timeOnZillow": 521109000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -835,521 +722,6 @@
   "zoomQuadrantSequence": []
 },
 {
-  "zpid": "88441538",
-  "palsId": "14001_20261006949",
-  "id": "88441538",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/52ef9e8d0eedfd69856fa2aecce96807-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/18259-Freeland-St-Detroit-MI-48235/88441538_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$150,000",
-  "unformattedPrice": 150000,
-  "address": "18259 Freeland St, Detroit, MI 48235",
-  "addressStreet": "18259 Freeland St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48235",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 3,
-  "baths": 2,
-  "area": 1230,
-  "latLong": {
-    "latitude": 42.424545,
-    "longitude": -83.186584
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Partially finished basement",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88441538,
-      "streetAddress": "18259 Freeland St",
-      "zipcode": "48235",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.424545,
-      "longitude": -83.186584,
-      "price": 150000,
-      "bathrooms": 2,
-      "bedrooms": 3,
-      "livingArea": 1230,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 5,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 150200,
-      "rentZestimate": 1390,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 150000,
-      "timeOnZillow": 456313000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 34200,
-      "lotAreaValue": 5227.2,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 150200,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Keller Williams Somerset",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "52ef9e8d0eedfd69856fa2aecce96807"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "88495774",
-  "palsId": "14001_20261006999",
-  "id": "88495774",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/1ff8f837df6502fc71d5090177ddfa14-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/15706-Manning-St-Detroit-MI-48205/88495774_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$120,000",
-  "unformattedPrice": 120000,
-  "address": "15706 Manning St, Detroit, MI 48205",
-  "addressStreet": "15706 Manning St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48205",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 3,
-  "baths": 1,
-  "area": 1200,
-  "latLong": {
-    "latitude": 42.440697,
-    "longitude": -82.9587
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Cosmetic updates",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88495774,
-      "streetAddress": "15706 Manning St",
-      "zipcode": "48205",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.440697,
-      "longitude": -82.9587,
-      "price": 120000,
-      "bathrooms": 1,
-      "bedrooms": 3,
-      "livingArea": 1200,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 5,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 54100,
-      "rentZestimate": 1193,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 120000,
-      "timeOnZillow": 456313000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 25400,
-      "lotAreaValue": 5227.2,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 54100,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Keller Williams Somerset",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "1ff8f837df6502fc71d5090177ddfa14"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "88620678",
-  "palsId": "14001_20261006959",
-  "id": "88620678",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/a02ec2dc724d8fa87211c47679860c06-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/16124-Murray-Hill-St-Detroit-MI-48235/88620678_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$125,000",
-  "unformattedPrice": 125000,
-  "address": "16124 Murray Hill St, Detroit, MI 48235",
-  "addressStreet": "16124 Murray Hill St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48235",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 3,
-  "baths": 1,
-  "area": 1032,
-  "latLong": {
-    "latitude": 42.40911,
-    "longitude": -83.207375
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Brick ranch-style home",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88620678,
-      "streetAddress": "16124 Murray Hill St",
-      "zipcode": "48235",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.40911,
-      "longitude": -83.207375,
-      "price": 125000,
-      "bathrooms": 1,
-      "bedrooms": 3,
-      "livingArea": 1032,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 5,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 91700,
-      "rentZestimate": 1447,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 125000,
-      "timeOnZillow": 456313000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 31100,
-      "lotAreaValue": 4791.6,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 91700,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Keller Williams Somerset",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "a02ec2dc724d8fa87211c47679860c06"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "88645287",
-  "palsId": "14001_20261007168",
-  "id": "88645287",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/fb5c6356775af6851d879677abf7c51d-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/343-Elmhurst-St-Highland-Park-MI-48203/88645287_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$249,000",
-  "unformattedPrice": 249000,
-  "address": "343 Elmhurst St, Highland Park, MI 48203",
-  "addressStreet": "343 Elmhurst St",
-  "addressCity": "Highland Park",
-  "addressState": "MI",
-  "addressZipcode": "48203",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 5,
-  "baths": 2,
-  "area": 2442,
-  "latLong": {
-    "latitude": 42.389854,
-    "longitude": -83.10095
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Flexible layout options",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88645287,
-      "streetAddress": "343 Elmhurst St",
-      "zipcode": "48203",
-      "city": "Highland Park",
-      "state": "MI",
-      "latitude": 42.389854,
-      "longitude": -83.10095,
-      "price": 249000,
-      "bathrooms": 2,
-      "bedrooms": 5,
-      "livingArea": 2442,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 5,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "rentZestimate": 1638,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 249000,
-      "timeOnZillow": 456313000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 39400,
-      "lotAreaValue": 4791.6,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Detroit Progress Realty LLC",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "fb5c6356775af6851d879677abf7c51d"
-      },
-      {
-        "photoKey": "deeb619fcffce593e2ee5739e44e4a47"
-      },
-      {
-        "photoKey": "87152087a8d7387f55da1257a8e749eb"
-      },
-      {
-        "photoKey": "748020666bade7c9c78396f562f10803"
-      },
-      {
-        "photoKey": "4b78f56c8992e0b1f8efae8b9f200409"
-      },
-      {
-        "photoKey": "f25609146146931ecefed8aae3c02c9b"
-      },
-      {
-        "photoKey": "5421de3f9ef26828966b3aee71203c4f"
-      },
-      {
-        "photoKey": "4bc7093512492afaaf21c8f73f105522"
-      },
-      {
-        "photoKey": "87ee5ad34a96fb10de6fdde40fefa0e2"
-      },
-      {
-        "photoKey": "9093eb4c3880ace98a40f86ccda47568"
-      },
-      {
-        "photoKey": "1c36c6ce11f7f65652638680c99b671a"
-      },
-      {
-        "photoKey": "4ee36b62e713489c0078ba07c0d22a42"
-      },
-      {
-        "photoKey": "48a01b4d336bba7e4cee48543742d4f8"
-      },
-      {
-        "photoKey": "ea73aa8d4243a2a73ab06a0ff338caa7"
-      },
-      {
-        "photoKey": "d34e7069eda956062ad911a96c22d7f3"
-      },
-      {
-        "photoKey": "3805a60c78e135ba2ae28bb0fe87f9aa"
-      },
-      {
-        "photoKey": "ec47c4fd600562f4551d1e2da9cc46fd"
-      },
-      {
-        "photoKey": "1cbc347e6c12ec92e9eb189021287be8"
-      },
-      {
-        "photoKey": "834d55cc299d47895ca687d92e96cf55"
-      },
-      {
-        "photoKey": "ca870c3a9f3e808e613e171074c550ee"
-      },
-      {
-        "photoKey": "d33adc486ed799573c796a6f4125f2be"
-      },
-      {
-        "photoKey": "199f71fad9a6730dab9fb21d422f7af0"
-      },
-      {
-        "photoKey": "786d1defaa2b26d047b9ddf282db1305"
-      },
-      {
-        "photoKey": "a0433927065d678179d7ad2b851b0cd6"
-      },
-      {
-        "photoKey": "12cc3ba115d3820b4bb16466e26c0a1b"
-      },
-      {
-        "photoKey": "8d7d1e345bd2bffd8697a09877dcaca4"
-      },
-      {
-        "photoKey": "c0a2c1293900ae4dad185385240a216a"
-      },
-      {
-        "photoKey": "f7a5a08f384fc8f126a943f78df90caa"
-      },
-      {
-        "photoKey": "d7789a8e86e8fc5ec23c0991025f68ab"
-      },
-      {
-        "photoKey": "e7e9e08c1c70729b5e6e4554df767d6a"
-      },
-      {
-        "photoKey": "1a6cb04a1f7027c3fddbeea781b46a11"
-      },
-      {
-        "photoKey": "78990afbfafc80426a493cc5fbd613a2"
-      },
-      {
-        "photoKey": "26713c4fb5f4dfecfe2202e8af82ebc3"
-      },
-      {
-        "photoKey": "022e1264515d0a7686e3862f75301f3e"
-      },
-      {
-        "photoKey": "2555f30524ba3d0457210ffceba5fe8f"
-      },
-      {
-        "photoKey": "d9f0850e647a741d841688a72e5bbdb8"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
   "zpid": "88705179",
   "palsId": "14001_20261007296",
   "id": "88705179",
@@ -1395,7 +767,7 @@
       "livingArea": 1920,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 5,
+      "daysOnZillow": 6,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1736,
@@ -1406,7 +778,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 215000,
-      "timeOnZillow": 456313000,
+      "timeOnZillow": 521109000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -1520,6 +892,519 @@
   "zoomQuadrantSequence": []
 },
 {
+  "zpid": "88441538",
+  "palsId": "14001_20261006949",
+  "id": "88441538",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/52ef9e8d0eedfd69856fa2aecce96807-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/18259-Freeland-St-Detroit-MI-48235/88441538_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$150,000",
+  "unformattedPrice": 150000,
+  "address": "18259 Freeland St, Detroit, MI 48235",
+  "addressStreet": "18259 Freeland St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48235",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 3,
+  "baths": 2,
+  "area": 1230,
+  "latLong": {
+    "latitude": 42.424545,
+    "longitude": -83.186584
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Partially finished basement",
+  "contentType": "homeInsight",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88441538,
+      "streetAddress": "18259 Freeland St",
+      "zipcode": "48235",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.424545,
+      "longitude": -83.186584,
+      "price": 150000,
+      "bathrooms": 2,
+      "bedrooms": 3,
+      "livingArea": 1230,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 6,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "zestimate": 150200,
+      "rentZestimate": 1390,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 150000,
+      "timeOnZillow": 521109000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 34200,
+      "lotAreaValue": 5227.2,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "zestimate": 150200,
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Keller Williams Somerset",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "52ef9e8d0eedfd69856fa2aecce96807"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "88269838",
+  "palsId": "14001_20261007010",
+  "id": "88269838",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/815e4b5757ec035b539e3b51b9d6e188-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/17695-Woodbine-St-Detroit-MI-48219/88269838_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$125,000",
+  "unformattedPrice": 125000,
+  "address": "17695 Woodbine St, Detroit, MI 48219",
+  "addressStreet": "17695 Woodbine St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48219",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 3,
+  "baths": 1,
+  "area": 950,
+  "latLong": {
+    "latitude": 42.420727,
+    "longitude": -83.27924
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Brick ranch",
+  "contentType": "homeInsight",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88269838,
+      "streetAddress": "17695 Woodbine St",
+      "zipcode": "48219",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.420727,
+      "longitude": -83.27924,
+      "price": 125000,
+      "bathrooms": 1,
+      "bedrooms": 3,
+      "livingArea": 950,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 6,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "zestimate": 125100,
+      "rentZestimate": 1214,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 125000,
+      "timeOnZillow": 521109000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 31000,
+      "lotAreaValue": 6534,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "zestimate": 125100,
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Keller Williams Somerset",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "815e4b5757ec035b539e3b51b9d6e188"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "88367270",
+  "palsId": "14001_20261006984",
+  "id": "88367270",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/e5077d721299295d554118c8d41a4344-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/20158-Riopelle-St-Highland-Park-MI-48203/88367270_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$100,000",
+  "unformattedPrice": 100000,
+  "address": "20158 Riopelle St, Highland Park, MI 48203",
+  "addressStreet": "20158 Riopelle St",
+  "addressCity": "Highland Park",
+  "addressState": "MI",
+  "addressZipcode": "48203",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 3,
+  "baths": 1,
+  "area": 929,
+  "latLong": {
+    "latitude": 42.443336,
+    "longitude": -83.086555
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Recent cosmetic improvements",
+  "contentType": "homeInsight",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88367270,
+      "streetAddress": "20158 Riopelle St",
+      "zipcode": "48203",
+      "city": "Highland Park",
+      "state": "MI",
+      "latitude": 42.443336,
+      "longitude": -83.086555,
+      "price": 100000,
+      "bathrooms": 1,
+      "bedrooms": 3,
+      "livingArea": 929,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 6,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "zestimate": 99800,
+      "rentZestimate": 1168,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 100000,
+      "timeOnZillow": 521109000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 18500,
+      "lotAreaValue": 4791.6,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "zestimate": 99800,
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Keller Williams Somerset",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "e5077d721299295d554118c8d41a4344"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "88620678",
+  "palsId": "14001_20261006959",
+  "id": "88620678",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/a02ec2dc724d8fa87211c47679860c06-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/16124-Murray-Hill-St-Detroit-MI-48235/88620678_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$125,000",
+  "unformattedPrice": 125000,
+  "address": "16124 Murray Hill St, Detroit, MI 48235",
+  "addressStreet": "16124 Murray Hill St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48235",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 3,
+  "baths": 1,
+  "area": 1032,
+  "latLong": {
+    "latitude": 42.40911,
+    "longitude": -83.207375
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Brick ranch-style home",
+  "contentType": "homeInsight",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88620678,
+      "streetAddress": "16124 Murray Hill St",
+      "zipcode": "48235",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.40911,
+      "longitude": -83.207375,
+      "price": 125000,
+      "bathrooms": 1,
+      "bedrooms": 3,
+      "livingArea": 1032,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 6,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "zestimate": 125400,
+      "rentZestimate": 1447,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 125000,
+      "timeOnZillow": 521109000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 31100,
+      "lotAreaValue": 4791.6,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "zestimate": 125400,
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Keller Williams Somerset",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "a02ec2dc724d8fa87211c47679860c06"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "88495774",
+  "palsId": "14001_20261006999",
+  "id": "88495774",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/1ff8f837df6502fc71d5090177ddfa14-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/15706-Manning-St-Detroit-MI-48205/88495774_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$120,000",
+  "unformattedPrice": 120000,
+  "address": "15706 Manning St, Detroit, MI 48205",
+  "addressStreet": "15706 Manning St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48205",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 3,
+  "baths": 1,
+  "area": 1200,
+  "latLong": {
+    "latitude": 42.440697,
+    "longitude": -82.9587
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Cosmetic updates",
+  "contentType": "homeInsight",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88495774,
+      "streetAddress": "15706 Manning St",
+      "zipcode": "48205",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.440697,
+      "longitude": -82.9587,
+      "price": 120000,
+      "bathrooms": 1,
+      "bedrooms": 3,
+      "livingArea": 1200,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 6,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "rentZestimate": 1193,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 120000,
+      "timeOnZillow": 521109000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 25400,
+      "lotAreaValue": 5227.2,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Keller Williams Somerset",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "1ff8f837df6502fc71d5090177ddfa14"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
   "zpid": "88269245",
   "palsId": "230001_26004134",
   "id": "88269245",
@@ -1577,7 +1462,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 140000,
-      "timeOnZillow": 537147000,
+      "timeOnZillow": 601943000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -1668,827 +1553,6 @@
   "zoomQuadrantSequence": []
 },
 {
-  "zpid": "24652849",
-  "palsId": "14001_20261007644",
-  "id": "24652849",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/63face7df20269f6b841cd73efbc0708-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/31-W-Barrett-Ave-Madison-Heights-MI-48071/24652849_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "Multi-family home for sale",
-  "countryCurrency": "$",
-  "price": "$280,000",
-  "unformattedPrice": 280000,
-  "address": "31 W Barrett Ave, Madison Heights, MI 48071",
-  "addressStreet": "31 W Barrett Ave",
-  "addressCity": "Madison Heights",
-  "addressState": "MI",
-  "addressZipcode": "48071",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 4,
-  "baths": 2,
-  "area": 1584,
-  "latLong": {
-    "latitude": 42.47902,
-    "longitude": -83.10503
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Price cut: $5,000 (2/10)",
-  "contentType": "priceCut",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 24652849,
-      "streetAddress": "31 W Barrett Ave",
-      "zipcode": "48071",
-      "city": "Madison Heights",
-      "state": "MI",
-      "latitude": 42.47902,
-      "longitude": -83.10503,
-      "price": 280000,
-      "datePriceChanged": 1770710400000,
-      "bathrooms": 2,
-      "bedrooms": 4,
-      "livingArea": 1584,
-      "homeType": "MULTI_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 6,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 276300,
-      "rentZestimate": 1525,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "priceReduction": "$5,000 (Feb 10)",
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 280000,
-      "priceChange": -5000,
-      "timeOnZillow": 542713000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 185700,
-      "lotAreaValue": 4356,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 276300,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Keller Williams Paint Creek",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "63face7df20269f6b841cd73efbc0708"
-      },
-      {
-        "photoKey": "ab6e3048558995c71487b0693527c826"
-      },
-      {
-        "photoKey": "6ea791d69ed31edb799392e6bddebef6"
-      },
-      {
-        "photoKey": "cf5265a03973061ff55f316dd7de4c27"
-      },
-      {
-        "photoKey": "40e666b277a358938bcfd1484ccbd9f5"
-      },
-      {
-        "photoKey": "b5b2fc61f2619ae343be8aca4d220627"
-      },
-      {
-        "photoKey": "4eee843a6bcf739bebb058d877437d8a"
-      },
-      {
-        "photoKey": "1b96d2cca02656c974b937c6d1b7a2cf"
-      },
-      {
-        "photoKey": "b83039278e114e3328b69e59a94b0f37"
-      },
-      {
-        "photoKey": "fcab939a6ac1c98cf27b6028ef659b8f"
-      },
-      {
-        "photoKey": "9c262443aaedfc2a778026e6e50f7d21"
-      },
-      {
-        "photoKey": "4073a36725365e7c4d211583b5a8c146"
-      },
-      {
-        "photoKey": "c0444d4dd8525af2c686505e1c0e8d01"
-      },
-      {
-        "photoKey": "1009c2b20187d540e6bc77e1b9e61a76"
-      },
-      {
-        "photoKey": "93f8b43649f3769b89bfc27a8f0ffa69"
-      },
-      {
-        "photoKey": "74dcd678bb0f7143cc430a8e3315b66d"
-      },
-      {
-        "photoKey": "962bd04683d7cdde2651e4d3ea0174ed"
-      },
-      {
-        "photoKey": "c92491276bea44efd770dce6fef997ce"
-      },
-      {
-        "photoKey": "e4423352f67f888bf7fce3139961f15f"
-      },
-      {
-        "photoKey": "b6de5ea7e014bf3ce5c88ffbca762b69"
-      },
-      {
-        "photoKey": "818a57509b67fcfffa524e58f3ac83a5"
-      },
-      {
-        "photoKey": "5ac68938fc8a4d9f88750c8136552edc"
-      },
-      {
-        "photoKey": "0801a7bea010892de1f3a154294186cd"
-      },
-      {
-        "photoKey": "81989d179c793085739ee91271ab7238"
-      },
-      {
-        "photoKey": "a58aec3df91018411d8e8a490b7f543e"
-      },
-      {
-        "photoKey": "8b8784131697a75501d2bc7c374d7d58"
-      },
-      {
-        "photoKey": "4aad3f1cec494d1dda02912e627ecd1e"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "83571471",
-  "palsId": "14001_20261002649",
-  "id": "83571471",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/6c32b625443ad5bfa2fdf3e96cf910c5-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/13425-Georgiana-Ave-Warren-MI-48089/83571471_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$105,000",
-  "unformattedPrice": 105000,
-  "address": "13425 Georgiana Ave, Warren, MI 48089",
-  "addressStreet": "13425 Georgiana Ave",
-  "addressCity": "Warren",
-  "addressState": "MI",
-  "addressZipcode": "48089",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 2,
-  "baths": 1,
-  "area": 1000,
-  "latLong": {
-    "latitude": 42.45128,
-    "longitude": -82.987724
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Convenient off-street parking",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 83571471,
-      "streetAddress": "13425 Georgiana Ave",
-      "zipcode": "48089",
-      "city": "Warren",
-      "state": "MI",
-      "latitude": 42.45128,
-      "longitude": -82.987724,
-      "price": 105000,
-      "bathrooms": 1,
-      "bedrooms": 2,
-      "livingArea": 1000,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 6,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 105700,
-      "rentZestimate": 1254,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 105000,
-      "timeOnZillow": 542713000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 89620,
-      "lotAreaValue": 3920.4,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 105700,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Keller Williams Somerset",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "6c32b625443ad5bfa2fdf3e96cf910c5"
-      },
-      {
-        "photoKey": "bc2f4854113926ae0714c84b07e4be65"
-      },
-      {
-        "photoKey": "a4bcca22c8f949d8e4fe7363bf12ed60"
-      },
-      {
-        "photoKey": "867620dd05c5628f8d4db275f192047c"
-      },
-      {
-        "photoKey": "ecdcdf485da7b2e519fa502faa589253"
-      },
-      {
-        "photoKey": "224e1cd04981b3fbe585a90aa2d4110f"
-      },
-      {
-        "photoKey": "895a839047a152b4550fd3054db7312d"
-      },
-      {
-        "photoKey": "268be1ebda5496b63e0a472374539d7b"
-      },
-      {
-        "photoKey": "c9a6bc23a3955ce74d96660cdbdfbfb8"
-      },
-      {
-        "photoKey": "fb7645618025af0bb89b72ced7f2ac94"
-      },
-      {
-        "photoKey": "5d1f92ce093be9deeb2e8fd082d11083"
-      },
-      {
-        "photoKey": "edcdc0bd859e08af14040cc6a9d22f72"
-      },
-      {
-        "photoKey": "ab27adf1fb601f40cf1f41c5d2124807"
-      },
-      {
-        "photoKey": "90f9958420b7dfb5180e02ec269c5a88"
-      },
-      {
-        "photoKey": "15ecebbabeddab98147744caa6831dc8"
-      },
-      {
-        "photoKey": "ba4a97d957783360cbd2ea619f3c16b6"
-      },
-      {
-        "photoKey": "6d46c598f15c2804befe4592737a4f76"
-      },
-      {
-        "photoKey": "446b7fb802d424c494c8d78bb215e01e"
-      },
-      {
-        "photoKey": "6c12e6e0caeb353222ac63af2f184ab0"
-      },
-      {
-        "photoKey": "a63780d8a23640f2a176d02b1603854e"
-      },
-      {
-        "photoKey": "dfbc208d371c8d10566781d9a54fe27d"
-      },
-      {
-        "photoKey": "2bbfc846eda05d8a3a9fca68beceb59a"
-      },
-      {
-        "photoKey": "65a4446946d917b6917281ab436997e3"
-      },
-      {
-        "photoKey": "f444d633d56b7873a4fdda7072ce1580"
-      },
-      {
-        "photoKey": "1cee432df212975f3fa302ad21bfdf81"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "88157039",
-  "palsId": "14001_20261007575",
-  "id": "88157039",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/cae94428bdc688368163a6ec9e0400a0-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/16873-Ferguson-St-Detroit-MI-48235/88157039_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$110,000",
-  "unformattedPrice": 110000,
-  "address": "16873 Ferguson St, Detroit, MI 48235",
-  "addressStreet": "16873 Ferguson St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48235",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 4,
-  "baths": 1,
-  "area": 1134,
-  "latLong": {
-    "latitude": 42.415012,
-    "longitude": -83.21027
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Spacious bedrooms",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88157039,
-      "streetAddress": "16873 Ferguson St",
-      "zipcode": "48235",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.415012,
-      "longitude": -83.21027,
-      "price": 110000,
-      "bathrooms": 1,
-      "bedrooms": 4,
-      "livingArea": 1134,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 6,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 92100,
-      "rentZestimate": 1557,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 110000,
-      "timeOnZillow": 542713000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 30500,
-      "lotAreaValue": 3920.4,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 92100,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Pro Realty Group",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "cae94428bdc688368163a6ec9e0400a0"
-      },
-      {
-        "photoKey": "37b27f25b1c91c85036d32dc0312f55f"
-      },
-      {
-        "photoKey": "1420db5ccb9b70a88a432e905468314f"
-      },
-      {
-        "photoKey": "4279c4367e7364786f9470829dbe29f8"
-      },
-      {
-        "photoKey": "afe69e4f94e52aa34219f28627c8ecbf"
-      },
-      {
-        "photoKey": "191432b62eb06b2f6167b044da4c745c"
-      },
-      {
-        "photoKey": "d1d6d21a88d88a8b97cf2285c5c2e6c1"
-      },
-      {
-        "photoKey": "23e5789fdfa3aa18b86eb74531cccbf8"
-      },
-      {
-        "photoKey": "d5546833bb9f0711d4807b5ffe0816cd"
-      },
-      {
-        "photoKey": "901efde656ca700cf72b56d79b7eb706"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "88725463",
-  "palsId": "14001_20261007652",
-  "id": "88725463",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/8b80894e00993aced587aef558315bf1-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/5272-Maplewood-St-Detroit-MI-48204/88725463_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "Multi-family home for sale",
-  "countryCurrency": "$",
-  "price": "$175,000",
-  "unformattedPrice": 175000,
-  "address": "5272 Maplewood St, Detroit, MI 48204",
-  "addressStreet": "5272 Maplewood St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48204",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 4,
-  "baths": 2,
-  "area": 1372,
-  "latLong": {
-    "latitude": 42.35926,
-    "longitude": -83.12788
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Refinished hardwood floors",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88725463,
-      "streetAddress": "5272 Maplewood St",
-      "zipcode": "48204",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.35926,
-      "longitude": -83.12788,
-      "price": 175000,
-      "bathrooms": 2,
-      "bedrooms": 4,
-      "livingArea": 1372,
-      "homeType": "MULTI_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 6,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 177800,
-      "rentZestimate": 1267,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 175000,
-      "timeOnZillow": 542713000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 14000,
-      "lotAreaValue": 4200,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 177800,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Better Living Real Estate LLC",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "8b80894e00993aced587aef558315bf1"
-      },
-      {
-        "photoKey": "58fc6dc571560166d3eb6e67b8a734ad"
-      },
-      {
-        "photoKey": "ede0eb778d794d8bcc7c5ad447b299d7"
-      },
-      {
-        "photoKey": "603fa5c44f93ec232af7a67532597d15"
-      },
-      {
-        "photoKey": "61e57ab125181d7b84bf401656141187"
-      },
-      {
-        "photoKey": "c32ceb5ed6b3127ee6e8a066eafb2c6c"
-      },
-      {
-        "photoKey": "4a3179a03c8360345debe547fb8aac5c"
-      },
-      {
-        "photoKey": "a5616257ab5fcceac1c935cbb0b4bf02"
-      },
-      {
-        "photoKey": "004dfaa727ef637b635d58197dcbdf70"
-      },
-      {
-        "photoKey": "3305264525d26945263777536865301a"
-      },
-      {
-        "photoKey": "59c83562264a57a457fd5f0c45464770"
-      },
-      {
-        "photoKey": "e1bbb1b6fd8401b6a415356fd4a20e7a"
-      },
-      {
-        "photoKey": "ed379fc2b05dddd36664c83b6bf0dd93"
-      },
-      {
-        "photoKey": "139c5a4cdf28a903e37b08f1449addf0"
-      },
-      {
-        "photoKey": "984ba02f2ddda76da7aac0ad04ff9fdb"
-      },
-      {
-        "photoKey": "c36720e0c3db282ca69acebb61b59bdc"
-      },
-      {
-        "photoKey": "273d6972188e1f0cfaa622ba56b9f21c"
-      },
-      {
-        "photoKey": "003c97ab46e7ff8f471fb519ac7b6ef1"
-      },
-      {
-        "photoKey": "9a65578eee993f5e91252d468a31cafe"
-      },
-      {
-        "photoKey": "3a81a0a4aea60a06f36d45e9d6be3a7f"
-      },
-      {
-        "photoKey": "31500d0d4bf1e35b0940013adedfed70"
-      },
-      {
-        "photoKey": "0d9de42993ac139effe3c471ab7da041"
-      },
-      {
-        "photoKey": "0b7de2882d1e17a6711e8b88f7ff9c01"
-      },
-      {
-        "photoKey": "ee1a476c04e5bc60561e5c467de865be"
-      },
-      {
-        "photoKey": "878c1753e547801199e753949769ef90"
-      },
-      {
-        "photoKey": "12f422d7574d78841b49375f13bba95c"
-      },
-      {
-        "photoKey": "534651a2bf7ac251f6e9c9ef1e73dc04"
-      },
-      {
-        "photoKey": "e5cfbf578e06e273fac805e329eead61"
-      },
-      {
-        "photoKey": "9817a1ecd6c23a8fba37b23dda8e4634"
-      },
-      {
-        "photoKey": "62d767141d0d6044d292054a8d1e6958"
-      },
-      {
-        "photoKey": "cb2012bfd9cb48ed81af56d88cdb1a3f"
-      },
-      {
-        "photoKey": "5c9db542d28b1a3af32daf594c76e18f"
-      },
-      {
-        "photoKey": "738ae62965deaf30f4c2e35791ff4f3d"
-      },
-      {
-        "photoKey": "5b5dbfdce3f77fd55d1a4d3ceef1e0d5"
-      },
-      {
-        "photoKey": "81c8579c334643e40a0cab30b851f989"
-      },
-      {
-        "photoKey": "1d8b7d4ac92f803618bbad0246aa1672"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "88728663",
-  "palsId": "14001_20261007510",
-  "id": "88728663",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/78740c3f44a62a0a9b60a6184cd49b6a-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/16083-Manning-St-Detroit-MI-48205/88728663_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$74,900",
-  "unformattedPrice": 74900,
-  "address": "16083 Manning St, Detroit, MI 48205",
-  "addressStreet": "16083 Manning St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48205",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 2,
-  "baths": 1,
-  "area": 1100,
-  "latLong": {
-    "latitude": 42.44129,
-    "longitude": -82.954285
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Full basement",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88728663,
-      "streetAddress": "16083 Manning St",
-      "zipcode": "48205",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.44129,
-      "longitude": -82.954285,
-      "price": 74900,
-      "bathrooms": 1,
-      "bedrooms": 2,
-      "livingArea": 1100,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 6,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 75000,
-      "rentZestimate": 1259,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 74900,
-      "timeOnZillow": 542713000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 16100,
-      "lotAreaValue": 4356,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 75000,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Berkshire Hathaway HomeServices Kee Realty Bham",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "78740c3f44a62a0a9b60a6184cd49b6a"
-      },
-      {
-        "photoKey": "bb76c921056b7734a3801672f5c90aa1"
-      },
-      {
-        "photoKey": "d804a50a90f5f6d310a53155317d6be3"
-      },
-      {
-        "photoKey": "b58dc44e300c5836b9f96e6eb4a02ab9"
-      },
-      {
-        "photoKey": "18f49552c99a376937d20cec1ea92801"
-      },
-      {
-        "photoKey": "c30f6da97d1e998f13bfc3481f881f21"
-      },
-      {
-        "photoKey": "8615d8332c3d5823c7a695726d55603b"
-      },
-      {
-        "photoKey": "1751fa2700d6e626ecc9d61d5594de8c"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
   "zpid": "444718400",
   "palsId": "14001_20261006422",
   "id": "444718400",
@@ -2534,7 +1598,7 @@
       "livingArea": 1581,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 6,
+      "daysOnZillow": 7,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 116800,
@@ -2546,7 +1610,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 115000,
-      "timeOnZillow": 542713000,
+      "timeOnZillow": 607509000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -2681,6 +1745,825 @@
   "zoomQuadrantSequence": []
 },
 {
+  "zpid": "24652849",
+  "palsId": "14001_20261007644",
+  "id": "24652849",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/63face7df20269f6b841cd73efbc0708-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/31-W-Barrett-Ave-Madison-Heights-MI-48071/24652849_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "Multi-family home for sale",
+  "countryCurrency": "$",
+  "price": "$280,000",
+  "unformattedPrice": 280000,
+  "address": "31 W Barrett Ave, Madison Heights, MI 48071",
+  "addressStreet": "31 W Barrett Ave",
+  "addressCity": "Madison Heights",
+  "addressState": "MI",
+  "addressZipcode": "48071",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 4,
+  "baths": 2,
+  "area": 1584,
+  "latLong": {
+    "latitude": 42.47902,
+    "longitude": -83.10503
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Price cut: $5,000 (2/10)",
+  "contentType": "priceCut",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 24652849,
+      "streetAddress": "31 W Barrett Ave",
+      "zipcode": "48071",
+      "city": "Madison Heights",
+      "state": "MI",
+      "latitude": 42.47902,
+      "longitude": -83.10503,
+      "price": 280000,
+      "datePriceChanged": 1770710400000,
+      "bathrooms": 2,
+      "bedrooms": 4,
+      "livingArea": 1584,
+      "homeType": "MULTI_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 7,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "zestimate": 276300,
+      "rentZestimate": 1525,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "priceReduction": "$5,000 (Feb 10)",
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 280000,
+      "priceChange": -5000,
+      "timeOnZillow": 607509000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 185700,
+      "lotAreaValue": 4356,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "zestimate": 276300,
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Keller Williams Paint Creek",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "63face7df20269f6b841cd73efbc0708"
+      },
+      {
+        "photoKey": "ab6e3048558995c71487b0693527c826"
+      },
+      {
+        "photoKey": "6ea791d69ed31edb799392e6bddebef6"
+      },
+      {
+        "photoKey": "cf5265a03973061ff55f316dd7de4c27"
+      },
+      {
+        "photoKey": "40e666b277a358938bcfd1484ccbd9f5"
+      },
+      {
+        "photoKey": "b5b2fc61f2619ae343be8aca4d220627"
+      },
+      {
+        "photoKey": "4eee843a6bcf739bebb058d877437d8a"
+      },
+      {
+        "photoKey": "1b96d2cca02656c974b937c6d1b7a2cf"
+      },
+      {
+        "photoKey": "b83039278e114e3328b69e59a94b0f37"
+      },
+      {
+        "photoKey": "fcab939a6ac1c98cf27b6028ef659b8f"
+      },
+      {
+        "photoKey": "9c262443aaedfc2a778026e6e50f7d21"
+      },
+      {
+        "photoKey": "4073a36725365e7c4d211583b5a8c146"
+      },
+      {
+        "photoKey": "c0444d4dd8525af2c686505e1c0e8d01"
+      },
+      {
+        "photoKey": "1009c2b20187d540e6bc77e1b9e61a76"
+      },
+      {
+        "photoKey": "93f8b43649f3769b89bfc27a8f0ffa69"
+      },
+      {
+        "photoKey": "74dcd678bb0f7143cc430a8e3315b66d"
+      },
+      {
+        "photoKey": "962bd04683d7cdde2651e4d3ea0174ed"
+      },
+      {
+        "photoKey": "c92491276bea44efd770dce6fef997ce"
+      },
+      {
+        "photoKey": "e4423352f67f888bf7fce3139961f15f"
+      },
+      {
+        "photoKey": "b6de5ea7e014bf3ce5c88ffbca762b69"
+      },
+      {
+        "photoKey": "818a57509b67fcfffa524e58f3ac83a5"
+      },
+      {
+        "photoKey": "5ac68938fc8a4d9f88750c8136552edc"
+      },
+      {
+        "photoKey": "0801a7bea010892de1f3a154294186cd"
+      },
+      {
+        "photoKey": "81989d179c793085739ee91271ab7238"
+      },
+      {
+        "photoKey": "a58aec3df91018411d8e8a490b7f543e"
+      },
+      {
+        "photoKey": "8b8784131697a75501d2bc7c374d7d58"
+      },
+      {
+        "photoKey": "4aad3f1cec494d1dda02912e627ecd1e"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "88725463",
+  "palsId": "14001_20261007652",
+  "id": "88725463",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/8b80894e00993aced587aef558315bf1-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/5272-Maplewood-St-Detroit-MI-48204/88725463_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "Multi-family home for sale",
+  "countryCurrency": "$",
+  "price": "$175,000",
+  "unformattedPrice": 175000,
+  "address": "5272 Maplewood St, Detroit, MI 48204",
+  "addressStreet": "5272 Maplewood St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48204",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 4,
+  "baths": 2,
+  "area": 1372,
+  "latLong": {
+    "latitude": 42.35926,
+    "longitude": -83.12788
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Refinished hardwood floors",
+  "contentType": "homeInsight",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88725463,
+      "streetAddress": "5272 Maplewood St",
+      "zipcode": "48204",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.35926,
+      "longitude": -83.12788,
+      "price": 175000,
+      "bathrooms": 2,
+      "bedrooms": 4,
+      "livingArea": 1372,
+      "homeType": "MULTI_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 7,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "rentZestimate": 1267,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 175000,
+      "timeOnZillow": 607509000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 14000,
+      "lotAreaValue": 4200,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Better Living Real Estate LLC",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "8b80894e00993aced587aef558315bf1"
+      },
+      {
+        "photoKey": "58fc6dc571560166d3eb6e67b8a734ad"
+      },
+      {
+        "photoKey": "ede0eb778d794d8bcc7c5ad447b299d7"
+      },
+      {
+        "photoKey": "603fa5c44f93ec232af7a67532597d15"
+      },
+      {
+        "photoKey": "61e57ab125181d7b84bf401656141187"
+      },
+      {
+        "photoKey": "c32ceb5ed6b3127ee6e8a066eafb2c6c"
+      },
+      {
+        "photoKey": "4a3179a03c8360345debe547fb8aac5c"
+      },
+      {
+        "photoKey": "a5616257ab5fcceac1c935cbb0b4bf02"
+      },
+      {
+        "photoKey": "004dfaa727ef637b635d58197dcbdf70"
+      },
+      {
+        "photoKey": "3305264525d26945263777536865301a"
+      },
+      {
+        "photoKey": "59c83562264a57a457fd5f0c45464770"
+      },
+      {
+        "photoKey": "e1bbb1b6fd8401b6a415356fd4a20e7a"
+      },
+      {
+        "photoKey": "ed379fc2b05dddd36664c83b6bf0dd93"
+      },
+      {
+        "photoKey": "139c5a4cdf28a903e37b08f1449addf0"
+      },
+      {
+        "photoKey": "984ba02f2ddda76da7aac0ad04ff9fdb"
+      },
+      {
+        "photoKey": "c36720e0c3db282ca69acebb61b59bdc"
+      },
+      {
+        "photoKey": "273d6972188e1f0cfaa622ba56b9f21c"
+      },
+      {
+        "photoKey": "003c97ab46e7ff8f471fb519ac7b6ef1"
+      },
+      {
+        "photoKey": "9a65578eee993f5e91252d468a31cafe"
+      },
+      {
+        "photoKey": "3a81a0a4aea60a06f36d45e9d6be3a7f"
+      },
+      {
+        "photoKey": "31500d0d4bf1e35b0940013adedfed70"
+      },
+      {
+        "photoKey": "0d9de42993ac139effe3c471ab7da041"
+      },
+      {
+        "photoKey": "0b7de2882d1e17a6711e8b88f7ff9c01"
+      },
+      {
+        "photoKey": "ee1a476c04e5bc60561e5c467de865be"
+      },
+      {
+        "photoKey": "878c1753e547801199e753949769ef90"
+      },
+      {
+        "photoKey": "12f422d7574d78841b49375f13bba95c"
+      },
+      {
+        "photoKey": "534651a2bf7ac251f6e9c9ef1e73dc04"
+      },
+      {
+        "photoKey": "e5cfbf578e06e273fac805e329eead61"
+      },
+      {
+        "photoKey": "9817a1ecd6c23a8fba37b23dda8e4634"
+      },
+      {
+        "photoKey": "62d767141d0d6044d292054a8d1e6958"
+      },
+      {
+        "photoKey": "cb2012bfd9cb48ed81af56d88cdb1a3f"
+      },
+      {
+        "photoKey": "5c9db542d28b1a3af32daf594c76e18f"
+      },
+      {
+        "photoKey": "738ae62965deaf30f4c2e35791ff4f3d"
+      },
+      {
+        "photoKey": "5b5dbfdce3f77fd55d1a4d3ceef1e0d5"
+      },
+      {
+        "photoKey": "81c8579c334643e40a0cab30b851f989"
+      },
+      {
+        "photoKey": "1d8b7d4ac92f803618bbad0246aa1672"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "83571471",
+  "palsId": "14001_20261002649",
+  "id": "83571471",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/6c32b625443ad5bfa2fdf3e96cf910c5-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/13425-Georgiana-Ave-Warren-MI-48089/83571471_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$105,000",
+  "unformattedPrice": 105000,
+  "address": "13425 Georgiana Ave, Warren, MI 48089",
+  "addressStreet": "13425 Georgiana Ave",
+  "addressCity": "Warren",
+  "addressState": "MI",
+  "addressZipcode": "48089",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 2,
+  "baths": 1,
+  "area": 1000,
+  "latLong": {
+    "latitude": 42.45128,
+    "longitude": -82.987724
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Convenient off-street parking",
+  "contentType": "homeInsight",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 83571471,
+      "streetAddress": "13425 Georgiana Ave",
+      "zipcode": "48089",
+      "city": "Warren",
+      "state": "MI",
+      "latitude": 42.45128,
+      "longitude": -82.987724,
+      "price": 105000,
+      "bathrooms": 1,
+      "bedrooms": 2,
+      "livingArea": 1000,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 7,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "zestimate": 105100,
+      "rentZestimate": 1254,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 105000,
+      "timeOnZillow": 607509000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 89620,
+      "lotAreaValue": 3920.4,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "zestimate": 105100,
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Keller Williams Somerset",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "6c32b625443ad5bfa2fdf3e96cf910c5"
+      },
+      {
+        "photoKey": "bc2f4854113926ae0714c84b07e4be65"
+      },
+      {
+        "photoKey": "a4bcca22c8f949d8e4fe7363bf12ed60"
+      },
+      {
+        "photoKey": "867620dd05c5628f8d4db275f192047c"
+      },
+      {
+        "photoKey": "ecdcdf485da7b2e519fa502faa589253"
+      },
+      {
+        "photoKey": "224e1cd04981b3fbe585a90aa2d4110f"
+      },
+      {
+        "photoKey": "895a839047a152b4550fd3054db7312d"
+      },
+      {
+        "photoKey": "268be1ebda5496b63e0a472374539d7b"
+      },
+      {
+        "photoKey": "c9a6bc23a3955ce74d96660cdbdfbfb8"
+      },
+      {
+        "photoKey": "fb7645618025af0bb89b72ced7f2ac94"
+      },
+      {
+        "photoKey": "5d1f92ce093be9deeb2e8fd082d11083"
+      },
+      {
+        "photoKey": "edcdc0bd859e08af14040cc6a9d22f72"
+      },
+      {
+        "photoKey": "ab27adf1fb601f40cf1f41c5d2124807"
+      },
+      {
+        "photoKey": "90f9958420b7dfb5180e02ec269c5a88"
+      },
+      {
+        "photoKey": "15ecebbabeddab98147744caa6831dc8"
+      },
+      {
+        "photoKey": "ba4a97d957783360cbd2ea619f3c16b6"
+      },
+      {
+        "photoKey": "6d46c598f15c2804befe4592737a4f76"
+      },
+      {
+        "photoKey": "446b7fb802d424c494c8d78bb215e01e"
+      },
+      {
+        "photoKey": "6c12e6e0caeb353222ac63af2f184ab0"
+      },
+      {
+        "photoKey": "a63780d8a23640f2a176d02b1603854e"
+      },
+      {
+        "photoKey": "dfbc208d371c8d10566781d9a54fe27d"
+      },
+      {
+        "photoKey": "2bbfc846eda05d8a3a9fca68beceb59a"
+      },
+      {
+        "photoKey": "65a4446946d917b6917281ab436997e3"
+      },
+      {
+        "photoKey": "f444d633d56b7873a4fdda7072ce1580"
+      },
+      {
+        "photoKey": "1cee432df212975f3fa302ad21bfdf81"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "88728663",
+  "palsId": "14001_20261007510",
+  "id": "88728663",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/78740c3f44a62a0a9b60a6184cd49b6a-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/16083-Manning-St-Detroit-MI-48205/88728663_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$74,900",
+  "unformattedPrice": 74900,
+  "address": "16083 Manning St, Detroit, MI 48205",
+  "addressStreet": "16083 Manning St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48205",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 2,
+  "baths": 1,
+  "area": 1100,
+  "latLong": {
+    "latitude": 42.44129,
+    "longitude": -82.954285
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Full basement",
+  "contentType": "homeInsight",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88728663,
+      "streetAddress": "16083 Manning St",
+      "zipcode": "48205",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.44129,
+      "longitude": -82.954285,
+      "price": 74900,
+      "bathrooms": 1,
+      "bedrooms": 2,
+      "livingArea": 1100,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 7,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "zestimate": 75000,
+      "rentZestimate": 1259,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 74900,
+      "timeOnZillow": 607509000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 16100,
+      "lotAreaValue": 4356,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "zestimate": 75000,
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Berkshire Hathaway HomeServices Kee Realty Bham",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "78740c3f44a62a0a9b60a6184cd49b6a"
+      },
+      {
+        "photoKey": "bb76c921056b7734a3801672f5c90aa1"
+      },
+      {
+        "photoKey": "d804a50a90f5f6d310a53155317d6be3"
+      },
+      {
+        "photoKey": "b58dc44e300c5836b9f96e6eb4a02ab9"
+      },
+      {
+        "photoKey": "18f49552c99a376937d20cec1ea92801"
+      },
+      {
+        "photoKey": "c30f6da97d1e998f13bfc3481f881f21"
+      },
+      {
+        "photoKey": "8615d8332c3d5823c7a695726d55603b"
+      },
+      {
+        "photoKey": "1751fa2700d6e626ecc9d61d5594de8c"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "88157039",
+  "palsId": "14001_20261007575",
+  "id": "88157039",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/cae94428bdc688368163a6ec9e0400a0-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/16873-Ferguson-St-Detroit-MI-48235/88157039_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$110,000",
+  "unformattedPrice": 110000,
+  "address": "16873 Ferguson St, Detroit, MI 48235",
+  "addressStreet": "16873 Ferguson St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48235",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 4,
+  "baths": 1,
+  "area": 1134,
+  "latLong": {
+    "latitude": 42.415012,
+    "longitude": -83.21027
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Spacious bedrooms",
+  "contentType": "homeInsight",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88157039,
+      "streetAddress": "16873 Ferguson St",
+      "zipcode": "48235",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.415012,
+      "longitude": -83.21027,
+      "price": 110000,
+      "bathrooms": 1,
+      "bedrooms": 4,
+      "livingArea": 1134,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 7,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "zestimate": 110300,
+      "rentZestimate": 1557,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 110000,
+      "timeOnZillow": 607509000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 30500,
+      "lotAreaValue": 3920.4,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "zestimate": 110300,
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Pro Realty Group",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "cae94428bdc688368163a6ec9e0400a0"
+      },
+      {
+        "photoKey": "37b27f25b1c91c85036d32dc0312f55f"
+      },
+      {
+        "photoKey": "1420db5ccb9b70a88a432e905468314f"
+      },
+      {
+        "photoKey": "4279c4367e7364786f9470829dbe29f8"
+      },
+      {
+        "photoKey": "afe69e4f94e52aa34219f28627c8ecbf"
+      },
+      {
+        "photoKey": "191432b62eb06b2f6167b044da4c745c"
+      },
+      {
+        "photoKey": "d1d6d21a88d88a8b97cf2285c5c2e6c1"
+      },
+      {
+        "photoKey": "23e5789fdfa3aa18b86eb74531cccbf8"
+      },
+      {
+        "photoKey": "d5546833bb9f0711d4807b5ffe0816cd"
+      },
+      {
+        "photoKey": "901efde656ca700cf72b56d79b7eb706"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
   "zpid": "88410221",
   "palsId": "230001_26003854",
   "id": "88410221",
@@ -2726,7 +2609,7 @@
       "livingArea": 1170,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 7,
+      "daysOnZillow": 8,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1334,
@@ -2737,7 +2620,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 133000,
-      "timeOnZillow": 665992000,
+      "timeOnZillow": 730788000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -2810,7 +2693,7 @@
     "longitude": -83.21149
   },
   "isZillowOwned": false,
-  "flexFieldText": "8 days on Zillow",
+  "flexFieldText": "9 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -2827,7 +2710,7 @@
       "livingArea": 1386,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 8,
+      "daysOnZillow": 9,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 96500,
@@ -2839,7 +2722,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 95000,
-      "timeOnZillow": 715513000,
+      "timeOnZillow": 780309000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -2952,7 +2835,7 @@
     "longitude": -83.134544
   },
   "isZillowOwned": false,
-  "flexFieldText": "8 days on Zillow",
+  "flexFieldText": "9 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -2969,7 +2852,7 @@
       "livingArea": 4300,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 8,
+      "daysOnZillow": 9,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1009,
@@ -2980,7 +2863,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 199900,
-      "timeOnZillow": 715513000,
+      "timeOnZillow": 780309000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -3143,7 +3026,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 1350000,
-      "timeOnZillow": 791054000,
+      "timeOnZillow": 855850000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -3219,6 +3102,12 @@
       },
       {
         "photoKey": "112fcd5c6542b503a004398ebe0b3ed6"
+      },
+      {
+        "photoKey": "2278fa2c1bb2bf005534d10a806d8d14"
+      },
+      {
+        "photoKey": "83ec710961122a201ebfaaab2c4b941b"
       }
     ],
     "communityPhotoData": null,
@@ -3273,7 +3162,7 @@
       "bedrooms": 4,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 9,
+      "daysOnZillow": 10,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 124500,
@@ -3285,7 +3174,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 125000,
-      "timeOnZillow": 836426000,
+      "timeOnZillow": 901222000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -3440,7 +3329,7 @@
       "livingArea": 1600,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 17,
+      "daysOnZillow": 18,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 159100,
@@ -3454,7 +3343,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 159900,
       "priceChange": -15100,
-      "timeOnZillow": 1493113000,
+      "timeOnZillow": 1557909000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -3630,7 +3519,7 @@
       "livingArea": 1219,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 18,
+      "daysOnZillow": 19,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1500,
@@ -3643,7 +3532,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 89900,
       "priceChange": -5100,
-      "timeOnZillow": 1579513000,
+      "timeOnZillow": 1644309000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -3794,7 +3683,7 @@
     "longitude": -83.2105
   },
   "isZillowOwned": false,
-  "flexFieldText": "20 days on Zillow",
+  "flexFieldText": "21 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -3811,7 +3700,7 @@
       "livingArea": 771,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 20,
+      "daysOnZillow": 21,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 78800,
@@ -3823,7 +3712,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 79000,
-      "timeOnZillow": 1752313000,
+      "timeOnZillow": 1817109000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -3858,151 +3747,6 @@
     "photoData": [
       {
         "photoKey": "20f67aa088ab97cc6f8452524c138207"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "88359401",
-  "palsId": "14001_20261002902",
-  "id": "88359401",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/d752901bad214bf34c190933042339d3-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/12890-Sussex-St-Detroit-MI-48227/88359401_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "Multi-family home for sale",
-  "countryCurrency": "$",
-  "price": "$190,000",
-  "unformattedPrice": 190000,
-  "address": "12890 Sussex St, Detroit, MI 48227",
-  "addressStreet": "12890 Sussex St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48227",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 3,
-  "baths": 3,
-  "area": 1722,
-  "latLong": {
-    "latitude": 42.383583,
-    "longitude": -83.19438
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "21 days on Zillow",
-  "contentType": "daysOnZillow",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88359401,
-      "streetAddress": "12890 Sussex St",
-      "zipcode": "48227",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.383583,
-      "longitude": -83.19438,
-      "price": 190000,
-      "bathrooms": 3,
-      "bedrooms": 3,
-      "livingArea": 1722,
-      "homeType": "MULTI_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 21,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "zestimate": 186500,
-      "rentZestimate": 1128,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 190000,
-      "timeOnZillow": 1838713000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 11100,
-      "lotAreaValue": 3484.8,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "zestimate": 186500,
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Sine & Monaghan LLC",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "d752901bad214bf34c190933042339d3"
-      },
-      {
-        "photoKey": "839e1511e481872d1ba4e851c36636ba"
-      },
-      {
-        "photoKey": "7bd0ea3bd503a3d890e2ea6b39318c4d"
-      },
-      {
-        "photoKey": "c7477cee622ac61e9d3d1cc046542097"
-      },
-      {
-        "photoKey": "5b5135baf3fad2ff22b1caa8bf4029a6"
-      },
-      {
-        "photoKey": "71a176e5ad94ff835e66995a22927086"
-      },
-      {
-        "photoKey": "5f6520f0263358ef3f64104b83765891"
-      },
-      {
-        "photoKey": "0bac5a737d06381e7dc6b750bba5d1b0"
-      },
-      {
-        "photoKey": "5c9bbd086724e61dd0225eb0900be19d"
-      },
-      {
-        "photoKey": "17651404857637d6f8811d06a4756415"
-      },
-      {
-        "photoKey": "81577801e1837073da74134e7bcc4391"
-      },
-      {
-        "photoKey": "7f6b648b5be1d2aa0cc43750f25d0312"
-      },
-      {
-        "photoKey": "ca4220c251b3067c519f3491f06ef6ea"
-      },
-      {
-        "photoKey": "ccbc3870b76796c3c5dc13c961b08353"
-      },
-      {
-        "photoKey": "ee7deccb7f31b8df001b1660407d3741"
       }
     ],
     "communityPhotoData": null,
@@ -4060,7 +3804,7 @@
       "livingArea": 1643,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 21,
+      "daysOnZillow": 22,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1556,
@@ -4073,7 +3817,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 79900,
       "priceChange": -5000,
-      "timeOnZillow": 1838713000,
+      "timeOnZillow": 1903509000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -4193,6 +3937,151 @@
   "zoomQuadrantSequence": []
 },
 {
+  "zpid": "88359401",
+  "palsId": "14001_20261002902",
+  "id": "88359401",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/d752901bad214bf34c190933042339d3-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/12890-Sussex-St-Detroit-MI-48227/88359401_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "Multi-family home for sale",
+  "countryCurrency": "$",
+  "price": "$190,000",
+  "unformattedPrice": 190000,
+  "address": "12890 Sussex St, Detroit, MI 48227",
+  "addressStreet": "12890 Sussex St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48227",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 3,
+  "baths": 3,
+  "area": 1722,
+  "latLong": {
+    "latitude": 42.383583,
+    "longitude": -83.19438
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "22 days on Zillow",
+  "contentType": "daysOnZillow",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88359401,
+      "streetAddress": "12890 Sussex St",
+      "zipcode": "48227",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.383583,
+      "longitude": -83.19438,
+      "price": 190000,
+      "bathrooms": 3,
+      "bedrooms": 3,
+      "livingArea": 1722,
+      "homeType": "MULTI_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 22,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "zestimate": 186500,
+      "rentZestimate": 1128,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 190000,
+      "timeOnZillow": 1903509000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 11100,
+      "lotAreaValue": 3484.8,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "zestimate": 186500,
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Sine & Monaghan LLC",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "d752901bad214bf34c190933042339d3"
+      },
+      {
+        "photoKey": "839e1511e481872d1ba4e851c36636ba"
+      },
+      {
+        "photoKey": "7bd0ea3bd503a3d890e2ea6b39318c4d"
+      },
+      {
+        "photoKey": "c7477cee622ac61e9d3d1cc046542097"
+      },
+      {
+        "photoKey": "5b5135baf3fad2ff22b1caa8bf4029a6"
+      },
+      {
+        "photoKey": "71a176e5ad94ff835e66995a22927086"
+      },
+      {
+        "photoKey": "5f6520f0263358ef3f64104b83765891"
+      },
+      {
+        "photoKey": "0bac5a737d06381e7dc6b750bba5d1b0"
+      },
+      {
+        "photoKey": "5c9bbd086724e61dd0225eb0900be19d"
+      },
+      {
+        "photoKey": "17651404857637d6f8811d06a4756415"
+      },
+      {
+        "photoKey": "81577801e1837073da74134e7bcc4391"
+      },
+      {
+        "photoKey": "7f6b648b5be1d2aa0cc43750f25d0312"
+      },
+      {
+        "photoKey": "ca4220c251b3067c519f3491f06ef6ea"
+      },
+      {
+        "photoKey": "ccbc3870b76796c3c5dc13c961b08353"
+      },
+      {
+        "photoKey": "ee7deccb7f31b8df001b1660407d3741"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
   "zpid": "88220601",
   "palsId": "14001_20261004062",
   "id": "88220601",
@@ -4238,7 +4127,7 @@
       "livingArea": 1152,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 22,
+      "daysOnZillow": 23,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1245,
@@ -4249,7 +4138,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 139900,
-      "timeOnZillow": 1925113000,
+      "timeOnZillow": 1989909000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -4459,10 +4348,10 @@
       "livingArea": 2558,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 23,
+      "daysOnZillow": 24,
       "isFeatured": false,
       "shouldHighlight": false,
-      "zestimate": 192800,
+      "zestimate": 193500,
       "rentZestimate": 1069,
       "listing_sub_type": {
         "is_FSBA": true
@@ -4471,7 +4360,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 199900,
-      "timeOnZillow": 2011513000,
+      "timeOnZillow": 2076309000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -4488,7 +4377,7 @@
   "isUserConfirmedClaim": false,
   "pgapt": "ForSale",
   "sgapt": "For Sale (Broker)",
-  "zestimate": 192800,
+  "zestimate": 193500,
   "shouldShowZestimateAsPrice": false,
   "has3DModel": false,
   "hasVideo": false,
@@ -4599,7 +4488,7 @@
     "longitude": -82.936455
   },
   "isZillowOwned": false,
-  "flexFieldText": "27 days on Zillow",
+  "flexFieldText": "28 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -4616,7 +4505,7 @@
       "livingArea": 2492,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 27,
+      "daysOnZillow": 28,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1008,
@@ -4627,7 +4516,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 1400000,
-      "timeOnZillow": 2357113000,
+      "timeOnZillow": 2421909000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -4727,10 +4616,10 @@
       "livingArea": 2704,
       "homeType": "TOWNHOUSE",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 27,
+      "daysOnZillow": 28,
       "isFeatured": false,
       "shouldHighlight": false,
-      "zestimate": 202500,
+      "zestimate": 202600,
       "rentZestimate": 1743,
       "listing_sub_type": {
         "is_FSBA": true
@@ -4741,7 +4630,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 205000,
       "priceChange": -5000,
-      "timeOnZillow": 2357113000,
+      "timeOnZillow": 2421909000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -4758,7 +4647,7 @@
   "isUserConfirmedClaim": false,
   "pgapt": "ForSale",
   "sgapt": "For Sale (Broker)",
-  "zestimate": 202500,
+  "zestimate": 202600,
   "shouldShowZestimateAsPrice": false,
   "has3DModel": false,
   "hasVideo": false,
@@ -4830,7 +4719,7 @@
     "longitude": -82.97614
   },
   "isZillowOwned": false,
-  "flexFieldText": "27 days on Zillow",
+  "flexFieldText": "28 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -4847,10 +4736,10 @@
       "livingArea": 1090,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 27,
+      "daysOnZillow": 28,
       "isFeatured": false,
       "shouldHighlight": false,
-      "zestimate": 132300,
+      "zestimate": 134800,
       "rentZestimate": 1246,
       "listing_sub_type": {
         "is_FSBA": true
@@ -4859,7 +4748,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 139900,
-      "timeOnZillow": 2395016000,
+      "timeOnZillow": 2459812000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -4876,7 +4765,7 @@
   "isUserConfirmedClaim": false,
   "pgapt": "ForSale",
   "sgapt": "For Sale (Broker)",
-  "zestimate": 132300,
+  "zestimate": 134800,
   "shouldShowZestimateAsPrice": false,
   "has3DModel": false,
   "hasVideo": false,
@@ -4956,6 +4845,140 @@
   "zoomQuadrantSequence": []
 },
 {
+  "zpid": "88757591",
+  "palsId": "14001_20261002246",
+  "id": "88757591",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/db6778f83b4c9b5a82b3f5290ea602e2-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/17184-Dresden-St-Detroit-MI-48205/88757591_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$80,000",
+  "unformattedPrice": 80000,
+  "address": "17184 Dresden St, Detroit, MI 48205",
+  "addressStreet": "17184 Dresden St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48205",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 3,
+  "baths": 2,
+  "area": 1600,
+  "latLong": {
+    "latitude": 42.423046,
+    "longitude": -82.9989
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "31 days on Zillow",
+  "contentType": "daysOnZillow",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88757591,
+      "streetAddress": "17184 Dresden St",
+      "zipcode": "48205",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.423046,
+      "longitude": -82.9989,
+      "price": 80000,
+      "bathrooms": 2,
+      "bedrooms": 3,
+      "livingArea": 1600,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 31,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "rentZestimate": 1318,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 80000,
+      "timeOnZillow": 2681109000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 37700,
+      "lotAreaValue": 4791.6,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "S&P Realty",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "db6778f83b4c9b5a82b3f5290ea602e2"
+      },
+      {
+        "photoKey": "00cb6702ac9fb77c13782e26b25c9871"
+      },
+      {
+        "photoKey": "3ea6c21ba39b1e9698b812cfff120c5f"
+      },
+      {
+        "photoKey": "ad1e57cd8af002a84af6de9395850436"
+      },
+      {
+        "photoKey": "8007b5b87c69aa73d2d4d74ea4ff5576"
+      },
+      {
+        "photoKey": "5ad195621ad2b9490dd77de62df88add"
+      },
+      {
+        "photoKey": "2b00bdab06ace4efeaa961eb332526d8"
+      },
+      {
+        "photoKey": "560f3c0a4fdd36b90b4be34e8677afe3"
+      },
+      {
+        "photoKey": "f67f23d9a67754c105386121e1d1a371"
+      },
+      {
+        "photoKey": "75e3d3785d447b137d03125e16d9fa59"
+      },
+      {
+        "photoKey": "28b3e8ff9c17d1aff62b1d13199a2277"
+      },
+      {
+        "photoKey": "2758bd774bcaa0464f1780687118dc8e"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 1,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
   "zpid": "88190784",
   "palsId": "14001_20261002180",
   "id": "88190784",
@@ -4984,7 +5007,7 @@
     "longitude": -82.97975
   },
   "isZillowOwned": false,
-  "flexFieldText": "30 days on Zillow",
+  "flexFieldText": "31 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -5001,7 +5024,7 @@
       "livingArea": 963,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 30,
+      "daysOnZillow": 31,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1190,
@@ -5012,7 +5035,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 82000,
-      "timeOnZillow": 2616313000,
+      "timeOnZillow": 2681109000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -5105,140 +5128,6 @@
   "zoomQuadrantSequence": []
 },
 {
-  "zpid": "88757591",
-  "palsId": "14001_20261002246",
-  "id": "88757591",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/db6778f83b4c9b5a82b3f5290ea602e2-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/17184-Dresden-St-Detroit-MI-48205/88757591_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$80,000",
-  "unformattedPrice": 80000,
-  "address": "17184 Dresden St, Detroit, MI 48205",
-  "addressStreet": "17184 Dresden St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48205",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 3,
-  "baths": 2,
-  "area": 1600,
-  "latLong": {
-    "latitude": 42.423046,
-    "longitude": -82.9989
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "30 days on Zillow",
-  "contentType": "daysOnZillow",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88757591,
-      "streetAddress": "17184 Dresden St",
-      "zipcode": "48205",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.423046,
-      "longitude": -82.9989,
-      "price": 80000,
-      "bathrooms": 2,
-      "bedrooms": 3,
-      "livingArea": 1600,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 30,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "rentZestimate": 1318,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 80000,
-      "timeOnZillow": 2616313000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 37700,
-      "lotAreaValue": 4791.6,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "S&P Realty",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "db6778f83b4c9b5a82b3f5290ea602e2"
-      },
-      {
-        "photoKey": "00cb6702ac9fb77c13782e26b25c9871"
-      },
-      {
-        "photoKey": "3ea6c21ba39b1e9698b812cfff120c5f"
-      },
-      {
-        "photoKey": "ad1e57cd8af002a84af6de9395850436"
-      },
-      {
-        "photoKey": "8007b5b87c69aa73d2d4d74ea4ff5576"
-      },
-      {
-        "photoKey": "5ad195621ad2b9490dd77de62df88add"
-      },
-      {
-        "photoKey": "2b00bdab06ace4efeaa961eb332526d8"
-      },
-      {
-        "photoKey": "560f3c0a4fdd36b90b4be34e8677afe3"
-      },
-      {
-        "photoKey": "f67f23d9a67754c105386121e1d1a371"
-      },
-      {
-        "photoKey": "75e3d3785d447b137d03125e16d9fa59"
-      },
-      {
-        "photoKey": "28b3e8ff9c17d1aff62b1d13199a2277"
-      },
-      {
-        "photoKey": "2758bd774bcaa0464f1780687118dc8e"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 1,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
   "zpid": "88761027",
   "palsId": "14001_20261001308",
   "id": "88761027",
@@ -5285,7 +5174,7 @@
       "livingArea": 2600,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 34,
+      "daysOnZillow": 35,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 306300,
@@ -5299,7 +5188,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 310000,
       "priceChange": -5000,
-      "timeOnZillow": 2961913000,
+      "timeOnZillow": 3026709000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -5477,7 +5366,7 @@
       "livingArea": 3662,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 35,
+      "daysOnZillow": 36,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 236400,
@@ -5489,7 +5378,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 239900,
-      "timeOnZillow": 3048313000,
+      "timeOnZillow": 3113109000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -5701,7 +5590,7 @@
       "livingArea": 894,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 35,
+      "daysOnZillow": 36,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 164500,
@@ -5715,7 +5604,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 165000,
       "priceChange": -10000,
-      "timeOnZillow": 3048313000,
+      "timeOnZillow": 3113109000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -5859,7 +5748,7 @@
       "livingArea": 3800,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 35,
+      "daysOnZillow": 36,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 2269,
@@ -5870,7 +5759,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 291000,
-      "timeOnZillow": 3055633000,
+      "timeOnZillow": 3120429000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -6060,7 +5949,7 @@
       "livingArea": 809,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 35,
+      "daysOnZillow": 36,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1130,
@@ -6071,7 +5960,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 96000,
-      "timeOnZillow": 3058753000,
+      "timeOnZillow": 3123549000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -6223,7 +6112,7 @@
       "livingArea": 1094,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 36,
+      "daysOnZillow": 37,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1199,
@@ -6236,7 +6125,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 82500,
       "priceChange": -5000,
-      "timeOnZillow": 3134713000,
+      "timeOnZillow": 3199509000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -6366,7 +6255,7 @@
       "livingArea": 1300,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 168,
+      "daysOnZillow": 169,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1387,
@@ -6379,7 +6268,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 94000,
       "priceChange": -10000,
-      "timeOnZillow": 14539514000,
+      "timeOnZillow": 14604312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -6482,7 +6371,7 @@
       "livingArea": 642,
       "homeType": "TOWNHOUSE",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 178,
+      "daysOnZillow": 179,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 942,
@@ -6495,7 +6384,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 59900,
       "priceChange": -10000,
-      "timeOnZillow": 15403514000,
+      "timeOnZillow": 15468312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -6616,7 +6505,7 @@
       "livingArea": 964,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 189,
+      "daysOnZillow": 190,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1213,
@@ -6629,7 +6518,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 70000,
       "priceChange": -9000,
-      "timeOnZillow": 16353914000,
+      "timeOnZillow": 16418712000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -6779,10 +6668,10 @@
       "livingArea": 1881,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 209,
+      "daysOnZillow": 210,
       "isFeatured": false,
       "shouldHighlight": false,
-      "zestimate": 101100,
+      "zestimate": 102000,
       "rentZestimate": 1262,
       "listing_sub_type": {
         "is_FSBA": true
@@ -6791,7 +6680,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 105000,
-      "timeOnZillow": 18081914000,
+      "timeOnZillow": 18146712000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -6808,7 +6697,7 @@
   "isUserConfirmedClaim": false,
   "pgapt": "ForSale",
   "sgapt": "For Sale (Broker)",
-  "zestimate": 101100,
+  "zestimate": 102000,
   "shouldShowZestimateAsPrice": false,
   "has3DModel": false,
   "hasVideo": false,
@@ -6943,7 +6832,7 @@
     "longitude": -83.2497
   },
   "isZillowOwned": false,
-  "flexFieldText": "211 days on Zillow",
+  "flexFieldText": "212 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -6961,7 +6850,7 @@
       "livingArea": 1381,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 211,
+      "daysOnZillow": 212,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1276,
@@ -6974,7 +6863,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 73000,
       "priceChange": -5000,
-      "timeOnZillow": 18268809000,
+      "timeOnZillow": 18333607000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -7109,7 +6998,7 @@
       "livingArea": 1144,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 211,
+      "daysOnZillow": 212,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 100300,
@@ -7121,7 +7010,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 104900,
-      "timeOnZillow": 18287020000,
+      "timeOnZillow": 18351818000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -7278,7 +7167,7 @@
       "livingArea": 672,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 322,
+      "daysOnZillow": 323,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1224,
@@ -7289,7 +7178,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 77000,
-      "timeOnZillow": 27870263000,
+      "timeOnZillow": 27935061000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -7379,7 +7268,7 @@
       "livingArea": 1400,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 322,
+      "daysOnZillow": 323,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1527,
@@ -7390,7 +7279,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 120000,
-      "timeOnZillow": 27870795000,
+      "timeOnZillow": 27935593000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -7480,7 +7369,7 @@
       "livingArea": 1072,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 322,
+      "daysOnZillow": 323,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1593,
@@ -7491,7 +7380,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 100000,
-      "timeOnZillow": 27872421000,
+      "timeOnZillow": 27937219000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -7581,7 +7470,7 @@
       "livingArea": 1600,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 344,
+      "daysOnZillow": 345,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1348,
@@ -7592,7 +7481,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 115000,
-      "timeOnZillow": 29761190000,
+      "timeOnZillow": 29825988000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -7683,7 +7572,7 @@
       "livingArea": 1957,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 634,
+      "daysOnZillow": 635,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1327,
@@ -7696,7 +7585,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 155000,
       "priceChange": -5000,
-      "timeOnZillow": 54812714000,
+      "timeOnZillow": 54877512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -7821,7 +7710,7 @@
       "livingArea": 1830,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 770,
+      "daysOnZillow": 771,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1253,
@@ -7834,7 +7723,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 215000,
       "priceChange": -5000,
-      "timeOnZillow": 66575534000,
+      "timeOnZillow": 66640332000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -7950,7 +7839,7 @@
       "livingArea": 894,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 36,
+      "daysOnZillow": 37,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1173,
@@ -7963,7 +7852,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 82500,
       "priceChange": -5000,
-      "timeOnZillow": 3134714000,
+      "timeOnZillow": 3199512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -8083,7 +7972,7 @@
       "livingArea": 3400,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 38,
+      "daysOnZillow": 39,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1591,
@@ -8094,7 +7983,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 285000,
-      "timeOnZillow": 3311474000,
+      "timeOnZillow": 3376272000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -8272,7 +8161,7 @@
       "livingArea": 2264,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 47,
+      "daysOnZillow": 48,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 182300,
@@ -8286,7 +8175,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 184900,
       "priceChange": -100,
-      "timeOnZillow": 4085114000,
+      "timeOnZillow": 4149912000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -8446,7 +8335,7 @@
       "livingArea": 1162,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 53,
+      "daysOnZillow": 54,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 98800,
@@ -8458,7 +8347,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 104500,
-      "timeOnZillow": 4603514000,
+      "timeOnZillow": 4668312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -8519,128 +8408,6 @@
   "zoomQuadrantSequence": []
 },
 {
-  "zpid": "88299201",
-  "palsId": "14001_20251050193",
-  "id": "88299201",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/ae9701f25a4ef9d40f926a6de088663b-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/9977-Evergreen-Ave-Detroit-MI-48228/88299201_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$88,900",
-  "unformattedPrice": 88900,
-  "address": "9977 Evergreen Ave, Detroit, MI 48228",
-  "addressStreet": "9977 Evergreen Ave",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48228",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 3,
-  "baths": 1,
-  "area": 1150,
-  "latLong": {
-    "latitude": 42.368397,
-    "longitude": -83.236565
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Hardwood floors",
-  "contentType": "homeInsight",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88299201,
-      "streetAddress": "9977 Evergreen Ave",
-      "zipcode": "48228",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.368397,
-      "longitude": -83.236565,
-      "price": 88900,
-      "bathrooms": 1,
-      "bedrooms": 3,
-      "livingArea": 1150,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 54,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "rentZestimate": 1313,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 88900,
-      "timeOnZillow": 4689914000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 23500,
-      "lotAreaValue": 4356,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Detroit Investment Company",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "ae9701f25a4ef9d40f926a6de088663b"
-      },
-      {
-        "photoKey": "9b3c409dddd514df03ab01f60cc20928"
-      },
-      {
-        "photoKey": "f920485130683a46ce81aaaf12f51a0e"
-      },
-      {
-        "photoKey": "27924689385dc764c9ce38cc559241e4"
-      },
-      {
-        "photoKey": "ffce3a005fb01efde5f5ebb975642912"
-      },
-      {
-        "photoKey": "8d8a956b82e844e239de14dd8b7de07d"
-      },
-      {
-        "photoKey": "25519738873ccd0506f44e3b1ee43e8c"
-      },
-      {
-        "photoKey": "1f17308695899057dec85f346827731d"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 2,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
   "zpid": "88639439",
   "palsId": "14001_20251060713",
   "id": "88639439",
@@ -8687,7 +8454,7 @@
       "livingArea": 846,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 55,
+      "daysOnZillow": 56,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1263,
@@ -8700,7 +8467,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 73400,
       "priceChange": -1000,
-      "timeOnZillow": 4776314000,
+      "timeOnZillow": 4841112000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -8815,7 +8582,7 @@
       "livingArea": 1894,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 56,
+      "daysOnZillow": 57,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 124200,
@@ -8829,7 +8596,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 125000,
       "priceChange": -4000,
-      "timeOnZillow": 4862714000,
+      "timeOnZillow": 4927512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -9031,7 +8798,7 @@
       "livingArea": 1872,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 56,
+      "daysOnZillow": 57,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 287200,
@@ -9043,7 +8810,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 289900,
-      "timeOnZillow": 4862714000,
+      "timeOnZillow": 4927512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -9168,7 +8935,7 @@
     "longitude": -83.23852
   },
   "isZillowOwned": false,
-  "flexFieldText": "57 days on Zillow",
+  "flexFieldText": "58 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -9186,7 +8953,7 @@
       "livingArea": 1100,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 57,
+      "daysOnZillow": 58,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 136000,
@@ -9200,7 +8967,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 139900,
       "priceChange": -5000,
-      "timeOnZillow": 4949114000,
+      "timeOnZillow": 5013912000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -9354,21 +9121,21 @@
   "zoomQuadrantSequence": []
 },
 {
-  "zpid": "88094348",
-  "palsId": "14001_20251060156",
-  "id": "88094348",
+  "zpid": "88343506",
+  "palsId": "14001_20251058238",
+  "id": "88343506",
   "rawHomeStatusCd": "ForSale",
   "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/ffe29b5dfa0b96690c04676ff20366dd-p_e.jpg",
+  "imgSrc": "https://photos.zillowstatic.com/fp/fb61c0b7977d6e98ef91e280c680918d-p_e.jpg",
   "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/137-Geneva-St-Highland-Park-MI-48203/88094348_zpid/",
+  "detailUrl": "https://www.zillow.com/homedetails/20473-Greeley-St-Highland-Park-MI-48203/88343506_zpid/",
   "statusType": "FOR_SALE",
   "statusText": "House for sale",
   "countryCurrency": "$",
-  "price": "$88,900",
-  "unformattedPrice": 88900,
-  "address": "137 Geneva St, Highland Park, MI 48203",
-  "addressStreet": "137 Geneva St",
+  "price": "$59,900",
+  "unformattedPrice": 59900,
+  "address": "20473 Greeley St, Highland Park, MI 48203",
+  "addressStreet": "20473 Greeley St",
   "addressCity": "Highland Park",
   "addressState": "MI",
   "addressZipcode": "48203",
@@ -9376,51 +9143,48 @@
   "shouldShowRequestOnPrice": false,
   "beds": 3,
   "baths": 1,
-  "area": 1274,
+  "area": 1179,
   "latLong": {
-    "latitude": 42.41574,
-    "longitude": -83.109825
+    "latitude": 42.445923,
+    "longitude": -83.088486
   },
   "isZillowOwned": false,
-  "flexFieldText": "Price cut: $1,000 (1/29)",
-  "contentType": "priceCut",
+  "flexFieldText": "58 days on Zillow",
+  "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
-      "zpid": 88094348,
-      "streetAddress": "137 Geneva St",
+      "zpid": 88343506,
+      "streetAddress": "20473 Greeley St",
       "zipcode": "48203",
       "city": "Highland Park",
       "state": "MI",
-      "latitude": 42.41574,
-      "longitude": -83.109825,
-      "price": 88900,
-      "datePriceChanged": 1769673600000,
+      "latitude": 42.445923,
+      "longitude": -83.088486,
+      "price": 59900,
       "bathrooms": 1,
       "bedrooms": 3,
-      "livingArea": 1274,
+      "livingArea": 1179,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
       "daysOnZillow": 58,
       "isFeatured": false,
       "shouldHighlight": false,
-      "rentZestimate": 1380,
+      "rentZestimate": 1187,
       "listing_sub_type": {
         "is_FSBA": true
       },
-      "priceReduction": "$1,000 (Jan 29)",
       "isUnmappable": false,
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 88900,
-      "priceChange": -1000,
-      "timeOnZillow": 5035514000,
+      "priceForHDP": 59900,
+      "timeOnZillow": 5013912000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
       "currency": "USD",
       "country": "USA",
-      "taxAssessedValue": 33600,
-      "lotAreaValue": 3920.4,
+      "taxAssessedValue": 22200,
+      "lotAreaValue": 3484.8,
       "lotAreaUnit": "sqft",
       "isShowcaseListing": false
     }
@@ -9440,329 +9204,13 @@
   "list": true,
   "relaxed": false,
   "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Detroit Investment Company",
+  "brokerName": "Berkshire Hathaway HomeServices The Loft Warehouse",
   "carouselPhotosComposable": {
     "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
     "communityBaseUrl": null,
     "photoData": [
       {
-        "photoKey": "ffe29b5dfa0b96690c04676ff20366dd"
-      },
-      {
-        "photoKey": "f523205ac6f2c1ad0d1e7efbebb5caf8"
-      },
-      {
-        "photoKey": "b818ebb70b3bd03096358635f2e95049"
-      },
-      {
-        "photoKey": "bf3a7332ca450ec3bd0a6067ce87343c"
-      },
-      {
-        "photoKey": "13bd6743e74488184d6077e5b6b24875"
-      },
-      {
-        "photoKey": "45e77f595b3ce641c8ffcb0db5c6b019"
-      },
-      {
-        "photoKey": "b9cd39b26b619a3d381a3381ec568b3a"
-      },
-      {
-        "photoKey": "84d2ee840a5ce9ee19c2e29e97a093e1"
-      },
-      {
-        "photoKey": "428f234e9db1b7b5c4f3126fc792889d"
-      },
-      {
-        "photoKey": "36273537c427164cdf15da8492e4dad1"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 2,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "88150178",
-  "palsId": "14001_20251060129",
-  "id": "88150178",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/04b33ab91c9a8a3db1fae1fcf11362c0-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/12290-Griggs-St-Detroit-MI-48204/88150178_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "House for sale",
-  "countryCurrency": "$",
-  "price": "$88,900",
-  "unformattedPrice": 88900,
-  "address": "12290 Griggs St, Detroit, MI 48204",
-  "addressStreet": "12290 Griggs St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48204",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 3,
-  "baths": 1,
-  "area": 1383,
-  "latLong": {
-    "latitude": 42.37938,
-    "longitude": -83.16171
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Price cut: $1,000 (1/29)",
-  "contentType": "priceCut",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88150178,
-      "streetAddress": "12290 Griggs St",
-      "zipcode": "48204",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.37938,
-      "longitude": -83.16171,
-      "price": 88900,
-      "datePriceChanged": 1769673600000,
-      "bathrooms": 1,
-      "bedrooms": 3,
-      "livingArea": 1383,
-      "homeType": "SINGLE_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 58,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "rentZestimate": 1156,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "priceReduction": "$1,000 (Jan 29)",
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 88900,
-      "priceChange": -1000,
-      "timeOnZillow": 5035514000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 11400,
-      "lotAreaValue": 3920.4,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Detroit Investment Company",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "04b33ab91c9a8a3db1fae1fcf11362c0"
-      },
-      {
-        "photoKey": "b75c629e5c5d63a599af211aea0de178"
-      },
-      {
-        "photoKey": "fe77f57002e6da9051cca686165e8d5b"
-      },
-      {
-        "photoKey": "a077e6e5405a38b469ee5a222e544020"
-      },
-      {
-        "photoKey": "21a150c2beb0e67ea95de41d5f02908c"
-      },
-      {
-        "photoKey": "f01b137e0f4041d184a4ba90f80c0b58"
-      },
-      {
-        "photoKey": "be7b41581fe3a50bff41c9054122a106"
-      },
-      {
-        "photoKey": "4fcd80c9f6bc1c0af35ab7566d0b09f3"
-      },
-      {
-        "photoKey": "706c7abd82636550116c2a9da911deb4"
-      },
-      {
-        "photoKey": "c318f235f939c57a6c78ad2701418f6b"
-      },
-      {
-        "photoKey": "d96af552d17b57819510d836046ccd14"
-      }
-    ],
-    "communityPhotoData": null,
-    "isStaticUrls": false
-  },
-  "isPaidBuilderNewConstruction": false,
-  "foundOnSearchPage": 2,
-  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
-  "zoomQuadrantSequence": []
-},
-{
-  "zpid": "88416194",
-  "palsId": "14001_20251060096",
-  "id": "88416194",
-  "rawHomeStatusCd": "ForSale",
-  "marketingStatusSimplifiedCd": "For Sale by Agent",
-  "imgSrc": "https://photos.zillowstatic.com/fp/698786f23894a71f9eed5f58243a578a-p_e.jpg",
-  "hasImage": true,
-  "detailUrl": "https://www.zillow.com/homedetails/15436-Steel-St-Detroit-MI-48227/88416194_zpid/",
-  "statusType": "FOR_SALE",
-  "statusText": "Multi-family home for sale",
-  "countryCurrency": "$",
-  "price": "$168,900",
-  "unformattedPrice": 168900,
-  "address": "15436 Steel St, Detroit, MI 48227",
-  "addressStreet": "15436 Steel St",
-  "addressCity": "Detroit",
-  "addressState": "MI",
-  "addressZipcode": "48227",
-  "isUndisclosedAddress": false,
-  "shouldShowRequestOnPrice": false,
-  "beds": 4,
-  "baths": 2,
-  "area": 2054,
-  "latLong": {
-    "latitude": 42.40432,
-    "longitude": -83.17148
-  },
-  "isZillowOwned": false,
-  "flexFieldText": "Price cut: $1,000 (2/10)",
-  "contentType": "priceCut",
-  "hdpData": {
-    "homeInfo": {
-      "zpid": 88416194,
-      "streetAddress": "15436 Steel St",
-      "zipcode": "48227",
-      "city": "Detroit",
-      "state": "MI",
-      "latitude": 42.40432,
-      "longitude": -83.17148,
-      "price": 168900,
-      "datePriceChanged": 1770710400000,
-      "bathrooms": 2,
-      "bedrooms": 4,
-      "livingArea": 2054,
-      "homeType": "MULTI_FAMILY",
-      "homeStatus": "FOR_SALE",
-      "daysOnZillow": 58,
-      "isFeatured": false,
-      "shouldHighlight": false,
-      "rentZestimate": 1162,
-      "listing_sub_type": {
-        "is_FSBA": true
-      },
-      "priceReduction": "$1,000 (Feb 10)",
-      "isUnmappable": false,
-      "isPreforeclosureAuction": false,
-      "homeStatusForHDP": "FOR_SALE",
-      "priceForHDP": 168900,
-      "priceChange": -1000,
-      "timeOnZillow": 5035514000,
-      "isNonOwnerOccupied": true,
-      "isPremierBuilder": false,
-      "isZillowOwned": false,
-      "currency": "USD",
-      "country": "USA",
-      "taxAssessedValue": 41600,
-      "lotAreaValue": 4356,
-      "lotAreaUnit": "sqft",
-      "isShowcaseListing": false
-    }
-  },
-  "isSaved": false,
-  "isUserClaimingOwner": false,
-  "isUserConfirmedClaim": false,
-  "pgapt": "ForSale",
-  "sgapt": "For Sale (Broker)",
-  "shouldShowZestimateAsPrice": false,
-  "has3DModel": false,
-  "hasVideo": false,
-  "isHomeRec": false,
-  "hasAdditionalAttributions": true,
-  "isFeaturedListing": false,
-  "isShowcaseListing": false,
-  "list": true,
-  "relaxed": false,
-  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
-  "brokerName": "Realtyflo Inc",
-  "carouselPhotosComposable": {
-    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
-    "communityBaseUrl": null,
-    "photoData": [
-      {
-        "photoKey": "698786f23894a71f9eed5f58243a578a"
-      },
-      {
-        "photoKey": "ee6aab018ea955cef809d6186c22ba10"
-      },
-      {
-        "photoKey": "910a1ce401eebac3dd0fe329c9b48eb9"
-      },
-      {
-        "photoKey": "3609f53680981c42580cbeb875bfb64c"
-      },
-      {
-        "photoKey": "c9a3f9a7c7e7863ef733e6d3c2bf2a01"
-      },
-      {
-        "photoKey": "81f7f121826785ba5a24f1aecd768382"
-      },
-      {
-        "photoKey": "6ac5ad255aab69adc4a66dadea21241c"
-      },
-      {
-        "photoKey": "6c0e57d789e20582fbc17a9c2100c538"
-      },
-      {
-        "photoKey": "ff64987f2ad38dacea411a6e45b33768"
-      },
-      {
-        "photoKey": "25ac8a68304370acadcb3a9450b4c2ed"
-      },
-      {
-        "photoKey": "92725002dde2a196e7f9a2bb807a32e3"
-      },
-      {
-        "photoKey": "5758d53040904e9e6840920d6b8f3269"
-      },
-      {
-        "photoKey": "de46be43337795ec3e721a07cb825ad2"
-      },
-      {
-        "photoKey": "38a31ddbe3bf5c80dc08bd1f398ae8f1"
-      },
-      {
-        "photoKey": "6de333b14e6768bedac5aeef240251a2"
-      },
-      {
-        "photoKey": "cf8296f19f132a26dc85a73832964a43"
-      },
-      {
-        "photoKey": "c819c4f305b8f304645600f98311c92b"
-      },
-      {
-        "photoKey": "77c2e2b57225165a37aea0589161f39d"
+        "photoKey": "fb61c0b7977d6e98ef91e280c680918d"
       }
     ],
     "communityPhotoData": null,
@@ -9819,7 +9267,7 @@
       "livingArea": 2256,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 58,
+      "daysOnZillow": 59,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1182,
@@ -9830,7 +9278,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 175000,
-      "timeOnZillow": 5035514000,
+      "timeOnZillow": 5100312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -9968,6 +9416,426 @@
   "zoomQuadrantSequence": []
 },
 {
+  "zpid": "88416194",
+  "palsId": "14001_20251060096",
+  "id": "88416194",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/698786f23894a71f9eed5f58243a578a-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/15436-Steel-St-Detroit-MI-48227/88416194_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "Multi-family home for sale",
+  "countryCurrency": "$",
+  "price": "$168,900",
+  "unformattedPrice": 168900,
+  "address": "15436 Steel St, Detroit, MI 48227",
+  "addressStreet": "15436 Steel St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48227",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 4,
+  "baths": 2,
+  "area": 2054,
+  "latLong": {
+    "latitude": 42.40432,
+    "longitude": -83.17148
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Price cut: $1,000 (2/10)",
+  "contentType": "priceCut",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88416194,
+      "streetAddress": "15436 Steel St",
+      "zipcode": "48227",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.40432,
+      "longitude": -83.17148,
+      "price": 168900,
+      "datePriceChanged": 1770710400000,
+      "bathrooms": 2,
+      "bedrooms": 4,
+      "livingArea": 2054,
+      "homeType": "MULTI_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 59,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "rentZestimate": 1162,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "priceReduction": "$1,000 (Feb 10)",
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 168900,
+      "priceChange": -1000,
+      "timeOnZillow": 5100312000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 41600,
+      "lotAreaValue": 4356,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Realtyflo Inc",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "698786f23894a71f9eed5f58243a578a"
+      },
+      {
+        "photoKey": "ee6aab018ea955cef809d6186c22ba10"
+      },
+      {
+        "photoKey": "910a1ce401eebac3dd0fe329c9b48eb9"
+      },
+      {
+        "photoKey": "3609f53680981c42580cbeb875bfb64c"
+      },
+      {
+        "photoKey": "c9a3f9a7c7e7863ef733e6d3c2bf2a01"
+      },
+      {
+        "photoKey": "81f7f121826785ba5a24f1aecd768382"
+      },
+      {
+        "photoKey": "6ac5ad255aab69adc4a66dadea21241c"
+      },
+      {
+        "photoKey": "6c0e57d789e20582fbc17a9c2100c538"
+      },
+      {
+        "photoKey": "ff64987f2ad38dacea411a6e45b33768"
+      },
+      {
+        "photoKey": "25ac8a68304370acadcb3a9450b4c2ed"
+      },
+      {
+        "photoKey": "92725002dde2a196e7f9a2bb807a32e3"
+      },
+      {
+        "photoKey": "5758d53040904e9e6840920d6b8f3269"
+      },
+      {
+        "photoKey": "de46be43337795ec3e721a07cb825ad2"
+      },
+      {
+        "photoKey": "38a31ddbe3bf5c80dc08bd1f398ae8f1"
+      },
+      {
+        "photoKey": "6de333b14e6768bedac5aeef240251a2"
+      },
+      {
+        "photoKey": "cf8296f19f132a26dc85a73832964a43"
+      },
+      {
+        "photoKey": "c819c4f305b8f304645600f98311c92b"
+      },
+      {
+        "photoKey": "77c2e2b57225165a37aea0589161f39d"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 2,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "88150178",
+  "palsId": "14001_20251060129",
+  "id": "88150178",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/04b33ab91c9a8a3db1fae1fcf11362c0-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/12290-Griggs-St-Detroit-MI-48204/88150178_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$88,900",
+  "unformattedPrice": 88900,
+  "address": "12290 Griggs St, Detroit, MI 48204",
+  "addressStreet": "12290 Griggs St",
+  "addressCity": "Detroit",
+  "addressState": "MI",
+  "addressZipcode": "48204",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 3,
+  "baths": 1,
+  "area": 1383,
+  "latLong": {
+    "latitude": 42.37938,
+    "longitude": -83.16171
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Price cut: $1,000 (1/29)",
+  "contentType": "priceCut",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88150178,
+      "streetAddress": "12290 Griggs St",
+      "zipcode": "48204",
+      "city": "Detroit",
+      "state": "MI",
+      "latitude": 42.37938,
+      "longitude": -83.16171,
+      "price": 88900,
+      "datePriceChanged": 1769673600000,
+      "bathrooms": 1,
+      "bedrooms": 3,
+      "livingArea": 1383,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 59,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "rentZestimate": 1156,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "priceReduction": "$1,000 (Jan 29)",
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 88900,
+      "priceChange": -1000,
+      "timeOnZillow": 5100312000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 11400,
+      "lotAreaValue": 3920.4,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Detroit Investment Company",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "04b33ab91c9a8a3db1fae1fcf11362c0"
+      },
+      {
+        "photoKey": "b75c629e5c5d63a599af211aea0de178"
+      },
+      {
+        "photoKey": "fe77f57002e6da9051cca686165e8d5b"
+      },
+      {
+        "photoKey": "a077e6e5405a38b469ee5a222e544020"
+      },
+      {
+        "photoKey": "21a150c2beb0e67ea95de41d5f02908c"
+      },
+      {
+        "photoKey": "f01b137e0f4041d184a4ba90f80c0b58"
+      },
+      {
+        "photoKey": "be7b41581fe3a50bff41c9054122a106"
+      },
+      {
+        "photoKey": "4fcd80c9f6bc1c0af35ab7566d0b09f3"
+      },
+      {
+        "photoKey": "706c7abd82636550116c2a9da911deb4"
+      },
+      {
+        "photoKey": "c318f235f939c57a6c78ad2701418f6b"
+      },
+      {
+        "photoKey": "d96af552d17b57819510d836046ccd14"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 2,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
+  "zpid": "88094348",
+  "palsId": "14001_20251060156",
+  "id": "88094348",
+  "rawHomeStatusCd": "ForSale",
+  "marketingStatusSimplifiedCd": "For Sale by Agent",
+  "imgSrc": "https://photos.zillowstatic.com/fp/ffe29b5dfa0b96690c04676ff20366dd-p_e.jpg",
+  "hasImage": true,
+  "detailUrl": "https://www.zillow.com/homedetails/137-Geneva-St-Highland-Park-MI-48203/88094348_zpid/",
+  "statusType": "FOR_SALE",
+  "statusText": "House for sale",
+  "countryCurrency": "$",
+  "price": "$88,900",
+  "unformattedPrice": 88900,
+  "address": "137 Geneva St, Highland Park, MI 48203",
+  "addressStreet": "137 Geneva St",
+  "addressCity": "Highland Park",
+  "addressState": "MI",
+  "addressZipcode": "48203",
+  "isUndisclosedAddress": false,
+  "shouldShowRequestOnPrice": false,
+  "beds": 3,
+  "baths": 1,
+  "area": 1274,
+  "latLong": {
+    "latitude": 42.41574,
+    "longitude": -83.109825
+  },
+  "isZillowOwned": false,
+  "flexFieldText": "Price cut: $1,000 (1/29)",
+  "contentType": "priceCut",
+  "hdpData": {
+    "homeInfo": {
+      "zpid": 88094348,
+      "streetAddress": "137 Geneva St",
+      "zipcode": "48203",
+      "city": "Highland Park",
+      "state": "MI",
+      "latitude": 42.41574,
+      "longitude": -83.109825,
+      "price": 88900,
+      "datePriceChanged": 1769673600000,
+      "bathrooms": 1,
+      "bedrooms": 3,
+      "livingArea": 1274,
+      "homeType": "SINGLE_FAMILY",
+      "homeStatus": "FOR_SALE",
+      "daysOnZillow": 59,
+      "isFeatured": false,
+      "shouldHighlight": false,
+      "rentZestimate": 1380,
+      "listing_sub_type": {
+        "is_FSBA": true
+      },
+      "priceReduction": "$1,000 (Jan 29)",
+      "isUnmappable": false,
+      "isPreforeclosureAuction": false,
+      "homeStatusForHDP": "FOR_SALE",
+      "priceForHDP": 88900,
+      "priceChange": -1000,
+      "timeOnZillow": 5100312000,
+      "isNonOwnerOccupied": true,
+      "isPremierBuilder": false,
+      "isZillowOwned": false,
+      "currency": "USD",
+      "country": "USA",
+      "taxAssessedValue": 33600,
+      "lotAreaValue": 3920.4,
+      "lotAreaUnit": "sqft",
+      "isShowcaseListing": false
+    }
+  },
+  "isSaved": false,
+  "isUserClaimingOwner": false,
+  "isUserConfirmedClaim": false,
+  "pgapt": "ForSale",
+  "sgapt": "For Sale (Broker)",
+  "shouldShowZestimateAsPrice": false,
+  "has3DModel": false,
+  "hasVideo": false,
+  "isHomeRec": false,
+  "hasAdditionalAttributions": true,
+  "isFeaturedListing": false,
+  "isShowcaseListing": false,
+  "list": true,
+  "relaxed": false,
+  "info3String": "https://photos.zillowstatic.com/fp/4d9707b45324470b5a7b36328e687eab-zillow_web_48_23.jpg",
+  "brokerName": "Detroit Investment Company",
+  "carouselPhotosComposable": {
+    "baseUrl": "https://photos.zillowstatic.com/fp/{photoKey}-p_e.jpg",
+    "communityBaseUrl": null,
+    "photoData": [
+      {
+        "photoKey": "ffe29b5dfa0b96690c04676ff20366dd"
+      },
+      {
+        "photoKey": "f523205ac6f2c1ad0d1e7efbebb5caf8"
+      },
+      {
+        "photoKey": "b818ebb70b3bd03096358635f2e95049"
+      },
+      {
+        "photoKey": "bf3a7332ca450ec3bd0a6067ce87343c"
+      },
+      {
+        "photoKey": "13bd6743e74488184d6077e5b6b24875"
+      },
+      {
+        "photoKey": "45e77f595b3ce641c8ffcb0db5c6b019"
+      },
+      {
+        "photoKey": "b9cd39b26b619a3d381a3381ec568b3a"
+      },
+      {
+        "photoKey": "84d2ee840a5ce9ee19c2e29e97a093e1"
+      },
+      {
+        "photoKey": "428f234e9db1b7b5c4f3126fc792889d"
+      },
+      {
+        "photoKey": "36273537c427164cdf15da8492e4dad1"
+      }
+    ],
+    "communityPhotoData": null,
+    "isStaticUrls": false
+  },
+  "isPaidBuilderNewConstruction": false,
+  "foundOnSearchPage": 2,
+  "foundFromSearchUrl": "https://www.zillow.com/homes/Detroit,-MI_rb/?searchQueryState={%22pagination%22:{},%22mapBounds%22:{%22north%22:42.6,%22east%22:-82.8,%22south%22:42.1,%22west%22:-83.5},%22filterState%22:{%22sort%22:{%22value%22:%22days%22},%22ah%22:{%22value%22:true},%22keywords%22:{%22value%22:%22section%208%22}},%22isListVisible%22:true}",
+  "zoomQuadrantSequence": []
+},
+{
   "zpid": "88276702",
   "palsId": "14001_20251059784",
   "id": "88276702",
@@ -10014,7 +9882,7 @@
       "livingArea": 1227,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 61,
+      "daysOnZillow": 62,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1246,
@@ -10027,7 +9895,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 87400,
       "priceChange": -500,
-      "timeOnZillow": 5294714000,
+      "timeOnZillow": 5359512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -10147,7 +10015,7 @@
       "livingArea": 947,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 68,
+      "daysOnZillow": 69,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 116900,
@@ -10159,7 +10027,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 119900,
-      "timeOnZillow": 5899514000,
+      "timeOnZillow": 5964312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -10233,7 +10101,7 @@
     "longitude": -83.089806
   },
   "isZillowOwned": false,
-  "flexFieldText": "71 days on Zillow",
+  "flexFieldText": "72 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -10250,7 +10118,7 @@
       "livingArea": 922,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 71,
+      "daysOnZillow": 72,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1473,
@@ -10261,7 +10129,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 68000,
-      "timeOnZillow": 6158714000,
+      "timeOnZillow": 6223512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -10387,7 +10255,7 @@
       "livingArea": 737,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 74,
+      "daysOnZillow": 75,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1174,
@@ -10398,7 +10266,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 97000,
-      "timeOnZillow": 6447690000,
+      "timeOnZillow": 6512488000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -10495,7 +10363,7 @@
     "longitude": -83.23623
   },
   "isZillowOwned": false,
-  "flexFieldText": "74 days on Zillow",
+  "flexFieldText": "75 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -10512,7 +10380,7 @@
       "livingArea": 896,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 74,
+      "daysOnZillow": 75,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1252,
@@ -10523,7 +10391,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 97000,
-      "timeOnZillow": 6448895000,
+      "timeOnZillow": 6513693000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -10631,7 +10499,7 @@
       "livingArea": 876,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 77,
+      "daysOnZillow": 78,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1135,
@@ -10642,7 +10510,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 65000,
-      "timeOnZillow": 6677114000,
+      "timeOnZillow": 6741912000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -10721,7 +10589,7 @@
     "longitude": -83.14727
   },
   "isZillowOwned": false,
-  "flexFieldText": "78 days on Zillow",
+  "flexFieldText": "79 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -10738,7 +10606,7 @@
       "livingArea": 1041,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 78,
+      "daysOnZillow": 79,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1466,
@@ -10749,7 +10617,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 80000,
-      "timeOnZillow": 6788513000,
+      "timeOnZillow": 6853311000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -10897,7 +10765,7 @@
       "livingArea": 1041,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 79,
+      "daysOnZillow": 80,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1244,
@@ -10910,7 +10778,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 84400,
       "priceChange": -500,
-      "timeOnZillow": 6849914000,
+      "timeOnZillow": 6914712000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -11025,7 +10893,7 @@
       "livingArea": 1181,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 86,
+      "daysOnZillow": 87,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 124100,
@@ -11039,7 +10907,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 124900,
       "priceChange": -5000,
-      "timeOnZillow": 7454714000,
+      "timeOnZillow": 7519512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -11175,7 +11043,7 @@
       "livingArea": 934,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 90,
+      "daysOnZillow": 91,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 115800,
@@ -11187,7 +11055,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 119900,
-      "timeOnZillow": 7800314000,
+      "timeOnZillow": 7865112000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -11333,7 +11201,7 @@
       "livingArea": 960,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 96,
+      "daysOnZillow": 97,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1392,
@@ -11346,7 +11214,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 75900,
       "priceChange": -500,
-      "timeOnZillow": 8318714000,
+      "timeOnZillow": 8383512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -11461,7 +11329,7 @@
       "livingArea": 2600,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 98,
+      "daysOnZillow": 99,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1056,
@@ -11474,7 +11342,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 105000,
       "priceChange": -15000,
-      "timeOnZillow": 8491514000,
+      "timeOnZillow": 8556312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -11634,7 +11502,7 @@
       "livingArea": 84557,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 101,
+      "daysOnZillow": 102,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1064,
@@ -11647,7 +11515,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 4450000,
       "priceChange": -50000,
-      "timeOnZillow": 8750714000,
+      "timeOnZillow": 8815512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -12031,7 +11899,7 @@
       "livingArea": 2020,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 104,
+      "daysOnZillow": 105,
       "isFeatured": false,
       "shouldHighlight": false,
       "listing_sub_type": {
@@ -12043,7 +11911,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 210000,
       "priceChange": -15000,
-      "timeOnZillow": 9009914000,
+      "timeOnZillow": 9074712000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -12187,7 +12055,7 @@
       "livingArea": 3130,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 107,
+      "daysOnZillow": 108,
       "isFeatured": false,
       "shouldHighlight": false,
       "zestimate": 270000,
@@ -12201,7 +12069,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 269900,
       "priceChange": -5100,
-      "timeOnZillow": 9269114000,
+      "timeOnZillow": 9333912000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -12328,7 +12196,7 @@
       "livingArea": 2750,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 108,
+      "daysOnZillow": 109,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1331,
@@ -12339,7 +12207,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 199900,
-      "timeOnZillow": 9355514000,
+      "timeOnZillow": 9420312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -12421,7 +12289,7 @@
     "longitude": -83.124794
   },
   "isZillowOwned": false,
-  "flexFieldText": "111 days on Zillow",
+  "flexFieldText": "112 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -12438,7 +12306,7 @@
       "livingArea": 2088,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 111,
+      "daysOnZillow": 112,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 855,
@@ -12449,7 +12317,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 169900,
-      "timeOnZillow": 9614714000,
+      "timeOnZillow": 9679512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -12594,7 +12462,7 @@
       "livingArea": 1832,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 112,
+      "daysOnZillow": 113,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1799,
@@ -12607,7 +12475,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 115000,
       "priceChange": -4900,
-      "timeOnZillow": 9701114000,
+      "timeOnZillow": 9765912000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -12734,7 +12602,7 @@
     "longitude": -83.122
   },
   "isZillowOwned": false,
-  "flexFieldText": "113 days on Zillow",
+  "flexFieldText": "114 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -12751,7 +12619,7 @@
       "livingArea": 2800,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 113,
+      "daysOnZillow": 114,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1203,
@@ -12762,7 +12630,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 199900,
-      "timeOnZillow": 9787514000,
+      "timeOnZillow": 9852312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -12912,7 +12780,7 @@
       "livingArea": 998,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 118,
+      "daysOnZillow": 119,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1693,
@@ -12923,7 +12791,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 59900,
-      "timeOnZillow": 10219514000,
+      "timeOnZillow": 10284312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -13149,7 +13017,7 @@
       "livingArea": 709,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 126,
+      "daysOnZillow": 127,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1134,
@@ -13162,7 +13030,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 1040,
       "priceChange": -110,
-      "timeOnZillow": 10910714000,
+      "timeOnZillow": 10975512000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -13287,7 +13155,7 @@
       "livingArea": 864,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 127,
+      "daysOnZillow": 128,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 993,
@@ -13298,7 +13166,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 78000,
-      "timeOnZillow": 10997114000,
+      "timeOnZillow": 11061912000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -13421,7 +13289,7 @@
       "livingArea": 2800,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 128,
+      "daysOnZillow": 129,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1325,
@@ -13432,7 +13300,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 199900,
-      "timeOnZillow": 11083514000,
+      "timeOnZillow": 11148312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -13555,7 +13423,7 @@
       "livingArea": 1716,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 128,
+      "daysOnZillow": 129,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1101,
@@ -13566,7 +13434,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 169900,
-      "timeOnZillow": 11083514000,
+      "timeOnZillow": 11148312000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -13683,7 +13551,7 @@
       "livingArea": 2198,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 149,
+      "daysOnZillow": 150,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 2205,
@@ -13694,7 +13562,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 159900,
-      "timeOnZillow": 12897914000,
+      "timeOnZillow": 12962712000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -13823,10 +13691,10 @@
       "livingArea": 15845,
       "homeType": "MULTI_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 151,
+      "daysOnZillow": 152,
       "isFeatured": false,
       "shouldHighlight": false,
-      "rentZestimate": 1035,
+      "rentZestimate": 1049,
       "listing_sub_type": {
         "is_FSBA": true
       },
@@ -13834,7 +13702,7 @@
       "isPreforeclosureAuction": false,
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 1200000,
-      "timeOnZillow": 13089338000,
+      "timeOnZillow": 13154136000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -13948,7 +13816,7 @@
     "longitude": -82.951546
   },
   "isZillowOwned": false,
-  "flexFieldText": "155 days on Zillow",
+  "flexFieldText": "156 days on Zillow",
   "contentType": "daysOnZillow",
   "hdpData": {
     "homeInfo": {
@@ -13966,7 +13834,7 @@
       "livingArea": 845,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 155,
+      "daysOnZillow": 156,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1286,
@@ -13979,7 +13847,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 70000,
       "priceChange": -20000,
-      "timeOnZillow": 13416314000,
+      "timeOnZillow": 13481112000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
@@ -14094,7 +13962,7 @@
       "livingArea": 1034,
       "homeType": "SINGLE_FAMILY",
       "homeStatus": "FOR_SALE",
-      "daysOnZillow": 162,
+      "daysOnZillow": 163,
       "isFeatured": false,
       "shouldHighlight": false,
       "rentZestimate": 1271,
@@ -14107,7 +13975,7 @@
       "homeStatusForHDP": "FOR_SALE",
       "priceForHDP": 104900,
       "priceChange": -100,
-      "timeOnZillow": 14021114000,
+      "timeOnZillow": 14085912000,
       "isNonOwnerOccupied": true,
       "isPremierBuilder": false,
       "isZillowOwned": false,
