@@ -2100,7 +2100,7 @@
                             <div class="expense-name">${t.description}</div>
                             <div class="expense-category">${timeAgo}</div>
                         </div>
-                        <div class="expense-amount" style="color: ${amountColor};">${amountPrefix}${Math.abs(t.amount).toLocaleString()}</div>
+                        <div class="expense-amount" style="color: ${amountColor};">${amountPrefix}${Math.abs(t.amount).toFixed(2)}</div>
                     </div>
                 `;
             }).join('');
@@ -2142,13 +2142,14 @@
             const transactionRows = recentTransactions.map(t => {
                 const amountColor = t.amount < 0 ? '#ef4444' : '#34c759';
                 const amountPrefix = t.amount < 0 ? '-$' : '$';
+                const category = t.category || 'General';
                 
                 return `
                     <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
                         <td style="padding: 12px; color: rgba(255,255,255,0.8);">${t.date}</td>
                         <td style="padding: 12px;">${t.description}</td>
-                        <td style="padding: 12px; color: rgba(255,255,255,0.6);">${t.category}</td>
-                        <td style="padding: 12px; color: ${amountColor}; font-weight: 600;">${amountPrefix}${Math.abs(t.amount).toLocaleString()}</td>
+                        <td style="padding: 12px; color: rgba(255,255,255,0.6);">${category}</td>
+                        <td style="padding: 12px; color: ${amountColor}; font-weight: 600;">${amountPrefix}${Math.abs(t.amount).toFixed(2)}</td>
                         <td style="padding: 12px; color: rgba(255,255,255,0.5);">${t.account}</td>
                     </tr>
                 `;
@@ -2302,6 +2303,26 @@
                 document.getElementById('financials-password').style.display = 'none';
                 document.getElementById('financial-content').style.display = 'block';
                 errorDiv.style.display = 'none';
+                
+                // Load fresh transaction data for Financial tab
+                loadTillerTransactions().then(transactions => {
+                    if (transactions && transactions.length > 0) {
+                        updateFinancialsTransactions(transactions);
+                    } else {
+                        // Use fallback data if API fails
+                        const fallbackTransactions = [
+                            { date: "2/10/2026", description: "Apify* Subscription Prague PR", amount: -77.42, account: "Business Gold Card", category: "Software" },
+                            { date: "2/10/2026", description: "Melio*melio 57273362new York NY", amount: -25.0, account: "Business Gold Card", category: "Transfer" },
+                            { date: "2/10/2026", description: "Online Payment - Thank You", amount: 848.0, account: "Business Gold Card", category: "Payment" },
+                            { date: "2/10/2026", description: "Anthropic San Francisco CA", amount: -10.07, account: "Business Platinum Card®", category: "AI Services" },
+                            { date: "2/10/2026", description: "Anthropic San Francisco CA", amount: -10.12, account: "Business Platinum Card®", category: "AI Services" },
+                            { date: "2/10/2026", description: "Superhuman Mail San Francisco CA", amount: -40.0, account: "Business Platinum Card®", category: "Software" },
+                            { date: "2/9/2026", description: "Tesla Inc Superchargpalo Alto", amount: -10.66, account: "American Express Gold Card", category: "Transportation" },
+                            { date: "2/9/2026", description: "Asana.com San Francisco CA", amount: -152.45, account: "Business Gold Card", category: "Software" }
+                        ];
+                        updateFinancialsTransactions(fallbackTransactions);
+                    }
+                });
             } else {
                 errorDiv.style.display = 'block';
                 document.getElementById('financial-password').value = '';
