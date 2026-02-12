@@ -2196,8 +2196,59 @@
         }
 
         function showFallbackTransactions() {
-            console.log('⚠️ Using fallback transaction data');
-            // Keep the existing hardcoded transactions as fallback
+            console.log('⚠️ Using real transaction data as fallback');
+            const transactions = [
+            { date: "2/10/2026", description: "Apify* Subscription Prague PR", amount: -77.42, account: "Business Gold Card" },
+            { date: "2/10/2026", description: "Melio*melio 57273362new York NY", amount: -25.0, account: "Business Gold Card" },
+            { date: "2/10/2026", description: "Online Payment - Thank You", amount: 848.0, account: "Business Gold Card" },
+            { date: "2/10/2026", description: "Anthropic San Francisco CA", amount: -10.07, account: "Business Platinum Card®" },
+            { date: "2/10/2026", description: "Anthropic San Francisco CA", amount: -10.12, account: "Business Platinum Card®" },
+            { date: "2/10/2026", description: "Anthropic San Francisco CA", amount: -10.16, account: "Business Platinum Card®" },
+            { date: "2/10/2026", description: "Anthropic San Francisco CA", amount: -10.27, account: "Business Platinum Card®" },
+            { date: "2/10/2026", description: "Anthropic San Francisco CA", amount: -10.22, account: "Business Platinum Card®" },
+            { date: "2/10/2026", description: "Anthropic San Francisco CA", amount: -10.23, account: "Business Platinum Card®" },
+            { date: "2/10/2026", description: "Aplpay Apple.com/bilinternet Charge CA", amount: -12.99, account: "Business Platinum Card®" },
+            { date: "2/10/2026", description: "Aplpay Apple.com/bilinternet Charge CA", amount: -20.98, account: "Business Platinum Card®" },
+            { date: "2/10/2026", description: "Superhuman Mail San Francisco CA", amount: -40.0, account: "Business Platinum Card®" },
+            { date: "2/9/2026", description: "Tesla Inc Superchargpalo Alto", amount: -10.66, account: "American Express Gold Card" },
+            { date: "2/9/2026", description: "Asana.com San Francisco CA", amount: -152.45, account: "Business Gold Card" },
+            { date: "2/9/2026", description: "Anthropic San Francisco CA", amount: -10.03, account: "Business Platinum Card®" },
+            { date: "2/9/2026", description: "Anthropic San Francisco CA", amount: -10.1, account: "Business Platinum Card®" },
+            { date: "2/9/2026", description: "Anthropic San Francisco CA", amount: -10.25, account: "Business Platinum Card®" },
+            { date: "2/9/2026", description: "Anthropic San Francisco CA", amount: -10.59, account: "Business Platinum Card®" },
+            { date: "2/9/2026", description: "Anthropic San Francisco CA", amount: -10.72, account: "Business Platinum Card®" },
+            { date: "2/9/2026", description: "Anthropic San Francisco CA", amount: -10.44, account: "Business Platinum Card®" },
+            { date: "2/9/2026", description: "Anthropic San Francisco CA", amount: -10.7, account: "Business Platinum Card®" },
+            { date: "2/9/2026", description: "Online Transfer to Chk ...6170 transaction#: 28011454527 02/09", amount: -2060.0, account: "BUS COMPLETE CHK" },
+            { date: "2/9/2026", description: "Online Transfer to Chk ...5781 transaction#: 28011469088 02/09", amount: -34.31, account: "BUS COMPLETE CHK" },
+            { date: "2/9/2026", description: "Online Transfer to Chk ...5781 transaction#: 28011452129 02/09", amount: -300.0, account: "BUS COMPLETE CHK" },
+            { date: "2/9/2026", description: "Tst*windmill Food Hall", amount: -35.78, account: "Ultimate Rewards®" },
+            { date: "2/9/2026", description: "Coast Highway", amount: -17.12, account: "Ultimate Rewards®" },
+            { date: "2/9/2026", description: "Tst*temaki Handroll Bar", amount: -36.4, account: "Ultimate Rewards®" },
+            { date: "2/8/2026", description: "Tst*temaki Handroll Bar", amount: -38.31, account: "Ultimate Rewards®" },
+            { date: "2/8/2026", description: "SD Sheriffs Dept Fee", amount: -2.31, account: "Ultimate Rewards®" },
+            { date: "2/8/2026", description: "San Diego Sheriffs Depart", amount: -77.0, account: "Ultimate Rewards®" },
+            { date: "2/8/2026", description: "Lazy Acres 25", amount: -140.88, account: "Ultimate Rewards®" },
+            { date: "2/8/2026", description: "Girl Scouts of the United", amount: -404.0, account: "Ultimate Rewards®" },
+            { date: "2/8/2026", description: "Coast Highway", amount: -20.67, account: "Ultimate Rewards®" },
+            { date: "2/8/2026", description: "Late Fee", amount: -39.0, account: "Business Gold Card" },
+            { date: "2/8/2026", description: "Anthropic San Francisco CA", amount: -10.13, account: "Business Platinum Card®" },
+            { date: "2/8/2026", description: "Anthropic San Francisco CA", amount: -10.35, account: "Business Platinum Card®" },
+            { date: "2/8/2026", description: "Anthropic San Francisco CA", amount: -10.46, account: "Business Platinum Card®" },
+            { date: "2/8/2026", description: "Anthropic San Francisco CA", amount: -10.52, account: "Business Platinum Card®" },
+            { date: "2/8/2026", description: "Anthropic San Francisco CA", amount: -10.14, account: "Business Platinum Card®" },
+            { date: "2/8/2026", description: "Anthropic San Francisco CA", amount: -10.14, account: "Business Platinum Card®" },
+            { date: "2/8/2026", description: "Anthropic San Francisco CA", amount: -10.58, account: "Business Platinum Card®" },
+            { date: "2/8/2026", description: "Anthropic San Francisco CA", amount: -10.65, account: "Business Platinum Card®" },
+            { date: "2/8/2026", description: "Anthropic San Francisco CA", amount: -10.67, account: "Business Platinum Card®" },
+            { date: "2/8/2026", description: "Anthropic San Francisco CA", amount: -11.1, account: "Business Platinum Card®" },
+            { date: "2/8/2026", description: "Incfile Llc Houston TX", amount: -29.0, account: "Business Platinum Card®" },
+            { date: "2/7/2026", description: "Anthropic San Francisco CA", amount: -10.12, account: "Business Platinum Card®" },
+            { date: "2/7/2026", description: "Anthropic San Francisco CA", amount: -10.15, account: "Business Platinum Card®" },
+            { date: "2/7/2026", description: "Anthropic San Francisco CA", amount: -10.2, account: "Business Platinum Card®" },
+            { date: "2/7/2026", description: "Anthropic San Francisco CA", amount: -10.32, account: "Business Platinum Card®" }
+        ];
+            updateRecentTransactions(transactions.slice(0, 10));
         }
 
         function updateTimestamp() {
